@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  plan_id: 1
+  plan_name: MyString
+  plan_name: MyString
+  plan_price: MyString
+  primary_key: 
+
+two:
+  plan_id: 1
+  plan_name: MyString
+  plan_name: MyString
+  plan_price: MyString
+  primary_key: 

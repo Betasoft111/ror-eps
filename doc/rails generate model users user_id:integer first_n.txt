@@ -1,0 +1,9 @@
+--> User Model
+
+	rails generate model users user_id:integer first_name:string last_name:string email:string password:string plan_id:integer user_type:integer reset_password_token:string created_at: datetime updated_at: datetime primary_key:user_id
+
+--> Subscriptions Plans Model
+	
+	rails generate model subscription_plans plan_id:integer plan_name:string plan_name:string plan_price:string primary_key:plan_id
+
+-->	ALTER TABLE users ADD CONSTRAINT fk_plan FOREIGN KEY (plan_id) REFERENCES subscription_plans (id)
