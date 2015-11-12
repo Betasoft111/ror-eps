@@ -4,8 +4,13 @@ class UserMailer < ActionMailer::Base
  
   def welcome_email(user)
     @user = user
-    @url  = 'http://localhost:3000/log_in'
     mail(to: @user.email, subject: 'Welcome to My Awesome Site')
+  end
+
+  def forgot_password(user, link)
+  	@user = user
+  	@link = link
+    mail(to: @user.email, subject: 'Reset your password')
   end
 
 end

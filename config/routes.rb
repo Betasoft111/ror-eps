@@ -41,6 +41,9 @@ EPS::Application.routes.draw do
   get "sign_up" => "users#new", :as => "sign_up"
   get "forgot_password" => "users#forgot_password"
   post "request_password" => "users#request_password"
+  get "reset_password/:reset_password_token" => "users#reset_password"
+  get "invalid_password_token" => "users#invalid_password_token"
+  post "update_password" => "users#update_password"
   resources :users
   resources :sessions
 

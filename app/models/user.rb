@@ -3,6 +3,7 @@ class User < ActiveRecord::Base
   
   attr_accessor :password
   before_save :encrypt_password
+  before_update :encrypt_password
   
   validates_presence_of :first_name
   validates_presence_of :last_name

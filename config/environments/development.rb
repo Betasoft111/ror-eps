@@ -31,7 +31,7 @@ EPS::Application.configure do
        :address => "smtp.gmail.com",
        :port => 587,
        :user_name => "betasoft111@gmail.com",
-       :password => "!virk@1234",
+       :password => "!360itpro@1234",
        :authentication => :login,
       # :enable_starttls_auto => true
   }

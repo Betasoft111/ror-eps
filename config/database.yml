@@ -9,8 +9,8 @@ development:
   database: db_eps 
   pool: 5
   timeout: 5000
-  username: db_eps #db_eps
-  password: dp_eps_plesk #dp_eps_plesk
+  username: root #db_eps
+  password: root #dp_eps_plesk
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
