@@ -5,7 +5,7 @@
 #   gem 'sqlite3'
 development:
   adapter: mysql2
-  host: localhost:3306 #localhost:3306
+  host: localhost #localhost:3306
   database: db_eps 
   pool: 5
   timeout: 5000
