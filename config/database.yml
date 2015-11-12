@@ -5,11 +5,12 @@
 #   gem 'sqlite3'
 development:
   adapter: mysql2
-  database: db_eps
+  host: localhost:3306 #localhost:3306
+  database: db_eps 
   pool: 5
   timeout: 5000
-  username: root
-  password: root
+  username: db_eps #db_eps
+  password: dp_eps_plesk #dp_eps_plesk
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
