@@ -10,8 +10,12 @@
 		  <div class="form-group">
 		    <%= label_tag :password %><br />
 		    <%= password_field_tag :password, nil, class:'form-control' %>
+		    <br>
+		    <a href="/forgot_password" >Forgot Password</a>
 		  </div>
 		  <%= submit_tag "Log in", :class => 'btn btn-default' %>
+		  Or
+		    <a href="/sign_up" >Create new account</a>
 		<% end %>
 	</div>
 </div>

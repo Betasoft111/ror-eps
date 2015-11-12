@@ -14,8 +14,16 @@
 	    </div>
 	  <% end %>
 	  <div class="form-group">
+	    <%= f.label :first_name %><br />
+	    <%= f.text_field :first_name, :class => 'form-control' %>
+	  </div>
+	  <div class="form-group">
+	    <%= f.label :last_name %><br />
+	    <%= f.text_field :last_name, :class => 'form-control' %>
+	  </div>
+	  <div class="form-group">
 	    <%= f.label :email %>
-	    <%= f.text_field :email, :class => 'form-control' %>
+	    <%= f.email_field :email, :class => 'form-control' %>
 	  </div>
 	  <div class="form-group">
 	    <%= f.label :password %>
@@ -25,6 +33,14 @@
 	    <%= f.label :password_confirmation %>
 	    <%= f.password_field :password_confirmation, :class => 'form-control' %>
 	  </div>
+	  <div class="form-group">
+		  <select name="user[user_type]" class="form-control">
+		  	<option value="">Select One</option>
+		  	<option value="1">I want to hire staff</option>
+		  	<option value="2">I want to sell staff</option>
+		  	<option value="3">I want to hire/sell staff</option>
+		  </select>
+	 </div>	  	
 	  <%= f.submit :class => 'btn btn-default' %>
 	<% end %>
 	</div>

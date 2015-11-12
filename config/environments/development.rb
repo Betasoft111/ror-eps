@@ -1,3 +1,4 @@
+require 'ntlm/smtp'
 EPS::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
@@ -27,10 +28,11 @@ EPS::Application.configure do
   config.assets.debug = true
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-      # :address => "email-smtp.us-west-2.amazonaws.com",
-      # :user_name => "AKIAJZ557T6WQWIJZHDQ",
-      # :password => "AtjuD40eQ1H96irPGEGolxkoF7G8XZasYfMXGq0qzQiO",
-      # :authentication => :login,
+       :address => "smtp.gmail.com",
+       :port => 587,
+       :user_name => "betasoft111@gmail.com",
+       :password => "!virk@1234",
+       :authentication => :login,
       # :enable_starttls_auto => true
   }
 end

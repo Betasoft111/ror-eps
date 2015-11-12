@@ -3,9 +3,7 @@ class WelcomeController < ApplicationController
 	before_filter :authenticate_user!
 
 	def index
-		#puts 'user is ' 
-		#puts session[:user_id]
-		if 
+		render :template => "welcome/index", :locals => { :user => @current_user }
 	end
 
 
