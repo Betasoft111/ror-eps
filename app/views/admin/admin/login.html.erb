@@ -1,19 +1,46 @@
 <%= render 'admin/layouts/application' %>
-<div class="container">
-	<h1>Log In</h1>
-	<div class="row col-md-3">
-		<%= form_tag '/admin/post_login' do %>
-		  <div class="form-group">
-		    <%= label_tag :email %><br />
-		    <%= text_field_tag :email, params[:email], :class => 'form-control' %>
-		  </div>
-		  <div class="form-group">
-		    <%= label_tag :password %><br />
-		    <%= password_field_tag :password, nil, class:'form-control' %>
-		    <br>
-		    <!-- <a href="/forgot_password" >Forgot Password</a> -->
-		  </div>
-		  <%= submit_tag "Log in", :class => 'btn btn-default' %>
-		<% end %>
+<div class="innerpage_banner">
+	<%= image_tag("create.png" , :alt => 'create.png') %>
+	<div class="container">
+		<div class="row">
+			<div class="banner-innerpage">
+				<h2>Be<span>St</span>aff</h2>
+			</div>
+		</div>
 	</div>
 </div>
+<div class="container">
+	<div class="content">
+		<div class="container register">
+			<div class="row ">
+				<div class="box-one sign-up">
+					<h4><span><!-- <img src="img/line.png"> --><%= image_tag("line.png" , :alt => 'line.png') %></span>ADMIN LOGIN<span><!-- <img src="img/right.png"> --><%= image_tag("right.png" , :alt => 'right.png') %></span></h4>
+					
+					</div><!-- end .box-one -->
+					<div class="box-two" >
+						
+						<%= form_tag '/admin/post_login' do %>
+						<div class="form-group col-md-10">
+							<%= text_field_tag :email, params[:email], :class => 'form-control' %>
+						</div>
+						<div class="form-group col-md-10">
+							
+							<%= password_field_tag :password, nil, class:'form-control' %>
+						</div>
+						
+						<div class="checkbox col-lg-12">
+							<label>
+								<input type="checkbox"> Remember me
+							</label>
+						</div>
+						<div class = "form-group col-md-12">
+							<%= submit_tag "Log in", :class => 'btn btn-default' %>
+						</div>
+						<% end %>
+						</div><!-- end .box-one -->
+					</div>
+				</div>
+				
+			</div>
+		</div>
+		<%= render 'admin/layouts/footer' %>
