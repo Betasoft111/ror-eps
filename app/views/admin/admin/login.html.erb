@@ -21,11 +21,11 @@
 						
 						<%= form_tag '/admin/post_login' do %>
 						<div class="form-group col-md-10">
-							<%= text_field_tag :email, params[:email], :class => 'form-control' %>
+							<%= text_field_tag :email, params[:email], :class => 'form-control', :placeholder => 'Enter Email' %>
 						</div>
 						<div class="form-group col-md-10">
 							
-							<%= password_field_tag :password, nil, class:'form-control' %>
+							<%= password_field_tag :password, nil, class:'form-control' , :placeholder => 'Enter Password' %>
 						</div>
 						
 						<div class="checkbox col-lg-12">

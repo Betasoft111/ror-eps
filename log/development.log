@@ -22928,3 +22928,45 @@ Started GET "/assets/right.png" for 127.0.0.1 at 2015-11-14 04:13:04 +0530
 
 
 Started GET "/assets/footerbg.jpg" for 127.0.0.1 at 2015-11-14 04:13:04 +0530
+
+
+Started GET "/admin/log_in" for 127.0.0.1 at 2015-11-14 04:19:37 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by Admin::AdminController#login as HTML
+  Rendered admin/layouts/_application.html.erb (22.8ms)
+  Rendered admin/layouts/_footer.html.erb (0.3ms)
+  Rendered admin/admin/login.html.erb (29.2ms)
+Completed 200 OK in 50ms (Views: 36.5ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/assets/style.css?body=1" for 127.0.0.1 at 2015-11-14 04:19:37 +0530
+
+
+Started GET "/assets/bootstrap-theme.css?body=1" for 127.0.0.1 at 2015-11-14 04:19:37 +0530
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2015-11-14 04:19:37 +0530
+
+
+Started GET "/assets/jquery.min.js?body=1" for 127.0.0.1 at 2015-11-14 04:19:37 +0530
+
+
+Started GET "/assets/bootstrap-theme.min.css?body=1" for 127.0.0.1 at 2015-11-14 04:19:38 +0530
+
+
+Started GET "/assets/bootstrap.css?body=1" for 127.0.0.1 at 2015-11-14 04:19:38 +0530
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2015-11-14 04:19:38 +0530
+
+
+Started GET "/assets/logo.png" for 127.0.0.1 at 2015-11-14 04:19:38 +0530
+
+
+Started GET "/assets/create.png" for 127.0.0.1 at 2015-11-14 04:19:38 +0530
+
+
+Started GET "/assets/line.png" for 127.0.0.1 at 2015-11-14 04:19:38 +0530
+
+
+Started GET "/assets/right.png" for 127.0.0.1 at 2015-11-14 04:19:38 +0530
