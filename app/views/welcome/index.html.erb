@@ -161,7 +161,15 @@
         </div>
       </div>
     </div><!-- end .footer -->
+<script type="text/javascript">
+$(document).ready(function )( {
+  delete_cookie('opentab');
+});
 
+function delete_cookie( name ) {
+  document.cookie = name + '=; expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+}
+</script>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <!--script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script-->
     <!-- Include all compiled plugins (below), or include individual files as needed -->

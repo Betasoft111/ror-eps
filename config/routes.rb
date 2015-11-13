@@ -37,8 +37,8 @@ EPS::Application.routes.draw do
 
   root :to => "welcome#index"
   get "log_out" => "sessions#destroy", :as => "log_out"
-  get "log_in" => "sessions#new", :as => "log_in"
-  get "sign_up" => "users#new", :as => "sign_up"
+  get "join" => "sessions#new", :as => "log_in"
+  #get "sign_up" => "users#new", :as => "sign_up"
   get "forgot_password" => "users#forgot_password"
   post "request_password" => "users#request_password"
   get "reset_password/:reset_password_token" => "users#reset_password"
@@ -53,6 +53,9 @@ EPS::Application.routes.draw do
     get "create" => "admin#create"
     get "log_in" => "admin#login"
     post "post_login" => "admin#do_login"
+    get "log_out" => "admin#destroy"
+    get "subscription_plans/new" => "subscription_plans#new"
+    post "subscription_plans/create" => "subscription_plans#create"
   end
 
   #   resources :companies

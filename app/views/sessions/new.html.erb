@@ -1,6 +1,6 @@
 <%= render 'layouts/application' %>
 <div class="container">
-	<h1>Log In</h1>
+	<!-- <h1>Log In</h1>
 	<div class="row col-md-3">
 		<%= form_tag sessions_path do %>
 		  <div class="form-group">
@@ -18,4 +18,151 @@
 		    <a href="/sign_up" >Create new account</a>
 		<% end %>
 	</div>
-</div>
+</div> -->
+
+<div class="content">
+          <div class="container register">
+            <div class="row ">
+              <div class="box-one sign-up">
+              <h3>Come join the ESP ! Let's set up your account. Already have one? <a href="javascript:void(0)" class="clickform"> Sign in here.</a></h3>
+                <h4><span><!-- <img src="img/line.png"> --><%= image_tag("line.png" , :alt => 'line.png') %></span>CREATE A NEW ACCOUNT<span><!-- <img src="img/right.png"> --><%= image_tag("right.png" , :alt => 'right.png') %></span></h4>
+                <form role = "form">
+                  <div class = "form-group col-md-5">
+                    <input type = "text" class = "form-control" id = "name" placeholder = "first name">
+                  </div>
+                  <div class = "form-group col-md-5">
+                    <input type = "text" class = "form-control" id = "name" placeholder = "last name">
+                  </div>
+                  <div class = "form-group col-md-5">
+                    <input type = "email" class = "form-control" id = "name" placeholder = "email">
+                  </div>
+                  <div class = "form-group col-md-5">
+                    <select class="form-control">
+                      <option selected>usertype</option>
+                      <option></option>
+                      <option></option>
+                      <option></option>
+                      <option></option>
+                    </select>
+                  </div>
+                  <div class = "form-group col-md-5">
+                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                  </div>
+                  <div class = "form-group col-md-5">
+                    <input type="password" class="form-control col-sm-10" id="exampleInputPassword1" placeholder="confirm password">
+                  </div>
+                  
+                  <div class = "form-group col-md-12">
+                    <span>By submitting this form you agree to ESP <span class="c1">Terms of Service.</span></span>
+                  </div>
+                  
+                  <!--  <div class = "checkbox">
+                    <label><input type = "checkbox"> Check me out</label>
+                  </div> -->
+                  <div class = "form-group col-md-12">
+                    <button type = "submit" class = "btn btn-default register">Join ESP!</button>
+                  </div>
+                </form>
+                </div><!-- end .box-one -->
+                <div class="box-two" style="display:none;">
+                	<h3>Come join the ESP ! Let's set up your account. Already have one? <a href="javascript:void(0)" class="clickform"> Sign up here.</a></h3>
+                  <h4><span><%= image_tag("line.png" , :alt => 'line.png') %></span>LOG IN<span><%= image_tag("right.png" , :alt => 'right.png') %></span></h4>
+                  <%= form_tag sessions_path do %>
+                    <div class="form-group col-md-10">
+                      <!-- <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email"> -->
+                      <%= text_field_tag :email, params[:email], :class => 'form-control', :placeholder => 'Email' %>
+                    </div>
+                    <div class="form-group col-md-10">
+                      
+                      <!-- <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password"> -->
+                      <%= password_field_tag :password, nil, class:'form-control', :placeholder => 'Password' %>
+                    </div>
+                    
+                    <div class="checkbox col-lg-12">
+                      <label>
+                        <input type="checkbox"> Remember me
+                      </label>
+                    </div>
+                    <div class = "form-group col-md-12">
+                      <%= submit_tag "Log in", :class => 'btn btn-default login-tab' %>
+                    </div>
+                  <% end %>
+                  </div><!-- end .box-one -->
+                </div>
+              </div>
+              
+            </div>
+            </div>
+            <div class="footer">
+              <div class="container">
+                <div class="row">
+                  <div class="col-lg-3">
+                    <select><option slected>Country</option></select>
+                    <select><option slected>USD</option></select>
+                  </div>
+                  <div class="col-lg-6">
+                    <h5>About Us</h5>
+                    <span></span>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec purus feugiat, molestie ipsum et, consequat nibh. Etiam non elit dui. Nullam vel eros sit amet arcu vestibulum accumsan in in leo. Fusce malesuada vulputate faucibus. Integer in hendrerit nisi. Praesent a hendrerit urna. In non imperdiet elit, sed molestie odio. Fusce ac metus non purus sollicitudin laoreet. </p>
+                  </div>
+                  <div class="col-lg-3">
+                    <h5>Company</h5>
+                    <span></span>
+                    <ul>
+                      <li><a href="#">Home </a></li>
+                      <li><a href="#">About Us </a></li>
+                      <li><a href="#">Contact Us </a></li>
+                      <li><a href="#">Login </a></li>
+                      <li><a href="#">Register   </a></li>
+                      <li><a href="#">Pricing </a></li>
+                      
+                    </ul>
+                  </div>
+                </div>
+                <div class="row footer-bottom">
+                  <h5>Join Us On</h5>
+                  <ul>
+                    <li><a href="#"><i class="fa fa-facebook"></i>
+                    </a></li>
+                    <li><a href="#"><i class="fa fa-twitter"></i>
+                    </a></li>
+                    <li><a href="#"><i class="fa fa-google-plus"></i>
+                    </a></li>
+                    <li><a href="#"><i class="fa fa-linkedin"></i>
+                    </a></li>
+                    <li><a href="#"><i class="fa fa-pinterest"></i>
+                    </a></li>
+                    <li><a href="#"><i class="fa fa-youtube"></i>
+                    </a></li
+                    
+                  </ul>
+                  <small>© EPS</small>
+                </div>
+              </div>
+              </div><!-- end .footer -->
+              
+              <script type="text/javascript">
+              $(document).ready(function(){
+              	var cookieVal = getCookie('opentab');
+              	if(cookieVal === 'login') {
+              		$(".box-two").show();
+              		$(".sign-up").hide();              
+              	}else{
+              		$(".box-two").hide();
+              		$(".sign-up").show();              
+              	}
+              	$(".clickform").click(function(){
+              		$(".box-two").toggle();
+              		$(".sign-up").toggle();              
+              	});
+
+              });
+
+              	function getCookie(name) {
+				  var value = "; " + document.cookie;
+				  var parts = value.split("; " + name + "=");
+				  if (parts.length == 2) return parts.pop().split(";").shift();
+				}
+              </script>
+            </body>
+          </html>

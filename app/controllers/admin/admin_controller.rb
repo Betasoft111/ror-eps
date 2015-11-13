@@ -5,7 +5,7 @@ class Admin::AdminController < ApplicationController
 		admin_id = session[:user_id]
 		user_role = session[:user_role]
 
-		if admin_id != '' && user_role && user_role == 'admin'
+		if admin_id != '' && user_role && user_role == 'admin' && user_role != nil
 		else
 			redirect_to '/admin/log_in'
 		end
@@ -39,5 +39,11 @@ class Admin::AdminController < ApplicationController
 	    #flash.now.alert = "Invalid email or password"
 	    redirect_to "/admin/log_in", :notice => "Invalid email or password"
 	  end
+	end
+
+	def destroy
+		session[:user_id] = nil
+		session[:user_role] = nil
+	  	redirect_to "/admin", :notice => "Logged out!"
 	end
 end

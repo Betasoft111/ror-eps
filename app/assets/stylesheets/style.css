@@ -38,7 +38,7 @@ span.bottom-bar {
     font-family: open sans;
     font-size: 15px;
     font-weight: 600;
-    padding: 10px 15px;
+    padding: 5px 15px;
     text-shadow: none !important;
     text-transform: uppercase;
 }
@@ -289,5 +289,95 @@ border: medium none;
     float: left;
     margin-bottom: 10px;
     margin-top: 15px;
+    width: 100%;
+}
+
+/***** new ******/
+
+.innerpage_banner {
+    width: 100%;
+    float: left;
+    position: relative;
+}
+.banner-innerpage {
+    position: absolute;
+    top: 22%;
+}
+
+.innerpage_banner img {
+    width: 100%;
+}
+.banner-innerpage h2 {
+    color: #fff;
+    font-family: open sans;
+    font-size: 47px;
+    font-weight: bold;
+    text-shadow:1px 1px 1px #000;
+}
+.banner-innerpage h2 span {
+    color: #008ed6;
+}
+.register h3 {
+    color: #505050 !important;
+    font-size: 17px !important;
+    font-weight: normal !important;
+    font-family: open sans;
+}
+.register h4 span {
+    margin: 0 22px;
+}
+.register h4 {
+   color: #008ed6;
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 40px;
+    margin-top: 46px;
+    text-shadow: 1px 1px 1px #3e3e3e;
+}
+.register .form-control {
+    border-radius: 0;
+    box-shadow: none;
+    height: 55px;
+
+}
+.register .btn {
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#4fc3ff+0,0376b0+100 */
+background: #4fc3ff; /* Old browsers */
+background: -moz-linear-gradient(top, #4fc3ff 0%, #0376b0 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top, #4fc3ff 0%,#0376b0 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom, #4fc3ff 0%,#0376b0 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4fc3ff', endColorstr='#0376b0',GradientType=0 ); /* IE6-9 */
+  border: 1px solid #0a7db7;
+    border-radius: 0;
+    color: #fff;
+    font-size: 20px;
+    font-weight: normal;
+    height: 45px;
+    text-shadow: none;
+    width: 20%;
+    margin-top: 20px;
+
+}
+.register .btn-default:hover {
+/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#4fc3ff+0,0376b0+100 */
+background: #fff; /* Old browsers */
+border: 1px solid #0a7db7;
+color: #0a7db7;
+
+}
+.register h3 a {
+    color: #008dd5;
+    margin-left: 5px;
+    display: inline;
+    text-decoration: none;
+}
+.register .form-group span {
+    font-size: 12px;
+}
+.c1 {
+    color: #008dd5;
+}
+.box-one, .box-two {
+    float: left;
     width: 100%;
 }

@@ -20,8 +20,18 @@
 <%#= javascript_include_tag "application", "data-turbolinks-track" => true %>
 <%#= javascript_include_tag "angular/lib/angular.min.js" %>
 <%#= javascript_include_tag "angular/lib/angular-route.js" %>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<%= javascript_include_tag "jquery.min.js" %>
 <%= javascript_include_tag "bootstrap.js" %>
+<script type="text/javascript">
+$(document).ready(function () {
+  $(".login-tab").click(function() {
+    document.cookie="opentab=login;path=/";
+  });
+  $(".register-tab").click(function() {
+    document.cookie="opentab=register;path=/";
+  });
+});
+</script>
 <%#= javascript_include_tag "angular/routes.js" %>
 
 </head>
@@ -54,8 +64,8 @@
         <li class=""><a href="/"> Home  <span class="sr-only">(current)</span></a></li>
         <li><a href="#">About Us</a></li>
         <li><a href="#">Contact Us</a></li>
-        <li><a href="/log_in">Login</a></li>
-        <li><a href="/sign_up">Register</a></li>
+        <li><a href="/join" class="login-tab">Login</a></li>
+        <li><a href="/join" class="register-tab">Register</a></li>
         <li><a href="#">Pricing </a></li>
 
        

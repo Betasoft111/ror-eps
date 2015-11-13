@@ -47,7 +47,7 @@ class UsersController < ApplicationController
 		@user = User.where('reset_password_token': params[:reset_password_token]).update_all(password_hash: password_hash, password_salt: password_salt)
 		puts 'finded'
 		puts @user
-		redirect_to "/log_in", :notice => "Your password has been changed, please login"
+		redirect_to "/join", :notice => "Your password has been changed, please login"
 	end
 
 	def invalid_password_token
