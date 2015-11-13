@@ -12,7 +12,7 @@ class UsersController < ApplicationController
 	    session[:user_id] = @user.id
 	    redirect_to "/", :notice => "Signed up!"
 	  else
-	    render "new"
+	    redirect_to "/join", :notice => "Please fill all details"
 	  end
 	end
 

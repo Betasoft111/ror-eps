@@ -1,55 +1,49 @@
 <%= render 'layouts/application' %>
-<div class="container">
-	<!-- <h1>Log In</h1>
-	<div class="row col-md-3">
-		<%= form_tag sessions_path do %>
-		  <div class="form-group">
-		    <%= label_tag :email %><br />
-		    <%= text_field_tag :email, params[:email], :class => 'form-control' %>
-		  </div>
-		  <div class="form-group">
-		    <%= label_tag :password %><br />
-		    <%= password_field_tag :password, nil, class:'form-control' %>
-		    <br>
-		    <a href="/forgot_password" >Forgot Password</a>
-		  </div>
-		  <%= submit_tag "Log in", :class => 'btn btn-default' %>
-		  Or
-		    <a href="/sign_up" >Create new account</a>
-		<% end %>
-	</div>
-</div> -->
 
+  <div class="innerpage_banner">
+    <%= image_tag("create.png" , :alt => 'create.png') %>
+    <div class="container">
+      <div class="row">
+        <div class="banner-innerpage">
+          <h2>Be<span>St</span>aff</h2>
+        </div>
+      </div>
+    </div>
+</div>
 <div class="content">
           <div class="container register">
             <div class="row ">
               <div class="box-one sign-up">
-              <h3>Come join the ESP ! Let's set up your account. Already have one? <a href="javascript:void(0)" class="clickform"> Sign in here.</a></h3>
+              <h3>Come join the ESP ! Already have one? <a href="javascript:void(0)" class="clickform"> Sign in here.</a></h3>
                 <h4><span><!-- <img src="img/line.png"> --><%= image_tag("line.png" , :alt => 'line.png') %></span>CREATE A NEW ACCOUNT<span><!-- <img src="img/right.png"> --><%= image_tag("right.png" , :alt => 'right.png') %></span></h4>
-                <form role = "form">
+                <%= form_for @user do |f| %>
                   <div class = "form-group col-md-5">
-                    <input type = "text" class = "form-control" id = "name" placeholder = "first name">
+                    <!-- <input type = "text" class = "form-control" id = "name" placeholder = "first name"> -->
+                    <%= f.text_field :first_name, :class => 'form-control', :placeholder => 'First Name' %>
                   </div>
                   <div class = "form-group col-md-5">
-                    <input type = "text" class = "form-control" id = "name" placeholder = "last name">
+                    <!-- <input type = "text" class = "form-control" id = "name" placeholder = "last name"> -->
+                    <%= f.text_field :last_name, :class => 'form-control', :placeholder => 'Last Name' %>
                   </div>
                   <div class = "form-group col-md-5">
-                    <input type = "email" class = "form-control" id = "name" placeholder = "email">
+                    <!-- <input type = "email" class = "form-control" id = "name" placeholder = "email"> -->
+                    <%= f.email_field :email, :class => 'form-control', :placeholder => 'Email' %>
                   </div>
                   <div class = "form-group col-md-5">
-                    <select class="form-control">
-                      <option selected>usertype</option>
-                      <option></option>
-                      <option></option>
-                      <option></option>
-                      <option></option>
+                    <select name="user[user_type]" class="form-control">
+                      <option value='' >Select User Type</option>
+                      <option value="1">I want to hire staff</option>
+				  	  <option value="2">I want to sell staff</option>
+				  	  <option value="3">I want to hire/sell staff</option>
                     </select>
                   </div>
                   <div class = "form-group col-md-5">
-                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                    <!-- <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password"> -->
+                    <%= f.password_field :password, :class => 'form-control', :placeholder => 'Password' %>
                   </div>
                   <div class = "form-group col-md-5">
-                    <input type="password" class="form-control col-sm-10" id="exampleInputPassword1" placeholder="confirm password">
+                    <!-- <input type="password" class="form-control col-sm-10" id="exampleInputPassword1" placeholder="confirm password"> -->
+                    <%= f.password_field :password_confirmation, :class => 'form-control', :placeholder => 'Confirm Password' %>
                   </div>
                   
                   <div class = "form-group col-md-12">
@@ -62,10 +56,10 @@
                   <div class = "form-group col-md-12">
                     <button type = "submit" class = "btn btn-default register">Join ESP!</button>
                   </div>
-                </form>
+                <% end %>
                 </div><!-- end .box-one -->
                 <div class="box-two" style="display:none;">
-                	<h3>Come join the ESP ! Let's set up your account. Already have one? <a href="javascript:void(0)" class="clickform"> Sign up here.</a></h3>
+                	<h3>Come join the ESP ! Let's set up your account.<a href="javascript:void(0)" class="clickform"> Sign up here.</a></h3>
                   <h4><span><%= image_tag("line.png" , :alt => 'line.png') %></span>LOG IN<span><%= image_tag("right.png" , :alt => 'right.png') %></span></h4>
                   <%= form_tag sessions_path do %>
                     <div class="form-group col-md-10">
