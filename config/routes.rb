@@ -47,6 +47,14 @@ EPS::Application.routes.draw do
   resources :users
   resources :sessions
 
+  namespace :admin do
+    #resources :tech_supports
+    root to: "admin#index"
+    get "create" => "admin#create"
+    get "log_in" => "admin#login"
+    post "post_login" => "admin#do_login"
+  end
+
   #   resources :companies
   #   resources :eobr_models
   #   resources :eobr_makes do

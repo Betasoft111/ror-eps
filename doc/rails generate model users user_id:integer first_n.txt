@@ -7,3 +7,7 @@
 	rails generate model subscription_plans plan_id:integer plan_name:string plan_name:string plan_price:string primary_key:plan_id
 
 -->	ALTER TABLE users ADD CONSTRAINT fk_plan FOREIGN KEY (plan_id) REFERENCES subscription_plans (id)
+
+--> Generate admin controller : rails g controller admin/admin
+
+--> Generate admin user model : rails generate model admin/admin_user first_name:string last_name:string email:string reset_password_token:string password_hash:string password_salt:string

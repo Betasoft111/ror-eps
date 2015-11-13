@@ -11,7 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151105195647) do
+ActiveRecord::Schema.define(version: 20151113163743) do
+
+  create_table "admin_admin_users", force: true do |t|
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "email"
+    t.string   "password"
+    t.string   "reset_password_token"
+    t.string   "password_hash"
+    t.string   "password_salt"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "subscription_plans", force: true do |t|
     t.string   "plan_name"
@@ -33,5 +45,7 @@ ActiveRecord::Schema.define(version: 20151105195647) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "users", ["plan_id"], name: "fk_plan", using: :btree
 
 end
