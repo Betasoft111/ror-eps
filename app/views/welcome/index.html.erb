@@ -1,15 +1,170 @@
    <%= render 'layouts/application' %>
+<div class="banner">
+        <!-- <img src="images/banner.png"> -->
+        <%= image_tag("banner.png" , :alt => 'video.png') %>
+        <div class="banner-inner">
+          <div class="container">
+            <div class="row">
+              <!-- <img src="images/video.png"> -->
+              <%= image_tag("video.png" , :alt => 'video.png') %>
+              <h2>Welcome home</h2>
+              <span></span>
+              <p>Etiam scelerisque nulla non dolor ornare, interdum porta metus tempus.</p>
+
+            </div>
+          </div>
+        </div><!-- end .banner-inner -->
+        <div class="banner-bottom">
+          <div class="container">
+            <div class="row">
+              <ul>
+                <li><select><option selected>Skills (Want to hire for)</option><option></option><option></option><option></option></select></li>
+                <li><input type="text" placeholder="Enter the staff Qualification"></li>
+                <li><select><option selected>Enter the work experience</option><option></option><option></option><option></option></select></li>
+                <li><input type="text" placeholder="Enter  the availability"></li>
+                <li><input type="submit" placeholder="Search"></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- end .banner -->
+
+
+
+    </div><!-- end. header -->
+    <div class="content">
     <div class="container">
+      <div class="row">
+        <div class="col-lg-8">
+      <h3>Why Us ?</h3>
+      <span class="bottom-bar"></span>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+      <a href="#">Click Here To See List of Staff with experience</a>
+    </div>
+    <div class="col-lg-4">
+      <!-- <img src="images/img1.png"> -->
+      <%= image_tag("img1.png" , :alt => 'video.png') %>
+    </div>
+    </div>
+    </div>
+  </div>
+    <hr class="mt0">
 
-        
-      <!-- Main component for a primary marketing message or call to action -->
-      <h3 > Hi <%= user.first_name %> </h3> <a href="/log_out">Logout</a>
-      <h3>Welcome to Employee Placement System</h3>
-    </div> <!-- /container -->
+    <div class="happy_client">
+      <h3>Happy Customers</h3>
+      <span class="hp"></span>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4">
+            <div class="box1">
+              <span><!-- <img src="images/img2.png"> -->
+                <%= image_tag("img2.png" , :alt => 'video.png') %>
+              </span>
+              <div class="box-inner">
+                <h3>Aram Vardan </h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec purus feugiat, molestie ipsum et, consequat nibh. Etiam non elit dui. Nullam vel eros sit amet arcu vestibulum accumsan in in leo. Fusce malesuada vulputate faucibus. Integer in hendrerit nisi. Praesent a hendrerit urna. In non imperdiet elit, sed molestie odio. Fusce ac metus non purus sollicitudin laoreet. </p>
+              </div>
+
+            </div>
+
+          </div>
+         <div class="col-lg-4">
+            <div class="box1">
+              <span><%= image_tag("img3.jpg" , :alt => 'img3.png') %></span>
+              <div class="box-inner">
+                <h3>Hourig Hurik </h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec purus feugiat, molestie ipsum et, consequat nibh. Etiam non elit dui. Nullam vel eros sit amet arcu vestibulum accumsan in in leo. Fusce malesuada vulputate faucibus. Integer in hendrerit nisi. Praesent a hendrerit urna. In non imperdiet elit, sed molestie odio. Fusce ac metus non purus sollicitudin laoreet. </p>
+              </div>
+
+            </div>
+
+          </div>
+          <div class="col-lg-4">
+            <div class="box1">
+              <span><%= image_tag("img4.jpg" , :alt => 'img4.png') %></span>
+              <div class="box-inner">
+                <h3>Berjouhi Zabel </h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec purus feugiat, molestie ipsum et, consequat nibh. Etiam non elit dui. Nullam vel eros sit amet arcu vestibulum accumsan in in leo. Fusce malesuada vulputate faucibus. Integer in hendrerit nisi. Praesent a hendrerit urna. In non imperdiet elit, sed molestie odio. Fusce ac metus non purus sollicitudin laoreet. </p>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+
+        <div class="row porro">
+          <!-- <img src="images/porro.png"> -->
+          <%= image_tag("porro.png" , :alt => 'video.png') %>
+          <div class="porro_inner">
+            <i>"Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..."</i>
+            <a href="#">See What You Can Earn</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
 
 
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
+    <div class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-3">
+            <select><option slected>Country</option></select>
+            <select><option slected>USD</option></select>
+
+
+          </div>
+          <div class="col-lg-6">
+            <h5>About Us</h5>
+            <span></span>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec purus feugiat, molestie ipsum et, consequat nibh. Etiam non elit dui. Nullam vel eros sit amet arcu vestibulum accumsan in in leo. Fusce malesuada vulputate faucibus. Integer in hendrerit nisi. Praesent a hendrerit urna. In non imperdiet elit, sed molestie odio. Fusce ac metus non purus sollicitudin laoreet. </p>
+
+          </div>
+          <div class="col-lg-3">
+            <h5>Company</h5>
+             <span></span>
+            <ul>
+              <li><a href="#">Home </a></li>
+              <li><a href="#">About Us </a></li>
+              <li><a href="#">Contact Us </a></li>
+              <li><a href="#">Login </a></li>
+              <li><a href="#">Register   </a></li>
+              <li><a href="#">Pricing </a></li>
+         
+
+            </ul>
+
+          </div>
+        </div>
+        <div class="row footer-bottom">
+          <h5>Join Us On</h5>
+          <ul>
+            <li><a href="#"><i class="fa fa-facebook"></i>
+</a></li>
+            <li><a href="#"><i class="fa fa-twitter"></i>
+</a></li>
+            <li><a href="#"><i class="fa fa-google-plus"></i>
+</a></li>
+            <li><a href="#"><i class="fa fa-linkedin"></i>
+</a></li>
+<li><a href="#"><i class="fa fa-pinterest"></i>
+</a></li>
+<li><a href="#"><i class="fa fa-youtube"></i>
+
+</a></li
+          
+
+
+          </ul>
+          <small>© EPS</small>
+        </div>
+      </div>
+    </div><!-- end .footer -->
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <!--script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script-->
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <!--script src="js/bootstrap.min.js"></script-->
   </body>
 </html>

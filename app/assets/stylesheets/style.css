@@ -1,0 +1,293 @@
+p {
+	color: #2a2a2a;
+	font-size: Open Sans;
+	font-size: 17px;
+	line-height: 28px;
+}
+h3 {
+	color: #2a2a2a !important;
+	font-size: 35px !important;
+	font-weight: bold !important;
+	margin-bottom: 0 !important;
+}
+.header {
+    float: left;
+    margin: 25px 0;
+    width: 100%;
+}
+.header .navbar {
+    background: none;
+    border: medium none;
+    box-shadow: none;
+    margin: 0;
+}
+.banner-inner p {
+	font-size: 13px;
+	color: #fff;
+}
+span.bottom-bar {
+    background: #008ed6 none repeat scroll 0 0;
+    clear: both;
+    display: inline-block;
+    height: 2px;
+    width: 50px;
+    margin-bottom: 5px;
+}
+.header .navbar li a {
+    color: #313131 !important;
+    font-family: open sans;
+    font-size: 15px;
+    font-weight: 600;
+    padding: 10px 15px;
+    text-shadow: none !important;
+    text-transform: uppercase;
+}
+.content a {
+    color: #008ed6;
+    display: block;
+    font-size: 17px;
+    margin-top: 30px;
+    text-decoration: underline;
+}
+.banner img {
+    width: 100%;
+}
+.banner-inner img{
+	width: auto;
+	margin-bottom: 20px;
+}
+.banner {
+	position: relative;
+}
+
+.banner-inner {
+    color: #fff;
+    font-family: open sans;
+    position: absolute;
+    text-align: center;
+    text-shadow: 1px 1px 1px #1a1818;
+    top: 18%;
+    width: 100%;
+}
+.banner h2 {
+    font-size: 42px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+.banner span {
+    background: #008ed6;
+    display: block;
+    height: 2px;
+    margin: auto auto 20px;
+    width: 80px;
+}
+.banner-bottom {
+    background: rgba(0, 0, 0, 0.36);
+    bottom: 0;
+    padding: 25px 0;
+    position: absolute;
+    width: 100%;
+}
+.banner-bottom li {
+   display: table-cell;
+    width: 24%;
+}
+.mt0 {
+    float: left;
+    margin-top: 0;
+    width: 100%;
+}
+.banner-bottom select {
+    width: 100%;
+      height: 50px;
+         border: medium none;
+    border-radius: 0;
+  /*  -webkit-appearance: none;
+   -moz-appearance:    none;
+   appearance:         none;*/
+   border-right: 1px solid #39ade8;
+    border-bottom: 0 none;
+    border-top: 0 none;
+    padding-left: 15px;
+    color: #2a2a2a;
+}
+.porro {
+    margin-top: 40px;
+    position: relative;
+    width: 100%;
+}
+.banner input[type="text"] {
+    width: 100%;
+    height: 50px;
+       border: medium none;
+    border-radius: 0;
+    border-right: 1px solid #39ade8;
+    border-bottom: 0;
+    padding-left: 15px;
+    color: #2a2a2a;
+}
+.banner-bottom ul {
+    border: 2px solid #097cb6;
+    height: 54px;
+    margin: 0;
+    padding: 0;
+    display: table;
+}
+.banner-bottom input[type="submit"] {
+/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#4fc3ff+0,0376b0+100 */
+background: #4fc3ff; /* Old browsers */
+background: -moz-linear-gradient(top, #4fc3ff 0%, #0376b0 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top, #4fc3ff 0%,#0376b0 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom, #4fc3ff 0%,#0376b0 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4fc3ff', endColorstr='#0376b0',GradientType=0 ); /* IE6-9 */
+border: medium none;
+    color: #fff;
+    height: 50px;
+    padding: 10px;
+    width: 170px;
+}
+.happy_client {
+    text-align: center;
+    float: left;
+    width: 100%;
+}
+.box1 img {
+    border: 1px solid #31a4de;
+    border-radius: 50%;
+    height: 100px;
+ 
+    width: 100px;
+}
+.box1 {
+    border: 1px solid #686868;
+    border-radius: 10px;
+    margin: 80px auto auto;
+    min-height: 200px;
+    padding: 60px 10px 10px;
+    position: relative;
+    width: 90%;
+}
+.content {
+    float: left;
+    width: 100%;
+}
+.box1 span {
+  
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: -47px;
+    z-index: 2147483647;
+}
+.box-inner h3 {
+    color: #009aab !important;
+    font-size: 17px !important;
+    margin-bottom: 10px !important;
+    margin-top: 10px !important;
+}
+.hp {
+    background: #008ed6 none repeat scroll 0 0;
+    display: inline-block;
+    height: 2px;
+    width: 68px;
+}
+.porro_inner {
+    position: absolute;
+    top: 0;
+    color: #fff;
+}
+.porro_inner {
+    color: #fff;
+    
+    font-size: 25px;
+    position: absolute;
+    top: 0;
+    width: 37%;
+}
+.porro_inner a {
+    background: #009aab none repeat scroll 0 0;
+    border-radius: 5px;
+    color: #fff;
+    display: block;
+    margin-top: 15px;
+    padding: 10px;
+    font-weight: bold;
+}
+.porro_inner {
+    color: #fff;
+    font-size: 25px;
+    left: 20px;
+    position: absolute;
+    top: 31%;
+    width: 37%;
+}
+.porro img {
+    width: 100%;
+}
+
+
+.footer {
+    background: rgba(0, 0, 0, 0) url(footerbg.jpg) repeat scroll 0 0;
+    color: #fff;
+    float: left;
+    margin-top: 40px;
+    width: 100%;
+    padding-top: 40px;
+}
+.footer select {
+    background: transparent none repeat scroll 0 0;
+    border: 1px solid #fff;
+    height: 39px;
+    margin: 10px 0;
+    padding-left: 10px;
+    width: 100%;
+    color: #656565;
+}
+.footer p , .footer li a{
+    color: #656565;
+    font-size: 17px;
+}
+.footer ul {
+    list-style: none;
+    padding: 0;
+}
+.footer h5 {
+    color: #fff;
+    font-size: 17px;
+    font-weight: bold;
+}
+.footer span {
+    background: #008ed6;
+    display: block;
+    height: 2px;
+    margin-bottom: 15px;
+    width: 37px;
+}
+.footer-bottom {
+    border-top: 1px solid #5d5d5d;
+    margin-top: 10px;
+    padding-top: 10px;
+    text-align: center;
+}
+.footer-bottom ul li {
+    display: inline;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+.footer-bottom ul li i {
+    border: 1px solid #5d5d5d;
+    border-radius: 50%;
+    color: #fff;
+    height: 30px;
+    padding: 5px;
+    width: 30px;
+     line-height: 18px;
+     font-size: 13px;
+}
+.footer-bottom small {
+    color: #5d5d5d;
+    float: left;
+    margin-bottom: 10px;
+    margin-top: 15px;
+    width: 100%;
+}
