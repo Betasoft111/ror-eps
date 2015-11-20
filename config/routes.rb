@@ -44,6 +44,8 @@ EPS::Application.routes.draw do
   get "reset_password/:reset_password_token" => "users#reset_password"
   get "invalid_password_token" => "users#invalid_password_token"
   post "update_password" => "users#update_password"
+  get "choose_plan" => "users#choose_plan"
+
   resources :users
   resources :sessions
 

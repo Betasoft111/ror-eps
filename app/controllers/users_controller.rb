@@ -54,6 +54,9 @@ class UsersController < ApplicationController
 		
 	end
 
+	def choose_plan
+	end
+
 	private
 
 	  def user_params

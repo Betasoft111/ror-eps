@@ -381,3 +381,84 @@ color: #0a7db7;
     float: left;
     width: 100%;
 }
+
+/********* choose plan page starts from here ************/
+
+/***** ll **/
+.inner-page h3 {
+    color: #4a4a4a !important;
+    font-family: open sans;
+    font-size: 25px !important;
+    text-shadow: 1px 1px 1px #cecece;
+    margin-bottom: 15px !important;
+}
+
+.inner-page p {
+    color: #4a4a4a !important;
+    font-size: 14px;
+    line-height: 25px;
+    font-family: open sans;
+}
+.plan {
+    border: 1px solid #9c9c9c;
+    border-radius: 10px;
+    box-shadow: 0 0 2px #9c9c9c;
+    position: relative;
+    text-align: center;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+p.plan-duration {
+    color: #008ed6 !important;
+    font-size: 15px;
+    margin: 25px 0;
+}
+p.plan-price {
+    color: #666666;
+    font-size: 29px;
+    margin: 45px 0;
+}
+p.plan-price span {
+    color: #000;
+    font-size: 51px;
+    font-weight: bold;
+    
+}
+p.plan-month {
+    background: #323232 none repeat scroll 0 0;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    color: #fff !important;
+    font-weight: bold;
+    margin: 50px 0 0;
+    padding: 10px;
+}
+.overlay-plan {
+    background: rgba(0, 0, 0, 0.2) none repeat scroll 0 0;
+    height: 100%;
+    left: 0;
+    opacity: 0;
+    position: absolute;
+    right: 0;
+    text-align: center;
+    top: 0;
+    width: 100%;
+     transition: all 0.5s ease 0s;
+     border-radius: 10px;
+}
+.overlay-plan button {
+    background: #008ed6 none repeat scroll 0 0;
+    border: medium none;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 77px;
+    padding: 14px 29px;
+    font-family: open sans;
+}
+.plan-main {position: relative;}
+.plan-main:hover .overlay-plan {
+  
+    opacity: 1;
+}
