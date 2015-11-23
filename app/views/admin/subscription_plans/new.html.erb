@@ -1,33 +1,47 @@
 <%= render 'admin/layouts/application' %>
-<div class="container">
-	<h1>Create Plan</h1>
-	
-	  <% if @subscription_plan.errors.any? %>
-	    <div id="error_explanation">
-	      <h2><%= pluralize(@subscription_plan.errors.count, "error") %> prohibited this subscription_plan from being saved:</h2>
-
-	      <ul>
-	      <% @subscription_plan.errors.full_messages.each do |msg| %>
-	        <li><%= msg %></li>
-	      <% end %>
-	      </ul>
-	    </div>
-	  <% end %>
-
-	<div class="row col-md-3">
-		<%= form_tag '/admin/subscription_plans/create' do %>
-		  <div class="form-group">
-		    <%= label_tag :plan_name %><br />
-		    <%= text_field_tag :plan_name, nil, :class => 'form-control', :placeholder => 'Enter Plan Name' %>
-		  </div>
-		  <div class="form-group">
-		    <%= label_tag :plan_price %><br />
-		    <%= text_field_tag :plan_price, nil, class:'form-control', :placeholder => 'Enter Plan Price' %>
-		    <br>
-		    <!-- <a href="/forgot_password" >Forgot Password</a> -->
-		  </div>
-		  <%= submit_tag "Add Plan", :class => 'btn btn-default' %>
+<div class="content inner-page">
+	<div class="container">
+		<% if @subscription_plan.errors.any? %>
+		<div id="error_explanation">
+			<h2><%= pluralize(@subscription_plan.errors.count, "error") %> prohibited this subscription_plan from being saved:</h2>
+			<ul>
+				<% @subscription_plan.errors.full_messages.each do |msg| %>
+				<li><%= msg %></li>
+				<% end %>
+			</ul>
+		</div>
 		<% end %>
+		<div class="row">
+			<h4><span><%= image_tag("line.png" , :alt => 'line.png') %></span>New Plan Page<span><%= image_tag("right.png" , :alt => 'right.png') %></span></h4>
+			<span class="q1">Company will add new employee to their team on this page.</span>
+			<%= form_tag '/admin/subscription_plans/create', {:class => 'form-horizontal add-employee'} do %>
+			<div class="form-group">
+				<%= label_tag :plan_name, 'Plan Name', :class => "control-label col-sm-2" %>
+				<div class="col-sm-7">
+					<%= text_field_tag :plan_name, nil, :class => 'form-control', :placeholder => 'Enter Plan Name' %>
+				</div>
+			</div>
+			<div class="form-group">
+				<%= label_tag :plan_details, 'Plan Details', :class => "control-label col-sm-2" %>
+				<div class="col-sm-7">
+					<%= text_field_tag :plan_details, nil, :class => 'form-control', :placeholder => 'Enter Plan Details' %>
+				</div>
+			</div>
+			<div class="form-group">
+				<%= label_tag :plan_price, 'Plan Price', :class => "control-label col-sm-2" %>
+				<div class="col-sm-7">
+					<%= text_field_tag :plan_price, nil, class:'form-control', :placeholder => 'Enter Plan Price' %>
+				</div>
+			</div>
+			<div class="form-group">
+				<div class="col-sm-offset-2 col-sm-10">
+					<%= submit_tag "Add Plan", :class => 'btn btn-default' %>
+				</div>
+			</div>
+			<% end %>
+			
+		</div>
 	</div>
+	
 </div>
 <%= render 'admin/layouts/footer' %>
