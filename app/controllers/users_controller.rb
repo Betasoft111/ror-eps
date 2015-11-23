@@ -2,6 +2,13 @@ class UsersController < ApplicationController
 	#skip_before_action :new, :create
 	#before_filter :authenticate_user!
 	
+	#################################
+	# 								#
+	#  								#
+	#  		      User  		    #
+	#  								#
+	#  								#
+	#################################
 	def new
 	  @user = User.new
 	end

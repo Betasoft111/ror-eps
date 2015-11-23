@@ -46,6 +46,9 @@ EPS::Application.routes.draw do
   post "update_password" => "users#update_password"
   get "choose_plan" => "users#choose_plan"
 
+  #organisation routes
+  get "add_staff" => "companies#add_staff"
+
   resources :users
   resources :sessions
 
