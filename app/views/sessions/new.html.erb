@@ -16,7 +16,7 @@
               <div class="box-one sign-up">
               <h3>Come join the ESP ! Already have one? <a href="javascript:void(0)" class="clickform"> Sign in here.</a></h3>
                 <h4><span><!-- <img src="img/line.png"> --><%= image_tag("line.png" , :alt => 'line.png') %></span>CREATE A NEW ACCOUNT<span><!-- <img src="img/right.png"> --><%= image_tag("right.png" , :alt => 'right.png') %></span></h4>
-                <%= form_for @user do |f| %>
+                <%= form_for User.new do |f| %>
                   <div class = "form-group col-md-5">
                     <!-- <input type = "text" class = "form-control" id = "name" placeholder = "first name"> -->
                     <%= f.text_field :first_name, :class => 'form-control', :placeholder => 'First Name' %>

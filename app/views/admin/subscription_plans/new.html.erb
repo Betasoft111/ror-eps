@@ -1,7 +1,7 @@
 <%= render 'admin/layouts/application' %>
 <div class="container">
 	<h1>Create Plan</h1>
-	<%= form_for(@subscription_plan) do |f| %>
+	
 	  <% if @subscription_plan.errors.any? %>
 	    <div id="error_explanation">
 	      <h2><%= pluralize(@subscription_plan.errors.count, "error") %> prohibited this subscription_plan from being saved:</h2>
@@ -13,6 +13,7 @@
 	      </ul>
 	    </div>
 	  <% end %>
+
 	<div class="row col-md-3">
 		<%= form_tag '/admin/subscription_plans/create' do %>
 		  <div class="form-group">
@@ -29,3 +30,4 @@
 		<% end %>
 	</div>
 </div>
+<%= render 'admin/layouts/footer' %>

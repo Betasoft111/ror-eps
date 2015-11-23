@@ -5,7 +5,7 @@ class Admin::SubscriptionPlansController < ApplicationController
 	end
 
 	def new
-		@subscription_plan = Admin::SubscriptionPlansController.new
+		@subscription_plan = SubscriptionPlans.new
 	end
 
 	def create
@@ -17,7 +17,7 @@ class Admin::SubscriptionPlansController < ApplicationController
 	 #    	render "new"
 		# end
 
-		@subscription_plan = Admin::SubscriptionPlansController.new(plan_params)
+		@subscription_plan = SubscriptionPlans.new(plan_params)
 
 	    respond_to do |format|
 	      if @subscription_plan.save
