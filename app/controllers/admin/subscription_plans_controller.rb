@@ -9,6 +9,12 @@ class Admin::SubscriptionPlansController < ApplicationController
 	end
 
 	#################################
+	#  	        Show Plan           #
+	#################################
+	def show
+  	end
+
+	#################################
 	#  	     Render Create Plan     #
 	#################################
 	def new
@@ -31,6 +37,30 @@ class Admin::SubscriptionPlansController < ApplicationController
 		else
 			redirect_to "/admin/subscription_plans/new", :notice => "You have already added this plan"
 		end
+	end
+
+	#################################
+	#  	     Render Edit Plan       #
+	#################################
+	def edit
+		@subscription_plan = SubscriptionPlans.find(params[:id])
+		@subscription_path = '/admin/subscription_plans/update/' + @subscription_plan.id.to_s
+	end
+
+	#################################
+	#     	   Update Plan          #
+	#################################
+	def update
+		SubscriptionPlans.where('id': params[:id]).update_all(plan_name: params[:plan_name], plan_price: params[:plan_price], plan_type: params[:plan_type])
+		redirect_to "/admin/subscription_plans", :notice => "Plan is updated successfully"
+	end
+
+	def destroy
+	    @subscription_plan.destroy
+	    respond_to do |format|
+	      format.html { redirect_to admin_companies_url, notice: 'Company was successfully deleted.' }
+	      format.json { head :no_content }
+	    end
 	end
 
 	private

@@ -59,9 +59,8 @@ EPS::Application.routes.draw do
     get "log_in" => "admin#login"
     post "post_login" => "admin#do_login"
     get "log_out" => "admin#destroy"
-    get "subscription_plans" => "subscription_plans#index"
-    get "subscription_plans/new" => "subscription_plans#new"
-    post "subscription_plans/create" => "subscription_plans#create"
+    resources :subscription_plans
+    post "subscription_plans/update/:id" => "subscription_plans#update"
   end
 
   #   resources :companies

@@ -59,12 +59,22 @@ span.bottom-bar {
 .banner img {
     width: 100%;
 }
+
 .banner-inner img{
 	width: auto;
 	margin-bottom: 20px;
 }
 .banner {
-	position: relative;
+	 background-attachment: fixed;
+    background-image: url("../assets/banner.png");
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-bottom: 1px solid #eaebec;
+    float: left;
+    height: 600px;
+    position: relative;
+    width: 100%;
 }
 
 .banner-inner {
@@ -101,7 +111,7 @@ span.bottom-bar {
 }
 .mt0 {
     float: left;
-    margin-top: 0;
+    margin: 0;
     width: 100%;
 }
 .banner-bottom select {
@@ -118,10 +128,30 @@ span.bottom-bar {
     padding-left: 15px;
     color: #2a2a2a;
 }
-.porro {
-    margin-top: 40px;
+.c2-main {
+    background-image: url("../assets/img.jpg");
     position: relative;
     width: 100%;
+     background-attachment: fixed;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-bottom: 1px solid #eaebec;
+    height: 500px;
+    float: left;
+   
+  
+
+    
+
+}
+.section-overlay {
+    background: rgba(0, 5, 8, 0.6) none repeat scroll 0 0;
+    padding-bottom: 250px;
+    padding-top: 250px;
+}
+.porro_inner i {
+    text-shadow: 1px 1px 1px #000;
 }
 .banner input[type="text"] {
     width: 100%;
@@ -198,36 +228,37 @@ border: medium none;
     height: 2px;
     width: 68px;
 }
-.porro_inner {
-    position: absolute;
-    top: 0;
-    color: #fff;
-}
+
 .porro_inner {
     color: #fff;
-    
     font-size: 25px;
+    left: 0;
+    margin: auto;
     position: absolute;
-    top: 0;
-    width: 37%;
+    right: 0;
+    text-align: center;
+    top: 38%;
+    width: 50%;
 }
 .porro_inner a {
-    background: #009aab none repeat scroll 0 0;
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#4fc3ff+0,0376b0+100 */
+background: #4fc3ff; /* Old browsers */
+background: -moz-linear-gradient(top, #4fc3ff 0%, #0376b0 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top, #4fc3ff 0%,#0376b0 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom, #4fc3ff 0%,#0376b0 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4fc3ff', endColorstr='#0376b0',GradientType=0 ); /* IE6-9 */
     border-radius: 5px;
     color: #fff;
     display: block;
-    margin-top: 15px;
+    font-size: 15px;
+    
+    margin: 20px auto;
     padding: 10px;
-    font-weight: bold;
+    width: 200px;
+    font-family: open sans;
+  
 }
-.porro_inner {
-    color: #fff;
-    font-size: 25px;
-    left: 20px;
-    position: absolute;
-    top: 31%;
-    width: 37%;
-}
+
 .porro img {
     width: 100%;
 }
@@ -335,6 +366,7 @@ border: medium none;
 }
 .register h4 {
    color: #008ed6;
+   text-align: center;
     font-size: 22px;
     font-weight: bold;
     margin-bottom: 40px;
