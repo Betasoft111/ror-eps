@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  plan_name: MyString
+  no_of_staff: 1
+  plan_price: 1
+
+two:
+  plan_name: MyString
+  no_of_staff: 1
+  plan_price: 1
