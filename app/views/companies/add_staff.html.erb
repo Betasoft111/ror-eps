@@ -18,47 +18,70 @@
         <%= image_tag("right.png" , :alt => 'right.png') %>
         </span></h4>
         <span class="q1">Company will add new employee to their team on this page.</span>
-        <form class="form-horizontal add-employee" role="form">
-          <div class="form-group">
-            <label class="control-label col-sm-2" for="email">Name</label>
-            <div class="col-sm-7">
-              <input type="email" class="form-control" id="email" placeholder="Enter email">
-            </div>
-          </div>
-          <div class="form-group">
-            <label class="control-label col-sm-2" for="pwd">Email</label>
-            <div class="col-sm-7">
-              <input type="password" class="form-control" id="pwd" placeholder="Enter password">
-            </div>
-          </div>
-          <div class="form-group">
-            <label class="control-label col-sm-2" for="pwd">Enter the skill of employee</label>
-            <div class="col-sm-7">
-              <input type="password" class="form-control" id="pwd" placeholder="Enter password">
-            </div>
-          </div>
-          <div class="form-group">
-            <label class="control-label col-sm-2" for="pwd">Enter the time availability</label>
-            <div class="col-sm-7">
-              <input type="password" class="form-control" id="pwd" placeholder="Enter password">
-            </div>
-          </div>
-          <div class="form-group">
-            <label class="control-label col-sm-2" for="pwd">Other fields</label>
-            <div class="col-sm-7">
-              <input type="password" class="form-control" id="pwd" placeholder="Enter password">
-            </div>
-          </div>
-          <div class="form-group col-md-12">
-            <span class="col-sm-offset-2 q2">By submitting this form you agree to ESP <span class="c1">Terms of Service.</span></span>
-          </div>
-          <div class="form-group">
-            <div class="col-sm-offset-2 col-sm-10">
-              <button type="submit" class="btn btn-default">Add Employee</button>
-            </div>
-          </div>
-          
-          
+
+            <%= form_tag '/add_staff/create', {:class => 'form-horizontal add-employee'} do %>
+      <div class="form-group">
+        <%= label_tag :first_name, 'First Name', :class => "control-label col-sm-2" %>
+        <div class="col-sm-7">
+          <%= text_field_tag :first_name, nil, :class => 'form-control', :placeholder => 'Enter First Name', :required => 'required' %>
+        </div>
+      </div>
+      <div class="form-group">
+        <%= label_tag :last_name, 'Last Name', :class => "control-label col-sm-2", :required => 'required' %>
+        <div class="col-sm-7">
+          <%= text_field_tag :last_name, nil, :class => 'form-control', :placeholder => 'Enter Last Name', :required => 'required' %>
+        </div>
+        
+      </div>
+      <div class="form-group">
+        <%= label_tag :email, 'Email', :class => "control-label col-sm-2" %>
+        <div class="col-sm-7">
+          <%= text_field_tag :email, nil, class:'form-control', :placeholder => 'Enter Email', :required => 'required' %>
+        </div>
+      </div>
+
+        <div class="form-group">
+        <%= label_tag :skills, 'Skills', :class => "control-label col-sm-2" %>
+        <div class="col-sm-7">
+          <%= text_field_tag :skills, nil, class:'form-control', :placeholder => 'Enter Skills', :required => 'required' %>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <%= label_tag :availability, 'Availability', :class => "control-label col-sm-2" %>
+        <div class="col-sm-7">
+          <%= text_field_tag :availability, nil, class:'form-control', :placeholder => 'Enter Availability', :required => 'required' %>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <%= label_tag :is_private, 'Is Private', :class => "control-label col-sm-2" %>
+        <div class="col-sm-7">
+          <%= text_field_tag :is_private, nil, class:'form-control', :placeholder => 'Yes/No', :required => 'required' %>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <%= label_tag :qualification, 'Qualification', :class => "control-label col-sm-2" %>
+        <div class="col-sm-7">
+          <%= text_field_tag :qualification, nil, class:'form-control', :placeholder => 'Enter Qualification', :required => 'required' %>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <%= label_tag :experience, 'Experience', :class => "control-label col-sm-2" %>
+        <div class="col-sm-7">
+          <%= text_field_tag :experience, nil, class:'form-control', :placeholder => 'Enter Experience', :required => 'required' %>
+        </div>
+      </div>
+        <input type="hidden" name="company_id" value="<%= @current_user.id %>">
+      <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+          <%= submit_tag "Add Plan", :class => 'btn btn-default' %>
+        </div>
+      </div>
+      <% end %>
+
         </div>
       </div>
       

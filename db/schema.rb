@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151124191412) do
+ActiveRecord::Schema.define(version: 20151124214703) do
 
   create_table "admin_admin_users", force: true do |t|
     t.string   "first_name"
@@ -29,6 +29,20 @@ ActiveRecord::Schema.define(version: 20151124191412) do
     t.string   "plan_name"
     t.integer  "no_of_staff"
     t.integer  "plan_price"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "company_staffs", force: true do |t|
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "email"
+    t.integer  "company_id"
+    t.string   "skills"
+    t.string   "availability"
+    t.boolean  "is_private"
+    t.string   "qualification"
+    t.string   "experience"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
