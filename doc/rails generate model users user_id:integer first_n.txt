@@ -11,3 +11,8 @@
 --> Generate admin controller : rails g controller admin/admin
 
 --> Generate admin user model : rails generate model admin/admin_user first_name:string last_name:string email:string reset_password_token:string password_hash:string password_salt:string
+
+--> Add new column to model:
+	plan_type
+	#rails generate migration AddListIdColumnToIdeas list_id:integer
+	rails generate migration add_plan_type_to_subscription_plans plan_type:integer

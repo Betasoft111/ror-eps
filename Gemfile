@@ -60,5 +60,7 @@ group :development do
   gem 'capistrano-rvm', github: 'capistrano/rvm'
 end
 
+gem 'stripe'
+
 # Use debugger
 # gem 'debugger', group: [:development, :test]

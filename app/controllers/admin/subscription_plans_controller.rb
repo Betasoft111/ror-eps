@@ -1,38 +1,41 @@
 class Admin::SubscriptionPlansController < ApplicationController
 	before_filter :authenticate_user!
 
+	#################################
+	#  	        List Plans          #
+	#################################
 	def index
+		@plans = SubscriptionPlans.all
 	end
 
+	#################################
+	#  	     Render Create Plan     #
+	#################################
 	def new
 		@subscription_plan = SubscriptionPlans.new
 	end
 
+	#################################
+	#  	     Create New Plan        #
+	#################################
 	def create
-		# @new_plan = Admin::SubscriptionPlansController.create(plan_params)
 
-		# if @new_plan && @new_plan.id != '' && @new_plan.id != nil
-		# else
-		# 	flash.now.alert = "Invalid email or password"
-	 #    	render "new"
-		# end
-
-		@subscription_plan = SubscriptionPlans.new(plan_params)
-
-	    respond_to do |format|
-	      if @subscription_plan.save
-	        format.html { redirect_to @subscription_plan, notice: 'Plan was successfully created.' }
-	        format.json { render action: 'index', status: :created, location: @subscription_plan }
-	      else
-	        format.html { render action: 'new' }
-	        format.json { render json: @subscription_plan.errors, status: :unprocessable_entity }
-	      end
-	    end
+		@check_plan = SubscriptionPlans.where(:plan_name => plan_params[:plan_name]).where(:plan_price => plan_params[:plan_price]).where(:plan_type => plan_params[:plan_type])
+		if @check_plan.empty?
+			@subscription_plan = SubscriptionPlans.new(plan_params)
+			if @subscription_plan.save
+				redirect_to "/admin/subscription_plans", :notice => "New plan is added successfully"
+			else
+				redirect_to "/admin/subscription_plans/new", :notice => @subscription_plan.errors
+			end
+		else
+			redirect_to "/admin/subscription_plans/new", :notice => "You have already added this plan"
+		end
 	end
 
 	private
 
 	  def plan_params
-	    params.require(:subscription_plan).permit(:plan_name, :plan_price)
+	    params.permit(:plan_name, :plan_price, :plan_type)
 	  end
 end

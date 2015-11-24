@@ -10,6 +10,13 @@ h3 {
 	font-weight: bold !important;
 	margin-bottom: 0 !important;
 }
+.main-c1 {
+    width:100%;
+    float:left;
+}
+.three-sap {
+    width:80%;
+}
 .header {
     float: left;
     margin: 25px 0;
@@ -446,20 +453,46 @@ p.plan-month {
      transition: all 0.5s ease 0s;
      border-radius: 10px;
 }
-.overlay-plan button {
+.overlay-plan .selected_plan {
     background: #008ed6 none repeat scroll 0 0;
     border: medium none;
     border-radius: 10px;
     color: #fff;
     font-size: 20px;
     font-weight: bold;
-    margin-top: 77px;
+    margin-top: 106px;
     padding: 14px 29px;
     font-family: open sans;
+}
+.overlay-plan img {
+    width: 13%;
+}
+.three-sap input[type="submit"] {
+    clear: both;
+    display: block;
+    float: none;
+    margin: auto;
+    text-align: center;
+    width: 20%;
+}
+.overlay-plan > p {
+    background: #008ed6 none repeat scroll 0 0;
+    border: medium none;
+    border-radius: 10px;
+    color: #fff !important;
+    display: inline;
+    font-family: open sans;
+    font-size: 14px !important;
+    font-weight: bold;
+
+    padding: 14px 29px;
 }
 .plan-main {position: relative;}
 .plan-main:hover .overlay-plan {
   
+    opacity: 1;
+}
+.opacity {
     opacity: 1;
 }
 
@@ -473,7 +506,7 @@ p.plan-month {
 }
 .q1 {
     color: #0d77ad;
-    float: left;
+    display: inline-block;
     font-family: open sans;
     font-size: 15px;
     margin-top: 35px;
@@ -524,4 +557,23 @@ p.plan-month {
 }
 .add-employee .form-group:nth-child(5) {
     margin-bottom: 6px !important;
+}
+
+/****** new *****/
+.inner-page .table-responsive {
+    margin-top: 30px;
+}
+.table-responsive {
+    border: 1px solid #cacaca;
+}
+.inner-page .table {
+    margin-bottom: 0;
+}
+.inner-page thead {
+    background: #00bff3;
+    border: medium none;
+    color: #fff;
+}
+.table tbody tr:nth-child(even) {
+    background:#F1F0EE ;
 }

@@ -1,18 +1,15 @@
 class UsersController < ApplicationController
-	#skip_before_action :new, :create
-	#before_filter :authenticate_user!
 	
 	#################################
-	# 								#
-	#  								#
-	#  		      User  		    #
-	#  								#
-	#  								#
+	#  		 Render New User	    #
 	#################################
 	def new
 	  @user = User.new
 	end
 
+	#################################
+	#  		 Create New User	    #
+	#################################
 	def create
 	  @user = User.new(user_params)
 	  if @user.save
@@ -23,9 +20,15 @@ class UsersController < ApplicationController
 	  end
 	end
 
+	#################################
+	#  	  Render Forgot Password    #
+	#################################
 	def forgot_password
 	end
 
+	#################################
+	#  	  Generate New Pass. Link   #
+	#################################
 	def request_password
 		@user = User.find_by_email(params[:email])
 		if @user == nil || @user == ''
@@ -39,6 +42,10 @@ class UsersController < ApplicationController
 	    end
 	end
 
+	#################################
+	#  	 Render Reset Password      #
+	#################################
+
 	def reset_password
 		@user = User.where(:reset_password_token => params[:reset_password_token])
 		if @user.empty?
@@ -47,6 +54,10 @@ class UsersController < ApplicationController
 			@token = params[:reset_password_token]
 		end
 	end
+
+	#################################
+	#  	     Update Password        #
+	#################################
 
 	def update_password
 		password_salt = BCrypt::Engine.generate_salt
@@ -57,11 +68,20 @@ class UsersController < ApplicationController
 		redirect_to "/join", :notice => "Your password has been changed, please login"
 	end
 
+	#################################
+	#  	  Render Invalid Password   #
+	#################################
+
 	def invalid_password_token
 		
 	end
 
+	#################################
+	#  	  Render Choose Plan        #
+	#################################
+
 	def choose_plan
+		@plans = SubscriptionPlans.all
 	end
 
 	private

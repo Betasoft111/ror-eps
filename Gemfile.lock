@@ -102,6 +102,8 @@ GEM
     rake (10.3.2)
     rdoc (4.1.1)
       json (~> 1.4)
+    rest-client (1.6.7)
+      mime-types (>= 1.16)
     ruby-ntlm (0.0.1)
     sass (3.2.19)
     sass-rails (4.0.3)
@@ -125,6 +127,9 @@ GEM
       colorize
       net-scp (>= 1.1.2)
       net-ssh (>= 2.8.0)
+    stripe (1.31.0)
+      json (~> 1.8.1)
+      rest-client (~> 1.4)
     thor (0.19.1)
     thread_safe (0.3.4)
     tilt (1.4.1)
@@ -157,6 +162,7 @@ DEPENDENCIES
   ruby-ntlm
   sass-rails (~> 4.0.2)
   sdoc
+  stripe
   turbolinks
   typhoeus
   uglifier (>= 1.3.0)
