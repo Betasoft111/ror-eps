@@ -1,0 +1,48 @@
+<%= render 'admin/layouts/application' %>
+<div class="content inner-page">
+	<div class="container">
+		<% if @staff_plans.errors.any? %>
+		<div id="error_explanation">
+			<h2><%= pluralize(@staff_plans.errors.count, "error") %> prohibited this staff_plans from being saved:</h2>
+			<ul>
+				<% @staff_plans.errors.full_messages.each do |msg| %>
+				<li><%= msg %></li>
+				<% end %>
+			</ul>
+		</div>
+		<% end %>
+		<div class="row">
+			<h4><span><%= image_tag("line.png" , :alt => 'line.png') %></span>New Plan Page<span><%= image_tag("right.png" , :alt => 'right.png') %></span></h4>
+			<span class="q1">Company will add new employee to their team on this page.</span>
+			<%= form_tag '/admin/staff_plans/create', {:class => 'form-horizontal add-employee'} do %>
+			<div class="form-group">
+				<%= label_tag :plan_name, 'Plan Name', :class => "control-label col-sm-2" %>
+				<div class="col-sm-7">
+					<%= text_field_tag :plan_name, nil, :class => 'form-control', :placeholder => 'Enter Plan Name', :required => 'required' %>
+				</div>
+			</div>
+			<div class="form-group">
+				<%= label_tag :no_of_staff, ' No Of Staff', :class => "control-label col-sm-2", :required => 'required' %>
+				<div class="col-sm-7">
+					<%= text_field_tag :no_of_staff, nil, :class => 'form-control', :placeholder => 'Enter No Of Staff', :required => 'required' %>
+				</div>
+				
+			</div>
+			<div class="form-group">
+				<%= label_tag :plan_price, 'Plan Price', :class => "control-label col-sm-2" %>
+				<div class="col-sm-7">
+					<%= text_field_tag :plan_price, nil, class:'form-control', :placeholder => 'Enter Plan Price', :required => 'required' %>
+				</div>
+			</div>
+			<div class="form-group">
+				<div class="col-sm-offset-2 col-sm-10">
+					<%= submit_tag "Add Plan", :class => 'btn btn-default' %>
+				</div>
+			</div>
+			<% end %>
+			
+		</div>
+	</div>
+	
+</div>
+<%= render 'admin/layouts/footer' %>

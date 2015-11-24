@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151123192503) do
+ActiveRecord::Schema.define(version: 20151124191412) do
 
   create_table "admin_admin_users", force: true do |t|
     t.string   "first_name"
@@ -21,6 +21,14 @@ ActiveRecord::Schema.define(version: 20151123192503) do
     t.string   "reset_password_token"
     t.string   "password_hash"
     t.string   "password_salt"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "admin_staff_plans", force: true do |t|
+    t.string   "plan_name"
+    t.integer  "no_of_staff"
+    t.integer  "plan_price"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

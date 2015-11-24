@@ -662,6 +662,11 @@ p.plan-month {
     float: left;
     width: 50%;
 }
+.banner-bottom input[type="submit"] {width: 100%;}
+.banner-bottom li:last-child {
+    display: inline-block;
+    width: 100%;
+}
 
  }
 
