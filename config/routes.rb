@@ -50,6 +50,7 @@ EPS::Application.routes.draw do
   #organisation routes
   get "add_staff" => "companies#add_staff"
   get "company_home" => "companies#index"
+  post "/add_staff/create" => "companies#create"
 
   resources :users
   resources :sessions
@@ -63,6 +64,7 @@ EPS::Application.routes.draw do
     get "log_in" => "admin#login"
     post "post_login" => "admin#do_login"
     get "log_out" => "admin#destroy"
+    get "staff_plans/delete/:id" => "staff_plans#destroy"
     post "subscription_plans/update/:id" => "subscription_plans#update"
 
     resources :subscription_plans

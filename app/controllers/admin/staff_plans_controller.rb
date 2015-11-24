@@ -63,7 +63,8 @@ class Admin::StaffPlansController < ApplicationController
 	#################################
 
 	def destroy
-	    Admin::StaffPlans.delete_all "person_id = 5 AND (category = 'Something' OR category = 'Else')"
+	    Admin::StaffPlans.find(params[:id]).destroy
+	    redirect_to "/admin/staff_plans", :notice => "Staff Plan Deleted successfully"
 	end
 
 

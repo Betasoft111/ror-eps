@@ -19,8 +19,14 @@ class WelcomeController < ApplicationController
 				redirect_to "/choose_plan", :notice => "Please choose a membership plan"
 			end
 	    else
+			# if @current_user.plan_id != nil
+			# 	@plan_details = SubscriptionPlans.find()
+			# else
+			# 	redirect_to "/choose_plan", :notice => "Please choose a membership plan"
+			# end
+	     #else
 			render :template => "welcome/index", :locals => { :user => @current_user }
-		end
+		 end
 	end
 
 
