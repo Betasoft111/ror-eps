@@ -5,7 +5,7 @@
    <div class="container">
       <div class="row">
          <div class="banner-innerpage">
-            <h2>Our<span>Plan</span></h2>
+            <h2>Choose<span>Method</span></h2>
          </div>
       </div>
    </div>
@@ -26,7 +26,7 @@
 			      <span>Amount: $<%= @plan_details.plan_price %> </span>
 			    </label>
 			  </article>
-			  <input type="text" name="plan_id" value="<%= @plan_details.id %>">
+			  <input type="hidden" name="plan_id" value="<%= @plan_details.id %>">
 			  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
 			          data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
 			          data-description="<%= @plan_details.plan_name %>"

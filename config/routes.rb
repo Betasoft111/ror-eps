@@ -49,6 +49,7 @@ EPS::Application.routes.draw do
 
   #organisation routes
   get "add_staff" => "companies#add_staff"
+  get "company_home" => "companies#index"
 
   resources :users
   resources :sessions

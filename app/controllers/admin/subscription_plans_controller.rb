@@ -57,10 +57,10 @@ class Admin::SubscriptionPlansController < ApplicationController
 
 	def destroy
 	    @subscription_plan.destroy
-	    respond_to do |format|
-	      format.html { redirect_to admin_companies_url, notice: 'Company was successfully deleted.' }
-	      format.json { head :no_content }
-	    end
+	    # respond_to do |format|
+	    #   format.html { redirect_to admin_companies_url, notice: 'Company was successfully deleted.' }
+	    #   format.json { head :no_content }
+	    # end
 	end
 
 	private

@@ -1,6 +1,6 @@
 p {
 	color: #2a2a2a;
-	font-size: Open Sans;
+	font-family: Open Sans;
 	font-size: 17px;
 	line-height: 28px;
 }
@@ -67,11 +67,12 @@ span.bottom-bar {
 .banner {
 	 background-attachment: fixed;
     background-image: url("../assets/banner.png");
-    /*background-position: 50% 50%;*/
+    background-position: center top;
     background-repeat: no-repeat;
     background-size: cover;
     border-bottom: 1px solid #eaebec;
     float: left;
+
     min-height: 600px;
     position: relative;
     width: 100%;
@@ -640,8 +641,27 @@ p.plan-month {
 .table tbody tr:nth-child(even) {
     background:#F1F0EE ;
 }
-
-
+.home-division li {
+    float: left;
+    margin: 10px 0;
+    width: 50%;
+    font-style: italic;
+}
+.home-division {
+    list-style: inside none disc;
+    margin: 0 0 20px;
+    float: left;
+    padding: 0;
+}
+.inner-page tbody td a {
+    margin: 0;
+    float: left;
+}
+.inner-page tbody td a {
+    float: left;
+    margin: 0 0 0 10px;
+    text-decoration: none;
+}
 
 
 /**** media start *****/
@@ -667,6 +687,7 @@ p.plan-month {
     display: inline-block;
     width: 100%;
 }
+.c2-main, .banner {background-attachment: scroll; background-size:unset;}
 
  }
 

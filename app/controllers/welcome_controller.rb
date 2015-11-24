@@ -13,7 +13,8 @@ class WelcomeController < ApplicationController
 			#  	     Check current plan     #
 			#################################
 			if @current_user.plan_id != nil
-				@plan_details = SubscriptionPlans.find()
+				@plan_details = SubscriptionPlans.find(current_user.plan_id)
+				redirect_to "/company_home"
 			else
 				redirect_to "/choose_plan", :notice => "Please choose a membership plan"
 			end
