@@ -67747,3 +67747,481 @@ Started GET "/assets/bootstrap.css.map" for 127.0.0.1 at 2015-11-25 05:15:18 +05
 
 
 Started GET "/assets/bootstrap-theme.css.map" for 127.0.0.1 at 2015-11-25 05:15:18 +0530
+
+
+Started GET "/admin/subscription_plans" for 127.0.0.1 at 2015-11-25 05:18:39 +0530
+Processing by Admin::SubscriptionPlansController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  Rendered admin/layouts/_application.html.erb (4.1ms)
+  [1m[35mSubscriptionPlans Load (0.2ms)[0m  SELECT `subscription_plans`.* FROM `subscription_plans`
+  Rendered admin/layouts/_footer.html.erb (0.0ms)
+  Rendered admin/subscription_plans/index.html.erb (6.4ms)
+Completed 200 OK in 9ms (Views: 7.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/style.css?body=1" for 127.0.0.1 at 2015-11-25 05:18:39 +0530
+
+
+Started GET "/assets/bootstrap.css?body=1" for 127.0.0.1 at 2015-11-25 05:18:39 +0530
+
+
+Started GET "/assets/bootstrap-theme.min.css?body=1" for 127.0.0.1 at 2015-11-25 05:18:39 +0530
+
+
+Started GET "/assets/jquery.min.js?body=1" for 127.0.0.1 at 2015-11-25 05:18:39 +0530
+
+
+Started GET "/assets/bootstrap-theme.css?body=1" for 127.0.0.1 at 2015-11-25 05:18:39 +0530
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2015-11-25 05:18:39 +0530
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2015-11-25 05:18:39 +0530
+
+
+Started GET "/assets/create.png" for 127.0.0.1 at 2015-11-25 05:18:39 +0530
+
+
+Started GET "/assets/line.png" for 127.0.0.1 at 2015-11-25 05:18:39 +0530
+
+
+Started GET "/assets/right.png" for 127.0.0.1 at 2015-11-25 05:18:39 +0530
+
+
+Started GET "/assets/logo.png" for 127.0.0.1 at 2015-11-25 05:18:40 +0530
+
+
+Started GET "/assets/bootstrap.css.map" for 127.0.0.1 at 2015-11-25 05:18:40 +0530
+
+
+Started GET "/assets/bootstrap-theme.css.map" for 127.0.0.1 at 2015-11-25 05:18:40 +0530
+
+
+Started GET "/assets/add.png" for 127.0.0.1 at 2015-11-25 05:18:40 +0530
+
+
+Started GET "/assets/delete.png" for 127.0.0.1 at 2015-11-25 05:18:40 +0530
+
+
+Started GET "/assets/edit.png" for 127.0.0.1 at 2015-11-25 05:18:40 +0530
+
+
+Started GET "/assets/footerbg.jpg" for 127.0.0.1 at 2015-11-25 05:18:40 +0530
+
+
+Started GET "/assets/jquery.min.map" for 127.0.0.1 at 2015-11-25 05:18:40 +0530
+
+
+Started GET "/admin/log_out" for 127.0.0.1 at 2015-11-25 05:24:22 +0530
+Processing by Admin::AdminController#destroy as HTML
+Redirected to http://localhost:3000/admin
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/admin" for 127.0.0.1 at 2015-11-25 05:24:22 +0530
+Processing by Admin::AdminController#index as HTML
+Redirected to http://localhost:3000/admin/log_in
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/admin/log_in" for 127.0.0.1 at 2015-11-25 05:24:22 +0530
+Processing by Admin::AdminController#login as HTML
+  Rendered admin/layouts/_application.html.erb (3.5ms)
+  Rendered admin/layouts/_footer.html.erb (0.0ms)
+  Rendered admin/admin/login.html.erb (5.9ms)
+Completed 200 OK in 12ms (Views: 7.5ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/assets/style.css?body=1" for 127.0.0.1 at 2015-11-25 05:24:22 +0530
+
+
+Started GET "/assets/bootstrap-theme.min.css?body=1" for 127.0.0.1 at 2015-11-25 05:24:22 +0530
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2015-11-25 05:24:22 +0530
+
+
+Started GET "/assets/bootstrap-theme.css?body=1" for 127.0.0.1 at 2015-11-25 05:24:22 +0530
+
+
+Started GET "/assets/jquery.min.js?body=1" for 127.0.0.1 at 2015-11-25 05:24:22 +0530
+
+
+Started GET "/assets/bootstrap.css?body=1" for 127.0.0.1 at 2015-11-25 05:24:22 +0530
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2015-11-25 05:24:22 +0530
+
+
+Started GET "/assets/create.png" for 127.0.0.1 at 2015-11-25 05:24:22 +0530
+
+
+Started GET "/assets/right.png" for 127.0.0.1 at 2015-11-25 05:24:22 +0530
+
+
+Started GET "/assets/logo.png" for 127.0.0.1 at 2015-11-25 05:24:22 +0530
+
+
+Started GET "/assets/line.png" for 127.0.0.1 at 2015-11-25 05:24:22 +0530
+
+
+Started GET "/assets/footerbg.jpg" for 127.0.0.1 at 2015-11-25 05:24:22 +0530
+
+
+Started GET "/" for 127.0.0.1 at 2015-11-25 05:24:26 +0530
+Processing by WelcomeController#index as HTML
+  Rendered layouts/_application.html.erb (3.7ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+  Rendered welcome/index.html.erb (451.8ms)
+Completed 200 OK in 454ms (Views: 453.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/style.css?body=1" for 127.0.0.1 at 2015-11-25 05:24:26 +0530
+
+
+Started GET "/assets/bootstrap.css?body=1" for 127.0.0.1 at 2015-11-25 05:24:27 +0530
+
+
+Started GET "/assets/bootstrap-theme.css?body=1" for 127.0.0.1 at 2015-11-25 05:24:27 +0530
+
+
+Started GET "/assets/jquery.min.js?body=1" for 127.0.0.1 at 2015-11-25 05:24:27 +0530
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2015-11-25 05:24:27 +0530
+
+
+Started GET "/assets/bootstrap-theme.min.css?body=1" for 127.0.0.1 at 2015-11-25 05:24:27 +0530
+
+
+Started GET "/assets/logo.png" for 127.0.0.1 at 2015-11-25 05:24:27 +0530
+
+
+Started GET "/assets/charges.js?body=1" for 127.0.0.1 at 2015-11-25 05:24:27 +0530
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2015-11-25 05:24:27 +0530
+
+
+Started GET "/assets/video.png" for 127.0.0.1 at 2015-11-25 05:24:27 +0530
+
+
+Started GET "/assets/img1.png" for 127.0.0.1 at 2015-11-25 05:24:27 +0530
+
+
+Started GET "/assets/img3.jpg" for 127.0.0.1 at 2015-11-25 05:24:27 +0530
+
+
+Started GET "/assets/img2.png" for 127.0.0.1 at 2015-11-25 05:24:27 +0530
+
+
+Started GET "/assets/img4.jpg" for 127.0.0.1 at 2015-11-25 05:24:27 +0530
+
+
+Started GET "/assets/banner.png" for 127.0.0.1 at 2015-11-25 05:24:27 +0530
+
+
+Started GET "/assets/img.jpg" for 127.0.0.1 at 2015-11-25 05:24:27 +0530
+
+
+Started GET "/assets/footerbg.jpg" for 127.0.0.1 at 2015-11-25 05:24:27 +0530
+
+
+Started GET "/join" for 127.0.0.1 at 2015-11-25 05:24:28 +0530
+Processing by SessionsController#new as HTML
+  Rendered layouts/_application.html.erb (4.5ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+  Rendered sessions/new.html.erb (32.1ms)
+Completed 200 OK in 35ms (Views: 33.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bootstrap.css?body=1" for 127.0.0.1 at 2015-11-25 05:24:28 +0530
+
+
+Started GET "/assets/style.css?body=1" for 127.0.0.1 at 2015-11-25 05:24:28 +0530
+
+
+Started GET "/assets/bootstrap-theme.min.css?body=1" for 127.0.0.1 at 2015-11-25 05:24:28 +0530
+
+
+Started GET "/assets/jquery.min.js?body=1" for 127.0.0.1 at 2015-11-25 05:24:28 +0530
+
+
+Started GET "/assets/bootstrap-theme.css?body=1" for 127.0.0.1 at 2015-11-25 05:24:28 +0530
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2015-11-25 05:24:28 +0530
+
+
+Started GET "/assets/create.png" for 127.0.0.1 at 2015-11-25 05:24:28 +0530
+
+
+Started GET "/assets/charges.js?body=1" for 127.0.0.1 at 2015-11-25 05:24:28 +0530
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2015-11-25 05:24:28 +0530
+
+
+Started GET "/assets/line.png" for 127.0.0.1 at 2015-11-25 05:24:28 +0530
+
+
+Started GET "/assets/logo.png" for 127.0.0.1 at 2015-11-25 05:24:28 +0530
+
+
+Started GET "/assets/right.png" for 127.0.0.1 at 2015-11-25 05:24:28 +0530
+
+
+Started GET "/assets/footerbg.jpg" for 127.0.0.1 at 2015-11-25 05:24:29 +0530
+
+
+Started POST "/sessions" for 127.0.0.1 at 2015-11-25 05:24:31 +0530
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"S90omTOaykDV3aZfjce6siurYVUaIsBpxmVNTVuJ5Q0=", "email"=>"randhir@betasoftsystems.com", "password"=>"[FILTERED]", "commit"=>"Log in"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`email` = 'randhir@betasoftsystems.com' LIMIT 1[0m
+  Rendered layouts/_application.html.erb (3.3ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+  Rendered sessions/new.html.erb (5.8ms)
+Completed 200 OK in 132ms (Views: 6.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/style.css?body=1" for 127.0.0.1 at 2015-11-25 05:24:31 +0530
+
+
+Started GET "/assets/bootstrap.css?body=1" for 127.0.0.1 at 2015-11-25 05:24:31 +0530
+
+
+Started GET "/assets/bootstrap-theme.min.css?body=1" for 127.0.0.1 at 2015-11-25 05:24:31 +0530
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2015-11-25 05:24:31 +0530
+
+
+Started GET "/assets/bootstrap-theme.css?body=1" for 127.0.0.1 at 2015-11-25 05:24:31 +0530
+
+
+Started GET "/assets/create.png" for 127.0.0.1 at 2015-11-25 05:24:31 +0530
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2015-11-25 05:24:31 +0530
+
+
+Started GET "/assets/jquery.min.js?body=1" for 127.0.0.1 at 2015-11-25 05:24:31 +0530
+
+
+Started GET "/assets/charges.js?body=1" for 127.0.0.1 at 2015-11-25 05:24:31 +0530
+
+
+Started GET "/assets/line.png" for 127.0.0.1 at 2015-11-25 05:24:31 +0530
+
+
+Started GET "/assets/logo.png" for 127.0.0.1 at 2015-11-25 05:24:31 +0530
+
+
+Started GET "/assets/right.png" for 127.0.0.1 at 2015-11-25 05:24:31 +0530
+
+
+Started GET "/assets/footerbg.jpg" for 127.0.0.1 at 2015-11-25 05:24:31 +0530
+
+
+Started GET "/admin/subscription_plans" for 10.11.12.168 at 2015-11-25 05:24:33 +0530
+Processing by Admin::SubscriptionPlansController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  Rendered admin/layouts/_application.html.erb (4.6ms)
+  [1m[36mSubscriptionPlans Load (0.1ms)[0m  [1mSELECT `subscription_plans`.* FROM `subscription_plans`[0m
+  Rendered admin/layouts/_footer.html.erb (0.0ms)
+  Rendered admin/subscription_plans/index.html.erb (6.6ms)
+Completed 200 OK in 10ms (Views: 8.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/style.css?body=1" for 10.11.12.168 at 2015-11-25 05:24:33 +0530
+
+
+Started GET "/assets/bootstrap.css?body=1" for 10.11.12.168 at 2015-11-25 05:24:33 +0530
+
+
+Started GET "/assets/bootstrap-theme.min.css?body=1" for 10.11.12.168 at 2015-11-25 05:24:33 +0530
+
+
+Started GET "/assets/bootstrap-theme.css?body=1" for 10.11.12.168 at 2015-11-25 05:24:33 +0530
+
+
+Started GET "/assets/jquery.min.js?body=1" for 10.11.12.168 at 2015-11-25 05:24:33 +0530
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 10.11.12.168 at 2015-11-25 05:24:33 +0530
+
+
+Started GET "/assets/bootstrap.js?body=1" for 10.11.12.168 at 2015-11-25 05:24:33 +0530
+
+
+Started GET "/assets/line.png" for 10.11.12.168 at 2015-11-25 05:24:34 +0530
+
+
+Started GET "/assets/logo.png" for 10.11.12.168 at 2015-11-25 05:24:34 +0530
+
+
+Started GET "/assets/create.png" for 10.11.12.168 at 2015-11-25 05:24:34 +0530
+
+
+Started GET "/assets/right.png" for 10.11.12.168 at 2015-11-25 05:24:34 +0530
+
+
+Started GET "/assets/edit.png" for 10.11.12.168 at 2015-11-25 05:24:34 +0530
+
+
+Started GET "/assets/add.png" for 10.11.12.168 at 2015-11-25 05:24:34 +0530
+
+
+Started GET "/assets/delete.png" for 10.11.12.168 at 2015-11-25 05:24:34 +0530
+
+
+Started GET "/assets/footerbg.jpg" for 10.11.12.168 at 2015-11-25 05:24:34 +0530
+
+
+Started POST "/sessions" for 127.0.0.1 at 2015-11-25 05:24:36 +0530
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"S90omTOaykDV3aZfjce6siurYVUaIsBpxmVNTVuJ5Q0=", "email"=>"randhir@betasoftsystems.com", "password"=>"[FILTERED]", "commit"=>"Log in"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`email` = 'randhir@betasoftsystems.com' LIMIT 1
+Redirected to http://localhost:3000/
+Completed 302 Found in 66ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-11-25 05:24:36 +0530
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mSubscriptionPlans Load (0.1ms)[0m  SELECT `subscription_plans`.* FROM `subscription_plans` WHERE `subscription_plans`.`id` = 7 LIMIT 1
+Redirected to http://localhost:3000/company_home
+Completed 302 Found in 2ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/company_home" for 127.0.0.1 at 2015-11-25 05:24:36 +0530
+Processing by CompaniesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  Rendered layouts/_application.html.erb (3.8ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+  Rendered companies/index.html.erb (4.6ms)
+Completed 200 OK in 9ms (Views: 6.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/style.css?body=1" for 127.0.0.1 at 2015-11-25 05:24:36 +0530
+
+
+Started GET "/assets/bootstrap.css?body=1" for 127.0.0.1 at 2015-11-25 05:24:36 +0530
+
+
+Started GET "/assets/bootstrap-theme.css?body=1" for 127.0.0.1 at 2015-11-25 05:24:36 +0530
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2015-11-25 05:24:36 +0530
+
+
+Started GET "/assets/bootstrap-theme.min.css?body=1" for 127.0.0.1 at 2015-11-25 05:24:36 +0530
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2015-11-25 05:24:36 +0530
+
+
+Started GET "/assets/jquery.min.js?body=1" for 127.0.0.1 at 2015-11-25 05:24:36 +0530
+
+
+Started GET "/assets/charges.js?body=1" for 127.0.0.1 at 2015-11-25 05:24:36 +0530
+
+
+Started GET "/assets/create.png" for 127.0.0.1 at 2015-11-25 05:24:36 +0530
+
+
+Started GET "/assets/logo.png" for 127.0.0.1 at 2015-11-25 05:24:36 +0530
+
+
+Started GET "/assets/footerbg.jpg" for 127.0.0.1 at 2015-11-25 05:24:36 +0530
+
+
+Started GET "/choose_plan" for 127.0.0.1 at 2015-11-25 05:24:42 +0530
+Processing by UsersController#choose_plan as HTML
+  Rendered layouts/_application.html.erb (5.2ms)
+  [1m[35mSubscriptionPlans Load (0.2ms)[0m  SELECT `subscription_plans`.* FROM `subscription_plans`
+  Rendered layouts/_footer.html.erb (0.0ms)
+  Rendered users/choose_plan.html.erb (53.7ms)
+Completed 200 OK in 77ms (Views: 76.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/style.css?body=1" for 127.0.0.1 at 2015-11-25 05:24:42 +0530
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2015-11-25 05:24:42 +0530
+
+
+Started GET "/assets/bootstrap-theme.css?body=1" for 127.0.0.1 at 2015-11-25 05:24:42 +0530
+
+
+Started GET "/assets/bootstrap-theme.min.css?body=1" for 127.0.0.1 at 2015-11-25 05:24:42 +0530
+
+
+Started GET "/assets/jquery.min.js?body=1" for 127.0.0.1 at 2015-11-25 05:24:42 +0530
+
+
+Started GET "/assets/bootstrap.css?body=1" for 127.0.0.1 at 2015-11-25 05:24:42 +0530
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2015-11-25 05:24:42 +0530
+
+
+Started GET "/assets/charges.js?body=1" for 127.0.0.1 at 2015-11-25 05:24:42 +0530
+
+
+Started GET "/assets/logo.png" for 127.0.0.1 at 2015-11-25 05:24:42 +0530
+
+
+Started GET "/assets/ourplan.png" for 127.0.0.1 at 2015-11-25 05:24:42 +0530
+
+
+Started GET "/assets/black-check-mark-hi.png" for 127.0.0.1 at 2015-11-25 05:24:42 +0530
+
+
+Started GET "/assets/footerbg.jpg" for 127.0.0.1 at 2015-11-25 05:24:42 +0530
+
+
+Started GET "/choose_plan" for 127.0.0.1 at 2015-11-25 05:24:44 +0530
+Processing by UsersController#choose_plan as HTML
+  Rendered layouts/_application.html.erb (4.2ms)
+  [1m[36mSubscriptionPlans Load (0.1ms)[0m  [1mSELECT `subscription_plans`.* FROM `subscription_plans`[0m
+  Rendered layouts/_footer.html.erb (0.0ms)
+  Rendered users/choose_plan.html.erb (6.7ms)
+Completed 200 OK in 9ms (Views: 8.0ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/style.css?body=1" for 127.0.0.1 at 2015-11-25 05:24:44 +0530
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2015-11-25 05:24:44 +0530
+
+
+Started GET "/assets/jquery.min.js?body=1" for 127.0.0.1 at 2015-11-25 05:24:44 +0530
+
+
+Started GET "/assets/bootstrap.css?body=1" for 127.0.0.1 at 2015-11-25 05:24:44 +0530
+
+
+Started GET "/assets/bootstrap-theme.css?body=1" for 127.0.0.1 at 2015-11-25 05:24:44 +0530
+
+
+Started GET "/assets/bootstrap-theme.min.css?body=1" for 127.0.0.1 at 2015-11-25 05:24:44 +0530
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2015-11-25 05:24:44 +0530
+
+
+Started GET "/assets/charges.js?body=1" for 127.0.0.1 at 2015-11-25 05:24:44 +0530
+
+
+Started GET "/assets/logo.png" for 127.0.0.1 at 2015-11-25 05:24:44 +0530
+
+
+Started GET "/assets/ourplan.png" for 127.0.0.1 at 2015-11-25 05:24:44 +0530
+
+
+Started GET "/assets/black-check-mark-hi.png" for 127.0.0.1 at 2015-11-25 05:24:44 +0530
+
+
+Started GET "/assets/footerbg.jpg" for 127.0.0.1 at 2015-11-25 05:24:45 +0530
