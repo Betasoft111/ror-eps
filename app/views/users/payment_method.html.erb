@@ -1,0 +1,39 @@
+<%= render 'layouts/application' %>
+<div class="innerpage_banner">
+   <!-- <img src="img/ourplan.png"> -->
+   <%= image_tag("ourplan.png" , :alt => 'ourplan.png') %>
+   <div class="container">
+      <div class="row">
+         <div class="banner-innerpage">
+            <h2>Our<span>Plan</span></h2>
+         </div>
+      </div>
+   </div>
+</div>
+<!-- end .innerpage_banner -->
+</div><!-- end. header -->
+<div class="content inner-page">
+   	<div class="container">
+      	<div class="row">
+	      	<%= form_tag charges_path do %>
+			  <article>
+			    <% if flash[:error].present? %>
+			      <div id="error_explanation">
+			        <p><%= flash[:error] %></p>
+			      </div>
+			    <% end %>
+			    <label class="amount">
+			      <span>Amount: $<%= @plan_details.plan_price %> </span>
+			    </label>
+			  </article>
+			  <input type="text" name="plan_id" value="<%= @plan_details.id %>">
+			  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+			          data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+			          data-description="<%= @plan_details.plan_name %>"
+			          data-amount="<%= @new_price %>"
+			          data-locale="auto"></script>
+			<% end %>
+      	</div>
+    </div>	
+</div>
+<%= render 'layouts/footer' %>

@@ -67,12 +67,12 @@ span.bottom-bar {
 .banner {
 	 background-attachment: fixed;
     background-image: url("../assets/banner.png");
-    background-position: 50% 50%;
+    /*background-position: 50% 50%;*/
     background-repeat: no-repeat;
     background-size: cover;
     border-bottom: 1px solid #eaebec;
     float: left;
-    height: 600px;
+    min-height: 600px;
     position: relative;
     width: 100%;
 }
@@ -133,11 +133,11 @@ span.bottom-bar {
     position: relative;
     width: 100%;
      background-attachment: fixed;
-    background-position: 50% 50%;
+    background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
     border-bottom: 1px solid #eaebec;
-    height: 500px;
+    min-height: 500px;
     float: left;
    
   
@@ -146,7 +146,7 @@ span.bottom-bar {
 
 }
 .section-overlay {
-    background: rgba(0, 5, 8, 0.6) none repeat scroll 0 0;
+ 
     padding-bottom: 250px;
     padding-top: 250px;
 }
@@ -169,6 +169,15 @@ span.bottom-bar {
     margin: 0;
     padding: 0;
     display: table;
+}
+.banner-bottom input[type="submit"]:hover {
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#4fc3ff+0,0376b0+100 */
+background: #4fc3ff; /* Old browsers */
+background: -moz-linear-gradient(top, #0376b0 0%,#4fc3ff 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top, #0376b0 0%, #4fc3ff 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom#0376b0 0%, #4fc3ff 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4fc3ff', endColorstr='#0376b0',GradientType=0 ); /* IE6-9 */
+
 }
 .banner-bottom input[type="submit"] {
 /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#4fc3ff+0,0376b0+100 */
@@ -208,6 +217,9 @@ border: medium none;
     float: left;
     width: 100%;
 }
+.c3 img {
+    width: 100%;
+}
 .box1 span {
   
     left: 0;
@@ -240,6 +252,13 @@ border: medium none;
     top: 38%;
     width: 50%;
 }
+.porro_inner a:hover {
+    text-decoration: none;
+    border: 1px solid #fff;
+    background: transparent;
+    color: #fff;
+}
+
 .porro_inner a {
     /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#4fc3ff+0,0376b0+100 */
 background: #4fc3ff; /* Old browsers */
@@ -251,7 +270,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4fc3ff', end
     color: #fff;
     display: block;
     font-size: 15px;
-    
+    border: 1px solid #006599;
     margin: 20px auto;
     padding: 10px;
     width: 200px;
@@ -321,6 +340,18 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4fc3ff', end
     width: 30px;
      line-height: 18px;
      font-size: 13px;
+}
+.footer-bottom ul li a{
+    text-decoration: none;
+}
+.footer-bottom ul li i:hover {
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#4fc3ff+0,0376b0+100 */
+background: #4fc3ff; /* Old browsers */
+background: -moz-linear-gradient(top, #4fc3ff 0%, #0376b0 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top, #4fc3ff 0%,#0376b0 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom, #4fc3ff 0%,#0376b0 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4fc3ff', endColorstr='#0376b0',GradientType=0 ); /* IE6-9 */
+ border: 1px solid #008ed6 ;
 }
 .footer-bottom small {
     color: #5d5d5d;
@@ -393,7 +424,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4fc3ff', end
     font-weight: normal;
     height: 45px;
     text-shadow: none;
-    width: 20%;
+    width: 210px;
     margin-top: 20px;
 
 }
@@ -608,4 +639,33 @@ p.plan-month {
 }
 .table tbody tr:nth-child(even) {
     background:#F1F0EE ;
+}
+
+
+
+
+/**** media start *****/
+
+@media screen and (max-width: 800px) {
+    .header .navbar li a { padding: 5px 10px; font-size: 12px;}
+    .porro_inner {width: 80%;}
+    .content a {margin:10px 0 20px; }
+    .banner-innerpage h2 {font-size: 30px;}
+    .register h3 {text-align: center;}
+.banner-innerpage {
+    left: 5%;
+    }
+    .banner-innerpage h2 {margin: 0;}
+    .banner-bottom li {
+    border-bottom: 1px solid #097cb6;
+    display: table-cell;
+    float: left;
+    width: 50%;
+}
+
+ }
+
+
+@media screen and (max-width: 480px) {
+    .col-xs-4, .col-xs-8 {width: 100% !important;}
 }

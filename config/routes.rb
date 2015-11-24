@@ -45,6 +45,7 @@ EPS::Application.routes.draw do
   get "invalid_password_token" => "users#invalid_password_token"
   post "update_password" => "users#update_password"
   get "choose_plan" => "users#choose_plan"
+  post "/charges/pyament_method" => "users#payment_method"
 
   #organisation routes
   get "add_staff" => "companies#add_staff"
@@ -59,8 +60,9 @@ EPS::Application.routes.draw do
     get "log_in" => "admin#login"
     post "post_login" => "admin#do_login"
     get "log_out" => "admin#destroy"
-    resources :subscription_plans
     post "subscription_plans/update/:id" => "subscription_plans#update"
+
+    resources :subscription_plans
   end
 
   #   resources :companies
