@@ -19,4 +19,11 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  def check_admin
+    if admin_id != '' && user_role && user_role == 'admin' && user_role != nil
+    else
+      redirect_to '/admin/log_in'
+    end
+  end
+
 end
