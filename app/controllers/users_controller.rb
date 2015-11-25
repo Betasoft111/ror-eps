@@ -36,7 +36,7 @@ class UsersController < ApplicationController
 		else
 			@random_string = (0...50).map { ('a'..'z').to_a[rand(26)] }.join
 			@url  = root_url + 'reset_password/' + @random_string
-    		User.where('id': @user.id).update_all(reset_password_token: @random_string)
+    		User.where(:id => @user.id).update_all(reset_password_token: @random_string)
 			@email = UserMailer.forgot_password(@user, @url).deliver
 			redirect_to "/forgot_password", :notice => "Please check your email to reset your password"
 	    end
@@ -62,7 +62,7 @@ class UsersController < ApplicationController
 	def update_password
 		password_salt = BCrypt::Engine.generate_salt
         password_hash = BCrypt::Engine.hash_secret(params[:password], password_salt)
-		@user = User.where('reset_password_token': params[:reset_password_token]).update_all(password_hash: password_hash, password_salt: password_salt)
+		@user = User.where(:reset_password_token => params[:reset_password_token]).update_all(password_hash: password_hash, password_salt: password_salt)
 		puts 'finded'
 		puts @user
 		redirect_to "/join", :notice => "Your password has been changed, please login"
