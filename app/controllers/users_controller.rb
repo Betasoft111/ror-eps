@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+    before_action :authenticate_user!, only: [:choose_plan, :payment_method]
+    #before_action :authenticate	
 	
 	#################################
 	#  		 Render New User	    #

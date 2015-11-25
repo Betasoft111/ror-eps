@@ -14,24 +14,27 @@
 </div><!-- end. header -->
 <div class="content inner-page">
    <div class="container">
-		<%= form_tag charges_path do %>
-		  <article>
-		    <% if flash[:error].present? %>
-		      <div id="error_explanation">
-		        <p><%= flash[:error] %></p>
-		      </div>
-		    <% end %>
-		    <label class="amount">
-		      <span>Amount: $5.00</span>
-		    </label>
-		  </article>
+   		<div class="row">
+   			<h2 class="text-center"> Pay with your favorite payment gateway </h2>
+			<%= form_tag charges_path do %>
+			  <article>
+			    <% if flash[:error].present? %>
+			      <div id="error_explanation">
+			        <p><%= flash[:error] %></p>
+			      </div>
+			    <% end %>
+			    <label class="amount">
+			      <span>Amount: $5.00</span>
+			    </label>
+			  </article>
 
-		  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-		          data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-		          data-description="A month's subscription"
-		          data-amount="500"
-		          data-locale="auto"></script>
-		<% end %>
+			  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+			          data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+			          data-description="A month's subscription"
+			          data-amount="500"
+			          data-locale="auto"></script>
+			<% end %>
+		</div>
 	</div>
 </div>
 <%= render 'layouts/footer' %>

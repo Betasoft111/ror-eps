@@ -82,11 +82,7 @@ GEM
     net-scp (1.2.1)
       net-ssh (>= 2.6.5)
     net-ssh (2.9.1)
-    paypal-sdk-core (0.3.2)
-      multi_json (~> 1.0)
-      xml-simple
-    paypal-sdk-merchant (1.117.2)
-      paypal-sdk-core (~> 0.3.0)
+    paypal-recurring (1.1.0)
     polyglot (0.3.5)
     rack (1.5.2)
     rack-test (0.6.2)
@@ -149,7 +145,6 @@ GEM
     uglifier (2.5.1)
       execjs (>= 0.3.0)
       json (>= 1.8.0)
-    xml-simple (1.1.5)
 
 PLATFORMS
   ruby
@@ -164,7 +159,7 @@ DEPENDENCIES
   jbuilder (~> 1.2)
   jquery-rails
   mysql2
-  paypal-sdk-merchant
+  paypal-recurring
   rails (= 4.0.4)
   ruby-ntlm
   sass-rails (~> 4.0.2)

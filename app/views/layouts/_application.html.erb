@@ -66,7 +66,7 @@ $(document).ready(function () {
         <li><a href="#">About Us</a></li>
         <li><a href="#">Contact Us</a></li>
         <li><a href="#">Pricing </a></li>
-        <% if @current_user && @current_user.id != nil %>
+        <% if session[:user_id] && session[:user_id] != nil %>
           <li><a href="/log_out" >Logout</a></li>
         <% else %>
           <li><a href="/join" class="login-tab">Login</a></li>

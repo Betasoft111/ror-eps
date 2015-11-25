@@ -14,25 +14,43 @@
 </div><!-- end. header -->
 <div class="content inner-page">
    	<div class="container">
+   		<h2 class="text-center"> Pay with your favourite <b>Payment Gateway</b> </h2>
       	<div class="row">
-	      	<%= form_tag charges_path do %>
-			  <article>
-			    <% if flash[:error].present? %>
-			      <div id="error_explanation">
-			        <p><%= flash[:error] %></p>
-			      </div>
-			    <% end %>
-			    <label class="amount">
-			      <span>Amount: $<%= @plan_details.plan_price %> </span>
-			    </label>
-			  </article>
-			  <input type="hidden" name="plan_id" value="<%= @plan_details.id %>">
-			  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-			          data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-			          data-description="<%= @plan_details.plan_name %>"
-			          data-amount="<%= @new_price %>"
-			          data-locale="auto"></script>
-			<% end %>
+      		<div class="col-lg-4">
+		      	<%= form_tag charges_path do %>
+				  <article>
+				    <% if flash[:error].present? %>
+				      <div id="error_explanation">
+				        <p><%= flash[:error] %></p>
+				      </div>
+				    <% end %>
+				    <label class="amount">
+				      <span>Amount: $<%= @plan_details.plan_price %> </span>
+				    </label>
+				  </article>
+				  <input type="hidden" name="plan_id" value="<%= @plan_details.id %>">
+				  <input type="hidden" name="pay_type" value="stripe">
+				  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+				          data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+				          data-description="<%= @plan_details.plan_name %>"
+				          data-amount="<%= @new_price %>"
+				          data-locale="auto"></script>
+				<% end %>
+			</div>
+			<div class="col-lg-4">
+				<form action="/charges/create" method="POST">
+					<input type="hidden" name="pay_type" value="paypal">
+					<input type="hidden" name="plan_id" value="<%= @plan_details.id %>">
+	      			<button type="submit"  /><img src="https://www.paypalobjects.com/webstatic/en_US/i/buttons/PP_logo_h_100x26.png" alt="PayPal">
+	      			</button>
+	      		</form>
+	      	</div>
+
+	      	<div class="col-lg-4">
+				<form action="/charges/create" method="POST">
+					<h2>Third Payment</h2>
+	      		</form>
+	      	</div>
       	</div>
     </div>	
 </div>

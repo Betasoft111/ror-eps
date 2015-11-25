@@ -1,6 +1,7 @@
 class CompaniesController < ApplicationController
 	before_filter :authenticate_user!
 	before_filter :current_user
+	before_filter :check_membership
 
 	#################################
 	#  	        List Plans          #
@@ -25,7 +26,7 @@ class CompaniesController < ApplicationController
 
 
 	#################################
-	#  Create New Compnay         #
+	#       Create New Compnay      #
 	#################################
 	def create
 

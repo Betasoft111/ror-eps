@@ -16,3 +16,7 @@
 	plan_type
 	#rails generate migration AddListIdColumnToIdeas list_id:integer
 	rails generate migration add_plan_type_to_subscription_plans plan_type:integer
+
+
+--> Generate user payments model
+	rails generate model user_payments payment_method:string payment_status:string user_id:string payment_json:text

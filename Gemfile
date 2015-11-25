@@ -61,6 +61,7 @@ group :development do
 end
 
 gem 'stripe'
-gem 'paypal-sdk-merchant'
+#gem 'paypal-sdk-merchant'
+gem 'paypal-recurring'
 # Use debugger
 # gem 'debugger', group: [:development, :test]
