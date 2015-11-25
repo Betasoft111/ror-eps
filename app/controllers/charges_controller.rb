@@ -36,7 +36,7 @@ class ChargesController < ApplicationController
 				})
 
 				response = ppr.checkout
-				User.where('id': @current_user.id).update_all(plan_id: @plan_id)
+				User.where(:id => @current_user.id).update_all(plan_id: @plan_id)
 				#:notice => "Membership is updated successfully"
 				#redirect_to "/company_home", :notice => "Membership is updated successfully"
 				redirect_to response.checkout_url if response.valid?
@@ -64,7 +64,7 @@ class ChargesController < ApplicationController
 				#################################
 			    #         Save In Database      #
 			    #################################
-				User.where('id': @current_user.id).update_all(plan_id: @plan_id)
+				User.where(:id => @current_user.id).update_all(plan_id: @plan_id)
 				redirect_to "/company_home", :notice => "Membership is updated successfully"
 		  end
 			
@@ -73,7 +73,7 @@ class ChargesController < ApplicationController
 			################################# 
 			rescue Stripe::CardError => e
 			  #if error delete user membership
-			  User.where('id': @current_user.id).update_all(plan_id: nil)
+			  User.where(:id => @current_user.id).update_all(plan_id: nil)
 			  flash[:error] = e.message
 			  redirect_to '/choose_plan'		  
 
