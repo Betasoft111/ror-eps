@@ -51,7 +51,7 @@ class Admin::SubscriptionPlansController < ApplicationController
 	#     	   Update Plan          #
 	#################################
 	def update
-		SubscriptionPlans.where(id => params[:id]).update_all(plan_name: params[:plan_name], plan_price: params[:plan_price], plan_type: params[:plan_type])
+		SubscriptionPlans.where(:id => params[:id]).update_all(plan_name: params[:plan_name], plan_price: params[:plan_price], plan_type: params[:plan_type])
 		redirect_to "/admin/subscription_plans", :notice => "Plan is updated successfully"
 	end
 
