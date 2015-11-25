@@ -30,13 +30,13 @@ class ChargesController < ApplicationController
 		    :currency    => 'usd'
 		  )
 		  #Save in database
-		  User.where('id': @current_user.id).update_all(plan_id: @plan_id)
+		  User.where(:id => @current_user.id).update_all(plan_id: @plan_id)
 		  redirect_to "/company_home", :notice => "Membership is updated successfully"
 	  end
 		 
 		rescue Stripe::CardError => e
 		  #if error delete user membership
-		  User.where('id': @current_user.id).update_all(plan_id: nil)
+		  User.where(:id => @current_user.id).update_all(plan_id: nil)
 		  flash[:error] = e.message
 		  redirect_to '/choose_plan'		  
 
