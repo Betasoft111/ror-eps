@@ -64,7 +64,7 @@ class Admin::StaffPlansController < ApplicationController
 
 	def destroy
 	    Admin::StaffPlans.find(params[:id]).destroy
-	    redirect_to "/admin/staff_plans", :notice => "Staff Plan Deleted successfully"
+	    redirect_to "/admin/staff_plans", :notice => "Staff Record Deleted successfully"
 	end
 
 
