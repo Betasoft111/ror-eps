@@ -41,8 +41,9 @@ class ApplicationController < ActionController::Base
   #################################
   #        Check Is Admin         #
   #################################
-  def check_admin
-    if admin_id != '' && user_role && user_role == 'admin' && user_role != nil
+  def check_admin!
+    if session[:user_id] != '' && session[:user_role
+      ] && session[:user_role] == 'admin' && session[:user_role] != nil
     else
       redirect_to '/admin/log_in'
     end

@@ -86051,3 +86051,437 @@ Started GET "/assets/paypal.png" for 10.11.12.168 at 2015-11-26 15:15:54 +0530
 
 
 Started GET "/assets/footerbg.jpg" for 10.11.12.168 at 2015-11-26 15:15:54 +0530
+
+
+Started GET "/" for 127.0.0.1 at 2015-11-26 15:18:22 +0530
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  Rendered layouts/_application.html.erb (3.3ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+  Rendered welcome/index.html.erb (4.4ms)
+Completed 200 OK in 67ms (Views: 66.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/bootstrap.css?body=1" for 127.0.0.1 at 2015-11-26 15:18:22 +0530
+
+
+Started GET "/assets/style.css?body=1" for 127.0.0.1 at 2015-11-26 15:18:22 +0530
+
+
+Started GET "/assets/bootstrap-theme.css?body=1" for 127.0.0.1 at 2015-11-26 15:18:22 +0530
+
+
+Started GET "/assets/bootstrap-theme.min.css?body=1" for 127.0.0.1 at 2015-11-26 15:18:22 +0530
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2015-11-26 15:18:22 +0530
+
+
+Started GET "/assets/jquery.min.js?body=1" for 127.0.0.1 at 2015-11-26 15:18:22 +0530
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2015-11-26 15:18:22 +0530
+
+
+Started GET "/assets/charges.js?body=1" for 127.0.0.1 at 2015-11-26 15:18:22 +0530
+
+
+Started GET "/assets/logo.png" for 127.0.0.1 at 2015-11-26 15:18:22 +0530
+
+
+Started GET "/assets/video.png" for 127.0.0.1 at 2015-11-26 15:18:22 +0530
+
+
+Started GET "/assets/img2.png" for 127.0.0.1 at 2015-11-26 15:18:22 +0530
+
+
+Started GET "/assets/img1.png" for 127.0.0.1 at 2015-11-26 15:18:22 +0530
+
+
+Started GET "/assets/img3.jpg" for 127.0.0.1 at 2015-11-26 15:18:22 +0530
+
+
+Started GET "/assets/img4.jpg" for 127.0.0.1 at 2015-11-26 15:18:22 +0530
+
+
+Started GET "/assets/banner.png" for 127.0.0.1 at 2015-11-26 15:18:22 +0530
+
+
+Started GET "/assets/img.jpg" for 127.0.0.1 at 2015-11-26 15:18:22 +0530
+
+
+Started GET "/assets/footerbg.jpg" for 127.0.0.1 at 2015-11-26 15:18:22 +0530
+
+
+Started GET "/admin" for 127.0.0.1 at 2015-11-26 15:18:24 +0530
+Processing by Admin::AdminController#index as HTML
+Redirected to http://localhost:3000/admin/log_in
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/admin/log_in" for 127.0.0.1 at 2015-11-26 15:18:24 +0530
+Processing by Admin::AdminController#login as HTML
+  Rendered admin/layouts/_application.html.erb (5.7ms)
+  Rendered admin/layouts/_footer.html.erb (0.4ms)
+  Rendered admin/admin/login.html.erb (88.4ms)
+Completed 200 OK in 217ms (Views: 159.6ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/assets/create.png" for 127.0.0.1 at 2015-11-26 15:18:24 +0530
+
+
+Started GET "/assets/right.png" for 127.0.0.1 at 2015-11-26 15:18:24 +0530
+
+
+Started GET "/assets/line.png" for 127.0.0.1 at 2015-11-26 15:18:24 +0530
+
+
+Started POST "/admin/post_login" for 127.0.0.1 at 2015-11-26 15:18:29 +0530
+Processing by Admin::AdminController#do_login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"mgFoNi6YCq+Xej/yA9AdOvnfkyolh79x4FrzcR0o8Ik=", "email"=>"epsadmin@admin.com", "password"=>"[FILTERED]", "commit"=>"Log in"}
+  [1m[35mAdmin::AdminUser Load (54.5ms)[0m  SELECT `admin_admin_users`.* FROM `admin_admin_users` WHERE `admin_admin_users`.`email` = 'epsadmin@admin.com' LIMIT 1
+Redirected to http://localhost:3000/admin
+Completed 302 Found in 133ms (ActiveRecord: 54.5ms)
+
+
+Started GET "/admin" for 127.0.0.1 at 2015-11-26 15:18:29 +0530
+Processing by Admin::AdminController#index as HTML
+  Rendered admin/layouts/_application.html.erb (3.2ms)
+  Rendered admin/layouts/_footer.html.erb (0.0ms)
+  Rendered admin/admin/index.html.erb (4.3ms)
+Completed 200 OK in 48ms (Views: 47.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/admin/subscription_plans" for 127.0.0.1 at 2015-11-26 15:18:31 +0530
+Processing by Admin::SubscriptionPlansController#index as HTML
+Completed 500 Internal Server Error in 4ms
+
+NoMethodError (undefined method `check_admin!' for #<Admin::SubscriptionPlansController:0x00000002ef71b0>):
+  activesupport (4.0.4) lib/active_support/callbacks.rb:397:in `_run__3340603472491924289__process_action__callbacks'
+  activesupport (4.0.4) lib/active_support/callbacks.rb:80:in `run_callbacks'
+  actionpack (4.0.4) lib/abstract_controller/callbacks.rb:17:in `process_action'
+  actionpack (4.0.4) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.0.4) lib/action_controller/metal/instrumentation.rb:31:in `block in process_action'
+  activesupport (4.0.4) lib/active_support/notifications.rb:159:in `block in instrument'
+  activesupport (4.0.4) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.0.4) lib/active_support/notifications.rb:159:in `instrument'
+  actionpack (4.0.4) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (4.0.4) lib/action_controller/metal/params_wrapper.rb:250:in `process_action'
+  activerecord (4.0.4) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.0.4) lib/abstract_controller/base.rb:136:in `process'
+  actionpack (4.0.4) lib/abstract_controller/rendering.rb:44:in `process'
+  actionpack (4.0.4) lib/action_controller/metal.rb:195:in `dispatch'
+  actionpack (4.0.4) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.0.4) lib/action_controller/metal.rb:231:in `block in action'
+  actionpack (4.0.4) lib/action_dispatch/routing/route_set.rb:80:in `call'
+  actionpack (4.0.4) lib/action_dispatch/routing/route_set.rb:80:in `dispatch'
+  actionpack (4.0.4) lib/action_dispatch/routing/route_set.rb:48:in `call'
+  actionpack (4.0.4) lib/action_dispatch/journey/router.rb:71:in `block in call'
+  actionpack (4.0.4) lib/action_dispatch/journey/router.rb:59:in `each'
+  actionpack (4.0.4) lib/action_dispatch/journey/router.rb:59:in `call'
+  actionpack (4.0.4) lib/action_dispatch/routing/route_set.rb:674:in `call'
+  rack (1.5.2) lib/rack/etag.rb:23:in `call'
+  rack (1.5.2) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.5.2) lib/rack/head.rb:11:in `call'
+  actionpack (4.0.4) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.0.4) lib/action_dispatch/middleware/flash.rb:241:in `call'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.0.4) lib/action_dispatch/middleware/cookies.rb:486:in `call'
+  activerecord (4.0.4) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.0.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:626:in `call'
+  activerecord (4.0.4) lib/active_record/migration.rb:373:in `call'
+  actionpack (4.0.4) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.0.4) lib/active_support/callbacks.rb:373:in `_run__2995115393773919519__call__callbacks'
+  activesupport (4.0.4) lib/active_support/callbacks.rb:80:in `run_callbacks'
+  actionpack (4.0.4) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.0.4) lib/action_dispatch/middleware/reloader.rb:64:in `call'
+  actionpack (4.0.4) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  actionpack (4.0.4) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.0.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.0.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.0.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.0.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.0.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.4) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.4) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.0.4) lib/rails/engine.rb:511:in `call'
+  railties (4.0.4) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/deepak/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/deepak/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/deepak/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /home/deepak/.rvm/gems/ruby-2.2.1/gems/actionpack-4.0.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.5ms)
+  Rendered /home/deepak/.rvm/gems/ruby-2.2.1/gems/actionpack-4.0.4/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+  Rendered /home/deepak/.rvm/gems/ruby-2.2.1/gems/actionpack-4.0.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.7ms)
+  Rendered /home/deepak/.rvm/gems/ruby-2.2.1/gems/actionpack-4.0.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (16.9ms)
+
+
+Started GET "/admin/subscription_plans" for 127.0.0.1 at 2015-11-26 15:18:50 +0530
+Processing by Admin::SubscriptionPlansController#index as HTML
+Completed 500 Internal Server Error in 3ms
+
+NameError (undefined local variable or method `admin_id' for #<Admin::SubscriptionPlansController:0x000000046d5b38>):
+  app/controllers/application_controller.rb:45:in `check_admin!'
+
+
+  Rendered /home/deepak/.rvm/gems/ruby-2.2.1/gems/actionpack-4.0.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.5ms)
+  Rendered /home/deepak/.rvm/gems/ruby-2.2.1/gems/actionpack-4.0.4/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.9ms)
+  Rendered /home/deepak/.rvm/gems/ruby-2.2.1/gems/actionpack-4.0.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.7ms)
+  Rendered /home/deepak/.rvm/gems/ruby-2.2.1/gems/actionpack-4.0.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (10.8ms)
+
+
+Started GET "/assets/paypal.png" for 10.11.12.168 at 2015-11-26 15:19:01 +0530
+
+
+Started GET "/admin/subscription_plans" for 127.0.0.1 at 2015-11-26 15:19:30 +0530
+Processing by Admin::SubscriptionPlansController#index as HTML
+Redirected to http://localhost:3000/admin/log_in
+Filter chain halted as :check_admin! rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/admin/log_in" for 127.0.0.1 at 2015-11-26 15:19:30 +0530
+Processing by Admin::AdminController#login as HTML
+  Rendered admin/layouts/_application.html.erb (4.7ms)
+  Rendered admin/layouts/_footer.html.erb (0.0ms)
+  Rendered admin/admin/login.html.erb (6.4ms)
+Completed 200 OK in 11ms (Views: 7.7ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2015-11-26 15:19:30 +0530
+
+
+Started GET "/assets/style.css?body=1" for 127.0.0.1 at 2015-11-26 15:19:30 +0530
+
+
+Started GET "/assets/bootstrap-theme.css?body=1" for 127.0.0.1 at 2015-11-26 15:19:30 +0530
+
+
+Started GET "/assets/bootstrap.css?body=1" for 127.0.0.1 at 2015-11-26 15:19:30 +0530
+
+
+Started GET "/assets/jquery.min.js?body=1" for 127.0.0.1 at 2015-11-26 15:19:30 +0530
+
+
+Started GET "/assets/bootstrap-theme.min.css?body=1" for 127.0.0.1 at 2015-11-26 15:19:30 +0530
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2015-11-26 15:19:30 +0530
+
+
+Started GET "/assets/logo.png" for 127.0.0.1 at 2015-11-26 15:19:30 +0530
+
+
+Started GET "/assets/line.png" for 127.0.0.1 at 2015-11-26 15:19:31 +0530
+
+
+Started GET "/assets/right.png" for 127.0.0.1 at 2015-11-26 15:19:31 +0530
+
+
+Started GET "/assets/create.png" for 127.0.0.1 at 2015-11-26 15:19:31 +0530
+
+
+Started GET "/assets/footerbg.jpg" for 127.0.0.1 at 2015-11-26 15:19:31 +0530
+
+
+Started POST "/admin/post_login" for 127.0.0.1 at 2015-11-26 15:19:37 +0530
+Processing by Admin::AdminController#do_login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"mgFoNi6YCq+Xej/yA9AdOvnfkyolh79x4FrzcR0o8Ik=", "email"=>"epsadmin@admin.com", "password"=>"[FILTERED]", "commit"=>"Log in"}
+  [1m[36mAdmin::AdminUser Load (0.1ms)[0m  [1mSELECT `admin_admin_users`.* FROM `admin_admin_users` WHERE `admin_admin_users`.`email` = 'epsadmin@admin.com' LIMIT 1[0m
+Redirected to http://localhost:3000/admin
+Completed 302 Found in 72ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/admin" for 127.0.0.1 at 2015-11-26 15:19:37 +0530
+Processing by Admin::AdminController#index as HTML
+  Rendered admin/layouts/_application.html.erb (3.2ms)
+  Rendered admin/layouts/_footer.html.erb (0.0ms)
+  Rendered admin/admin/index.html.erb (4.0ms)
+Completed 200 OK in 5ms (Views: 4.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/style.css?body=1" for 127.0.0.1 at 2015-11-26 15:19:37 +0530
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2015-11-26 15:19:37 +0530
+
+
+Started GET "/assets/bootstrap.css?body=1" for 127.0.0.1 at 2015-11-26 15:19:37 +0530
+
+
+Started GET "/assets/bootstrap-theme.min.css?body=1" for 127.0.0.1 at 2015-11-26 15:19:37 +0530
+
+
+Started GET "/assets/jquery.min.js?body=1" for 127.0.0.1 at 2015-11-26 15:19:37 +0530
+
+
+Started GET "/assets/bootstrap-theme.css?body=1" for 127.0.0.1 at 2015-11-26 15:19:37 +0530
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2015-11-26 15:19:37 +0530
+
+
+Started GET "/assets/logo.png" for 127.0.0.1 at 2015-11-26 15:19:37 +0530
+
+
+Started GET "/assets/footerbg.jpg" for 127.0.0.1 at 2015-11-26 15:19:37 +0530
+
+
+Started GET "/admin/subscription_plans" for 127.0.0.1 at 2015-11-26 15:19:40 +0530
+Processing by Admin::SubscriptionPlansController#index as HTML
+Redirected to http://localhost:3000/admin/log_in
+Filter chain halted as :check_admin! rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/admin/log_in" for 127.0.0.1 at 2015-11-26 15:19:40 +0530
+Processing by Admin::AdminController#login as HTML
+  Rendered admin/layouts/_application.html.erb (3.1ms)
+  Rendered admin/layouts/_footer.html.erb (0.0ms)
+  Rendered admin/admin/login.html.erb (4.4ms)
+Completed 200 OK in 6ms (Views: 5.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/style.css?body=1" for 127.0.0.1 at 2015-11-26 15:19:40 +0530
+
+
+Started GET "/assets/bootstrap.css?body=1" for 127.0.0.1 at 2015-11-26 15:19:40 +0530
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2015-11-26 15:19:40 +0530
+
+
+Started GET "/assets/bootstrap-theme.min.css?body=1" for 127.0.0.1 at 2015-11-26 15:19:40 +0530
+
+
+Started GET "/assets/jquery.min.js?body=1" for 127.0.0.1 at 2015-11-26 15:19:40 +0530
+
+
+Started GET "/assets/bootstrap-theme.css?body=1" for 127.0.0.1 at 2015-11-26 15:19:40 +0530
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2015-11-26 15:19:40 +0530
+
+
+Started GET "/assets/logo.png" for 127.0.0.1 at 2015-11-26 15:19:40 +0530
+
+
+Started GET "/assets/create.png" for 127.0.0.1 at 2015-11-26 15:19:40 +0530
+
+
+Started GET "/assets/line.png" for 127.0.0.1 at 2015-11-26 15:19:40 +0530
+
+
+Started GET "/assets/right.png" for 127.0.0.1 at 2015-11-26 15:19:40 +0530
+
+
+Started GET "/assets/footerbg.jpg" for 127.0.0.1 at 2015-11-26 15:19:40 +0530
+
+
+Started POST "/admin/post_login" for 127.0.0.1 at 2015-11-26 15:20:46 +0530
+Processing by Admin::AdminController#do_login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"mgFoNi6YCq+Xej/yA9AdOvnfkyolh79x4FrzcR0o8Ik=", "email"=>"epsadmin@admin.com", "password"=>"[FILTERED]", "commit"=>"Log in"}
+  [1m[35mAdmin::AdminUser Load (0.1ms)[0m  SELECT `admin_admin_users`.* FROM `admin_admin_users` WHERE `admin_admin_users`.`email` = 'epsadmin@admin.com' LIMIT 1
+Redirected to http://localhost:3000/admin
+Completed 302 Found in 76ms (ActiveRecord: 1.4ms)
+
+
+Started GET "/admin" for 127.0.0.1 at 2015-11-26 15:20:46 +0530
+Processing by Admin::AdminController#index as HTML
+  Rendered admin/layouts/_application.html.erb (8.5ms)
+  Rendered admin/layouts/_footer.html.erb (0.1ms)
+  Rendered admin/admin/index.html.erb (10.2ms)
+Completed 200 OK in 13ms (Views: 12.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bootstrap.css?body=1" for 127.0.0.1 at 2015-11-26 15:20:46 +0530
+
+
+Started GET "/assets/bootstrap-theme.css?body=1" for 127.0.0.1 at 2015-11-26 15:20:46 +0530
+
+
+Started GET "/assets/style.css?body=1" for 127.0.0.1 at 2015-11-26 15:20:46 +0530
+
+
+Started GET "/assets/bootstrap-theme.min.css?body=1" for 127.0.0.1 at 2015-11-26 15:20:46 +0530
+
+
+Started GET "/assets/jquery.min.js?body=1" for 127.0.0.1 at 2015-11-26 15:20:46 +0530
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2015-11-26 15:20:46 +0530
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2015-11-26 15:20:46 +0530
+
+
+Started GET "/assets/logo.png" for 127.0.0.1 at 2015-11-26 15:20:46 +0530
+
+
+Started GET "/assets/footerbg.jpg" for 127.0.0.1 at 2015-11-26 15:20:46 +0530
+
+
+Started GET "/admin/subscription_plans" for 127.0.0.1 at 2015-11-26 15:20:48 +0530
+Processing by Admin::SubscriptionPlansController#index as HTML
+  Rendered admin/layouts/_application.html.erb (3.3ms)
+  [1m[36mSubscriptionPlans Load (0.2ms)[0m  [1mSELECT `subscription_plans`.* FROM `subscription_plans`[0m
+  Rendered admin/layouts/_footer.html.erb (0.1ms)
+  Rendered admin/subscription_plans/index.html.erb (11.0ms)
+Completed 200 OK in 43ms (Views: 39.5ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/assets/bootstrap.css?body=1" for 127.0.0.1 at 2015-11-26 15:20:48 +0530
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2015-11-26 15:20:48 +0530
+
+
+Started GET "/assets/bootstrap-theme.css?body=1" for 127.0.0.1 at 2015-11-26 15:20:48 +0530
+
+
+Started GET "/assets/jquery.min.js?body=1" for 127.0.0.1 at 2015-11-26 15:20:48 +0530
+
+
+Started GET "/assets/bootstrap-theme.min.css?body=1" for 127.0.0.1 at 2015-11-26 15:20:48 +0530
+
+
+Started GET "/assets/style.css?body=1" for 127.0.0.1 at 2015-11-26 15:20:48 +0530
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2015-11-26 15:20:48 +0530
+
+
+Started GET "/assets/logo.png" for 127.0.0.1 at 2015-11-26 15:20:48 +0530
+
+
+Started GET "/assets/line.png" for 127.0.0.1 at 2015-11-26 15:20:48 +0530
+
+
+Started GET "/assets/create.png" for 127.0.0.1 at 2015-11-26 15:20:48 +0530
+
+
+Started GET "/assets/right.png" for 127.0.0.1 at 2015-11-26 15:20:48 +0530
+
+
+Started GET "/assets/footerbg.jpg" for 127.0.0.1 at 2015-11-26 15:20:48 +0530
+
+
+Started GET "/assets/add.png" for 127.0.0.1 at 2015-11-26 15:20:48 +0530
+
+
+Started GET "/assets/edit.png" for 127.0.0.1 at 2015-11-26 15:20:48 +0530
+
+
+Started GET "/assets/delete.png" for 127.0.0.1 at 2015-11-26 15:20:48 +0530

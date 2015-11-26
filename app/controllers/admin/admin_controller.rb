@@ -1,6 +1,6 @@
 class Admin::AdminController < ApplicationController
-#	before_filter :check_admin!#, except: :create
-	#skip_before_filter :login
+	#before_filter :check_admin!, only: [:choose_plan, :payment_method]
+
 	def index
 		admin_id = session[:user_id]
 		user_role = session[:user_role]
