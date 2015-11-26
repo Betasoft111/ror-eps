@@ -85104,3 +85104,103 @@ Started GET "/assets/ourplan.png" for 10.11.12.168 at 2015-11-26 14:55:57 +0530
 
 
 Started GET "/assets/footerbg.jpg" for 10.11.12.168 at 2015-11-26 14:55:57 +0530
+
+
+Started POST "/charges/payment_method" for 10.11.12.168 at 2015-11-26 14:57:53 +0530
+Processing by UsersController#payment_method as HTML
+  Parameters: {"plan_id"=>"7", "selected_plan"=>"4", "submit"=>"Proceed To Pay"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mSubscriptionPlans Load (0.3ms)[0m  [1mSELECT `subscription_plans`.* FROM `subscription_plans` WHERE `subscription_plans`.`id` = 4 LIMIT 1[0m
+  Rendered layouts/_application.html.erb (5.4ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+  Rendered users/payment_method.html.erb (8.5ms)
+Completed 200 OK in 13ms (Views: 10.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/bootstrap.css?body=1" for 10.11.12.168 at 2015-11-26 14:57:53 +0530
+
+
+Started GET "/assets/bootstrap-theme.min.css?body=1" for 10.11.12.168 at 2015-11-26 14:57:53 +0530
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 10.11.12.168 at 2015-11-26 14:57:53 +0530
+
+
+Started GET "/assets/charges.js?body=1" for 10.11.12.168 at 2015-11-26 14:57:53 +0530
+
+
+Started GET "/assets/bootstrap-theme.css?body=1" for 10.11.12.168 at 2015-11-26 14:57:53 +0530
+
+
+Started GET "/assets/jquery.min.js?body=1" for 10.11.12.168 at 2015-11-26 14:57:53 +0530
+
+
+Started GET "/assets/bootstrap.js?body=1" for 10.11.12.168 at 2015-11-26 14:57:53 +0530
+
+
+Started GET "/assets/style.css?body=1" for 10.11.12.168 at 2015-11-26 14:57:53 +0530
+
+
+Started GET "/assets/logo.png" for 10.11.12.168 at 2015-11-26 14:57:54 +0530
+
+
+Started GET "/assets/right.png" for 10.11.12.168 at 2015-11-26 14:57:54 +0530
+
+
+Started GET "/assets/ourplan.png" for 10.11.12.168 at 2015-11-26 14:57:54 +0530
+
+
+Started GET "/assets/line.png" for 10.11.12.168 at 2015-11-26 14:57:54 +0530
+
+
+Started GET "/assets/footerbg.jpg" for 10.11.12.168 at 2015-11-26 14:57:54 +0530
+
+
+Started POST "/charges/payment_method" for 10.11.12.168 at 2015-11-26 14:58:20 +0530
+Processing by UsersController#payment_method as HTML
+  Parameters: {"plan_id"=>"7", "selected_plan"=>"4", "submit"=>"Proceed To Pay"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mSubscriptionPlans Load (0.2ms)[0m  [1mSELECT `subscription_plans`.* FROM `subscription_plans` WHERE `subscription_plans`.`id` = 4 LIMIT 1[0m
+  Rendered layouts/_application.html.erb (4.9ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+  Rendered users/payment_method.html.erb (7.2ms)
+Completed 200 OK in 11ms (Views: 8.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/bootstrap.css?body=1" for 10.11.12.168 at 2015-11-26 14:58:20 +0530
+
+
+Started GET "/assets/style.css?body=1" for 10.11.12.168 at 2015-11-26 14:58:20 +0530
+
+
+Started GET "/assets/bootstrap-theme.css?body=1" for 10.11.12.168 at 2015-11-26 14:58:20 +0530
+
+
+Started GET "/assets/jquery.min.js?body=1" for 10.11.12.168 at 2015-11-26 14:58:20 +0530
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 10.11.12.168 at 2015-11-26 14:58:20 +0530
+
+
+Started GET "/assets/bootstrap-theme.min.css?body=1" for 10.11.12.168 at 2015-11-26 14:58:20 +0530
+
+
+Started GET "/assets/bootstrap.js?body=1" for 10.11.12.168 at 2015-11-26 14:58:20 +0530
+
+
+Started GET "/assets/charges.js?body=1" for 10.11.12.168 at 2015-11-26 14:58:20 +0530
+
+
+Started GET "/assets/logo.png" for 10.11.12.168 at 2015-11-26 14:58:20 +0530
+
+
+Started GET "/assets/right.png" for 10.11.12.168 at 2015-11-26 14:58:21 +0530
+
+
+Started GET "/assets/line.png" for 10.11.12.168 at 2015-11-26 14:58:21 +0530
+
+
+Started GET "/assets/ourplan.png" for 10.11.12.168 at 2015-11-26 14:58:21 +0530
+
+
+Started GET "/assets/footerbg.jpg" for 10.11.12.168 at 2015-11-26 14:58:21 +0530
