@@ -47,9 +47,12 @@
 	      	</div>
 
 	      	<div class="col-lg-4">
-				<form action="/charges/create" method="POST">
-					<h2>Third Payment</h2>
-	      		</form>
+					<form action="https://ssl.ditonlinebetalingssystem.dk/integration/ewindow/Default.aspx" method="post">
+				    <input type="hidden" name="merchantnumber" value="8020578">
+				    <input type="hidden" name="amount" value="<%= @plan_details.plan_price %>"> <input type="hidden" name="currency" value="DKK">
+				    <input type="hidden" name="windowstate" value="3"> <input type="submit" value=
+				    "Pay With Epay">
+				</form>
 	      	</div>
       	</div>
     </div>	

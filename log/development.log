@@ -82591,3 +82591,415 @@ Started GET "/assets/ourplan.png" for 127.0.0.1 at 2015-11-26 04:09:02 +0530
 
 
 Started GET "/assets/footerbg.jpg" for 127.0.0.1 at 2015-11-26 04:09:03 +0530
+
+
+Started GET "/" for 127.0.0.1 at 2015-11-26 04:28:10 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+
+ActiveRecord::PendingMigrationError (Migrations are pending; run 'bin/rake db:migrate RAILS_ENV=development' to resolve this issue.):
+  activerecord (4.0.4) lib/active_record/migration.rb:383:in `check_pending!'
+  activerecord (4.0.4) lib/active_record/migration.rb:370:in `call'
+  actionpack (4.0.4) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.0.4) lib/active_support/callbacks.rb:373:in `_run__3295898648882059882__call__callbacks'
+  activesupport (4.0.4) lib/active_support/callbacks.rb:80:in `run_callbacks'
+  actionpack (4.0.4) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.0.4) lib/action_dispatch/middleware/reloader.rb:64:in `call'
+  actionpack (4.0.4) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  actionpack (4.0.4) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.0.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.0.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.0.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.0.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.0.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.4) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.4) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.0.4) lib/rails/engine.rb:511:in `call'
+  railties (4.0.4) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/ramandeep/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/ramandeep/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/ramandeep/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /home/ramandeep/.rvm/gems/ruby-2.2.1/gems/actionpack-4.0.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.4ms)
+  Rendered /home/ramandeep/.rvm/gems/ruby-2.2.1/gems/actionpack-4.0.4/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.8ms)
+  Rendered /home/ramandeep/.rvm/gems/ruby-2.2.1/gems/actionpack-4.0.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.7ms)
+  Rendered /home/ramandeep/.rvm/gems/ruby-2.2.1/gems/actionpack-4.0.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (9.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-11-26 04:49:51 +0530
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT `schema_migrations`.* FROM `schema_migrations`
+
+ActiveRecord::PendingMigrationError (Migrations are pending; run 'bin/rake db:migrate RAILS_ENV=development' to resolve this issue.):
+  activerecord (4.0.4) lib/active_record/migration.rb:383:in `check_pending!'
+  activerecord (4.0.4) lib/active_record/migration.rb:370:in `call'
+  actionpack (4.0.4) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.0.4) lib/active_support/callbacks.rb:373:in `_run__3295898648882059882__call__callbacks'
+  activesupport (4.0.4) lib/active_support/callbacks.rb:80:in `run_callbacks'
+  actionpack (4.0.4) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.0.4) lib/action_dispatch/middleware/reloader.rb:64:in `call'
+  actionpack (4.0.4) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  actionpack (4.0.4) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.0.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.0.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.0.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.0.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.0.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.4) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.4) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.0.4) lib/rails/engine.rb:511:in `call'
+  railties (4.0.4) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/ramandeep/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/ramandeep/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/ramandeep/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /home/ramandeep/.rvm/gems/ruby-2.2.1/gems/actionpack-4.0.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.5ms)
+  Rendered /home/ramandeep/.rvm/gems/ruby-2.2.1/gems/actionpack-4.0.4/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.7ms)
+  Rendered /home/ramandeep/.rvm/gems/ruby-2.2.1/gems/actionpack-4.0.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.8ms)
+  Rendered /home/ramandeep/.rvm/gems/ruby-2.2.1/gems/actionpack-4.0.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (11.8ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Migrating to CreateUserPayments (20151125215209)
+  [1m[35m (155.4ms)[0m  CREATE TABLE `user_payments` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `payment_method` varchar(255), `payment_status` varchar(255), `user_id` varchar(255), `payment_json` text, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20151125215209')
+  [1m[36m (47.3ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT `schema_migrations`.* FROM `schema_migrations`
+
+
+Started GET "/" for 127.0.0.1 at 2015-11-26 04:50:19 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by WelcomeController#index as HTML
+  Rendered layouts/_application.html.erb (19.6ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+  Rendered welcome/index.html.erb (30.9ms)
+Completed 200 OK in 42ms (Views: 34.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/style.css?body=1" for 127.0.0.1 at 2015-11-26 04:50:19 +0530
+
+
+Started GET "/assets/bootstrap-theme.min.css?body=1" for 127.0.0.1 at 2015-11-26 04:50:19 +0530
+
+
+Started GET "/assets/bootstrap.css?body=1" for 127.0.0.1 at 2015-11-26 04:50:19 +0530
+
+
+Started GET "/assets/bootstrap-theme.css?body=1" for 127.0.0.1 at 2015-11-26 04:50:19 +0530
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2015-11-26 04:50:19 +0530
+
+
+Started GET "/assets/jquery.min.js?body=1" for 127.0.0.1 at 2015-11-26 04:50:19 +0530
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2015-11-26 04:50:19 +0530
+
+
+Started GET "/assets/charges.js?body=1" for 127.0.0.1 at 2015-11-26 04:50:19 +0530
+
+
+Started GET "/assets/logo.png" for 127.0.0.1 at 2015-11-26 04:50:19 +0530
+
+
+Started GET "/assets/video.png" for 127.0.0.1 at 2015-11-26 04:50:19 +0530
+
+
+Started GET "/assets/img1.png" for 127.0.0.1 at 2015-11-26 04:50:19 +0530
+
+
+Started GET "/assets/img2.png" for 127.0.0.1 at 2015-11-26 04:50:19 +0530
+
+
+Started GET "/assets/img3.jpg" for 127.0.0.1 at 2015-11-26 04:50:19 +0530
+
+
+Started GET "/assets/img4.jpg" for 127.0.0.1 at 2015-11-26 04:50:19 +0530
+
+
+Started GET "/assets/img.jpg" for 127.0.0.1 at 2015-11-26 04:50:26 +0530
+
+
+Started GET "/assets/banner.png" for 127.0.0.1 at 2015-11-26 04:50:26 +0530
+
+
+Started GET "/assets/footerbg.jpg" for 127.0.0.1 at 2015-11-26 04:50:26 +0530
+
+
+Started GET "/" for 127.0.0.1 at 2015-11-26 13:47:24 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by WelcomeController#index as HTML
+  Rendered layouts/_application.html.erb (180.7ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+  Rendered welcome/index.html.erb (205.7ms)
+Completed 200 OK in 250ms (Views: 235.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2015-11-26 13:47:25 +0530
+
+
+Started GET "/assets/bootstrap.css?body=1" for 127.0.0.1 at 2015-11-26 13:47:25 +0530
+
+
+Started GET "/assets/bootstrap-theme.css?body=1" for 127.0.0.1 at 2015-11-26 13:47:25 +0530
+
+
+Started GET "/assets/bootstrap-theme.min.css?body=1" for 127.0.0.1 at 2015-11-26 13:47:25 +0530
+
+
+Started GET "/assets/jquery.min.js?body=1" for 127.0.0.1 at 2015-11-26 13:47:25 +0530
+
+
+Started GET "/assets/style.css?body=1" for 127.0.0.1 at 2015-11-26 13:47:25 +0530
+
+
+Started GET "/assets/charges.js?body=1" for 127.0.0.1 at 2015-11-26 13:47:25 +0530
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2015-11-26 13:47:25 +0530
+
+
+Started GET "/assets/logo.png" for 127.0.0.1 at 2015-11-26 13:47:25 +0530
+
+
+Started GET "/assets/img1.png" for 127.0.0.1 at 2015-11-26 13:47:25 +0530
+
+
+Started GET "/assets/video.png" for 127.0.0.1 at 2015-11-26 13:47:25 +0530
+
+
+Started GET "/assets/img3.jpg" for 127.0.0.1 at 2015-11-26 13:47:25 +0530
+
+
+Started GET "/assets/img4.jpg" for 127.0.0.1 at 2015-11-26 13:47:25 +0530
+
+
+Started GET "/assets/img2.png" for 127.0.0.1 at 2015-11-26 13:47:25 +0530
+
+
+Started GET "/assets/img.jpg" for 127.0.0.1 at 2015-11-26 13:47:25 +0530
+
+
+Started GET "/assets/banner.png" for 127.0.0.1 at 2015-11-26 13:47:25 +0530
+
+
+Started GET "/assets/footerbg.jpg" for 127.0.0.1 at 2015-11-26 13:47:25 +0530
+
+
+Started GET "/join" for 127.0.0.1 at 2015-11-26 13:47:28 +0530
+Processing by SessionsController#new as HTML
+  Rendered layouts/_application.html.erb (5.1ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+  Rendered sessions/new.html.erb (67.4ms)
+Completed 200 OK in 82ms (Views: 71.8ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/assets/bootstrap.css?body=1" for 127.0.0.1 at 2015-11-26 13:47:28 +0530
+
+
+Started GET "/assets/bootstrap-theme.min.css?body=1" for 127.0.0.1 at 2015-11-26 13:47:28 +0530
+
+
+Started GET "/assets/style.css?body=1" for 127.0.0.1 at 2015-11-26 13:47:28 +0530
+
+
+Started GET "/assets/bootstrap-theme.css?body=1" for 127.0.0.1 at 2015-11-26 13:47:28 +0530
+
+
+Started GET "/assets/jquery.min.js?body=1" for 127.0.0.1 at 2015-11-26 13:47:28 +0530
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2015-11-26 13:47:28 +0530
+
+
+Started GET "/assets/charges.js?body=1" for 127.0.0.1 at 2015-11-26 13:47:28 +0530
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2015-11-26 13:47:28 +0530
+
+
+Started GET "/assets/logo.png" for 127.0.0.1 at 2015-11-26 13:47:28 +0530
+
+
+Started GET "/assets/create.png" for 127.0.0.1 at 2015-11-26 13:47:28 +0530
+
+
+Started GET "/assets/right.png" for 127.0.0.1 at 2015-11-26 13:47:28 +0530
+
+
+Started GET "/assets/line.png" for 127.0.0.1 at 2015-11-26 13:47:28 +0530
+
+
+Started GET "/assets/footerbg.jpg" for 127.0.0.1 at 2015-11-26 13:47:28 +0530
+
+
+Started POST "/users" for 127.0.0.1 at 2015-11-26 13:48:07 +0530
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"6Ebr+XUdfXYnbap3G2wfufgajwZBFFbUR77RdkWyLp0=", "user"=>{"first_name"=>"Randhir", "last_name"=>"Singh", "email"=>"randhirsinghpaul@gmail.com", "user_type"=>"1", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.5ms)[0m  [1mSELECT 1 AS one FROM `users` WHERE `users`.`email` = BINARY 'randhirsinghpaul@gmail.com' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO `users` (`created_at`, `email`, `first_name`, `last_name`, `password_hash`, `password_salt`, `updated_at`, `user_type`) VALUES ('2015-11-26 08:18:07', 'randhirsinghpaul@gmail.com', 'Randhir', 'Singh', '$2a$10$NktHmpvDCQJVgtCykX8aqO7lnRDj4gfqH1QTK/LuKaR8cRLdYZuVm', '$2a$10$NktHmpvDCQJVgtCykX8aqO', '2015-11-26 08:18:07', 1)
+  [1m[36m (54.4ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 235ms (ActiveRecord: 55.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-11-26 13:48:07 +0530
+Processing by WelcomeController#index as HTML
+  [1m[35mUser Load (0.6ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 4 LIMIT 1
+Redirected to http://localhost:3000/choose_plan
+Filter chain halted as :check_membership rendered or redirected
+Completed 302 Found in 4ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/choose_plan" for 127.0.0.1 at 2015-11-26 13:48:07 +0530
+Processing by UsersController#choose_plan as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 4 LIMIT 1[0m
+  Rendered layouts/_application.html.erb (4.6ms)
+  [1m[35mSubscriptionPlans Load (0.4ms)[0m  SELECT `subscription_plans`.* FROM `subscription_plans`
+  Rendered layouts/_footer.html.erb (0.1ms)
+  Rendered users/choose_plan.html.erb (27.2ms)
+Completed 200 OK in 53ms (Views: 26.9ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/assets/bootstrap.css?body=1" for 127.0.0.1 at 2015-11-26 13:48:07 +0530
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2015-11-26 13:48:07 +0530
+
+
+Started GET "/assets/style.css?body=1" for 127.0.0.1 at 2015-11-26 13:48:07 +0530
+
+
+Started GET "/assets/bootstrap-theme.min.css?body=1" for 127.0.0.1 at 2015-11-26 13:48:07 +0530
+
+
+Started GET "/assets/jquery.min.js?body=1" for 127.0.0.1 at 2015-11-26 13:48:07 +0530
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2015-11-26 13:48:07 +0530
+
+
+Started GET "/assets/charges.js?body=1" for 127.0.0.1 at 2015-11-26 13:48:07 +0530
+
+
+Started GET "/assets/bootstrap-theme.css?body=1" for 127.0.0.1 at 2015-11-26 13:48:07 +0530
+
+
+Started GET "/assets/logo.png" for 127.0.0.1 at 2015-11-26 13:48:07 +0530
+
+
+Started GET "/assets/ourplan.png" for 127.0.0.1 at 2015-11-26 13:48:07 +0530
+
+
+Started GET "/assets/footerbg.jpg" for 127.0.0.1 at 2015-11-26 13:48:07 +0530
+
+
+Started POST "/charges/payment_method" for 127.0.0.1 at 2015-11-26 13:48:09 +0530
+Processing by UsersController#payment_method as HTML
+  Parameters: {"plan_id"=>"1", "submit"=>"Proceed To Pay"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 4 LIMIT 1[0m
+Completed 404 Not Found in 2ms
+
+ActiveRecord::RecordNotFound (Couldn't find SubscriptionPlans without an ID):
+  app/controllers/users_controller.rb:92:in `payment_method'
+
+
+  Rendered /home/ramandeep/.rvm/gems/ruby-2.2.1/gems/actionpack-4.0.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.2ms)
+  Rendered /home/ramandeep/.rvm/gems/ruby-2.2.1/gems/actionpack-4.0.4/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.2ms)
+  Rendered /home/ramandeep/.rvm/gems/ruby-2.2.1/gems/actionpack-4.0.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.5ms)
+  Rendered /home/ramandeep/.rvm/gems/ruby-2.2.1/gems/actionpack-4.0.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (16.3ms)
+
+
+Started POST "/charges/payment_method" for 127.0.0.1 at 2015-11-26 13:48:16 +0530
+Processing by UsersController#payment_method as HTML
+  Parameters: {"plan_id"=>"1", "selected_plan"=>"1", "submit"=>"Proceed To Pay"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 4 LIMIT 1
+  [1m[36mSubscriptionPlans Load (0.3ms)[0m  [1mSELECT `subscription_plans`.* FROM `subscription_plans` WHERE `subscription_plans`.`id` = 1 LIMIT 1[0m
+  Rendered layouts/_application.html.erb (8.2ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+  Rendered users/payment_method.html.erb (12.2ms)
+Completed 200 OK in 17ms (Views: 14.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/style.css?body=1" for 127.0.0.1 at 2015-11-26 13:48:16 +0530
+
+
+Started GET "/assets/jquery.min.js?body=1" for 127.0.0.1 at 2015-11-26 13:48:16 +0530
+
+
+Started GET "/assets/bootstrap-theme.min.css?body=1" for 127.0.0.1 at 2015-11-26 13:48:16 +0530
+
+
+Started GET "/assets/bootstrap-theme.css?body=1" for 127.0.0.1 at 2015-11-26 13:48:16 +0530
+
+
+Started GET "/assets/bootstrap.css?body=1" for 127.0.0.1 at 2015-11-26 13:48:16 +0530
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2015-11-26 13:48:16 +0530
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2015-11-26 13:48:16 +0530
+
+
+Started GET "/assets/charges.js?body=1" for 127.0.0.1 at 2015-11-26 13:48:16 +0530
+
+
+Started GET "/assets/ourplan.png" for 127.0.0.1 at 2015-11-26 13:48:16 +0530
+
+
+Started GET "/assets/logo.png" for 127.0.0.1 at 2015-11-26 13:48:16 +0530
+
+
+Started GET "/assets/footerbg.jpg" for 127.0.0.1 at 2015-11-26 13:48:24 +0530
+
+
+Started GET "/assets/style.css?body=1" for 127.0.0.1 at 2015-11-26 13:48:39 +0530
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2015-11-26 13:48:39 +0530
+
+
+Started GET "/assets/bootstrap-theme.css?body=1" for 127.0.0.1 at 2015-11-26 13:48:39 +0530
+
+
+Started GET "/assets/jquery.min.js?body=1" for 127.0.0.1 at 2015-11-26 13:48:39 +0530
+
+
+Started GET "/assets/bootstrap-theme.min.css?body=1" for 127.0.0.1 at 2015-11-26 13:48:39 +0530
+
+
+Started GET "/assets/bootstrap.css?body=1" for 127.0.0.1 at 2015-11-26 13:48:39 +0530
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2015-11-26 13:48:39 +0530
+
+
+Started GET "/assets/charges.js?body=1" for 127.0.0.1 at 2015-11-26 13:48:39 +0530
+
+
+Started GET "/assets/ourplan.png" for 127.0.0.1 at 2015-11-26 13:48:39 +0530
+
+
+Started GET "/assets/logo.png" for 127.0.0.1 at 2015-11-26 13:48:39 +0530
