@@ -20,7 +20,9 @@
    		<p><strong>Lorem Ipsum </strong>is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
 
       	<div class="row">
-      		<div class="col-lg-4">
+      		<h3>Payment Type</h3>
+      		<div class="col-lg-2">
+      			<img src="../assets/mastercard.png">
 		      	<%= form_tag charges_path do %>
 				  <article>
 				    <% if flash[:error].present? %>
@@ -40,19 +42,21 @@
 				          data-amount="<%= @new_price %>"
 				          data-locale="auto"></script>
 				<% end %>
+				
 			</div>
-			<div class="col-lg-4">
+			<div class="col-lg-2">
 				<form action="/charges/create" method="POST">
 					<input type="hidden" name="pay_type" value="paypal">
 					<input type="hidden" name="plan_id" value="<%= @plan_details.id %>">
-	      			<button type="submit"  /><img src="https://www.paypalobjects.com/webstatic/en_US/i/buttons/PP_logo_h_100x26.png" alt="PayPal">
+	      			<button type="submit"  /><img src="../assets/paypal.png" alt="PayPal">
 	      			</button>
 	      		</form>
 	      	</div>
 
-	      	<div class="col-lg-4">
+	      	<div class="col-lg-2">
+	      		<img src="../assets/visa.png">
 				<form action="/charges/create" method="POST">
-					<h2>Third Payment</h2>
+					
 	      		</form>
 	      	</div>
       	</div>

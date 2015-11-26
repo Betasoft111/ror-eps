@@ -1,5 +1,5 @@
 class Admin::StaffPlansController < ApplicationController
-	before_filter :authenticate_user!
+	before_filter :check_admin!
 
 	#################################
 	#  	        List Plans          #
@@ -54,7 +54,7 @@ class Admin::StaffPlansController < ApplicationController
 	#     	   Update staff Plan    #
 	#################################
 	def update
-		Admin::StaffPlans.where('id': params[:id]).update_all(plan_name: params[:plan_name], no_of_staff: params[:no_of_staff], plan_price: params[:plan_price])
+		Admin::StaffPlans.where(:id => params[:id]).update_all(plan_name: params[:plan_name], no_of_staff: params[:no_of_staff], plan_price: params[:plan_price])
 		redirect_to "/admin/staff_plans", :notice => "Staff Plan is updated successfully"
 	end
 

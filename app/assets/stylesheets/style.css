@@ -782,6 +782,10 @@ input[type=radio]:not(old):checked +  label > span > span{
     text-align: center;
     text-shadow: 1px 1px 1px #3e3e3e;
 }
+.inner-page button[type="submit"] {
+    background: transparent none repeat scroll 0 0;
+    border: medium none;
+}
 
 
 /**** media start *****/

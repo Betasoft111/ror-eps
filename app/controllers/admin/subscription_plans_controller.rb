@@ -1,5 +1,5 @@
 class Admin::SubscriptionPlansController < ApplicationController
-	before_filter :authenticate_user!
+	before_filter :check_admin!
 
 	#################################
 	#  	        List Plans          #
