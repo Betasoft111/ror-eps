@@ -22,7 +22,9 @@
       	<div class="row">
       		<h3>Payment Type</h3>
       		<div class="col-lg-2">
-      			<img src="../assets/mastercard.png">
+      			<div class="card stripe">
+      				<h2><span>S</span>Connect to Stripe</h2>
+      			</div>
 		      	<%= form_tag charges_path do %>
 				  <article>
 				    <% if flash[:error].present? %>
@@ -45,19 +47,24 @@
 				
 			</div>
 			<div class="col-lg-2">
-				<form action="/charges/create" method="POST">
+				<div class="card epay">
+      				<h2><span>E</span>Connect to Epay</h2>
+      			</div>
+				<!-- <form action="/charges/create" method="POST">
 					<input type="hidden" name="pay_type" value="paypal">
 					<input type="hidden" name="plan_id" value="<%= @plan_details.id %>">
 	      			<button type="submit"  /><img src="../assets/paypal.png" alt="PayPal">
 	      			</button>
-	      		</form>
+	      		</form> -->
 	      	</div>
 
-	      	<div class="col-lg-2">
-	      		<img src="../assets/visa.png">
-				<form action="/charges/create" method="POST">
+	      	<div class="col-lg-2 paypal">
+	      		<div class="card">
+      				<h2><span>P</span>Pay Pal</h2>
+      			</div>
+				<!-- <form action="/charges/create" method="POST">
 					
-	      		</form>
+	      		</form> -->
 	      	</div>
       	</div>
     </div>	
