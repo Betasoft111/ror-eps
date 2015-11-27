@@ -786,7 +786,7 @@ input[type=radio]:not(old):checked +  label > span > span{
     background: transparent none repeat scroll 0 0;
     border: medium none;
 }
-.card h2 , .epay input[type="submit"],form.ng-pristine button.stripe-button-el span, .epay button[type="submit"]{
+.card h2 , .epay input[type="button"],form.ng-pristine button.stripe-button-el span, .epay button[type="submit"]{
      /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#4fc3ff+0,0376b0+100 */
 background: #4fc3ff; /* Old browsers */
 background: -moz-linear-gradient(top, #4fc3ff 0%, #0376b0 100%); /* FF3.6-15 */

@@ -23,6 +23,8 @@
 
 	 	$('#plan_id').val(id);
 	 	$('#plan_id_paypal').val(id);
+	 	$('#hidden_amount').val(price);
+	 	amount = price;
 	 	$('#script-key').attr('data-description', name);
 	 	$('#script-key').attr('data-amount', price);
 	 	
