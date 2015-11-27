@@ -49,19 +49,23 @@
 					<h2><span>E</span>Connect to Epay</h2>
 				</div>
 				<!-- <form action="/charges/create" method="POST">
-							<input type="hidden" name="pay_type" value="paypal">
-							<input type="hidden" name="plan_id" value="<%= @plan_details.id %>">
-						<button type="submit"  /><img src="../assets/paypal.png" alt="PayPal">
-						</button>
+								<input type="hidden" name="pay_type" value="paypal">
+								<input type="hidden" name="plan_id" value="<%= @plan_details.id %>">
+							<button type="submit"  /><img src="../assets/paypal.png" alt="PayPal">
+							</button>
 				</form> -->
 			</div>
 			<div class="col-lg-2 paypal">
 				<div class="card">
 					<h2><span>P</span>Pay Pal</h2>
+					<form action="/charges/create" method="POST">
+						<input type="hidden" name="pay_type" value="paypal">
+						<input type="hidden" name="plan_id" id="plan_id" value="<%= @plan_details.id %>">
+		      			<button type="submit"  /><img src="https://www.paypalobjects.com/webstatic/en_US/i/buttons/PP_logo_h_100x26.png" alt="PayPal">
+		      			</button>
+		      		</form>
 				</div>
-				<!-- <form action="/charges/create" method="POST">
-							
-				</form> -->
+				
 				<div class="col-lg-4">
 					<form action="https://ssl.ditonlinebetalingssystem.dk/integration/ewindow/Default.aspx" method="post">
 						<input type="hidden" name="merchantnumber" value="8020578">
@@ -74,14 +78,14 @@
 						<input type="submit" value="Pay With Epay" >
 					</form>
 					<!-- <div class="col-lg-2">
-						<img src="../assets/visa.png">
-						<form action="/charges/create" method="POST">
-							
-						</form>
+							<img src="../assets/visa.png">
+							<form action="/charges/create" method="POST">
+									
+							</form>
 					</div> -->
 				</div>
 			</div>
-		</div> 
-	</div> 
+		</div>
+	</div>
 </div>
 <%= render 'layouts/footer' %>

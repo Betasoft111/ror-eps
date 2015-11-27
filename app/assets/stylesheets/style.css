@@ -786,7 +786,7 @@ input[type=radio]:not(old):checked +  label > span > span{
     background: transparent none repeat scroll 0 0;
     border: medium none;
 }
-.card h2 {
+.card h2 , .epay input[type="submit"],form.ng-pristine button.stripe-button-el span, .epay button[type="submit"]{
      /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#4fc3ff+0,0376b0+100 */
 background: #4fc3ff; /* Old browsers */
 background: -moz-linear-gradient(top, #4fc3ff 0%, #0376b0 100%); /* FF3.6-15 */
@@ -799,6 +799,12 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4fc3ff', end
     padding: 10px;
     text-align: center;
     border: 1px solid #0B91DF;
+    width: 100%;
+    height: auto;
+    line-height: normal;
+}
+form.ng-pristine button {
+    width: 100%;
 }
 .card span {
     border-right: 1px solid #fff;
@@ -878,4 +884,15 @@ ul.tabs {
 
 @media screen and (max-width: 480px) {
     .col-xs-4, .col-xs-8 {width: 100% !important;}
+}
+
+
+
+
+/****** 27 Nov 15  *****/
+li.selected-tab {
+    background: #008ed6 none repeat scroll 0 0;
+    border-left: 1px solid #008ed6;
+    border-right: 1px solid #008ed6;
+    border-top: 1px solid #008ed6;
 }
