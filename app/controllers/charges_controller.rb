@@ -1,3 +1,4 @@
+require "paypal/recurring"
 class ChargesController < ApplicationController
 	before_filter :authenticate_user!
 	before_filter :current_user

@@ -14,9 +14,15 @@
 </div><!-- end. header -->
 <div class="content inner-page">
    	<div class="container">
-   		<h2 class="text-center"> Pay with your favourite <b>Payment Gateway</b> </h2>
+   		
+   		<h4><span><img src="/assets/line.png" alt="line.png"></span> Pay with your favourite <strong>Payment Gateway</strong> <span><img src="/assets/right.png" alt="right.png"></span></h4>
+
+   		<p><strong>Lorem Ipsum </strong>is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+
       	<div class="row">
-      		<div class="col-lg-4">
+      		<h3>Payment Type</h3>
+      		<div class="col-lg-2">
+      			<img src="../assets/mastercard.png">
 		      	<%= form_tag charges_path do %>
 				  <article>
 				    <% if flash[:error].present? %>
@@ -36,15 +42,17 @@
 				          data-amount="<%= @new_price %>"
 				          data-locale="auto"></script>
 				<% end %>
+				
 			</div>
-			<div class="col-lg-4">
+			<div class="col-lg-2">
 				<form action="/charges/create" method="POST">
 					<input type="hidden" name="pay_type" value="paypal">
 					<input type="hidden" name="plan_id" value="<%= @plan_details.id %>">
-	      			<button type="submit"  /><img src="https://www.paypalobjects.com/webstatic/en_US/i/buttons/PP_logo_h_100x26.png" alt="PayPal">
+	      			<button type="submit"  /><img src="../assets/paypal.png" alt="PayPal">
 	      			</button>
 	      		</form>
 	      	</div>
+
 
 	      	<div class="col-lg-4">
 					<form action="https://ssl.ditonlinebetalingssystem.dk/integration/ewindow/Default.aspx" method="post">
@@ -53,6 +61,13 @@
 				    <input type="hidden" name="windowstate" value="3"> <input type="submit" value=
 				    "Pay With Epay">
 				</form>
+
+	      	<div class="col-lg-2">
+	      		<img src="../assets/visa.png">
+				<form action="/charges/create" method="POST">
+					
+	      		</form>
+
 	      	</div>
       	</div>
     </div>	
