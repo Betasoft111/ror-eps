@@ -7,7 +7,7 @@ class CompaniesController < ApplicationController
 	#  	        List Plans          #
 	#################################
 	def index
-		@plans = CompanyStaff.all
+		@staff_list = CompanyStaff.all
 	end
 
 	#################################
@@ -26,7 +26,7 @@ class CompaniesController < ApplicationController
 
 
 	#################################
-	#       Create New Compnay      #
+	#   Create New Compnay staff    #
 	#################################
 	def create
 
@@ -44,6 +44,28 @@ class CompaniesController < ApplicationController
 	end
 
 
+	#################################
+	#  		Edit Compnay staff     #
+	#################################
+	def edit
+		@staff_data = CompanyStaff.find(params[:id])
+		@staff_url = '/companies/update/' + @staff_data.id.to_s
+	end
+
+	#################################
+	#  		update Compnay staff    #
+	#################################
+	def update
+		CompanyStaff.where(:id => params[:id]).update_all(plan_params)
+		redirect_to "/company_home", :notice => "Updated successfully"
+	end
+	#################################
+	#  		Delete Compnay staff    #
+	#################################
+	def destroy
+	    CompanyStaff.find(params[:id]).destroy
+	    redirect_to "/company_home", :notice => "Staff Record Deleted successfully"
+	end
 
 
 	private

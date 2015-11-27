@@ -28,8 +28,14 @@ EPS::Application.routes.draw do
   #################################
   #         Company Routes        #
   #################################
-  get "add_staff" => "companies#add_staff"
-  get "company_home" => "companies#index"
+
+  resources :companies
+  get "/add_staff" => "companies#add_staff"
+  get "/company_home" => "companies#index"
+  post "companies/update/:id" => "companies#update"
+  get "/companies/delete/:id" => "companies#destroy"
+
+
 
   resources :users
   resources :sessions
