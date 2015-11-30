@@ -85,17 +85,7 @@
           </div>
           <div class="col-lg-3">
             <div class="card epay">
-              <!-- <h2><span>E</span>Connect to Epay</h2> -->
-              <!-- <form action="https://ssl.ditonlinebetalingssystem.dk/integration/ewindow/Default.aspx" method="post">
-                <input type="hidden" name="merchantnumber" value="8020578">
-                <input type="hidden" name="amount" value="{{ selectedPlan.price }}">
-                <input type="hidden" name="currency" value="DKK">
-                <input type="hidden" name="windowstate" value="3">
-                <input type="hidden" name="instantcallback" value="1">
-                <input type="hidden" name="callbackurl" value="http://176.28.23.162/charges/payment_ipn">
-                
-                <input type="submit" value="Pay With Epay" >
-              </form> -->
+              
 
               <script charset="UTF-8" src="https://ssl.ditonlinebetalingssystem.dk/integration/ewindow/paymentwindow.js" type="text/javascript"></script>
                     <script type="text/javascript">
@@ -108,10 +98,12 @@
                         paymentwindow = new PaymentWindow({
                          'merchantnumber': "8020578",
                          'amount': '100',
-                         'currency': "DKK"
+                         'currency': "DKK",
+                         'ownreceipt' : "1",
+                         'accepturl' : "http://system.jobkeeper.dk:3000/choose_plan"
                          });
 
-                      },5000);
+                      },1000);
                     });
                     </script>
 

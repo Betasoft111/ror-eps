@@ -15,7 +15,11 @@ class ChargesController < ApplicationController
 
   		#################################
 		#      Check Payment Method     #
-		#################################	
+		#################################
+
+
+		puts params[:pay_type]
+
 	  	if params[:pay_type] && params[:pay_type] == 'paypal'
 	  		#################################
 			#      Paypal Configuration     #
@@ -67,7 +71,16 @@ class ChargesController < ApplicationController
 			    #################################
 				User.where(:id => @current_user.id).update_all(plan_id: @plan_id)
 				redirect_to "/company_home", :notice => "Membership is updated successfully"
-		  end
+		 end
+		
+
+		else 
+
+			:notice => "You payment is successfully completed"
+		end
+
+
+
 			
 			#################################
 			#         Stripe Ends           #
