@@ -15,15 +15,18 @@
           </div>
         </div><!-- end .banner-inner -->
         <div class="banner-bottom">
+
           <div class="container">
             <div class="row">
+           <form method="get" action="/search">
               <ul>
-                <li><select><option selected>Skills (Want to hire for)</option><option></option><option></option><option></option></select></li>
-                <li><input type="text" placeholder="Enter the staff Qualification"></li>
-                <li><select><option selected>Enter the work experience</option><option></option><option></option><option></option></select></li>
-                <li><input type="text" placeholder="Enter  the availability"></li>
+                <li><input type="text" name="skills" placeholder="Skills (Want to hire for)"></li>
+                <li><input type="text" name="staff_quf" placeholder="Enter the staff Qualification"></li>
+                <li><input type="text" name="experience" placeholder="Enter the work experience"></li>
+                <li><input type="text" name="availability" placeholder="Enter  the availability"></li>
                 <li><input type="submit" placeholder="Search"></li>
               </ul>
+          </form>
             </div>
           </div>
         </div>
