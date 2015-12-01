@@ -25,10 +25,22 @@ EPS::Application.routes.draw do
   post "/add_staff/create" => "companies#create"
   post "/charges/payment_ipn" => "charges#payment_ipn"  
 
+
+
+
+
+  #################################
+  #         search Routes        #
+  #################################
+  get "/search" => "search#search"
+
+
+
+
+
   #################################
   #         Company Routes        #
   #################################
-
   resources :companies
   get "/add_staff" => "companies#add_staff"
   get "/company_home" => "companies#index"
