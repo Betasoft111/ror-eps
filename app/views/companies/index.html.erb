@@ -39,7 +39,7 @@
             <td><%= staff_list.email %></td>
             <td><%= staff_list.skills %></td>
             <td><%= staff_list.availability %></td>
-            <td><a href="/companies/<%= staff_list.id %>/edit">Edit</a> <a href="/companies/delete/<%= staff_list.id %>">Delete</a></td>            
+            <td><a class="edit" href="/companies/<%= staff_list.id %>/edit"></a> <a class="delete" href="/companies/delete/<%= staff_list.id %>"></a></td>            
           </tr>
           <% end %>
           
