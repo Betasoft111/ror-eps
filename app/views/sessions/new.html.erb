@@ -14,7 +14,7 @@
           <div class="container register">
             <div class="row ">
               <div class="box-one sign-up">
-              <h3>Come join the ESP ! Already have one? <a href="javascript:void(0)" class="clickform"> Sign in here.</a></h3>
+              <h3>Come join the ESP ! Already have one? <a href="javascript:void(0)" class="clickform login-tab"> Sign in here.</a></h3>
                 <h4><span><!-- <img src="img/line.png"> --><%= image_tag("line.png" , :alt => 'line.png') %></span>CREATE A NEW ACCOUNT<span><!-- <img src="img/right.png"> --><%= image_tag("right.png" , :alt => 'right.png') %></span></h4>
                 <%= form_for User.new do |f| %>
                   <div class = "form-group col-md-5">
@@ -59,7 +59,7 @@
                 <% end %>
                 </div><!-- end .box-one -->
                 <div class="box-two" style="display:none;">
-                	<h3>Come join the ESP ! Let's set up your account.<a href="javascript:void(0)" class="clickform"> Sign up here.</a></h3>
+                	<h3>Come join the ESP ! Let's set up your account.<a href="javascript:void(0)" class="clickform register-tab"> Sign up here.</a></h3>
                   <h4><span><%= image_tag("line.png" , :alt => 'line.png') %></span>LOG IN<span><%= image_tag("right.png" , :alt => 'right.png') %></span></h4>
                   <%= form_tag sessions_path do %>
                     <div class="form-group col-md-10">
