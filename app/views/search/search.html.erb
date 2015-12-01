@@ -1,6 +1,167 @@
-   <%= render 'layouts/application' %>
-<div class="bannerss">
-<h2>Page Coming soon</h2>
-<%= debug @search_results %>
+<%= render 'layouts/application' %>
+<div class="innerpage_banner">
+	<!-- <img src="img/staff.png"> -->
+	 <%= image_tag("staff.png" , :alt => 'staff.png') %>
+	<div class="container">
+		<div class="row">
+			<div class="banner-innerpage">
+				<h2>Be<span>St</span>aff</h2>
+			</div>
+		</div>
+	</div>
+	
+	</div><!-- end .innerpage_banner -->
+	</div><!-- end. header -->
+	<div class="content inner-page">
+		<div class="container">
+			<div class="row">
+				
+				
+				<div class="col-lg-7">
+					<form class="form-horizontal add-employee search-employee" role="form">
+						<div class="form-group">
+							<label class="control-label col-sm-3" for="">Dates</label>
+							<div class="col-sm-3">
+								<input type="email" class="form-control" id="email" placeholder="11-6-2015">
+							</div><div class="col-sm-3">
+							<input type="email" class="form-control" id="email" placeholder="28-6-2015">
+						</div><div class="col-sm-3">
+						<!-- <input type="email" class="form-control" id="email" placeholder=""> -->
+						<select>
+							<option value="">Select Years</option>
+							<option value="">Less than 5 years</option>
+							<option selected="">More than 5 years</option>
+							
+						</select>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="control-label col-sm-3" for="pwd">Skill</label>
+					<div class="col-sm-9">
+						<input type="password" class="form-control" id="pwd" placeholder="">
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="control-label col-sm-3" for="pwd">Experience</label>
+					<div class="col-sm-9">
+						<input type="password" class="form-control" id="pwd" placeholder="">
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="control-label col-sm-3" for="pwd">Qualification</label>
+					<div class="col-sm-9">
+						<input type="password" class="form-control" id="pwd" placeholder="">
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="control-label col-sm-3" for="pwd">Availability</label>
+					<div class="col-sm-9">
+						<input type="password" class="form-control" id="pwd" placeholder="">
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="control-label col-sm-3" for="pwd">Price level</label>
+					<div class="col-sm-9">
+						<!-- <img src="img/rang.png"> -->
+						<%= image_tag("rang.png" , :alt => 'rang.png') %>
+					</div>
+				</div>
+				
+				<div class="form-group">
+					<div class="col-sm-offset-2 col-sm-10 ">
+						<button type="submit" class="btn btn-default  pull-right">Search Staff</button>
+					</div>
+				</div>
+			</form>
+		</div>
+		<div class="col-lg-5 map">
+			<!-- <img src="img/map.png"> -->
+			<%= image_tag("map.png" , :alt => 'map.png') %>
+		</div>
+		
+		
+	</div>
+	<div class="row">
+		<div class="col-lg-4 col-sm-4 search-result">
+			<!-- <img src="img/search1.jpg"> -->
+			<%= image_tag("search1.jpg" , :alt => 'search1.jpg') %>
+			<div class="company-search">
+				<span><!-- <img src="img/company1.png"> --><%= image_tag("company1.png" , :alt => 'company1.png') %></span>
+				<a href="#">View More</a>
+			</div>
+			<span class="rate-search">6,300 <sup>kr</sup></span>
+			<h5>Company Name / Staff</h5>
+		</div>
+		<div class="col-lg-4 col-sm-4 search-result">
+			<!-- <img src="img/search2.jpg"> -->
+			<%= image_tag("search2.jpg" , :alt => 'search2.jpg') %>
+			<div class="company-search">
+				<span>
+					<!-- <img src="img/company2.png"> -->
+					<%= image_tag("company2.png" , :alt => 'company2.png') %></span>
+				<a href="#">View More</a>
+			</div>
+			<span class="rate-search">3,300 <sup>kr</sup></span>
+			<h5>Company Name / Staff</h5>
+		</div>
+		<div class="col-lg-4 col-sm-4 search-result">
+			<!-- <img src="img/search4.jpg"> -->
+			<%= image_tag("search4.jpg" , :alt => 'search4.jpg') %>
+			<div class="company-search">
+				<span>
+					<!-- <img src="img/search3.png"> -->
+					<%= image_tag("search3.png" , :alt => 'search3.png') %>
+				</span>
+				<a href="#">View More</a>
+			</div>
+			<span class="rate-search">9,9900 <sup>kr</sup></span>
+			<h5>Company Name / Staff</h5>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-lg-4 col-sm-4 search-result">
+			<!-- <img src="img/search4.jpg"> -->
+			<%= image_tag("search4.jpg" , :alt => 'search4.jpg') %>
+			<div class="company-search">
+				<span>
+					<!-- <img src="img/search3.png"> -->
+					<%= image_tag("search3.png" , :alt => 'search3.png') %>
+				</span>
+				<a href="#">View More</a>
+			</div>
+			<span class="rate-search">9,9900 <sup>kr</sup></span>
+			<h5>Company Name / Staff</h5>
+		</div>
+		
+		<div class="col-lg-4 col-sm-4 search-result">
+			<!-- <img src="img/search2.jpg"> -->
+			<%= image_tag("search2.jpg" , :alt => 'search2.jpg') %>
+			<div class="company-search">
+				<span>
+					<!-- <img src="img/company2.png"> -->
+					<%= image_tag("company2.png" , :alt => 'company2.png') %>
+				</span>
+				<a href="#">View More</a>
+			</div>
+			<span class="rate-search">3,300 <sup>kr</sup></span>
+			<h5>Company Name / Staff</h5>
+		</div>
+		<div class="col-lg-4 col-sm-4 search-result">
+			<!-- <img src="img/search1.jpg"> -->
+			<%= image_tag("search1.jpg" , :alt => 'search1.jpg') %>
+			<div class="company-search">
+				<span>
+					<!-- <img src="img/company1.png"> -->
+					<%= image_tag("company1.png" , :alt => 'company1.png') %>
+				</span>
+				<a href="#">View More</a>
+			</div>
+			<span class="rate-search">6,300 <sup>kr</sup></span>
+			<h5>Company Name / Staff</h5>
+		</div>
+		
+	</div>
 </div>
-<%= render 'layouts/footer' %>            
+
+</div>
+<%= render 'layouts/footer' %>

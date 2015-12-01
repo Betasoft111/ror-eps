@@ -901,3 +901,97 @@ li.selected-tab {
 .error {
     color: red;
 }
+
+
+/*********** searchPage ****************/
+
+.add-employee.search-employee .form-group:nth-child(5) {
+    margin-bottom: 30px !important;
+}
+.add-employee.search-employee img, .map img {
+    width: 100%;
+}
+.add-employee.search-employee .btn {
+    width: auto;
+}
+.search-employee select {
+ border: 1px solid #ccc;
+    width: 100%;
+    height: 55px;
+}
+.map {
+    border-left: 1px solid #ccc;
+    margin-top: 30px;
+    padding-bottom: 15px;
+    padding-top: 15px;
+}
+.search-result img {
+    border: 1px solid #5c5c5c;
+    position: relative;
+    width: 100%;
+}
+.company-search img {
+    background: #fff none repeat scroll 0 0;
+    border: 1px solid #015e8e;
+    border-radius: 50%;
+
+    height: 60px;
+    
+   
+    width: 60px;
+}
+.search-result h5 {
+    color: #2a2a2a;
+    display: inline-block;
+    font-size: 17px;
+    margin-top: 20px;
+}
+.company-search {
+    bottom: 2px;
+    position: absolute;
+    right: 39px;
+}
+.company-search a{
+    margin-top: 0;
+    font-size: 13px;
+    color: #008ed6;
+    text-decoration: none;
+}
+.rate-search {
+    background: #363839 none repeat scroll 0 0;
+    bottom: 79px;
+    color: #fff;
+    font-size: 17px;
+    left: 30px;
+    padding: 10px 15px;
+    position: absolute;
+}
+.search-result {
+    margin-bottom: 40px;
+}
+
+@media screen and (max-width: 980px) {
+    .company-search {
+   
+    left: auto;
+  
+    right: auto;
+    text-align: center;
+    width: 88%;
+}
+.company-search {
+    bottom: 29px;
+}
+.search-result h5 {
+    margin-top: 46px;
+    text-align: center;
+    width: 100%;
+}
+.rate-search {
+     left: 19px;
+      top: 3px;
+      bottom: auto;
+}
+
+
+}
