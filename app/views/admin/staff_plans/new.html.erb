@@ -14,7 +14,7 @@
 		<div class="row">
 			<h4><span><%= image_tag("line.png" , :alt => 'line.png') %></span>New Plan Page<span><%= image_tag("right.png" , :alt => 'right.png') %></span></h4>
 			<span class="q1">Company will add new employee to their team on this page.</span>
-			<%= form_tag '/admin/staff_plans/create', {:class => 'form-horizontal add-employee'} do %>
+			<%= form_tag '/admin/staff_plans/create', {:class => 'form-horizontal add-employee' , :id => 'loginForm'} do %>
 			<div class="form-group">
 				<%= label_tag :plan_name, 'Plan Name', :class => "control-label col-sm-2" %>
 				<div class="col-sm-7">
@@ -45,4 +45,10 @@
 	</div>
 	
 </div>
+
+<script type="text/javascript">
+$(document).ready(function () {
+  $("#loginForm").validate();  
+});
+</script> 
 <%= render 'admin/layouts/footer' %>
