@@ -20,3 +20,5 @@
 
 --> Generate user payments model
 	rails generate model user_payments payment_method:string payment_status:string user_id:string payment_json:text
+
+-->	ALTER TABLE company_staffs ADD CONSTRAINT fk_staff FOREIGN KEY (company_id) REFERENCES users (id)	

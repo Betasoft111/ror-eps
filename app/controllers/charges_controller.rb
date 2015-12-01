@@ -15,11 +15,7 @@ class ChargesController < ApplicationController
 
   		#################################
 		#      Check Payment Method     #
-		#################################
-
-
-		puts params[:pay_type]
-
+		#################################	
 	  	if params[:pay_type] && params[:pay_type] == 'paypal'
 	  		#################################
 			#      Paypal Configuration     #
@@ -71,16 +67,7 @@ class ChargesController < ApplicationController
 			    #################################
 				User.where(:id => @current_user.id).update_all(plan_id: @plan_id)
 				redirect_to "/company_home", :notice => "Membership is updated successfully"
-		 end
-		
-
-		else 
-
-			:notice => "You payment is successfully completed"
-		end
-
-
-
+		  end
 			
 			#################################
 			#         Stripe Ends           #
@@ -97,9 +84,14 @@ class ChargesController < ApplicationController
 	#         IPN Listner           #
 	################################# 
 	def payment_ipn
-		@subscription_plan = UserPayments.new(ipn_params)
-			if @subscription_plan.save
+		if params[:txnid] && params[:txnid] != nil && params[:orderid] && params[:orderid] != nil && params[:amount] && params[:amount] != nil
+			@plan_details = SubscriptionPlans.where(:plan_price => params[:amount]) #.where(:email => plan_params[:email])
+			if @plan_details && @plan_details[0]
+				@plan_id = @plan_details[0].id
+				User.where(:id => @current_user.id).update_all(plan_id: @plan_id)
+				redirect_to "/company_home", :notice => "Membership is updated successfully"
 			end
+		end
 	end
 
 	private
