@@ -85,27 +85,11 @@
           </div>
           <div class="col-lg-3">
             <div class="card epay">
-              
-
-              <!--script charset="UTF-8" src="https://ssl.ditonlinebetalingssystem.dk/integration/ewindow/paymentwindow.js" type="text/javascript"></script-->
                     <script type="text/javascript">
-                    // $(document).ready(function () {
-                    //     var amount;
-                    //     setTimeout(function() {
-                    //       paymentwindow = new PaymentWindow({
-                    //        'merchantnumber': "8020578",
-                    //        'amount': '25',
-                    //        'currency': "DKK",
-                    //        'ownreceipt' : "1",
-                    //        'accepturl' : "http://system.jobkeeper.dk:3000/payment_ipn"
-                    //        });
-                    //     },1000);
-                    // });
-                    function loadEpay() {
+                      function loadEpay() {
                        $.getScript("https://ssl.ditonlinebetalingssystem.dk/integration/ewindow/paymentwindow.js");
                          setTimeout(function() {
                             var amount = $('#hidden_amount').val();
-                            //console.log('Amount ', amount);
                             paymentwindow = new PaymentWindow({
                              'merchantnumber': "8020578",
                              'amount': amount,
@@ -149,6 +133,9 @@ $(document).ready(function () {
     $('.overlay-plan').removeClass('opacity');
     $('.overlay-plan.'+id).addClass('opacity');    
   });
+
+  //$("#loginForm").validate();
+  
 });
 </script>
 
