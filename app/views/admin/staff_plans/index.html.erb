@@ -21,7 +21,7 @@
 		</span>Company Staffing Plans <span><%= image_tag("right.png" , :alt => 'right.png') %></span></h4>
 		<span class="q1">This will be the Staff plans page  for admin after login
 		</span>
-		<a href="/admin/staff_plans/new" > Add New</a>
+		<a class="add-new" href="/admin/staff_plans/new" > Add New</a>
 		<div class="table-responsive">
 			<table class="table">
 				<thead>
@@ -38,7 +38,7 @@
 						<td><%= plan.plan_name %></td>
 						<td><%= plan.no_of_staff %></td>
 						<td><%= plan.plan_price %></td>
-						<td><a href="/admin/staff_plans/<%= plan.id %>/edit">Edit</a> <a href="/admin/staff_plans/delete/<%= plan.id %>">Delete</a></td>						
+						<td><a class="edit" href="/admin/staff_plans/<%= plan.id %>/edit">Edit</a> <a class="delete" href="/admin/staff_plans/delete/<%= plan.id %>">Delete</a></td>						
 					</tr>
 					<% end %>
 				</tbody>
