@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Employee Placement System | Admin</title>
+    <title>Employee Placement System</title>
 <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
 
 <%= stylesheet_link_tag    "style.css" %>
@@ -16,37 +16,34 @@
 <%= stylesheet_link_tag    "https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" %>
 
 
-<%#= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-<%#= javascript_include_tag "application", "data-turbolinks-track" => true %>
-<%#= javascript_include_tag "angular/lib/angular.min.js" %>
-<%#= javascript_include_tag "angular/lib/angular-route.js" %>
 <%= javascript_include_tag "jquery.min.js" %>
-<%= javascript_include_tag "bootstrap.js" %>
 <%= javascript_include_tag "jquery.validate.js" %>
-<%#= javascript_include_tag "angular/routes.js" %>
+<%= javascript_include_tag "bootstrap.js" %>
+<%= javascript_include_tag "charges.js" %>
+<%= javascript_include_tag "sweetalert-dev.js" %>
 <script type="text/javascript">
-$(document).ready(function (){
-  $('.delete').click(function () {
-    var confirmBox = confirm('Are you sure, you want to delete ??');
-    if(confirmBox) {
-      return true;
-    }else{
-      return false;
-    }
+$(document).ready(function () {
+  $(".login-tab").click(function() {
+    document.cookie="opentab=login;path=/";
+  });
+  $(".register-tab").click(function() {
+    document.cookie="opentab=register;path=/";
   });
 });
 </script>
+<%#= javascript_include_tag "angular/routes.js" %>
+
 </head>
   <body>
     <div class="header">
       <div class="container">
         <div class="row">
-          <div class="col-lg-3">
+          <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
             <a href="#"><!-- <img src="images/logo.png"> -->
               <%= image_tag("logo.png" , :alt => 'EPS Logo') %>
             </a>
           </div>
-          <div class="col-lg-9">
+          <div class="col-lg-9 col-md-9 col-sm-9">
             <nav class="navbar navbar-default">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
@@ -63,16 +60,16 @@ $(document).ready(function (){
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
-        <li class=""><a href="/admin"> Home  <span class="sr-only">(current)</span></a></li>
-        <% if @current_user && @current_user.id != nil %>
-          <li><a href="/admin/log_out">Logout</a></li>
-        <% end %>
-        <!-- <li><a href="#">About Us</a></li>
+        <li class=""><a href="/company_home"> Home  <span class="sr-only">(current)</span></a></li>
+        <li><a href="#">About Us</a></li>
         <li><a href="#">Contact Us</a></li>
-        <li><a href="/log_in">Login</a></li>
-        <li><a href="/sign_up">Register</a></li>
-        <li><a href="#">Pricing </a></li> -->
-
+        <li><a href="#">Pricing </a></li>
+        <% if session[:user_id] && session[:user_id] != nil %>
+          <li><a href="/log_out" >Logout</a></li>
+        <% else %>
+          <li><a href="/join" class="login-tab">Login</a></li>
+          <li><a href="/join" class="register-tab">Register</a></li>
+        <% end %>
        
       </ul>
     
