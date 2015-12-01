@@ -54,7 +54,7 @@
               </div>
              </div>
            <% end %>
-            <input type="submit" name="submit" ng-disabled="!selectedPlan.id" value="Proceed To Pay" class="btn btn-primary" ng-click="proceedToPay()">
+            <input type="submit"  id="thistest" name="submit" ng-disabled="!selectedPlan.id" value="Proceed To Pay" class="btn btn-primary" ng-click="proceedToPay()">
           <!-- </form> -->
       </div>
       <div class="row three-sap" id="second-tab" ng-show="showSecondTab">
@@ -100,7 +100,7 @@
                          'amount': '100',
                          'currency': "DKK",
                          'ownreceipt' : "1",
-                         'accepturl' : "http://system.jobkeeper.dk:3000"
+                         'accepturl' : "http://system.jobkeeper.dk:3000/payment_ipn"
                          });
 
                       },1000);

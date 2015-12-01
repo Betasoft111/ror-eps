@@ -24,6 +24,7 @@ EPS::Application.routes.draw do
   post "/charges/create" => "charges#create"
   post "/add_staff/create" => "companies#create"
   post "/charges/payment_ipn" => "charges#payment_ipn"  
+  get "/payment_ipn" => "charges#payment_ipn"  
 
   #################################
   #         Company Routes        #
