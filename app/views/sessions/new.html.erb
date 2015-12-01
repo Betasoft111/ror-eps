@@ -16,21 +16,21 @@
               <div class="box-one sign-up">
               <h3>Come join the ESP ! Already have one? <a href="javascript:void(0)" class="clickform login-tab"> Sign in here.</a></h3>
                 <h4><span><!-- <img src="img/line.png"> --><%= image_tag("line.png" , :alt => 'line.png') %></span>CREATE A NEW ACCOUNT<span><!-- <img src="img/right.png"> --><%= image_tag("right.png" , :alt => 'right.png') %></span></h4>
-                <%= form_for User.new do |f| %>
+                <%= form_for User.new, :html => { :class => "loginForm" } do |f| %>
                   <div class = "form-group col-md-5">
                     <!-- <input type = "text" class = "form-control" id = "name" placeholder = "first name"> -->
-                    <%= f.text_field :first_name, :class => 'form-control', :placeholder => 'First Name' %>
+                    <%= f.text_field :first_name, :class => 'form-control', :placeholder => 'First Name', :required => 'required' %>
                   </div>
                   <div class = "form-group col-md-5">
                     <!-- <input type = "text" class = "form-control" id = "name" placeholder = "last name"> -->
-                    <%= f.text_field :last_name, :class => 'form-control', :placeholder => 'Last Name' %>
+                    <%= f.text_field :last_name, :class => 'form-control', :placeholder => 'Last Name', :required => 'required' %>
                   </div>
                   <div class = "form-group col-md-5">
                     <!-- <input type = "email" class = "form-control" id = "name" placeholder = "email"> -->
-                    <%= f.email_field :email, :class => 'form-control', :placeholder => 'Email' %>
+                    <%= f.email_field :email, :class => 'form-control', :placeholder => 'Email', :required => 'required' %>
                   </div>
                   <div class = "form-group col-md-5">
-                    <select name="user[user_type]" class="form-control">
+                    <select name="user[user_type]" class="form-control" required="required">
                       <option value='' >Select User Type</option>
                       <option value="1">I want to hire staff</option>
 				  	  <option value="2">I want to sell staff</option>
@@ -39,14 +39,15 @@
                   </div>
                   <div class = "form-group col-md-5">
                     <!-- <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password"> -->
-                    <%= f.password_field :password, :class => 'form-control', :placeholder => 'Password' %>
+                    <%= f.password_field :password, :class => 'form-control', :placeholder => 'Password', :required => 'required' %>
                   </div>
                   <div class = "form-group col-md-5">
                     <!-- <input type="password" class="form-control col-sm-10" id="exampleInputPassword1" placeholder="confirm password"> -->
-                    <%= f.password_field :password_confirmation, :class => 'form-control', :placeholder => 'Confirm Password' %>
+                    <%= f.password_field :password_confirmation, :class => 'form-control', :placeholder => 'Confirm Password', :required => 'required' %>
                   </div>
                   
                   <div class = "form-group col-md-12">
+                    <input type="checkbox" required="required" name="agree">
                     <span>By submitting this form you agree to ESP <span class="c1">Terms of Service.</span></span>
                   </div>
                   
@@ -61,15 +62,15 @@
                 <div class="box-two" style="display:none;">
                 	<h3>Come join the ESP ! Let's set up your account.<a href="javascript:void(0)" class="clickform register-tab"> Sign up here.</a></h3>
                   <h4><span><%= image_tag("line.png" , :alt => 'line.png') %></span>LOG IN<span><%= image_tag("right.png" , :alt => 'right.png') %></span></h4>
-                  <%= form_tag sessions_path do %>
+                  <%= form_tag sessions_path, :id => 'loginForm' do %>
                     <div class="form-group col-md-10">
                       <!-- <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email"> -->
-                      <%= text_field_tag :email, params[:email], :class => 'form-control', :placeholder => 'Email' %>
+                      <%= email_field_tag :email, params[:email], :class => 'form-control', :placeholder => 'Email', :required => 'required' %>
                     </div>
                     <div class="form-group col-md-10">
                       
                       <!-- <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password"> -->
-                      <%= password_field_tag :password, nil, class:'form-control', :placeholder => 'Password' %>
+                      <%= password_field_tag :password, nil, class:'form-control', :placeholder => 'Password', :required => 'required' %>
                     </div>
                     
                     <div class="checkbox col-lg-12">
@@ -87,4 +88,10 @@
               
             </div>
             </div>
+<script type="text/javascript">
+$(document).ready(function () {
+  $("#loginForm").validate();
+  $("#new_user").validate();  
+});
+</script>            
 <%= render 'layouts/footer' %>            

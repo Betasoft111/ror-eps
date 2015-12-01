@@ -896,3 +896,8 @@ li.selected-tab {
     border-right: 1px solid #008ed6;
     border-top: 1px solid #008ed6;
 }
+
+/***** validation engine *******/
+.error {
+    color: red;
+}
