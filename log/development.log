@@ -1109,3 +1109,179 @@ Started GET "/assets/footerbg.jpg" for 127.0.0.1 at 2015-12-02 01:56:23 +0530
 =======
 >>>>>>> 4cc5db48302bc48e1931b1e7355e7b7139766ddb
 >>>>>>> 29d93c07330076d7c828cc9e4760d92dbb11285f
+
+
+Started GET "/" for 127.0.0.1 at 2015-12-02 02:41:40 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by WelcomeController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+Redirected to http://localhost:3000/choose_plan
+Filter chain halted as :check_membership rendered or redirected
+Completed 302 Found in 20ms (ActiveRecord: 1.7ms)
+
+
+Started GET "/choose_plan" for 127.0.0.1 at 2015-12-02 02:41:41 +0530
+Processing by UsersController#choose_plan as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  Rendered layouts/_application.html.erb (20.6ms)
+  [1m[35mSubscriptionPlans Load (0.2ms)[0m  SELECT `subscription_plans`.* FROM `subscription_plans`
+  Rendered layouts/_footer.html.erb (0.5ms)
+  Rendered users/choose_plan.html.erb (36.1ms)
+Completed 200 OK in 45ms (Views: 39.0ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/assets/style.css?body=1" for 127.0.0.1 at 2015-12-02 02:41:41 +0530
+
+
+Started GET "/assets/angular/angular.min.js?body=1" for 127.0.0.1 at 2015-12-02 02:41:41 +0530
+
+
+Started GET "/assets/bootstrap-theme.css?body=1" for 127.0.0.1 at 2015-12-02 02:41:41 +0530
+
+
+Started GET "/assets/angular/payment.app.js?body=1" for 127.0.0.1 at 2015-12-02 02:41:41 +0530
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2015-12-02 02:41:41 +0530
+
+
+Started GET "/assets/bootstrap.css?body=1" for 127.0.0.1 at 2015-12-02 02:41:41 +0530
+
+
+Started GET "/assets/bootstrap-theme.min.css?body=1" for 127.0.0.1 at 2015-12-02 02:41:41 +0530
+
+
+Started GET "/assets/jquery.validate.js?body=1" for 127.0.0.1 at 2015-12-02 02:41:41 +0530
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2015-12-02 02:41:41 +0530
+
+
+Started GET "/assets/charges.js?body=1" for 127.0.0.1 at 2015-12-02 02:41:41 +0530
+
+
+Started GET "/assets/jquery.min.js?body=1" for 127.0.0.1 at 2015-12-02 02:41:41 +0530
+
+
+Started GET "/assets/logo.png" for 127.0.0.1 at 2015-12-02 02:41:41 +0530
+
+
+Started GET "/assets/ourplan.png" for 127.0.0.1 at 2015-12-02 02:41:41 +0530
+
+
+Started GET "/log_out" for 127.0.0.1 at 2015-12-02 02:41:42 +0530
+Processing by SessionsController#destroy as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-12-02 02:41:42 +0530
+Processing by WelcomeController#index as HTML
+  Rendered layouts/_application.html.erb (4.7ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+  Rendered welcome/index.html.erb (13.2ms)
+Completed 200 OK in 15ms (Views: 14.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/style.css?body=1" for 127.0.0.1 at 2015-12-02 02:41:42 +0530
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2015-12-02 02:41:42 +0530
+
+
+Started GET "/assets/jquery.min.js?body=1" for 127.0.0.1 at 2015-12-02 02:41:42 +0530
+
+
+Started GET "/assets/bootstrap-theme.min.css?body=1" for 127.0.0.1 at 2015-12-02 02:41:42 +0530
+
+
+Started GET "/assets/bootstrap.css?body=1" for 127.0.0.1 at 2015-12-02 02:41:42 +0530
+
+
+Started GET "/assets/bootstrap-theme.css?body=1" for 127.0.0.1 at 2015-12-02 02:41:42 +0530
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2015-12-02 02:41:42 +0530
+
+
+Started GET "/assets/jquery.validate.js?body=1" for 127.0.0.1 at 2015-12-02 02:41:42 +0530
+
+
+Started GET "/assets/charges.js?body=1" for 127.0.0.1 at 2015-12-02 02:41:42 +0530
+
+
+Started GET "/assets/logo.png" for 127.0.0.1 at 2015-12-02 02:41:42 +0530
+
+
+Started GET "/assets/video.png" for 127.0.0.1 at 2015-12-02 02:41:42 +0530
+
+
+Started GET "/assets/img3.jpg" for 127.0.0.1 at 2015-12-02 02:41:42 +0530
+
+
+Started GET "/assets/img4.jpg" for 127.0.0.1 at 2015-12-02 02:41:42 +0530
+
+
+Started GET "/assets/img2.png" for 127.0.0.1 at 2015-12-02 02:41:42 +0530
+
+
+Started GET "/assets/img1.png" for 127.0.0.1 at 2015-12-02 02:41:42 +0530
+
+
+Started GET "/assets/banner.png" for 127.0.0.1 at 2015-12-02 02:41:42 +0530
+
+
+Started GET "/assets/img.jpg" for 127.0.0.1 at 2015-12-02 02:41:42 +0530
+
+
+Started GET "/assets/footerbg.jpg" for 127.0.0.1 at 2015-12-02 02:41:42 +0530
+
+
+Started GET "/join" for 127.0.0.1 at 2015-12-02 02:41:44 +0530
+Processing by SessionsController#new as HTML
+  Rendered layouts/_application.html.erb (4.4ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+  Rendered sessions/new.html.erb (15.1ms)
+Completed 200 OK in 18ms (Views: 16.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/style.css?body=1" for 127.0.0.1 at 2015-12-02 02:41:44 +0530
+
+
+Started GET "/assets/bootstrap.css?body=1" for 127.0.0.1 at 2015-12-02 02:41:44 +0530
+
+
+Started GET "/assets/jquery.min.js?body=1" for 127.0.0.1 at 2015-12-02 02:41:44 +0530
+
+
+Started GET "/assets/bootstrap-theme.min.css?body=1" for 127.0.0.1 at 2015-12-02 02:41:44 +0530
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2015-12-02 02:41:44 +0530
+
+
+Started GET "/assets/bootstrap-theme.css?body=1" for 127.0.0.1 at 2015-12-02 02:41:44 +0530
+
+
+Started GET "/assets/charges.js?body=1" for 127.0.0.1 at 2015-12-02 02:41:44 +0530
+
+
+Started GET "/assets/jquery.validate.js?body=1" for 127.0.0.1 at 2015-12-02 02:41:44 +0530
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2015-12-02 02:41:44 +0530
+
+
+Started GET "/assets/logo.png" for 127.0.0.1 at 2015-12-02 02:41:44 +0530
+
+
+Started GET "/assets/create.png" for 127.0.0.1 at 2015-12-02 02:41:44 +0530
+
+
+Started GET "/assets/right.png" for 127.0.0.1 at 2015-12-02 02:41:44 +0530
+
+
+Started GET "/assets/line.png" for 127.0.0.1 at 2015-12-02 02:41:44 +0530
+
+
+Started GET "/assets/footerbg.jpg" for 127.0.0.1 at 2015-12-02 02:41:44 +0530
