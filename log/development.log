@@ -1,5 +1,6 @@
 
 
+<<<<<<< HEAD
 Started GET "/search?skills=&staff_quf=B.C.A&experience=&availability=" for 127.0.0.1 at 2015-12-03 00:49:59 +0530
   [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
 Processing by SearchController#search as HTML
@@ -11,62 +12,522 @@ Processing by SearchController#search as HTML
   Rendered layouts/_footer.html.erb (0.5ms)
   Rendered search/search.html.erb (259.6ms)
 Completed 200 OK in 313ms (Views: 276.6ms | ActiveRecord: 1.6ms)
+=======
+Started POST "/add_staff/create" for 127.0.0.1 at 2015-12-03 01:58:52 +0530
+Processing by CompaniesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"bLZVhp9OlN5eRBmqXNxwaiz3jwUgkqo/VYamYs9Y9kg=", "first_name"=>"Randhir", "last_name"=>"Singh", "email"=>"parmarth1993@gmail.com", "skills"=>"Nodejs, Ruby, Rails", "availability"=>"40", "is_private"=>"0", "qualification"=>"Post Graduate", "experience"=>"3", "company_id"=>"1", "commit"=>"Add Staff"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mUsersStaffPlans Load (0.1ms)[0m  [1mSELECT `users_staff_plans`.* FROM `users_staff_plans` WHERE `users_staff_plans`.`user_id` = 1 ORDER BY `users_staff_plans`.`id` ASC LIMIT 1[0m
+  [1m[35mAdmin::StaffPlans Load (0.3ms)[0m  SELECT `admin_staff_plans`.* FROM `admin_staff_plans` WHERE `admin_staff_plans`.`id` = 1 LIMIT 1
+*********************
+#<Admin::StaffPlans id: 1, plan_name: "Basic Starter", no_of_staff: 10, plan_price: 50, created_at: nil, updated_at: nil>
+*********************
+Completed 500 Internal Server Error in 28ms
+
+ActionView::MissingTemplate (Missing template companies/create, application/create with {:locale=>[:en], :formats=>[:html], :handlers=>[:erb, :builder, :raw, :ruby, :jbuilder]}. Searched in:
+  * "/var/www/html/eps2/app/views"
+):
+  actionpack (4.0.4) lib/action_view/path_set.rb:46:in `find'
+  actionpack (4.0.4) lib/action_view/lookup_context.rb:122:in `find'
+  actionpack (4.0.4) lib/action_view/renderer/abstract_renderer.rb:18:in `find_template'
+  actionpack (4.0.4) lib/action_view/renderer/template_renderer.rb:35:in `determine_template'
+  actionpack (4.0.4) lib/action_view/renderer/template_renderer.rb:8:in `render'
+  actionpack (4.0.4) lib/action_view/renderer/renderer.rb:42:in `render_template'
+  actionpack (4.0.4) lib/action_view/renderer/renderer.rb:23:in `render'
+  actionpack (4.0.4) lib/abstract_controller/rendering.rb:127:in `_render_template'
+  actionpack (4.0.4) lib/action_controller/metal/streaming.rb:219:in `_render_template'
+  actionpack (4.0.4) lib/abstract_controller/rendering.rb:120:in `render_to_body'
+  actionpack (4.0.4) lib/action_controller/metal/rendering.rb:33:in `render_to_body'
+  actionpack (4.0.4) lib/action_controller/metal/renderers.rb:26:in `render_to_body'
+  actionpack (4.0.4) lib/abstract_controller/rendering.rb:97:in `render'
+  actionpack (4.0.4) lib/action_controller/metal/rendering.rb:16:in `render'
+  actionpack (4.0.4) lib/action_controller/metal/instrumentation.rb:41:in `block (2 levels) in render'
+  activesupport (4.0.4) lib/active_support/core_ext/benchmark.rb:12:in `block in ms'
+  /home/deepak/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/benchmark.rb:303:in `realtime'
+  activesupport (4.0.4) lib/active_support/core_ext/benchmark.rb:12:in `ms'
+  actionpack (4.0.4) lib/action_controller/metal/instrumentation.rb:41:in `block in render'
+  actionpack (4.0.4) lib/action_controller/metal/instrumentation.rb:84:in `cleanup_view_runtime'
+  activerecord (4.0.4) lib/active_record/railties/controller_runtime.rb:25:in `cleanup_view_runtime'
+  actionpack (4.0.4) lib/action_controller/metal/instrumentation.rb:40:in `render'
+  actionpack (4.0.4) lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  actionpack (4.0.4) lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+  actionpack (4.0.4) lib/abstract_controller/base.rb:189:in `process_action'
+  actionpack (4.0.4) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (4.0.4) lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+  activesupport (4.0.4) lib/active_support/callbacks.rb:423:in `_run__1239417503673804191__process_action__callbacks'
+  activesupport (4.0.4) lib/active_support/callbacks.rb:80:in `run_callbacks'
+  actionpack (4.0.4) lib/abstract_controller/callbacks.rb:17:in `process_action'
+  actionpack (4.0.4) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.0.4) lib/action_controller/metal/instrumentation.rb:31:in `block in process_action'
+  activesupport (4.0.4) lib/active_support/notifications.rb:159:in `block in instrument'
+  activesupport (4.0.4) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.0.4) lib/active_support/notifications.rb:159:in `instrument'
+  actionpack (4.0.4) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (4.0.4) lib/action_controller/metal/params_wrapper.rb:250:in `process_action'
+  activerecord (4.0.4) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.0.4) lib/abstract_controller/base.rb:136:in `process'
+  actionpack (4.0.4) lib/abstract_controller/rendering.rb:44:in `process'
+  actionpack (4.0.4) lib/action_controller/metal.rb:195:in `dispatch'
+  actionpack (4.0.4) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.0.4) lib/action_controller/metal.rb:231:in `block in action'
+  actionpack (4.0.4) lib/action_dispatch/routing/route_set.rb:80:in `call'
+  actionpack (4.0.4) lib/action_dispatch/routing/route_set.rb:80:in `dispatch'
+  actionpack (4.0.4) lib/action_dispatch/routing/route_set.rb:48:in `call'
+  actionpack (4.0.4) lib/action_dispatch/journey/router.rb:71:in `block in call'
+  actionpack (4.0.4) lib/action_dispatch/journey/router.rb:59:in `each'
+  actionpack (4.0.4) lib/action_dispatch/journey/router.rb:59:in `call'
+  actionpack (4.0.4) lib/action_dispatch/routing/route_set.rb:674:in `call'
+  rack (1.5.2) lib/rack/etag.rb:23:in `call'
+  rack (1.5.2) lib/rack/conditionalget.rb:35:in `call'
+  rack (1.5.2) lib/rack/head.rb:11:in `call'
+  actionpack (4.0.4) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.0.4) lib/action_dispatch/middleware/flash.rb:241:in `call'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.0.4) lib/action_dispatch/middleware/cookies.rb:486:in `call'
+  activerecord (4.0.4) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.0.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:626:in `call'
+  activerecord (4.0.4) lib/active_record/migration.rb:373:in `call'
+  actionpack (4.0.4) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.0.4) lib/active_support/callbacks.rb:373:in `_run__1960787920128567176__call__callbacks'
+  activesupport (4.0.4) lib/active_support/callbacks.rb:80:in `run_callbacks'
+  actionpack (4.0.4) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.0.4) lib/action_dispatch/middleware/reloader.rb:64:in `call'
+  actionpack (4.0.4) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  actionpack (4.0.4) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.0.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.0.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.0.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.0.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.0.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.4) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.4) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.0.4) lib/rails/engine.rb:511:in `call'
+  railties (4.0.4) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/deepak/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/deepak/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/deepak/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
 
 
+  Rendered /home/deepak/.rvm/gems/ruby-2.2.1/gems/actionpack-4.0.4/lib/action_dispatch/middleware/templates/rescues/missing_template.erb within rescues/layout (0.5ms)
+
+
+Started POST "/add_staff/create" for 127.0.0.1 at 2015-12-03 01:59:15 +0530
+Processing by CompaniesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"bLZVhp9OlN5eRBmqXNxwaiz3jwUgkqo/VYamYs9Y9kg=", "first_name"=>"Randhir", "last_name"=>"Singh", "email"=>"parmarth1993@gmail.com", "skills"=>"Nodejs, Ruby, Rails", "availability"=>"40", "is_private"=>"0", "qualification"=>"Post Graduate", "experience"=>"3", "company_id"=>"1", "commit"=>"Add Staff"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mUsersStaffPlans Load (0.3ms)[0m  SELECT `users_staff_plans`.* FROM `users_staff_plans` WHERE `users_staff_plans`.`user_id` = 1 ORDER BY `users_staff_plans`.`id` ASC LIMIT 1
+  [1m[36mAdmin::StaffPlans Load (0.2ms)[0m  [1mSELECT `admin_staff_plans`.* FROM `admin_staff_plans` WHERE `admin_staff_plans`.`id` = 1 LIMIT 1[0m
+*********************
+10
+*********************
+Completed 500 Internal Server Error in 24ms
+
+ActionView::MissingTemplate (Missing template companies/create, application/create with {:locale=>[:en], :formats=>[:html], :handlers=>[:erb, :builder, :raw, :ruby, :jbuilder]}. Searched in:
+  * "/var/www/html/eps2/app/views"
+):
+  actionpack (4.0.4) lib/action_view/path_set.rb:46:in `find'
+  actionpack (4.0.4) lib/action_view/lookup_context.rb:122:in `find'
+  actionpack (4.0.4) lib/action_view/renderer/abstract_renderer.rb:18:in `find_template'
+  actionpack (4.0.4) lib/action_view/renderer/template_renderer.rb:35:in `determine_template'
+  actionpack (4.0.4) lib/action_view/renderer/template_renderer.rb:8:in `render'
+  actionpack (4.0.4) lib/action_view/renderer/renderer.rb:42:in `render_template'
+  actionpack (4.0.4) lib/action_view/renderer/renderer.rb:23:in `render'
+  actionpack (4.0.4) lib/abstract_controller/rendering.rb:127:in `_render_template'
+  actionpack (4.0.4) lib/action_controller/metal/streaming.rb:219:in `_render_template'
+  actionpack (4.0.4) lib/abstract_controller/rendering.rb:120:in `render_to_body'
+  actionpack (4.0.4) lib/action_controller/metal/rendering.rb:33:in `render_to_body'
+  actionpack (4.0.4) lib/action_controller/metal/renderers.rb:26:in `render_to_body'
+  actionpack (4.0.4) lib/abstract_controller/rendering.rb:97:in `render'
+  actionpack (4.0.4) lib/action_controller/metal/rendering.rb:16:in `render'
+  actionpack (4.0.4) lib/action_controller/metal/instrumentation.rb:41:in `block (2 levels) in render'
+  activesupport (4.0.4) lib/active_support/core_ext/benchmark.rb:12:in `block in ms'
+  /home/deepak/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/benchmark.rb:303:in `realtime'
+  activesupport (4.0.4) lib/active_support/core_ext/benchmark.rb:12:in `ms'
+  actionpack (4.0.4) lib/action_controller/metal/instrumentation.rb:41:in `block in render'
+  actionpack (4.0.4) lib/action_controller/metal/instrumentation.rb:84:in `cleanup_view_runtime'
+  activerecord (4.0.4) lib/active_record/railties/controller_runtime.rb:25:in `cleanup_view_runtime'
+  actionpack (4.0.4) lib/action_controller/metal/instrumentation.rb:40:in `render'
+  actionpack (4.0.4) lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  actionpack (4.0.4) lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+  actionpack (4.0.4) lib/abstract_controller/base.rb:189:in `process_action'
+  actionpack (4.0.4) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (4.0.4) lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+  activesupport (4.0.4) lib/active_support/callbacks.rb:423:in `_run__1239417503673804191__process_action__callbacks'
+  activesupport (4.0.4) lib/active_support/callbacks.rb:80:in `run_callbacks'
+  actionpack (4.0.4) lib/abstract_controller/callbacks.rb:17:in `process_action'
+  actionpack (4.0.4) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.0.4) lib/action_controller/metal/instrumentation.rb:31:in `block in process_action'
+  activesupport (4.0.4) lib/active_support/notifications.rb:159:in `block in instrument'
+  activesupport (4.0.4) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.0.4) lib/active_support/notifications.rb:159:in `instrument'
+  actionpack (4.0.4) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (4.0.4) lib/action_controller/metal/params_wrapper.rb:250:in `process_action'
+  activerecord (4.0.4) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.0.4) lib/abstract_controller/base.rb:136:in `process'
+  actionpack (4.0.4) lib/abstract_controller/rendering.rb:44:in `process'
+  actionpack (4.0.4) lib/action_controller/metal.rb:195:in `dispatch'
+  actionpack (4.0.4) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.0.4) lib/action_controller/metal.rb:231:in `block in action'
+  actionpack (4.0.4) lib/action_dispatch/routing/route_set.rb:80:in `call'
+  actionpack (4.0.4) lib/action_dispatch/routing/route_set.rb:80:in `dispatch'
+  actionpack (4.0.4) lib/action_dispatch/routing/route_set.rb:48:in `call'
+  actionpack (4.0.4) lib/action_dispatch/journey/router.rb:71:in `block in call'
+  actionpack (4.0.4) lib/action_dispatch/journey/router.rb:59:in `each'
+  actionpack (4.0.4) lib/action_dispatch/journey/router.rb:59:in `call'
+  actionpack (4.0.4) lib/action_dispatch/routing/route_set.rb:674:in `call'
+  rack (1.5.2) lib/rack/etag.rb:23:in `call'
+  rack (1.5.2) lib/rack/conditionalget.rb:35:in `call'
+  rack (1.5.2) lib/rack/head.rb:11:in `call'
+  actionpack (4.0.4) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.0.4) lib/action_dispatch/middleware/flash.rb:241:in `call'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.0.4) lib/action_dispatch/middleware/cookies.rb:486:in `call'
+  activerecord (4.0.4) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.0.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:626:in `call'
+  activerecord (4.0.4) lib/active_record/migration.rb:373:in `call'
+  actionpack (4.0.4) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.0.4) lib/active_support/callbacks.rb:373:in `_run__1960787920128567176__call__callbacks'
+  activesupport (4.0.4) lib/active_support/callbacks.rb:80:in `run_callbacks'
+  actionpack (4.0.4) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.0.4) lib/action_dispatch/middleware/reloader.rb:64:in `call'
+  actionpack (4.0.4) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  actionpack (4.0.4) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.0.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.0.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.0.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.0.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.0.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.4) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.4) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.0.4) lib/rails/engine.rb:511:in `call'
+  railties (4.0.4) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/deepak/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/deepak/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/deepak/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /home/deepak/.rvm/gems/ruby-2.2.1/gems/actionpack-4.0.4/lib/action_dispatch/middleware/templates/rescues/missing_template.erb within rescues/layout (0.5ms)
+
+
+Started POST "/add_staff/create" for 127.0.0.1 at 2015-12-03 02:01:18 +0530
+Processing by CompaniesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"bLZVhp9OlN5eRBmqXNxwaiz3jwUgkqo/VYamYs9Y9kg=", "first_name"=>"Randhir", "last_name"=>"Singh", "email"=>"parmarth1993@gmail.com", "skills"=>"Nodejs, Ruby, Rails", "availability"=>"40", "is_private"=>"0", "qualification"=>"Post Graduate", "experience"=>"3", "company_id"=>"1", "commit"=>"Add Staff"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mUsersStaffPlans Load (0.1ms)[0m  [1mSELECT `users_staff_plans`.* FROM `users_staff_plans` WHERE `users_staff_plans`.`user_id` = 1 ORDER BY `users_staff_plans`.`id` ASC LIMIT 1[0m
+DEPRECATION WARNING: Relation#all is deprecated. If you want to eager-load a relation, you can call #load (e.g. `Post.where(published: true).load`). If you want to get an array of records from a relation, you can call #to_a (e.g. `Post.where(published: true).to_a`). (called from create at /var/www/html/eps2/app/controllers/companies_controller.rb:42)
+  [1m[35mCompanyStaff Load (0.2ms)[0m  SELECT `company_staffs`.* FROM `company_staffs` WHERE `company_staffs`.`company_id` = 1
+  [1m[36mAdmin::StaffPlans Load (0.1ms)[0m  [1mSELECT `admin_staff_plans`.* FROM `admin_staff_plans` WHERE `admin_staff_plans`.`id` = 1 LIMIT 1[0m
+Unpermitted parameters: utf8, authenticity_token, commit
+  [1m[35mCompanyStaff Load (0.4ms)[0m  SELECT `company_staffs`.* FROM `company_staffs` WHERE `company_staffs`.`email` = 'parmarth1993@gmail.com' ORDER BY `company_staffs`.`id` ASC LIMIT 1
+Completed 500 Internal Server Error in 35ms
+
+NoMethodError (undefined method `empty?' for #<CompanyStaff:0x0000000485b3e0>):
+  app/controllers/companies_controller.rb:56:in `create'
+
+
+  Rendered /home/deepak/.rvm/gems/ruby-2.2.1/gems/actionpack-4.0.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.7ms)
+  Rendered /home/deepak/.rvm/gems/ruby-2.2.1/gems/actionpack-4.0.4/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+  Rendered /home/deepak/.rvm/gems/ruby-2.2.1/gems/actionpack-4.0.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.0ms)
+  Rendered /home/deepak/.rvm/gems/ruby-2.2.1/gems/actionpack-4.0.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (9.9ms)
+
+
+Started POST "/add_staff/create" for 127.0.0.1 at 2015-12-03 02:01:37 +0530
+Processing by CompaniesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"bLZVhp9OlN5eRBmqXNxwaiz3jwUgkqo/VYamYs9Y9kg=", "first_name"=>"Randhir", "last_name"=>"Singh", "email"=>"parmarth1993@gmail.com", "skills"=>"Nodejs, Ruby, Rails", "availability"=>"40", "is_private"=>"0", "qualification"=>"Post Graduate", "experience"=>"3", "company_id"=>"1", "commit"=>"Add Staff"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mUsersStaffPlans Load (0.1ms)[0m  SELECT `users_staff_plans`.* FROM `users_staff_plans` WHERE `users_staff_plans`.`user_id` = 1 ORDER BY `users_staff_plans`.`id` ASC LIMIT 1
+DEPRECATION WARNING: Relation#all is deprecated. If you want to eager-load a relation, you can call #load (e.g. `Post.where(published: true).load`). If you want to get an array of records from a relation, you can call #to_a (e.g. `Post.where(published: true).to_a`). (called from create at /var/www/html/eps2/app/controllers/companies_controller.rb:42)
+  [1m[36mCompanyStaff Load (0.2ms)[0m  [1mSELECT `company_staffs`.* FROM `company_staffs` WHERE `company_staffs`.`company_id` = 1[0m
+  [1m[35mAdmin::StaffPlans Load (0.1ms)[0m  SELECT `admin_staff_plans`.* FROM `admin_staff_plans` WHERE `admin_staff_plans`.`id` = 1 LIMIT 1
+Unpermitted parameters: utf8, authenticity_token, commit
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM `company_staffs` WHERE `company_staffs`.`email` = 'parmarth1993@gmail.com'[0m
+Redirected to http://localhost:3000/company_home
+Completed 302 Found in 41ms (ActiveRecord: 6.4ms)
+
+
+Started GET "/company_home" for 127.0.0.1 at 2015-12-03 02:01:37 +0530
+Processing by CompaniesController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  Rendered layouts/_application.html.erb (4.2ms)
+  [1m[36mCompanyStaff Load (0.1ms)[0m  [1mSELECT `company_staffs`.* FROM `company_staffs`[0m
+  Rendered layouts/_footer.html.erb (0.0ms)
+  Rendered companies/index.html.erb (6.3ms)
+Completed 200 OK in 8ms (Views: 7.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/style.css?body=1" for 127.0.0.1 at 2015-12-03 02:01:37 +0530
+
+
+Started GET "/assets/bootstrap-theme.css?body=1" for 127.0.0.1 at 2015-12-03 02:01:37 +0530
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2015-12-03 02:01:37 +0530
+
+
+Started GET "/assets/bootstrap-theme.min.css?body=1" for 127.0.0.1 at 2015-12-03 02:01:37 +0530
+
+
+Started GET "/assets/sweetalert.css?body=1" for 127.0.0.1 at 2015-12-03 02:01:37 +0530
+
+
+Started GET "/assets/bootstrap.css?body=1" for 127.0.0.1 at 2015-12-03 02:01:37 +0530
+
+
+Started GET "/assets/jquery.min.js?body=1" for 127.0.0.1 at 2015-12-03 02:01:37 +0530
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2015-12-03 02:01:37 +0530
+
+
+Started GET "/assets/jquery.validate.js?body=1" for 127.0.0.1 at 2015-12-03 02:01:37 +0530
+
+
+Started GET "/assets/charges.js?body=1" for 127.0.0.1 at 2015-12-03 02:01:37 +0530
+
+
+Started GET "/assets/sweetalert-dev.js?body=1" for 127.0.0.1 at 2015-12-03 02:01:37 +0530
+
+
+Started GET "/assets/line.png" for 127.0.0.1 at 2015-12-03 02:01:37 +0530
+
+
+Started GET "/assets/right.png" for 127.0.0.1 at 2015-12-03 02:01:37 +0530
+
+
+Started GET "/assets/logo.png" for 127.0.0.1 at 2015-12-03 02:01:37 +0530
+
+
+Started GET "/assets/create.png" for 127.0.0.1 at 2015-12-03 02:01:37 +0530
+
+
+Started GET "/assets/add.png" for 127.0.0.1 at 2015-12-03 02:01:38 +0530
+
+
+Started GET "/assets/edit.png" for 127.0.0.1 at 2015-12-03 02:01:38 +0530
+
+
+Started GET "/assets/delete.png" for 127.0.0.1 at 2015-12-03 02:01:38 +0530
+
+
+Started GET "/assets/footerbg.jpg" for 127.0.0.1 at 2015-12-03 02:01:38 +0530
+
+
+Started GET "/add_staff" for 127.0.0.1 at 2015-12-03 02:01:41 +0530
+Processing by CompaniesController#add_staff as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  Rendered layouts/_application.html.erb (4.9ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+  Rendered companies/add_staff.html.erb (7.2ms)
+Completed 200 OK in 10ms (Views: 8.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/style.css?body=1" for 127.0.0.1 at 2015-12-03 02:01:41 +0530
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2015-12-03 02:01:41 +0530
+
+
+Started GET "/assets/sweetalert.css?body=1" for 127.0.0.1 at 2015-12-03 02:01:41 +0530
+
+
+Started GET "/assets/bootstrap.css?body=1" for 127.0.0.1 at 2015-12-03 02:01:41 +0530
+
+
+Started GET "/assets/bootstrap-theme.min.css?body=1" for 127.0.0.1 at 2015-12-03 02:01:41 +0530
+
+
+Started GET "/assets/bootstrap-theme.css?body=1" for 127.0.0.1 at 2015-12-03 02:01:41 +0530
+
+
+Started GET "/assets/jquery.min.js?body=1" for 127.0.0.1 at 2015-12-03 02:01:41 +0530
+
+
+Started GET "/assets/jquery.validate.js?body=1" for 127.0.0.1 at 2015-12-03 02:01:41 +0530
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2015-12-03 02:01:41 +0530
+
+
+Started GET "/assets/charges.js?body=1" for 127.0.0.1 at 2015-12-03 02:01:41 +0530
+
+
+Started GET "/assets/sweetalert-dev.js?body=1" for 127.0.0.1 at 2015-12-03 02:01:41 +0530
+
+>>>>>>> 628178772b616bad342e07e81ffe6d92d871a0e5
+
+Started GET "/assets/line.png" for 127.0.0.1 at 2015-12-03 02:01:41 +0530
+
+<<<<<<< HEAD
 Started GET "/assets/style.css?body=1" for 127.0.0.1 at 2015-12-03 00:50:00 +0530
+=======
+>>>>>>> 628178772b616bad342e07e81ffe6d92d871a0e5
 
+Started GET "/assets/logo.png" for 127.0.0.1 at 2015-12-03 02:01:41 +0530
 
+<<<<<<< HEAD
 Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2015-12-03 00:50:00 +0530
+=======
+>>>>>>> 628178772b616bad342e07e81ffe6d92d871a0e5
 
+Started GET "/assets/create.png" for 127.0.0.1 at 2015-12-03 02:01:41 +0530
 
+<<<<<<< HEAD
 Started GET "/assets/bootstrap-theme.min.css?body=1" for 127.0.0.1 at 2015-12-03 00:50:00 +0530
+=======
+>>>>>>> 628178772b616bad342e07e81ffe6d92d871a0e5
 
+Started GET "/assets/right.png" for 127.0.0.1 at 2015-12-03 02:01:41 +0530
 
+<<<<<<< HEAD
 Started GET "/assets/bootstrap-theme.css?body=1" for 127.0.0.1 at 2015-12-03 00:50:00 +0530
+=======
+>>>>>>> 628178772b616bad342e07e81ffe6d92d871a0e5
 
+Started GET "/assets/footerbg.jpg" for 127.0.0.1 at 2015-12-03 02:01:41 +0530
 
+<<<<<<< HEAD
 Started GET "/assets/bootstrap.css?body=1" for 127.0.0.1 at 2015-12-03 00:50:00 +0530
+=======
+>>>>>>> 628178772b616bad342e07e81ffe6d92d871a0e5
 
+Started POST "/add_staff/create" for 127.0.0.1 at 2015-12-03 02:01:55 +0530
+Processing by CompaniesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"bLZVhp9OlN5eRBmqXNxwaiz3jwUgkqo/VYamYs9Y9kg=", "first_name"=>"RSP", "last_name"=>"RSP", "email"=>"rsp@email.com", "skills"=>"Nodejs, Ruby, Rails", "availability"=>"40", "is_private"=>"0", "qualification"=>"Post Graduate", "experience"=>"3", "company_id"=>"1", "commit"=>"Add Staff"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mUsersStaffPlans Load (0.2ms)[0m  SELECT `users_staff_plans`.* FROM `users_staff_plans` WHERE `users_staff_plans`.`user_id` = 1 ORDER BY `users_staff_plans`.`id` ASC LIMIT 1
+DEPRECATION WARNING: Relation#all is deprecated. If you want to eager-load a relation, you can call #load (e.g. `Post.where(published: true).load`). If you want to get an array of records from a relation, you can call #to_a (e.g. `Post.where(published: true).to_a`). (called from create at /var/www/html/eps2/app/controllers/companies_controller.rb:42)
+  [1m[36mCompanyStaff Load (0.1ms)[0m  [1mSELECT `company_staffs`.* FROM `company_staffs` WHERE `company_staffs`.`company_id` = 1[0m
+  [1m[35mAdmin::StaffPlans Load (0.2ms)[0m  SELECT `admin_staff_plans`.* FROM `admin_staff_plans` WHERE `admin_staff_plans`.`id` = 1 LIMIT 1
+Unpermitted parameters: utf8, authenticity_token, commit
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM `company_staffs` WHERE `company_staffs`.`email` = 'rsp@email.com'[0m
+Unpermitted parameters: utf8, authenticity_token, commit
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `company_staffs` (`availability`, `company_id`, `created_at`, `email`, `experience`, `first_name`, `is_private`, `last_name`, `qualification`, `skills`, `updated_at`) VALUES ('40', 1, '2015-12-02 20:31:55', 'rsp@email.com', '3', 'RSP', 0, 'RSP', 'Post Graduate', 'Nodejs, Ruby, Rails', '2015-12-02 20:31:55')[0m
+  [1m[35m (26.7ms)[0m  COMMIT
+Redirected to http://localhost:3000/company_home
+Completed 302 Found in 38ms (ActiveRecord: 28.1ms)
 
+<<<<<<< HEAD
 Started GET "/assets/sweetalert.css?body=1" for 127.0.0.1 at 2015-12-03 00:50:00 +0530
+=======
+>>>>>>> 628178772b616bad342e07e81ffe6d92d871a0e5
 
+Started GET "/company_home" for 127.0.0.1 at 2015-12-03 02:01:55 +0530
+Processing by CompaniesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  Rendered layouts/_application.html.erb (7.0ms)
+  [1m[35mCompanyStaff Load (0.4ms)[0m  SELECT `company_staffs`.* FROM `company_staffs`
+  Rendered layouts/_footer.html.erb (0.0ms)
+  Rendered companies/index.html.erb (9.3ms)
+Completed 200 OK in 12ms (Views: 10.2ms | ActiveRecord: 0.6ms)
 
+<<<<<<< HEAD
 Started GET "/assets/jquery.min.js?body=1" for 127.0.0.1 at 2015-12-03 00:50:00 +0530
+=======
+>>>>>>> 628178772b616bad342e07e81ffe6d92d871a0e5
 
+Started GET "/assets/style.css?body=1" for 127.0.0.1 at 2015-12-03 02:01:55 +0530
 
+<<<<<<< HEAD
 Started GET "/assets/jquery.validate.js?body=1" for 127.0.0.1 at 2015-12-03 00:50:00 +0530
+=======
+>>>>>>> 628178772b616bad342e07e81ffe6d92d871a0e5
 
+Started GET "/assets/bootstrap.css?body=1" for 127.0.0.1 at 2015-12-03 02:01:55 +0530
 
+<<<<<<< HEAD
 Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2015-12-03 00:50:00 +0530
+=======
+>>>>>>> 628178772b616bad342e07e81ffe6d92d871a0e5
 
+Started GET "/assets/bootstrap-theme.min.css?body=1" for 127.0.0.1 at 2015-12-03 02:01:55 +0530
 
+<<<<<<< HEAD
 Started GET "/assets/charges.js?body=1" for 127.0.0.1 at 2015-12-03 00:50:00 +0530
+=======
+>>>>>>> 628178772b616bad342e07e81ffe6d92d871a0e5
 
+Started GET "/assets/bootstrap-theme.css?body=1" for 127.0.0.1 at 2015-12-03 02:01:55 +0530
 
+<<<<<<< HEAD
 Started GET "/assets/sweetalert-dev.js?body=1" for 127.0.0.1 at 2015-12-03 00:50:00 +0530
+=======
+>>>>>>> 628178772b616bad342e07e81ffe6d92d871a0e5
 
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2015-12-03 02:01:55 +0530
 
+<<<<<<< HEAD
 Started GET "/assets/logo.png" for 127.0.0.1 at 2015-12-03 00:50:00 +0530
+=======
+>>>>>>> 628178772b616bad342e07e81ffe6d92d871a0e5
 
+Started GET "/assets/sweetalert.css?body=1" for 127.0.0.1 at 2015-12-03 02:01:55 +0530
 
+<<<<<<< HEAD
 Started GET "/assets/staff.png" for 127.0.0.1 at 2015-12-03 00:50:00 +0530
+=======
+>>>>>>> 628178772b616bad342e07e81ffe6d92d871a0e5
 
+Started GET "/assets/jquery.min.js?body=1" for 127.0.0.1 at 2015-12-03 02:01:55 +0530
 
+<<<<<<< HEAD
 Started GET "/assets/rang.png" for 127.0.0.1 at 2015-12-03 00:50:00 +0530
+=======
+>>>>>>> 628178772b616bad342e07e81ffe6d92d871a0e5
 
+Started GET "/assets/jquery.validate.js?body=1" for 127.0.0.1 at 2015-12-03 02:01:55 +0530
 
+<<<<<<< HEAD
 Started GET "/assets/map.png" for 127.0.0.1 at 2015-12-03 00:50:00 +0530
+=======
+>>>>>>> 628178772b616bad342e07e81ffe6d92d871a0e5
 
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2015-12-03 02:01:55 +0530
 
+<<<<<<< HEAD
 Started GET "/assets/search1.jpg" for 127.0.0.1 at 2015-12-03 00:50:00 +0530
+=======
+>>>>>>> 628178772b616bad342e07e81ffe6d92d871a0e5
 
+Started GET "/assets/sweetalert-dev.js?body=1" for 127.0.0.1 at 2015-12-03 02:01:55 +0530
 
+<<<<<<< HEAD
 Started GET "/assets/company1.png" for 127.0.0.1 at 2015-12-03 00:50:00 +0530
+=======
+>>>>>>> 628178772b616bad342e07e81ffe6d92d871a0e5
 
+Started GET "/assets/charges.js?body=1" for 127.0.0.1 at 2015-12-03 02:01:55 +0530
 
+<<<<<<< HEAD
 Started GET "/assets/footerbg.jpg" for 127.0.0.1 at 2015-12-03 00:50:00 +0530
+=======
+>>>>>>> 628178772b616bad342e07e81ffe6d92d871a0e5
 
+Started GET "/assets/line.png" for 127.0.0.1 at 2015-12-03 02:01:55 +0530
 
+<<<<<<< HEAD
 Started GET "/search?skills=&staff_quf=B.C.A&experience=&availability=" for 127.0.0.1 at 2015-12-03 00:52:26 +0530
 Processing by SearchController#search as HTML
   Parameters: {"skills"=>"", "staff_quf"=>"B.C.A", "experience"=>"", "availability"=>""}
@@ -79,62 +540,144 @@ B.C.A
   Rendered layouts/_footer.html.erb (0.0ms)
   Rendered search/search.html.erb (7.9ms)
 Completed 200 OK in 21ms (Views: 9.5ms | ActiveRecord: 1.8ms)
+=======
+>>>>>>> 628178772b616bad342e07e81ffe6d92d871a0e5
 
+Started GET "/assets/create.png" for 127.0.0.1 at 2015-12-03 02:01:55 +0530
 
+<<<<<<< HEAD
 Started GET "/assets/style.css?body=1" for 127.0.0.1 at 2015-12-03 00:52:26 +0530
+=======
+>>>>>>> 628178772b616bad342e07e81ffe6d92d871a0e5
 
+Started GET "/assets/right.png" for 127.0.0.1 at 2015-12-03 02:01:55 +0530
 
+<<<<<<< HEAD
 Started GET "/assets/bootstrap.css?body=1" for 127.0.0.1 at 2015-12-03 00:52:26 +0530
+=======
+>>>>>>> 628178772b616bad342e07e81ffe6d92d871a0e5
 
+Started GET "/assets/logo.png" for 127.0.0.1 at 2015-12-03 02:01:55 +0530
 
+<<<<<<< HEAD
 Started GET "/assets/bootstrap-theme.min.css?body=1" for 127.0.0.1 at 2015-12-03 00:52:26 +0530
+=======
+>>>>>>> 628178772b616bad342e07e81ffe6d92d871a0e5
 
+Started GET "/assets/add.png" for 127.0.0.1 at 2015-12-03 02:01:55 +0530
 
+<<<<<<< HEAD
 Started GET "/assets/bootstrap-theme.css?body=1" for 127.0.0.1 at 2015-12-03 00:52:26 +0530
+=======
+>>>>>>> 628178772b616bad342e07e81ffe6d92d871a0e5
 
+Started GET "/assets/edit.png" for 127.0.0.1 at 2015-12-03 02:01:55 +0530
 
+<<<<<<< HEAD
 Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2015-12-03 00:52:26 +0530
+=======
+>>>>>>> 628178772b616bad342e07e81ffe6d92d871a0e5
 
+Started GET "/assets/footerbg.jpg" for 127.0.0.1 at 2015-12-03 02:01:55 +0530
 
+<<<<<<< HEAD
 Started GET "/assets/sweetalert.css?body=1" for 127.0.0.1 at 2015-12-03 00:52:26 +0530
+=======
+>>>>>>> 628178772b616bad342e07e81ffe6d92d871a0e5
 
+Started GET "/assets/delete.png" for 127.0.0.1 at 2015-12-03 02:01:55 +0530
 
+<<<<<<< HEAD
 Started GET "/assets/jquery.validate.js?body=1" for 127.0.0.1 at 2015-12-03 00:52:26 +0530
+=======
+>>>>>>> 628178772b616bad342e07e81ffe6d92d871a0e5
 
+Started GET "/add_staff" for 127.0.0.1 at 2015-12-03 02:01:59 +0530
+Processing by CompaniesController#add_staff as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  Rendered layouts/_application.html.erb (4.4ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+  Rendered companies/add_staff.html.erb (6.5ms)
+Completed 200 OK in 9ms (Views: 7.6ms | ActiveRecord: 0.2ms)
 
+<<<<<<< HEAD
 Started GET "/assets/jquery.min.js?body=1" for 127.0.0.1 at 2015-12-03 00:52:26 +0530
+=======
+>>>>>>> 628178772b616bad342e07e81ffe6d92d871a0e5
 
+Started GET "/assets/bootstrap.css?body=1" for 127.0.0.1 at 2015-12-03 02:01:59 +0530
 
+<<<<<<< HEAD
 Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2015-12-03 00:52:27 +0530
+=======
+>>>>>>> 628178772b616bad342e07e81ffe6d92d871a0e5
 
+Started GET "/assets/bootstrap-theme.min.css?body=1" for 127.0.0.1 at 2015-12-03 02:01:59 +0530
 
+<<<<<<< HEAD
 Started GET "/assets/charges.js?body=1" for 127.0.0.1 at 2015-12-03 00:52:27 +0530
+=======
+>>>>>>> 628178772b616bad342e07e81ffe6d92d871a0e5
 
+Started GET "/assets/sweetalert.css?body=1" for 127.0.0.1 at 2015-12-03 02:01:59 +0530
 
+<<<<<<< HEAD
 Started GET "/assets/sweetalert-dev.js?body=1" for 127.0.0.1 at 2015-12-03 00:52:27 +0530
+=======
+>>>>>>> 628178772b616bad342e07e81ffe6d92d871a0e5
 
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2015-12-03 02:01:59 +0530
 
+<<<<<<< HEAD
 Started GET "/assets/logo.png" for 127.0.0.1 at 2015-12-03 00:52:27 +0530
+=======
+>>>>>>> 628178772b616bad342e07e81ffe6d92d871a0e5
 
+Started GET "/assets/bootstrap-theme.css?body=1" for 127.0.0.1 at 2015-12-03 02:01:59 +0530
 
+<<<<<<< HEAD
 Started GET "/assets/staff.png" for 127.0.0.1 at 2015-12-03 00:52:27 +0530
+=======
+>>>>>>> 628178772b616bad342e07e81ffe6d92d871a0e5
 
+Started GET "/assets/style.css?body=1" for 127.0.0.1 at 2015-12-03 02:01:59 +0530
 
+<<<<<<< HEAD
 Started GET "/assets/rang.png" for 127.0.0.1 at 2015-12-03 00:52:27 +0530
+=======
+>>>>>>> 628178772b616bad342e07e81ffe6d92d871a0e5
 
+Started GET "/assets/jquery.validate.js?body=1" for 127.0.0.1 at 2015-12-03 02:01:59 +0530
 
+<<<<<<< HEAD
 Started GET "/assets/map.png" for 127.0.0.1 at 2015-12-03 00:52:27 +0530
+=======
+>>>>>>> 628178772b616bad342e07e81ffe6d92d871a0e5
 
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2015-12-03 02:01:59 +0530
 
+<<<<<<< HEAD
 Started GET "/assets/search1.jpg" for 127.0.0.1 at 2015-12-03 00:52:27 +0530
+=======
+>>>>>>> 628178772b616bad342e07e81ffe6d92d871a0e5
 
+Started GET "/assets/jquery.min.js?body=1" for 127.0.0.1 at 2015-12-03 02:01:59 +0530
 
+<<<<<<< HEAD
 Started GET "/assets/company1.png" for 127.0.0.1 at 2015-12-03 00:52:27 +0530
+=======
+>>>>>>> 628178772b616bad342e07e81ffe6d92d871a0e5
 
+Started GET "/assets/sweetalert-dev.js?body=1" for 127.0.0.1 at 2015-12-03 02:01:59 +0530
 
+<<<<<<< HEAD
 Started GET "/assets/footerbg.jpg" for 127.0.0.1 at 2015-12-03 00:52:27 +0530
+=======
+>>>>>>> 628178772b616bad342e07e81ffe6d92d871a0e5
 
+Started GET "/assets/charges.js?body=1" for 127.0.0.1 at 2015-12-03 02:01:59 +0530
 
+<<<<<<< HEAD
 Started GET "/search?skills=&staff_quf=B.C.A&experience=&availability=" for 127.0.0.1 at 2015-12-03 00:53:48 +0530
 Processing by SearchController#search as HTML
   Parameters: {"skills"=>"", "staff_quf"=>"B.C.A", "experience"=>"", "availability"=>""}
@@ -147,63 +690,161 @@ B.C.A
   Rendered layouts/_footer.html.erb (0.0ms)
   Rendered search/search.html.erb (6.8ms)
 Completed 200 OK in 20ms (Views: 8.1ms | ActiveRecord: 2.0ms)
+=======
+>>>>>>> 628178772b616bad342e07e81ffe6d92d871a0e5
 
+Started GET "/assets/line.png" for 127.0.0.1 at 2015-12-03 02:01:59 +0530
 
+<<<<<<< HEAD
 Started GET "/assets/style.css?body=1" for 127.0.0.1 at 2015-12-03 00:53:48 +0530
+=======
+>>>>>>> 628178772b616bad342e07e81ffe6d92d871a0e5
 
+Started GET "/assets/create.png" for 127.0.0.1 at 2015-12-03 02:01:59 +0530
 
+<<<<<<< HEAD
 Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2015-12-03 00:53:48 +0530
+=======
+>>>>>>> 628178772b616bad342e07e81ffe6d92d871a0e5
 
+Started GET "/assets/logo.png" for 127.0.0.1 at 2015-12-03 02:01:59 +0530
 
+<<<<<<< HEAD
 Started GET "/assets/bootstrap-theme.min.css?body=1" for 127.0.0.1 at 2015-12-03 00:53:48 +0530
+=======
+>>>>>>> 628178772b616bad342e07e81ffe6d92d871a0e5
 
+Started GET "/assets/right.png" for 127.0.0.1 at 2015-12-03 02:01:59 +0530
 
+<<<<<<< HEAD
 Started GET "/assets/sweetalert.css?body=1" for 127.0.0.1 at 2015-12-03 00:53:48 +0530
+=======
+>>>>>>> 628178772b616bad342e07e81ffe6d92d871a0e5
 
+Started GET "/assets/footerbg.jpg" for 127.0.0.1 at 2015-12-03 02:01:59 +0530
 
+<<<<<<< HEAD
 Started GET "/assets/bootstrap.css?body=1" for 127.0.0.1 at 2015-12-03 00:53:48 +0530
+=======
+>>>>>>> 628178772b616bad342e07e81ffe6d92d871a0e5
 
+Started POST "/add_staff/create" for 127.0.0.1 at 2015-12-03 02:02:13 +0530
+Processing by CompaniesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"bLZVhp9OlN5eRBmqXNxwaiz3jwUgkqo/VYamYs9Y9kg=", "first_name"=>"RS", "last_name"=>"P", "email"=>"rs@email.com", "skills"=>"Nodejs, Ruby, Rails", "availability"=>"40", "is_private"=>"0", "qualification"=>"Post Graduate", "experience"=>"3", "company_id"=>"1", "commit"=>"Add Staff"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mUsersStaffPlans Load (0.1ms)[0m  [1mSELECT `users_staff_plans`.* FROM `users_staff_plans` WHERE `users_staff_plans`.`user_id` = 1 ORDER BY `users_staff_plans`.`id` ASC LIMIT 1[0m
+DEPRECATION WARNING: Relation#all is deprecated. If you want to eager-load a relation, you can call #load (e.g. `Post.where(published: true).load`). If you want to get an array of records from a relation, you can call #to_a (e.g. `Post.where(published: true).to_a`). (called from create at /var/www/html/eps2/app/controllers/companies_controller.rb:42)
+  [1m[35mCompanyStaff Load (0.4ms)[0m  SELECT `company_staffs`.* FROM `company_staffs` WHERE `company_staffs`.`company_id` = 1
+  [1m[36mAdmin::StaffPlans Load (0.1ms)[0m  [1mSELECT `admin_staff_plans`.* FROM `admin_staff_plans` WHERE `admin_staff_plans`.`id` = 1 LIMIT 1[0m
+Unpermitted parameters: utf8, authenticity_token, commit
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM `company_staffs` WHERE `company_staffs`.`email` = 'rs@email.com'
+Unpermitted parameters: utf8, authenticity_token, commit
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `company_staffs` (`availability`, `company_id`, `created_at`, `email`, `experience`, `first_name`, `is_private`, `last_name`, `qualification`, `skills`, `updated_at`) VALUES ('40', 1, '2015-12-02 20:32:13', 'rs@email.com', '3', 'RS', 0, 'P', 'Post Graduate', 'Nodejs, Ruby, Rails', '2015-12-02 20:32:13')
+  [1m[36m (38.8ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/company_home
+Completed 302 Found in 47ms (ActiveRecord: 40.3ms)
 
+<<<<<<< HEAD
 Started GET "/assets/bootstrap-theme.css?body=1" for 127.0.0.1 at 2015-12-03 00:53:48 +0530
+=======
+>>>>>>> 628178772b616bad342e07e81ffe6d92d871a0e5
 
+Started GET "/company_home" for 127.0.0.1 at 2015-12-03 02:02:13 +0530
+Processing by CompaniesController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  Rendered layouts/_application.html.erb (7.4ms)
+  [1m[36mCompanyStaff Load (0.2ms)[0m  [1mSELECT `company_staffs`.* FROM `company_staffs`[0m
+  Rendered layouts/_footer.html.erb (0.0ms)
+  Rendered companies/index.html.erb (9.4ms)
+Completed 200 OK in 12ms (Views: 10.1ms | ActiveRecord: 0.4ms)
 
+<<<<<<< HEAD
 Started GET "/assets/jquery.min.js?body=1" for 127.0.0.1 at 2015-12-03 00:53:48 +0530
+=======
+>>>>>>> 628178772b616bad342e07e81ffe6d92d871a0e5
 
+Started GET "/assets/bootstrap.css?body=1" for 127.0.0.1 at 2015-12-03 02:02:13 +0530
 
+<<<<<<< HEAD
 Started GET "/assets/jquery.validate.js?body=1" for 127.0.0.1 at 2015-12-03 00:53:48 +0530
+=======
+>>>>>>> 628178772b616bad342e07e81ffe6d92d871a0e5
 
+Started GET "/assets/bootstrap-theme.css?body=1" for 127.0.0.1 at 2015-12-03 02:02:13 +0530
 
+<<<<<<< HEAD
 Started GET "/assets/charges.js?body=1" for 127.0.0.1 at 2015-12-03 00:53:48 +0530
+=======
+>>>>>>> 628178772b616bad342e07e81ffe6d92d871a0e5
 
+Started GET "/assets/sweetalert.css?body=1" for 127.0.0.1 at 2015-12-03 02:02:13 +0530
 
+<<<<<<< HEAD
 Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2015-12-03 00:53:48 +0530
+=======
+>>>>>>> 628178772b616bad342e07e81ffe6d92d871a0e5
 
+Started GET "/assets/bootstrap-theme.min.css?body=1" for 127.0.0.1 at 2015-12-03 02:02:13 +0530
 
+<<<<<<< HEAD
 Started GET "/assets/sweetalert-dev.js?body=1" for 127.0.0.1 at 2015-12-03 00:53:48 +0530
+=======
+>>>>>>> 628178772b616bad342e07e81ffe6d92d871a0e5
 
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2015-12-03 02:02:13 +0530
 
+<<<<<<< HEAD
 Started GET "/assets/logo.png" for 127.0.0.1 at 2015-12-03 00:53:48 +0530
+=======
+>>>>>>> 628178772b616bad342e07e81ffe6d92d871a0e5
 
+Started GET "/assets/style.css?body=1" for 127.0.0.1 at 2015-12-03 02:02:13 +0530
 
+<<<<<<< HEAD
 Started GET "/assets/staff.png" for 127.0.0.1 at 2015-12-03 00:53:48 +0530
+=======
+>>>>>>> 628178772b616bad342e07e81ffe6d92d871a0e5
 
+Started GET "/assets/jquery.validate.js?body=1" for 127.0.0.1 at 2015-12-03 02:02:13 +0530
 
+<<<<<<< HEAD
 Started GET "/assets/rang.png" for 127.0.0.1 at 2015-12-03 00:53:48 +0530
+=======
+>>>>>>> 628178772b616bad342e07e81ffe6d92d871a0e5
 
+Started GET "/assets/jquery.min.js?body=1" for 127.0.0.1 at 2015-12-03 02:02:13 +0530
 
+<<<<<<< HEAD
 Started GET "/assets/map.png" for 127.0.0.1 at 2015-12-03 00:53:48 +0530
+=======
+>>>>>>> 628178772b616bad342e07e81ffe6d92d871a0e5
 
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2015-12-03 02:02:13 +0530
 
+<<<<<<< HEAD
 Started GET "/assets/search1.jpg" for 127.0.0.1 at 2015-12-03 00:53:48 +0530
+=======
+>>>>>>> 628178772b616bad342e07e81ffe6d92d871a0e5
 
+Started GET "/assets/charges.js?body=1" for 127.0.0.1 at 2015-12-03 02:02:13 +0530
 
+<<<<<<< HEAD
 Started GET "/assets/company1.png" for 127.0.0.1 at 2015-12-03 00:53:48 +0530
+=======
+>>>>>>> 628178772b616bad342e07e81ffe6d92d871a0e5
 
+Started GET "/assets/sweetalert-dev.js?body=1" for 127.0.0.1 at 2015-12-03 02:02:13 +0530
 
+<<<<<<< HEAD
 Started GET "/assets/footerbg.jpg" for 127.0.0.1 at 2015-12-03 00:53:49 +0530
   [1m[36mUser Load (0.4ms)[0m  [1mSELECT `users`.* FROM `users`[0m
+=======
+>>>>>>> 628178772b616bad342e07e81ffe6d92d871a0e5
 
+Started GET "/assets/line.png" for 127.0.0.1 at 2015-12-03 02:02:13 +0530
 
+<<<<<<< HEAD
 Started GET "/search?skills=&staff_quf=B.C.A&experience=&availability=" for 127.0.0.1 at 2015-12-03 00:59:11 +0530
 Processing by SearchController#search as HTML
   Parameters: {"skills"=>"", "staff_quf"=>"B.C.A", "experience"=>"", "availability"=>""}
@@ -236,14 +877,31 @@ Completed 500 Internal Server Error in 2ms
 ActiveRecord::StatementInvalid (Mysql2::Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '%%' OR company_staffs.availability like '%%'' at line 2: SELECT users.first_name as company_fn, users.last_name as company_ln, company_staffs.* FROM users 
 	INNER JOIN company_staffs ON users.id = company_staffs.company_id where company_staffs.skills like %%' OR company_staffs.availability like '%%'):
   app/controllers/search_controller.rb:8:in `search'
+=======
+
+Started GET "/assets/logo.png" for 127.0.0.1 at 2015-12-03 02:02:13 +0530
 
 
+Started GET "/assets/create.png" for 127.0.0.1 at 2015-12-03 02:02:13 +0530
+
+
+Started GET "/assets/right.png" for 127.0.0.1 at 2015-12-03 02:02:13 +0530
+
+>>>>>>> 628178772b616bad342e07e81ffe6d92d871a0e5
+
+Started GET "/assets/add.png" for 127.0.0.1 at 2015-12-03 02:02:13 +0530
+
+<<<<<<< HEAD
   Rendered /home/ramandeep/.rvm/gems/ruby-2.2.1/gems/actionpack-4.0.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.6ms)
   Rendered /home/ramandeep/.rvm/gems/ruby-2.2.1/gems/actionpack-4.0.4/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
   Rendered /home/ramandeep/.rvm/gems/ruby-2.2.1/gems/actionpack-4.0.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.7ms)
   Rendered /home/ramandeep/.rvm/gems/ruby-2.2.1/gems/actionpack-4.0.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (9.1ms)
+=======
+>>>>>>> 628178772b616bad342e07e81ffe6d92d871a0e5
 
+Started GET "/assets/delete.png" for 127.0.0.1 at 2015-12-03 02:02:13 +0530
 
+<<<<<<< HEAD
 Started GET "/search?skills=&staff_quf=B.C.A&experience=&availability=" for 127.0.0.1 at 2015-12-03 00:59:49 +0530
 Processing by SearchController#search as HTML
   Parameters: {"skills"=>"", "staff_quf"=>"B.C.A", "experience"=>"", "availability"=>""}
@@ -256,62 +914,144 @@ B.C.A
   Rendered layouts/_footer.html.erb (0.0ms)
   Rendered search/search.html.erb (6.6ms)
 Completed 200 OK in 18ms (Views: 7.9ms | ActiveRecord: 1.4ms)
+=======
+>>>>>>> 628178772b616bad342e07e81ffe6d92d871a0e5
 
+Started GET "/assets/footerbg.jpg" for 127.0.0.1 at 2015-12-03 02:02:13 +0530
 
+<<<<<<< HEAD
 Started GET "/assets/style.css?body=1" for 127.0.0.1 at 2015-12-03 00:59:49 +0530
+=======
+>>>>>>> 628178772b616bad342e07e81ffe6d92d871a0e5
 
+Started GET "/assets/edit.png" for 127.0.0.1 at 2015-12-03 02:02:13 +0530
 
+<<<<<<< HEAD
 Started GET "/assets/bootstrap.css?body=1" for 127.0.0.1 at 2015-12-03 00:59:49 +0530
+=======
+>>>>>>> 628178772b616bad342e07e81ffe6d92d871a0e5
 
+Started GET "/add_staff" for 127.0.0.1 at 2015-12-03 02:02:32 +0530
+Processing by CompaniesController#add_staff as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  Rendered layouts/_application.html.erb (5.0ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+  Rendered companies/add_staff.html.erb (7.0ms)
+Completed 200 OK in 10ms (Views: 8.7ms | ActiveRecord: 0.2ms)
 
+<<<<<<< HEAD
 Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2015-12-03 00:59:49 +0530
+=======
+>>>>>>> 628178772b616bad342e07e81ffe6d92d871a0e5
 
+Started GET "/assets/style.css?body=1" for 127.0.0.1 at 2015-12-03 02:02:32 +0530
 
+<<<<<<< HEAD
 Started GET "/assets/sweetalert.css?body=1" for 127.0.0.1 at 2015-12-03 00:59:49 +0530
+=======
+>>>>>>> 628178772b616bad342e07e81ffe6d92d871a0e5
 
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2015-12-03 02:02:32 +0530
 
+<<<<<<< HEAD
 Started GET "/assets/bootstrap-theme.min.css?body=1" for 127.0.0.1 at 2015-12-03 00:59:49 +0530
+=======
+>>>>>>> 628178772b616bad342e07e81ffe6d92d871a0e5
 
+Started GET "/assets/bootstrap.css?body=1" for 127.0.0.1 at 2015-12-03 02:02:32 +0530
 
+<<<<<<< HEAD
 Started GET "/assets/bootstrap-theme.css?body=1" for 127.0.0.1 at 2015-12-03 00:59:49 +0530
+=======
+>>>>>>> 628178772b616bad342e07e81ffe6d92d871a0e5
 
+Started GET "/assets/sweetalert.css?body=1" for 127.0.0.1 at 2015-12-03 02:02:32 +0530
 
+<<<<<<< HEAD
 Started GET "/assets/jquery.min.js?body=1" for 127.0.0.1 at 2015-12-03 00:59:49 +0530
+=======
+>>>>>>> 628178772b616bad342e07e81ffe6d92d871a0e5
 
+Started GET "/assets/bootstrap-theme.min.css?body=1" for 127.0.0.1 at 2015-12-03 02:02:32 +0530
 
+<<<<<<< HEAD
 Started GET "/assets/jquery.validate.js?body=1" for 127.0.0.1 at 2015-12-03 00:59:49 +0530
+=======
+>>>>>>> 628178772b616bad342e07e81ffe6d92d871a0e5
 
+Started GET "/assets/bootstrap-theme.css?body=1" for 127.0.0.1 at 2015-12-03 02:02:32 +0530
 
+<<<<<<< HEAD
 Started GET "/assets/charges.js?body=1" for 127.0.0.1 at 2015-12-03 00:59:49 +0530
+=======
+>>>>>>> 628178772b616bad342e07e81ffe6d92d871a0e5
 
+Started GET "/assets/jquery.min.js?body=1" for 127.0.0.1 at 2015-12-03 02:02:32 +0530
 
+<<<<<<< HEAD
 Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2015-12-03 00:59:49 +0530
+=======
+>>>>>>> 628178772b616bad342e07e81ffe6d92d871a0e5
 
+Started GET "/assets/jquery.validate.js?body=1" for 127.0.0.1 at 2015-12-03 02:02:32 +0530
 
+<<<<<<< HEAD
 Started GET "/assets/sweetalert-dev.js?body=1" for 127.0.0.1 at 2015-12-03 00:59:49 +0530
+=======
+>>>>>>> 628178772b616bad342e07e81ffe6d92d871a0e5
 
+Started GET "/assets/charges.js?body=1" for 127.0.0.1 at 2015-12-03 02:02:32 +0530
 
+<<<<<<< HEAD
 Started GET "/assets/logo.png" for 127.0.0.1 at 2015-12-03 00:59:49 +0530
+=======
+>>>>>>> 628178772b616bad342e07e81ffe6d92d871a0e5
 
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2015-12-03 02:02:32 +0530
 
+<<<<<<< HEAD
 Started GET "/assets/staff.png" for 127.0.0.1 at 2015-12-03 00:59:49 +0530
+=======
+>>>>>>> 628178772b616bad342e07e81ffe6d92d871a0e5
 
+Started GET "/assets/sweetalert-dev.js?body=1" for 127.0.0.1 at 2015-12-03 02:02:32 +0530
 
+<<<<<<< HEAD
 Started GET "/assets/rang.png" for 127.0.0.1 at 2015-12-03 00:59:49 +0530
+=======
+>>>>>>> 628178772b616bad342e07e81ffe6d92d871a0e5
 
+Started GET "/assets/line.png" for 127.0.0.1 at 2015-12-03 02:02:32 +0530
 
+<<<<<<< HEAD
 Started GET "/assets/map.png" for 127.0.0.1 at 2015-12-03 00:59:49 +0530
+=======
+>>>>>>> 628178772b616bad342e07e81ffe6d92d871a0e5
 
+Started GET "/assets/right.png" for 127.0.0.1 at 2015-12-03 02:02:32 +0530
 
+<<<<<<< HEAD
 Started GET "/assets/search1.jpg" for 127.0.0.1 at 2015-12-03 00:59:49 +0530
+=======
+>>>>>>> 628178772b616bad342e07e81ffe6d92d871a0e5
 
+Started GET "/assets/logo.png" for 127.0.0.1 at 2015-12-03 02:02:32 +0530
 
+<<<<<<< HEAD
 Started GET "/assets/company1.png" for 127.0.0.1 at 2015-12-03 00:59:49 +0530
+=======
+>>>>>>> 628178772b616bad342e07e81ffe6d92d871a0e5
 
+Started GET "/assets/create.png" for 127.0.0.1 at 2015-12-03 02:02:32 +0530
 
+<<<<<<< HEAD
 Started GET "/assets/footerbg.jpg" for 127.0.0.1 at 2015-12-03 00:59:50 +0530
+=======
+>>>>>>> 628178772b616bad342e07e81ffe6d92d871a0e5
 
+Started GET "/assets/footerbg.jpg" for 127.0.0.1 at 2015-12-03 02:02:32 +0530
 
+<<<<<<< HEAD
 Started GET "/search?skills=&staff_quf=B.C.A&experience=&availability=" for 127.0.0.1 at 2015-12-03 00:59:57 +0530
 Processing by SearchController#search as HTML
   Parameters: {"skills"=>"", "staff_quf"=>"B.C.A", "experience"=>"", "availability"=>""}
@@ -324,8 +1064,20 @@ B.C.A
   Rendered layouts/_footer.html.erb (0.1ms)
   Rendered search/search.html.erb (7.0ms)
 Completed 200 OK in 20ms (Views: 8.2ms | ActiveRecord: 1.3ms)
+=======
+>>>>>>> 628178772b616bad342e07e81ffe6d92d871a0e5
 
+Started POST "/add_staff/create" for 127.0.0.1 at 2015-12-03 02:03:16 +0530
+Processing by CompaniesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"bLZVhp9OlN5eRBmqXNxwaiz3jwUgkqo/VYamYs9Y9kg=", "first_name"=>"New", "last_name"=>"One", "email"=>"new@gmail.com", "skills"=>"Nodejs, Ruby, Rails", "availability"=>"40", "is_private"=>"0", "qualification"=>"Post Graduate", "experience"=>"3", "company_id"=>"1", "commit"=>"Add Staff"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mUsersStaffPlans Load (0.1ms)[0m  SELECT `users_staff_plans`.* FROM `users_staff_plans` WHERE `users_staff_plans`.`user_id` = 1 ORDER BY `users_staff_plans`.`id` ASC LIMIT 1
+DEPRECATION WARNING: Relation#all is deprecated. If you want to eager-load a relation, you can call #load (e.g. `Post.where(published: true).load`). If you want to get an array of records from a relation, you can call #to_a (e.g. `Post.where(published: true).to_a`). (called from create at /var/www/html/eps2/app/controllers/companies_controller.rb:42)
+  [1m[36mCompanyStaff Load (0.5ms)[0m  [1mSELECT `company_staffs`.* FROM `company_staffs` WHERE `company_staffs`.`company_id` = 1[0m
+  [1m[35mAdmin::StaffPlans Load (0.3ms)[0m  SELECT `admin_staff_plans`.* FROM `admin_staff_plans` WHERE `admin_staff_plans`.`id` = 1 LIMIT 1
+Completed 500 Internal Server Error in 39ms
 
+<<<<<<< HEAD
 Started GET "/assets/style.css?body=1" for 127.0.0.1 at 2015-12-03 00:59:58 +0530
 
 
@@ -1507,3 +2259,437 @@ Started GET "/assets/right.png" for 127.0.0.1 at 2015-12-03 01:28:53 +0530
 
 
 Started GET "/assets/footerbg.jpg" for 127.0.0.1 at 2015-12-03 01:28:53 +0530
+=======
+NoMethodError (undefined method `>=' for #<Array:0x0000000465d0e8>):
+  app/controllers/companies_controller.rb:49:in `create'
+
+
+  Rendered /home/deepak/.rvm/gems/ruby-2.2.1/gems/actionpack-4.0.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.7ms)
+  Rendered /home/deepak/.rvm/gems/ruby-2.2.1/gems/actionpack-4.0.4/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.9ms)
+  Rendered /home/deepak/.rvm/gems/ruby-2.2.1/gems/actionpack-4.0.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.8ms)
+  Rendered /home/deepak/.rvm/gems/ruby-2.2.1/gems/actionpack-4.0.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (9.4ms)
+
+
+Started POST "/add_staff/create" for 127.0.0.1 at 2015-12-03 02:03:37 +0530
+Processing by CompaniesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"bLZVhp9OlN5eRBmqXNxwaiz3jwUgkqo/VYamYs9Y9kg=", "first_name"=>"New", "last_name"=>"One", "email"=>"new@gmail.com", "skills"=>"Nodejs, Ruby, Rails", "availability"=>"40", "is_private"=>"0", "qualification"=>"Post Graduate", "experience"=>"3", "company_id"=>"1", "commit"=>"Add Staff"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mUsersStaffPlans Load (0.1ms)[0m  SELECT `users_staff_plans`.* FROM `users_staff_plans` WHERE `users_staff_plans`.`user_id` = 1 ORDER BY `users_staff_plans`.`id` ASC LIMIT 1
+DEPRECATION WARNING: Relation#all is deprecated. If you want to eager-load a relation, you can call #load (e.g. `Post.where(published: true).load`). If you want to get an array of records from a relation, you can call #to_a (e.g. `Post.where(published: true).to_a`). (called from create at /var/www/html/eps2/app/controllers/companies_controller.rb:42)
+  [1m[36mCompanyStaff Load (0.2ms)[0m  [1mSELECT `company_staffs`.* FROM `company_staffs` WHERE `company_staffs`.`company_id` = 1[0m
+  [1m[35mAdmin::StaffPlans Load (0.2ms)[0m  SELECT `admin_staff_plans`.* FROM `admin_staff_plans` WHERE `admin_staff_plans`.`id` = 1 LIMIT 1
+Redirected to http://localhost:3000/company_home
+Completed 302 Found in 34ms (ActiveRecord: 5.7ms)
+
+
+Started GET "/company_home" for 127.0.0.1 at 2015-12-03 02:03:37 +0530
+Processing by CompaniesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  Rendered layouts/_application.html.erb (7.2ms)
+  [1m[35mCompanyStaff Load (0.2ms)[0m  SELECT `company_staffs`.* FROM `company_staffs`
+  Rendered layouts/_footer.html.erb (0.0ms)
+  Rendered companies/index.html.erb (11.2ms)
+Completed 200 OK in 15ms (Views: 12.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/style.css?body=1" for 127.0.0.1 at 2015-12-03 02:03:37 +0530
+
+
+Started GET "/assets/bootstrap-theme.css?body=1" for 127.0.0.1 at 2015-12-03 02:03:37 +0530
+
+
+Started GET "/assets/bootstrap.css?body=1" for 127.0.0.1 at 2015-12-03 02:03:37 +0530
+
+
+Started GET "/assets/bootstrap-theme.min.css?body=1" for 127.0.0.1 at 2015-12-03 02:03:37 +0530
+
+
+Started GET "/assets/sweetalert.css?body=1" for 127.0.0.1 at 2015-12-03 02:03:37 +0530
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2015-12-03 02:03:37 +0530
+
+
+Started GET "/assets/jquery.min.js?body=1" for 127.0.0.1 at 2015-12-03 02:03:37 +0530
+
+
+Started GET "/assets/jquery.validate.js?body=1" for 127.0.0.1 at 2015-12-03 02:03:37 +0530
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2015-12-03 02:03:37 +0530
+
+
+Started GET "/assets/charges.js?body=1" for 127.0.0.1 at 2015-12-03 02:03:37 +0530
+
+
+Started GET "/assets/sweetalert-dev.js?body=1" for 127.0.0.1 at 2015-12-03 02:03:37 +0530
+
+
+Started GET "/assets/line.png" for 127.0.0.1 at 2015-12-03 02:03:37 +0530
+
+
+Started GET "/assets/right.png" for 127.0.0.1 at 2015-12-03 02:03:37 +0530
+
+
+Started GET "/assets/logo.png" for 127.0.0.1 at 2015-12-03 02:03:37 +0530
+
+
+Started GET "/assets/create.png" for 127.0.0.1 at 2015-12-03 02:03:37 +0530
+
+
+Started GET "/assets/add.png" for 127.0.0.1 at 2015-12-03 02:03:41 +0530
+
+
+Started GET "/assets/edit.png" for 127.0.0.1 at 2015-12-03 02:03:41 +0530
+
+
+Started GET "/assets/delete.png" for 127.0.0.1 at 2015-12-03 02:03:41 +0530
+
+
+Started GET "/assets/footerbg.jpg" for 127.0.0.1 at 2015-12-03 02:03:41 +0530
+
+
+Started GET "/add_staff" for 127.0.0.1 at 2015-12-03 02:03:53 +0530
+Processing by CompaniesController#add_staff as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  Rendered layouts/_application.html.erb (8.4ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+  Rendered companies/add_staff.html.erb (10.7ms)
+Completed 200 OK in 17ms (Views: 15.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/style.css?body=1" for 127.0.0.1 at 2015-12-03 02:03:53 +0530
+
+
+Started GET "/assets/bootstrap.css?body=1" for 127.0.0.1 at 2015-12-03 02:03:53 +0530
+
+
+Started GET "/assets/bootstrap-theme.css?body=1" for 127.0.0.1 at 2015-12-03 02:03:53 +0530
+
+
+Started GET "/assets/sweetalert.css?body=1" for 127.0.0.1 at 2015-12-03 02:03:53 +0530
+
+
+Started GET "/assets/bootstrap-theme.min.css?body=1" for 127.0.0.1 at 2015-12-03 02:03:53 +0530
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2015-12-03 02:03:53 +0530
+
+
+Started GET "/assets/jquery.validate.js?body=1" for 127.0.0.1 at 2015-12-03 02:03:53 +0530
+
+
+Started GET "/assets/jquery.min.js?body=1" for 127.0.0.1 at 2015-12-03 02:03:53 +0530
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2015-12-03 02:03:53 +0530
+
+
+Started GET "/assets/charges.js?body=1" for 127.0.0.1 at 2015-12-03 02:03:53 +0530
+
+
+Started GET "/assets/sweetalert-dev.js?body=1" for 127.0.0.1 at 2015-12-03 02:03:53 +0530
+
+
+Started GET "/assets/line.png" for 127.0.0.1 at 2015-12-03 02:03:53 +0530
+
+
+Started GET "/assets/right.png" for 127.0.0.1 at 2015-12-03 02:03:53 +0530
+
+
+Started GET "/assets/logo.png" for 127.0.0.1 at 2015-12-03 02:03:53 +0530
+
+
+Started GET "/assets/create.png" for 127.0.0.1 at 2015-12-03 02:03:53 +0530
+
+
+Started GET "/assets/footerbg.jpg" for 127.0.0.1 at 2015-12-03 02:03:53 +0530
+
+
+Started POST "/add_staff/create" for 127.0.0.1 at 2015-12-03 02:04:05 +0530
+Processing by CompaniesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"bLZVhp9OlN5eRBmqXNxwaiz3jwUgkqo/VYamYs9Y9kg=", "first_name"=>"New", "last_name"=>"One", "email"=>"new@gmail.com", "skills"=>"Nodejs, Ruby, Rails", "availability"=>"40", "is_private"=>"0", "qualification"=>"Post Graduate", "experience"=>"3", "company_id"=>"1", "commit"=>"Add Staff"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mUsersStaffPlans Load (0.1ms)[0m  [1mSELECT `users_staff_plans`.* FROM `users_staff_plans` WHERE `users_staff_plans`.`user_id` = 1 ORDER BY `users_staff_plans`.`id` ASC LIMIT 1[0m
+DEPRECATION WARNING: Relation#all is deprecated. If you want to eager-load a relation, you can call #load (e.g. `Post.where(published: true).load`). If you want to get an array of records from a relation, you can call #to_a (e.g. `Post.where(published: true).to_a`). (called from create at /var/www/html/eps2/app/controllers/companies_controller.rb:42)
+  [1m[35mCompanyStaff Load (0.2ms)[0m  SELECT `company_staffs`.* FROM `company_staffs` WHERE `company_staffs`.`company_id` = 1
+  [1m[36mAdmin::StaffPlans Load (0.3ms)[0m  [1mSELECT `admin_staff_plans`.* FROM `admin_staff_plans` WHERE `admin_staff_plans`.`id` = 1 LIMIT 1[0m
+Unpermitted parameters: utf8, authenticity_token, commit
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM `company_staffs` WHERE `company_staffs`.`email` = 'new@gmail.com'
+Unpermitted parameters: utf8, authenticity_token, commit
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `company_staffs` (`availability`, `company_id`, `created_at`, `email`, `experience`, `first_name`, `is_private`, `last_name`, `qualification`, `skills`, `updated_at`) VALUES ('40', 1, '2015-12-02 20:34:05', 'new@gmail.com', '3', 'New', 0, 'One', 'Post Graduate', 'Nodejs, Ruby, Rails', '2015-12-02 20:34:05')
+  [1m[36m (14.2ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/company_home
+Completed 302 Found in 23ms (ActiveRecord: 15.7ms)
+
+
+Started GET "/company_home" for 127.0.0.1 at 2015-12-03 02:04:05 +0530
+Processing by CompaniesController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  Rendered layouts/_application.html.erb (4.8ms)
+  [1m[36mCompanyStaff Load (0.3ms)[0m  [1mSELECT `company_staffs`.* FROM `company_staffs`[0m
+  Rendered layouts/_footer.html.erb (0.0ms)
+  Rendered companies/index.html.erb (7.2ms)
+Completed 200 OK in 10ms (Views: 8.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/style.css?body=1" for 127.0.0.1 at 2015-12-03 02:04:05 +0530
+
+
+Started GET "/assets/bootstrap.css?body=1" for 127.0.0.1 at 2015-12-03 02:04:05 +0530
+
+
+Started GET "/assets/jquery.validate.js?body=1" for 127.0.0.1 at 2015-12-03 02:04:05 +0530
+
+
+Started GET "/assets/bootstrap-theme.min.css?body=1" for 127.0.0.1 at 2015-12-03 02:04:05 +0530
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2015-12-03 02:04:05 +0530
+
+
+Started GET "/assets/bootstrap-theme.css?body=1" for 127.0.0.1 at 2015-12-03 02:04:05 +0530
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2015-12-03 02:04:05 +0530
+
+
+Started GET "/assets/sweetalert.css?body=1" for 127.0.0.1 at 2015-12-03 02:04:05 +0530
+
+
+Started GET "/assets/jquery.min.js?body=1" for 127.0.0.1 at 2015-12-03 02:04:05 +0530
+
+
+Started GET "/assets/sweetalert-dev.js?body=1" for 127.0.0.1 at 2015-12-03 02:04:05 +0530
+
+
+Started GET "/assets/charges.js?body=1" for 127.0.0.1 at 2015-12-03 02:04:05 +0530
+
+
+Started GET "/assets/line.png" for 127.0.0.1 at 2015-12-03 02:04:05 +0530
+
+
+Started GET "/assets/right.png" for 127.0.0.1 at 2015-12-03 02:04:05 +0530
+
+
+Started GET "/assets/create.png" for 127.0.0.1 at 2015-12-03 02:04:05 +0530
+
+
+Started GET "/assets/logo.png" for 127.0.0.1 at 2015-12-03 02:04:05 +0530
+
+
+Started GET "/assets/add.png" for 127.0.0.1 at 2015-12-03 02:04:05 +0530
+
+
+Started GET "/assets/edit.png" for 127.0.0.1 at 2015-12-03 02:04:05 +0530
+
+
+Started GET "/assets/footerbg.jpg" for 127.0.0.1 at 2015-12-03 02:04:05 +0530
+
+
+Started GET "/assets/delete.png" for 127.0.0.1 at 2015-12-03 02:04:05 +0530
+
+
+Started GET "/add_staff" for 127.0.0.1 at 2015-12-03 02:04:09 +0530
+Processing by CompaniesController#add_staff as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  Rendered layouts/_application.html.erb (4.8ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+  Rendered companies/add_staff.html.erb (6.8ms)
+Completed 200 OK in 9ms (Views: 7.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/style.css?body=1" for 127.0.0.1 at 2015-12-03 02:04:09 +0530
+
+
+Started GET "/assets/bootstrap.css?body=1" for 127.0.0.1 at 2015-12-03 02:04:09 +0530
+
+
+Started GET "/assets/bootstrap-theme.min.css?body=1" for 127.0.0.1 at 2015-12-03 02:04:09 +0530
+
+
+Started GET "/assets/sweetalert.css?body=1" for 127.0.0.1 at 2015-12-03 02:04:09 +0530
+
+
+Started GET "/assets/bootstrap-theme.css?body=1" for 127.0.0.1 at 2015-12-03 02:04:09 +0530
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2015-12-03 02:04:09 +0530
+
+
+Started GET "/assets/jquery.min.js?body=1" for 127.0.0.1 at 2015-12-03 02:04:09 +0530
+
+
+Started GET "/assets/jquery.validate.js?body=1" for 127.0.0.1 at 2015-12-03 02:04:09 +0530
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2015-12-03 02:04:09 +0530
+
+
+Started GET "/assets/charges.js?body=1" for 127.0.0.1 at 2015-12-03 02:04:09 +0530
+
+
+Started GET "/assets/sweetalert-dev.js?body=1" for 127.0.0.1 at 2015-12-03 02:04:09 +0530
+
+
+Started GET "/assets/line.png" for 127.0.0.1 at 2015-12-03 02:04:09 +0530
+
+
+Started GET "/assets/create.png" for 127.0.0.1 at 2015-12-03 02:04:09 +0530
+
+
+Started GET "/assets/logo.png" for 127.0.0.1 at 2015-12-03 02:04:09 +0530
+
+
+Started GET "/assets/right.png" for 127.0.0.1 at 2015-12-03 02:04:09 +0530
+
+
+Started GET "/assets/footerbg.jpg" for 127.0.0.1 at 2015-12-03 02:04:09 +0530
+
+
+Started POST "/add_staff/create" for 127.0.0.1 at 2015-12-03 02:04:24 +0530
+Processing by CompaniesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"bLZVhp9OlN5eRBmqXNxwaiz3jwUgkqo/VYamYs9Y9kg=", "first_name"=>"New", "last_name"=>"Singh", "email"=>"newnew@gmail.com", "skills"=>"Nodejs, Ruby, Rails", "availability"=>"40", "is_private"=>"0", "qualification"=>"Post Graduate", "experience"=>"3", "company_id"=>"1", "commit"=>"Add Staff"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mUsersStaffPlans Load (0.2ms)[0m  SELECT `users_staff_plans`.* FROM `users_staff_plans` WHERE `users_staff_plans`.`user_id` = 1 ORDER BY `users_staff_plans`.`id` ASC LIMIT 1
+DEPRECATION WARNING: Relation#all is deprecated. If you want to eager-load a relation, you can call #load (e.g. `Post.where(published: true).load`). If you want to get an array of records from a relation, you can call #to_a (e.g. `Post.where(published: true).to_a`). (called from create at /var/www/html/eps2/app/controllers/companies_controller.rb:42)
+  [1m[36mCompanyStaff Load (0.4ms)[0m  [1mSELECT `company_staffs`.* FROM `company_staffs` WHERE `company_staffs`.`company_id` = 1[0m
+  [1m[35mAdmin::StaffPlans Load (0.1ms)[0m  SELECT `admin_staff_plans`.* FROM `admin_staff_plans` WHERE `admin_staff_plans`.`id` = 1 LIMIT 1
+Redirected to http://localhost:3000/company_home
+Completed 302 Found in 5ms (ActiveRecord: 0.9ms)
+
+
+Started GET "/company_home" for 127.0.0.1 at 2015-12-03 02:04:25 +0530
+Processing by CompaniesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  Rendered layouts/_application.html.erb (7.6ms)
+  [1m[35mCompanyStaff Load (0.1ms)[0m  SELECT `company_staffs`.* FROM `company_staffs`
+  Rendered layouts/_footer.html.erb (0.1ms)
+  Rendered companies/index.html.erb (10.0ms)
+Completed 200 OK in 13ms (Views: 11.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/bootstrap.css?body=1" for 127.0.0.1 at 2015-12-03 02:04:25 +0530
+
+
+Started GET "/assets/sweetalert.css?body=1" for 127.0.0.1 at 2015-12-03 02:04:25 +0530
+
+
+Started GET "/assets/bootstrap-theme.min.css?body=1" for 127.0.0.1 at 2015-12-03 02:04:25 +0530
+
+
+Started GET "/assets/bootstrap-theme.css?body=1" for 127.0.0.1 at 2015-12-03 02:04:25 +0530
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2015-12-03 02:04:25 +0530
+
+
+Started GET "/assets/style.css?body=1" for 127.0.0.1 at 2015-12-03 02:04:25 +0530
+
+
+Started GET "/assets/jquery.min.js?body=1" for 127.0.0.1 at 2015-12-03 02:04:25 +0530
+
+
+Started GET "/assets/jquery.validate.js?body=1" for 127.0.0.1 at 2015-12-03 02:04:25 +0530
+
+
+Started GET "/assets/charges.js?body=1" for 127.0.0.1 at 2015-12-03 02:04:25 +0530
+
+
+Started GET "/assets/sweetalert-dev.js?body=1" for 127.0.0.1 at 2015-12-03 02:04:25 +0530
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2015-12-03 02:04:25 +0530
+
+
+Started GET "/assets/line.png" for 127.0.0.1 at 2015-12-03 02:04:25 +0530
+
+
+Started GET "/assets/right.png" for 127.0.0.1 at 2015-12-03 02:04:25 +0530
+
+
+Started GET "/assets/create.png" for 127.0.0.1 at 2015-12-03 02:04:25 +0530
+
+
+Started GET "/assets/logo.png" for 127.0.0.1 at 2015-12-03 02:04:25 +0530
+
+
+Started GET "/assets/delete.png" for 127.0.0.1 at 2015-12-03 02:04:25 +0530
+
+
+Started GET "/assets/add.png" for 127.0.0.1 at 2015-12-03 02:04:25 +0530
+
+
+Started GET "/assets/footerbg.jpg" for 127.0.0.1 at 2015-12-03 02:04:25 +0530
+
+
+Started GET "/assets/edit.png" for 127.0.0.1 at 2015-12-03 02:04:25 +0530
+
+
+Started GET "/company_home" for 127.0.0.1 at 2015-12-03 02:04:42 +0530
+Processing by CompaniesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  Rendered layouts/_application.html.erb (4.7ms)
+  [1m[35mCompanyStaff Load (0.1ms)[0m  SELECT `company_staffs`.* FROM `company_staffs`
+  Rendered layouts/_footer.html.erb (0.0ms)
+  Rendered companies/index.html.erb (7.1ms)
+Completed 200 OK in 9ms (Views: 8.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/style.css?body=1" for 127.0.0.1 at 2015-12-03 02:04:42 +0530
+
+
+Started GET "/assets/sweetalert.css?body=1" for 127.0.0.1 at 2015-12-03 02:04:42 +0530
+
+
+Started GET "/assets/bootstrap-theme.css?body=1" for 127.0.0.1 at 2015-12-03 02:04:42 +0530
+
+
+Started GET "/assets/bootstrap-theme.min.css?body=1" for 127.0.0.1 at 2015-12-03 02:04:42 +0530
+
+
+Started GET "/assets/bootstrap.css?body=1" for 127.0.0.1 at 2015-12-03 02:04:42 +0530
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2015-12-03 02:04:42 +0530
+
+
+Started GET "/assets/jquery.min.js?body=1" for 127.0.0.1 at 2015-12-03 02:04:42 +0530
+
+
+Started GET "/assets/jquery.validate.js?body=1" for 127.0.0.1 at 2015-12-03 02:04:42 +0530
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2015-12-03 02:04:43 +0530
+
+
+Started GET "/assets/charges.js?body=1" for 127.0.0.1 at 2015-12-03 02:04:43 +0530
+
+
+Started GET "/assets/sweetalert-dev.js?body=1" for 127.0.0.1 at 2015-12-03 02:04:43 +0530
+
+
+Started GET "/assets/line.png" for 127.0.0.1 at 2015-12-03 02:04:43 +0530
+
+
+Started GET "/assets/logo.png" for 127.0.0.1 at 2015-12-03 02:04:43 +0530
+
+
+Started GET "/assets/create.png" for 127.0.0.1 at 2015-12-03 02:04:43 +0530
+
+
+Started GET "/assets/right.png" for 127.0.0.1 at 2015-12-03 02:04:43 +0530
+
+
+Started GET "/assets/edit.png" for 127.0.0.1 at 2015-12-03 02:04:43 +0530
+
+
+Started GET "/assets/delete.png" for 127.0.0.1 at 2015-12-03 02:04:43 +0530
+
+
+Started GET "/assets/add.png" for 127.0.0.1 at 2015-12-03 02:04:43 +0530
+
+
+Started GET "/assets/footerbg.jpg" for 127.0.0.1 at 2015-12-03 02:04:43 +0530
+>>>>>>> 628178772b616bad342e07e81ffe6d92d871a0e5

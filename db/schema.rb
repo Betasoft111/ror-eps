@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151125215209) do
+ActiveRecord::Schema.define(version: 20151202192042) do
 
   create_table "admin_admin_users", force: true do |t|
     t.string   "first_name"
@@ -47,6 +47,8 @@ ActiveRecord::Schema.define(version: 20151125215209) do
     t.datetime "updated_at"
   end
 
+  add_index "company_staffs", ["company_id"], name: "fk_staff", using: :btree
+
   create_table "subscription_plans", force: true do |t|
     t.string   "plan_name"
     t.string   "plan_price"
@@ -79,5 +81,12 @@ ActiveRecord::Schema.define(version: 20151125215209) do
   end
 
   add_index "users", ["plan_id"], name: "fk_plan", using: :btree
+
+  create_table "users_staff_plans", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "plan_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end
