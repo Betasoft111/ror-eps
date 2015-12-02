@@ -82,85 +82,24 @@
 		
 	</div>
 	<div class="row">
-		<div class="col-lg-4 col-sm-4 search-result">
-			<!-- <img src="img/search1.jpg"> -->
-			<%= image_tag("search1.jpg" , :alt => 'search1.jpg') %>
-			<div class="company-search">
-				<span><!-- <img src="img/company1.png"> --><%= image_tag("company1.png" , :alt => 'company1.png') %></span>
-				<a href="#">View More</a>
-			</div>
-			<span class="rate-search">6,300 <sup>kr</sup></span>
-			<h5>Company Name / Staff</h5>
-		</div>
-		<div class="col-lg-4 col-sm-4 search-result">
-			<!-- <img src="img/search2.jpg"> -->
-			<%= image_tag("search2.jpg" , :alt => 'search2.jpg') %>
-			<div class="company-search">
-				<span>
-					<!-- <img src="img/company2.png"> -->
-					<%= image_tag("company2.png" , :alt => 'company2.png') %></span>
-				<a href="#">View More</a>
-			</div>
-			<span class="rate-search">3,300 <sup>kr</sup></span>
-			<h5>Company Name / Staff</h5>
-		</div>
-		<div class="col-lg-4 col-sm-4 search-result">
-			<!-- <img src="img/search4.jpg"> -->
-			<%= image_tag("search4.jpg" , :alt => 'search4.jpg') %>
-			<div class="company-search">
-				<span>
-					<!-- <img src="img/search3.png"> -->
-					<%= image_tag("search3.png" , :alt => 'search3.png') %>
-				</span>
-				<a href="#">View More</a>
-			</div>
-			<span class="rate-search">9,9900 <sup>kr</sup></span>
-			<h5>Company Name / Staff</h5>
-		</div>
-	</div>
-	<div class="row">
-		<div class="col-lg-4 col-sm-4 search-result">
-			<!-- <img src="img/search4.jpg"> -->
-			<%= image_tag("search4.jpg" , :alt => 'search4.jpg') %>
-			<div class="company-search">
-				<span>
-					<!-- <img src="img/search3.png"> -->
-					<%= image_tag("search3.png" , :alt => 'search3.png') %>
-				</span>
-				<a href="#">View More</a>
-			</div>
-			<span class="rate-search">9,9900 <sup>kr</sup></span>
-			<h5>Company Name / Staff</h5>
-		</div>
 		
-		<div class="col-lg-4 col-sm-4 search-result">
-			<!-- <img src="img/search2.jpg"> -->
-			<%= image_tag("search2.jpg" , :alt => 'search2.jpg') %>
-			<div class="company-search">
-				<span>
-					<!-- <img src="img/company2.png"> -->
-					<%= image_tag("company2.png" , :alt => 'company2.png') %>
-				</span>
-				<a href="#">View More</a>
+
+		<% @search_results.each do |data| %> 
+			<div class="col-lg-4 col-sm-4 search-result">
+				<!-- <img src="img/search1.jpg"> -->
+				<%= image_tag("search1.jpg" , :alt => 'search1.jpg') %>
+				<div class="company-search">
+					<span><!-- <img src="img/company1.png"> --><%= image_tag("company1.png" , :alt => 'company1.png') %></span>
+					<a href="/details/<%= data.id%>">View More</a>
+				</div>
+				<span class="rate-search">6,300 <sup>kr</sup></span>
+				<h5><%= data.company_fn %> <%= data.company_ln %>/ <%= data.first_name %> <%= data.last_name %></h5>
 			</div>
-			<span class="rate-search">3,300 <sup>kr</sup></span>
-			<h5>Company Name / Staff</h5>
-		</div>
-		<div class="col-lg-4 col-sm-4 search-result">
-			<!-- <img src="img/search1.jpg"> -->
-			<%= image_tag("search1.jpg" , :alt => 'search1.jpg') %>
-			<div class="company-search">
-				<span>
-					<!-- <img src="img/company1.png"> -->
-					<%= image_tag("company1.png" , :alt => 'company1.png') %>
-				</span>
-				<a href="#">View More</a>
-			</div>
-			<span class="rate-search">6,300 <sup>kr</sup></span>
-			<h5>Company Name / Staff</h5>
-		</div>
-		
+		<% end %>  
+
+
 	</div>
+	
 </div>
 
 </div>
