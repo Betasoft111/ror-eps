@@ -622,6 +622,9 @@ a.add-new:hover {
     margin-top: 20px;
     text-shadow: none;
     width: 20%;
+    float:left;
+    text-decoration: none;
+    margin-right: 20px;
 }
 .add-employee .btn-default:hover {
     background: #fff none repeat scroll 0 0;
