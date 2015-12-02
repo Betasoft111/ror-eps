@@ -26,21 +26,66 @@ class CompaniesController < ApplicationController
 
 
 	#################################
-	#   Create New Compnay staff    #
+	#   Add New Company staff    #
 	#################################
 	def create
 
-		@check_company = CompanyStaff.where(:email => plan_params[:email])
-		if @check_company.empty?
-			@check_company = CompanyStaff.new(plan_params)
-			if @check_company.save
-				redirect_to "/company_home", :notice => "Company added successfully"
+		####################################################
+		# Check The Current Plan For Adding Staff Members  #
+		####################################################
+		@current_plan = UsersStaffPlans.where(:user_id => @current_user.id).first
+
+		##########################
+		# Get Total Staff Added  #
+		##########################
+		@total_staff = CompanyStaff.where(:company_id => @current_user.id).all
+
+		if @current_plan && @current_plan != nil
+			####################################
+			# Get No. Of Staff Allowed To Add  #
+			####################################
+			@allowed_staff = Admin::StaffPlans.find(@current_plan.plan_id)
+			if @total_staff.size >= @allowed_staff.no_of_staff
+				redirect_to "/company_home", :notice => "Your plan is not allows to add new members, please upgrade your plan"
 			else
-				redirect_to "/company_home", :notice => @check_company.errors
+				##########################
+				# Add New  Staff Member  #
+				##########################
+				@check_company = CompanyStaff.where(:email => plan_params[:email])
+				if @check_company.empty?
+					@check_company = CompanyStaff.new(plan_params)
+					if @check_company.save
+						redirect_to "/company_home", :notice => "Staff member added successfully"
+					else
+						redirect_to "/add_staff", :notice => @check_company.errors
+					end
+				else
+					redirect_to "/company_home", :notice => "Staff member already Exists"
+				end
 			end
+
 		else
-			redirect_to "/company_home", :notice => "Company  already Exists"
+			
+			if @current_plan.nil? && @total_staff.size > 9
+				redirect_to "/company_home", :notice => "Your plan is not allows to add new members, please upgrade your plan"
+			else
+				##########################
+				# Add New  Staff Member  #
+				##########################
+				@check_company = CompanyStaff.where(:email => plan_params[:email]).first
+				if @check_company.empty?
+					@check_company = CompanyStaff.new(plan_params)
+					if @check_company.save
+						redirect_to "/company_home", :notice => "Staff member added successfully"
+					else
+						redirect_to "/add_staff", :notice => @check_company.errors
+					end
+				else
+					redirect_to "/company_home", :notice => "Staff member already Exists"
+				end
+			end
 		end
+			
 	end
 
 
