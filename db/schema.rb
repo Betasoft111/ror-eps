@@ -82,6 +82,10 @@ ActiveRecord::Schema.define(version: 20151203193108) do
     t.string   "password_salt"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
   end
 
   add_index "users", ["plan_id"], name: "fk_plan", using: :btree
