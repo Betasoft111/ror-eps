@@ -1031,11 +1031,23 @@ p.nn1 {
 .l4 {
     background:rgba(57,60,61,0.7);
 }
-.happy_client li.l1 span {
-     background: rgb(101,109,148);
+.happy_client li span {
+    
     color: #fff;
     display: inline-block;
     padding: 10px 20px;
+}
+.happy_client li.l1 span {
+    background: rgb(101,109,148); 
+}
+.happy_client li.l2 span {
+    background: rgb(0,122,135);
+}
+.happy_client li.l3 span {
+    background: rgb(0,140,216);
+}
+.happy_client li.l4 span {
+    background: rgb(57,60,61);
 }
 /**** media start *****/
 

@@ -21818,3 +21818,215 @@ Started GET "/assets/footerbg.jpg" for 127.0.0.1 at 2015-12-04 03:40:51 +0530
 
 
 Started GET "/assets/img.jpg" for 127.0.0.1 at 2015-12-04 03:40:51 +0530
+
+
+Started GET "/" for 10.11.12.168 at 2015-12-04 03:41:49 +0530
+Processing by WelcomeController#index as HTML
+  Rendered layouts/_application.html.erb (424.9ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+  Rendered welcome/index.html.erb (429.1ms)
+Completed 200 OK in 431ms (Views: 430.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/style.css?body=1" for 10.11.12.168 at 2015-12-04 03:41:50 +0530
+
+
+Started GET "/assets/bootstrap.css?body=1" for 10.11.12.168 at 2015-12-04 03:41:50 +0530
+
+
+Started GET "/assets/bootstrap-theme.css?body=1" for 10.11.12.168 at 2015-12-04 03:41:50 +0530
+
+
+Started GET "/assets/bootstrap-theme.min.css?body=1" for 10.11.12.168 at 2015-12-04 03:41:50 +0530
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 10.11.12.168 at 2015-12-04 03:41:50 +0530
+
+
+Started GET "/assets/jquery.min.js?body=1" for 10.11.12.168 at 2015-12-04 03:41:50 +0530
+
+
+Started GET "/assets/jquery.validate.js?body=1" for 10.11.12.168 at 2015-12-04 03:41:50 +0530
+
+
+Started GET "/assets/bootstrap.js?body=1" for 10.11.12.168 at 2015-12-04 03:41:50 +0530
+
+
+Started GET "/assets/charges.js?body=1" for 10.11.12.168 at 2015-12-04 03:41:50 +0530
+
+
+Started GET "/assets/new-logo.png" for 10.11.12.168 at 2015-12-04 03:41:51 +0530
+
+
+Started GET "/assets/video.png" for 10.11.12.168 at 2015-12-04 03:41:51 +0530
+
+
+Started GET "/assets/img1.png" for 10.11.12.168 at 2015-12-04 03:41:51 +0530
+
+
+Started GET "/assets/banner.png" for 10.11.12.168 at 2015-12-04 03:41:51 +0530
+
+
+Started GET "/assets/footerbg.jpg" for 10.11.12.168 at 2015-12-04 03:41:51 +0530
+
+
+Started GET "/assets/img.jpg" for 10.11.12.168 at 2015-12-04 03:41:51 +0530
+
+
+Started GET "/" for 10.11.12.168 at 2015-12-04 03:41:53 +0530
+Processing by WelcomeController#index as HTML
+  Rendered layouts/_application.html.erb (6.2ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+  Rendered welcome/index.html.erb (8.6ms)
+Completed 200 OK in 10ms (Views: 10.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/style.css?body=1" for 10.11.12.168 at 2015-12-04 03:41:53 +0530
+
+
+Started GET "/assets/bootstrap.css?body=1" for 10.11.12.168 at 2015-12-04 03:41:53 +0530
+
+
+Started GET "/assets/bootstrap-theme.min.css?body=1" for 10.11.12.168 at 2015-12-04 03:41:53 +0530
+
+
+Started GET "/assets/jquery.min.js?body=1" for 10.11.12.168 at 2015-12-04 03:41:53 +0530
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 10.11.12.168 at 2015-12-04 03:41:53 +0530
+
+
+Started GET "/assets/bootstrap-theme.css?body=1" for 10.11.12.168 at 2015-12-04 03:41:53 +0530
+
+
+Started GET "/assets/jquery.validate.js?body=1" for 10.11.12.168 at 2015-12-04 03:41:53 +0530
+
+
+Started GET "/assets/bootstrap.js?body=1" for 10.11.12.168 at 2015-12-04 03:41:53 +0530
+
+
+Started GET "/assets/charges.js?body=1" for 10.11.12.168 at 2015-12-04 03:41:53 +0530
+
+
+Started GET "/assets/new-logo.png" for 10.11.12.168 at 2015-12-04 03:41:53 +0530
+
+
+Started GET "/assets/video.png" for 10.11.12.168 at 2015-12-04 03:41:53 +0530
+
+
+Started GET "/assets/img1.png" for 10.11.12.168 at 2015-12-04 03:41:53 +0530
+
+
+Started GET "/assets/banner.png" for 10.11.12.168 at 2015-12-04 03:41:53 +0530
+
+
+Started GET "/assets/img.jpg" for 10.11.12.168 at 2015-12-04 03:41:53 +0530
+
+
+Started GET "/assets/footerbg.jpg" for 10.11.12.168 at 2015-12-04 03:41:53 +0530
+
+
+Started GET "/" for 10.11.12.168 at 2015-12-04 03:42:04 +0530
+Processing by WelcomeController#index as HTML
+  Rendered layouts/_application.html.erb (32.7ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+  Rendered welcome/index.html.erb (35.3ms)
+Completed 200 OK in 37ms (Views: 36.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/style.css?body=1" for 10.11.12.168 at 2015-12-04 03:42:04 +0530
+
+
+Started GET "/assets/bootstrap-theme.css?body=1" for 10.11.12.168 at 2015-12-04 03:42:04 +0530
+
+
+Started GET "/assets/bootstrap.css?body=1" for 10.11.12.168 at 2015-12-04 03:42:04 +0530
+
+
+Started GET "/assets/bootstrap-theme.min.css?body=1" for 10.11.12.168 at 2015-12-04 03:42:04 +0530
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 10.11.12.168 at 2015-12-04 03:42:04 +0530
+
+
+Started GET "/assets/jquery.min.js?body=1" for 10.11.12.168 at 2015-12-04 03:42:04 +0530
+
+
+Started GET "/assets/jquery.validate.js?body=1" for 10.11.12.168 at 2015-12-04 03:42:04 +0530
+
+
+Started GET "/assets/bootstrap.js?body=1" for 10.11.12.168 at 2015-12-04 03:42:04 +0530
+
+
+Started GET "/assets/charges.js?body=1" for 10.11.12.168 at 2015-12-04 03:42:04 +0530
+
+
+Started GET "/assets/new-logo.png" for 10.11.12.168 at 2015-12-04 03:42:04 +0530
+
+
+Started GET "/assets/video.png" for 10.11.12.168 at 2015-12-04 03:42:04 +0530
+
+
+Started GET "/assets/img1.png" for 10.11.12.168 at 2015-12-04 03:42:04 +0530
+
+
+Started GET "/assets/banner.png" for 10.11.12.168 at 2015-12-04 03:42:04 +0530
+
+
+Started GET "/assets/img.jpg" for 10.11.12.168 at 2015-12-04 03:42:04 +0530
+
+
+Started GET "/assets/footerbg.jpg" for 10.11.12.168 at 2015-12-04 03:42:04 +0530
+
+
+Started GET "/" for 10.11.12.168 at 2015-12-04 03:42:49 +0530
+Processing by WelcomeController#index as HTML
+  Rendered layouts/_application.html.erb (4.4ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+  Rendered welcome/index.html.erb (6.2ms)
+Completed 200 OK in 8ms (Views: 7.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/style.css?body=1" for 10.11.12.168 at 2015-12-04 03:42:50 +0530
+
+
+Started GET "/assets/bootstrap.css?body=1" for 10.11.12.168 at 2015-12-04 03:42:50 +0530
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 10.11.12.168 at 2015-12-04 03:42:50 +0530
+
+
+Started GET "/assets/bootstrap-theme.min.css?body=1" for 10.11.12.168 at 2015-12-04 03:42:50 +0530
+
+
+Started GET "/assets/jquery.min.js?body=1" for 10.11.12.168 at 2015-12-04 03:42:50 +0530
+
+
+Started GET "/assets/jquery.validate.js?body=1" for 10.11.12.168 at 2015-12-04 03:42:50 +0530
+
+
+Started GET "/assets/bootstrap-theme.css?body=1" for 10.11.12.168 at 2015-12-04 03:42:50 +0530
+
+
+Started GET "/assets/bootstrap.js?body=1" for 10.11.12.168 at 2015-12-04 03:42:50 +0530
+
+
+Started GET "/assets/charges.js?body=1" for 10.11.12.168 at 2015-12-04 03:42:50 +0530
+
+
+Started GET "/assets/new-logo.png" for 10.11.12.168 at 2015-12-04 03:42:50 +0530
+
+
+Started GET "/assets/img1.png" for 10.11.12.168 at 2015-12-04 03:42:50 +0530
+
+
+Started GET "/assets/video.png" for 10.11.12.168 at 2015-12-04 03:42:50 +0530
+
+
+Started GET "/assets/banner.png" for 10.11.12.168 at 2015-12-04 03:42:50 +0530
+
+
+Started GET "/assets/footerbg.jpg" for 10.11.12.168 at 2015-12-04 03:42:50 +0530
+
+
+Started GET "/assets/img.jpg" for 10.11.12.168 at 2015-12-04 03:42:50 +0530
