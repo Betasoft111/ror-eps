@@ -1049,6 +1049,10 @@ p.nn1 {
 .happy_client li.l4 span {
     background: rgb(57,60,61);
 }
+.happy_client ul li p {
+    color: #fff;
+    margin-top: 20px;
+}
 /**** media start *****/
 
 @media screen and (max-width: 800px) {
@@ -1189,4 +1193,46 @@ li.selected-tab {
 }
 
 
+}
+
+
+
+
+/************* employee profile **********/
+
+.ng-emd h4 {
+    color: #0e81bb;
+    margin-bottom: 50px;
+}
+.ng-pic img {
+    border: 1px solid #b0b0b0;
+    box-shadow: 0 0 3px #3e3e3e;
+    padding: 10px;
+    margin-top: 20px;
+}
+.ng-emd strong {
+    display: block;
+    font-size: 20px;
+    margin-bottom: 10px;
+    margin-top: 20px;
+}
+.ng-emd p {
+    line-height: 20px;
+    margin: 0;
+}
+.ng-emd label {
+    width: 25%;
+    font-weight: normal;
+}
+.ng-emd button{
+      background: rgba(0, 0, 0, 0) linear-gradient(to bottom, #4fc3ff 0%, #0376b0 100%) repeat scroll 0 0;
+    border: 1px solid #0a7db7;
+    border-radius: 0;
+    color: #fff;
+    font-size: 20px;
+    font-weight: normal;
+    height: 45px;
+    margin-top: 20px;
+    text-shadow: none;
+    width: auto;
 }

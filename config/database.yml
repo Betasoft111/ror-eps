@@ -21,7 +21,7 @@ test:
   pool: 5
   timeout: 5000
   username: root
-  password: root
+  password: toor
 
 production:
   adapter: mysql2
@@ -29,4 +29,4 @@ production:
   pool: 5
   timeout: 5000
   username: root
-  password: root
+  password: toor

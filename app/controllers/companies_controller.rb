@@ -38,7 +38,7 @@ class CompaniesController < ApplicationController
 		##########################
 		# Get Total Staff Added  #
 		##########################
-		@total_staff = CompanyStaff.where(:company_id => @current_user.id).all
+		@total_staff = CompanyStaff.where(:company_id => @current_user.id).load
 
 		if @current_plan && @current_plan != nil
 			####################################
@@ -116,7 +116,7 @@ class CompaniesController < ApplicationController
 	private
 
 	  def plan_params
-	    params.permit(:first_name, :last_name, :email, :company_id, :skills, :availability, :is_private, :qualification, :experience)
+	    params.permit(:first_name, :last_name, :email, :company_id, :skills, :availability, :is_private, :qualification, :experience, :image)
 	 end
 
 end

@@ -15,3 +15,4 @@ EPS::Application.initialize!
 #   :password => "mypassword",
 #   :authentication => :login
 # }
+Paperclip.options[:command_path] = "/usr/bin/convert/"
