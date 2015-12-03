@@ -89,7 +89,7 @@
 				<!-- <img src="img/search1.jpg"> -->
 				<%= image_tag("search1.jpg" , :alt => 'search1.jpg') %>
 				<div class="company-search">
-					<span><!-- <img src="img/company1.png"> --><%= image_tag("company1.png" , :alt => 'company1.png') %></span>
+					<span><%= image_tag(data.image.url , :alt => 'company1.png') %></span>
 					<a href="/details/<%= data.id%>">View More</a>
 				</div>
 				<span class="rate-search">6,300 <sup>kr</sup></span>

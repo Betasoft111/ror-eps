@@ -19,7 +19,7 @@
         </span></h4>
         <span class="q1">Company will add new employee to their team on this page.</span>
 
-            <%= form_tag '/add_staff/create', {:class => 'form-horizontal add-employee', :id => 'addStaff'} do %>
+            <%= form_tag '/add_staff/create', { :multipart => true, :class => 'form-horizontal add-employee', :id => 'addStaff'} do %>
       <div class="form-group">
         <%= label_tag :first_name, 'First Name', :class => "control-label col-sm-2" %>
         <div class="col-sm-7">
@@ -79,9 +79,10 @@
         </div>
       </div>
       <div class="form-group">
-        <%= label_tag :upload_image, 'Upload Image', :class => "control-label col-sm-2" %>
+        <%= label_tag :image, 'Upload Image', :class => "control-label col-sm-2" %>
         <div class="col-sm-7">
-         <input type ="file" name="upload" >
+          <%= file_field_tag :image, class:'form-control' %> 
+         <!-- <input type ="file" name="upload" > -->
         </div>
       </div>
         <input type="hidden" name="company_id" value="<%= @current_user.id %>">
