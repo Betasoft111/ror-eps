@@ -19,8 +19,9 @@ h3 {
 }
 .header {
     float: left;
-    margin: 25px 0;
+    margin: 0;
     width: 100%;
+    position: relative;
 }
 .header .navbar {
     background: none;
@@ -44,10 +45,11 @@ span.bottom-bar {
     color: #313131 !important;
     font-family: open sans;
     font-size: 15px;
-    font-weight: 600;
+    font-weight: normal;
     padding: 5px 15px;
     text-shadow: none !important;
-    text-transform: uppercase;
+    text-transform: capitalize;
+    height: 59px;
 }
 .content a {
     color: #008ed6;
@@ -73,7 +75,7 @@ span.bottom-bar {
     border-bottom: 1px solid #eaebec;
     float: left;
 
-    min-height: 600px;
+    min-height: 650px;
     position: relative;
     width: 100%;
 }
@@ -84,7 +86,7 @@ span.bottom-bar {
     position: absolute;
     text-align: center;
     text-shadow: 1px 1px 1px #1a1818;
-    top: 18%;
+    top: 28%;
     width: 100%;
 }
 .banner h2 {
@@ -253,29 +255,32 @@ border: medium none;
     top: 38%;
     width: 50%;
 }
-.porro_inner a:hover {
+.porro_inner a {
     text-decoration: none;
     border: 1px solid #fff;
     background: transparent;
     color: #fff;
+    border-radius: 5px;
+    display: block;
+    font-size: 15px;
+    margin: 20px auto;
+    padding: 10px;
+    width: 200px;
+    font-family: open sans;
 }
 
-.porro_inner a {
+.porro_inner a:hover {
     /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#4fc3ff+0,0376b0+100 */
 background: #4fc3ff; /* Old browsers */
 background: -moz-linear-gradient(top, #4fc3ff 0%, #0376b0 100%); /* FF3.6-15 */
 background: -webkit-linear-gradient(top, #4fc3ff 0%,#0376b0 100%); /* Chrome10-25,Safari5.1-6 */
 background: linear-gradient(to bottom, #4fc3ff 0%,#0376b0 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4fc3ff', endColorstr='#0376b0',GradientType=0 ); /* IE6-9 */
-    border-radius: 5px;
+    
     color: #fff;
-    display: block;
-    font-size: 15px;
+     text-decoration: none;
     border: 1px solid #006599;
-    margin: 20px auto;
-    padding: 10px;
-    width: 200px;
-    font-family: open sans;
+    
   
 }
 
@@ -856,6 +861,181 @@ ul.tabs {
     padding: 0 11px;
     text-decoration: none;
     text-transform: capitalize;
+}
+
+
+
+.header-top {
+    margin: 10px 0;
+    width: 100%;
+    float: left;
+    position: absolute;
+    z-index: 100;
+}
+
+.header-top .navbar {
+    min-height: auto;
+    margin-top: 12px;
+}
+
+.header-top .navbar-header {
+    display: none;
+}
+.content.c3 {
+    margin: 20px 0 0;
+}
+.header-top  .navbar-default .navbar-nav > li > a {
+    color: #fff !important;
+}
+.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:focus, .navbar-default .navbar-nav > .open > a:hover {
+    background: transparent !important;
+}
+.content.c3 img {
+    margin-top: 38%;
+}
+.header-top .nav ul {
+    display: none;
+    list-style: outside none none;
+    margin: 0;
+    padding: 0;
+    background: #fff;
+     position: absolute;
+    right: 13px;
+    top: 50px;
+    min-width: 148px;
+
+
+}
+.header-top .nav ul::after {
+    content: "";
+  display: inline-block;
+  position: absolute;
+  top: -10px;
+  right: 14px;
+  bottom: auto;
+  border: 10px solid transparent;
+  border-top: 0;
+  border-bottom-color: rgba(0,0,0,0.1);
+}
+.header-top .nav ul::after {
+   border: none;
+    border-color: -moz-use-text-color transparent #fff;
+    border-color: -wibkit-use-text-color transparent #fff;
+
+    border-image: none;
+    border-style: none solid solid;
+    border-width: 0 9px 9px;
+    bottom: auto;
+    content: "";
+    display: inline-block;
+    position: absolute;
+      right: 12px;
+    top: -9px;
+}
+.header-top .nav ul:after {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  top: -9px;
+  right: 15px;
+  bottom: auto;
+  border: 9px solid transparent;
+  border-top: 0;
+  border-bottom-color: #fff;
+}
+.header-top .nav ul li a {
+    border-bottom: 1px solid #eee;
+    display: inline-block;
+    font-family: open sans;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 10px 15px;
+    width: 100%;
+    transition:left 0.15s ease-out 0s;
+    position: relative;
+    height: auto;
+
+}
+.header-top .nav ul li a:hover {
+    text-decoration: none;
+
+}
+.header-top .nav li:hover ul {
+    display: block;
+}
+.header-top{
+           /* text-align: center;
+            font-size: 72px;
+            line-height: 108px;
+            height: 108px;
+            background: #335C7D;*/
+            color: #fff;
+            font-family: 'PT Sans', sans-serif;
+            margin: 10px 0;
+            // set animation
+            -webkit-transition: all 0.4s ease;
+            transition: all 0.4s ease;
+        }
+        
+        .header-top.sticky {
+            position: fixed;
+            /*font-size: 24px;
+            line-height: 48px;
+            height: 48px; */
+            width: 100%;
+            background: #000;
+            /*text-align: left;
+            padding-left: 20px;*/
+            padding: 10px 0;
+            margin: 0;
+            height: 50px;
+
+        }
+        .header-top.sticky img {
+    width: 70px;
+}
+.header-top img {
+    width: 42%;
+}
+.header-top.sticky .navbar {
+    margin-top: 0;
+}
+p.nn1 {
+    line-height: 0;
+}
+.happy_client ul {
+    float: left;
+    list-style: outside none none;
+    padding: 0;
+    width: 100%;
+    margin-top: 20px;
+}
+.happy_client ul li {
+    min-height: 350px;
+}
+.happy_client ul img {
+    width: 100%;
+}
+.happy_client ul li {
+    min-height: 450px;
+}
+.l1 {
+    background: rgba(101,109,148,0.7);
+}
+.l2 {
+    background: rgba(0,122,135,0.7);
+}
+.l3 {
+    background: rgba(0,140,216,0.7);
+}
+.l4 {
+    background:rgba(57,60,61,0.7);
+}
+.happy_client li.l1 span {
+     background: rgb(101,109,148);
+    color: #fff;
+    display: inline-block;
+    padding: 10px 20px;
 }
 /**** media start *****/
 

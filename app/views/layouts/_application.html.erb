@@ -54,15 +54,27 @@ $(document).ready(function () {
 });
 </script>
 <%#= javascript_include_tag "angular/routes.js" %>
+<script>
+$(window).scroll(function() {
+    if ($(this).scrollTop() > 1){  
+        $('.header-top').addClass("sticky");
+    }
+    else{
+        $('.header-top').removeClass("sticky");
+    }
+});
+</script>
+
 
 </head>
   <body>
     <div class="header">
+      <div class="header-top">
       <div class="container">
         <div class="row">
           <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
             <a href="/"><!-- <img src="images/logo.png"> -->
-              <%= image_tag("logo.png" , :alt => 'EPS Logo') %>
+              <%= image_tag("new-logo.png" , :alt => 'EPS Logo') %>
             </a>
           </div>
           <div class="col-lg-9 col-md-9 col-sm-9">
@@ -89,8 +101,31 @@ $(document).ready(function () {
         <% if session[:user_id] && session[:user_id] != nil %>
           <li><a href="/log_out" >Logout</a></li>
         <% else %>
-          <li><a href="/join" class="login-tab">Login</a></li>
-          <li><a href="/join" class="register-tab">Register</a></li>
+          <!-- <li><a href="/join" class="login-tab">Login</a></li> -->
+          <li><a href="/join" class="login-tab">Join</a>
+
+            <ul>
+              <li><a href="/join" class="login-tab">Login</a></li>
+              <li><a href="/join" class="register-tab">Register</a></li>
+
+            </ul>
+
+          </li>
+         
+
+
+          <!-- <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Register <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Action</a></li>
+            <li><a href="#">Another action</a></li>
+            <li><a href="#">Something else here</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">Separated link</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">One more separated link</a></li>
+          </ul>
+        </li> -->
         <% end %>
        
       </ul>
@@ -101,9 +136,10 @@ $(document).ready(function () {
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
+</div>
           </div>
         </div>
-      </div>
+      </div><!-- end. header-top -->
 
      <% flash.each do |name, msg| %>
       <div class="">

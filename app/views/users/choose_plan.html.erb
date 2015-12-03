@@ -18,7 +18,7 @@
         <ul class="tabs">
           <li ng-class="{'selected-tab': selectedTab == '1' }"><a ng-click="changeTab('1')" href="javascript:void(0)">Choose Plan</a></li>
           <li ng-class="{'selected-tab': selectedTab == '2' }"><a ng-click="changeTab('2')" href="javascript:void(0)">Payment Method</a></li>
-          <li ng-class="{'selected-tab': selectedTab == '3' }"><a ng-click="changeTab('3')" href="javascript:void(0)">coming soon</a></li>
+          <li ng-class="{'selected-tab': selectedTab == '3' }"><a ng-click="changeTab('3')" href="javascript:void(0)">All Set</a></li>
 
         </ul>
         
@@ -79,6 +79,8 @@
               data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
               data-description=""
               data-amount=""
+              data-image="https://stripe.com/favicon.ico"
+              data-name="Stripe Payment"
               data-locale="auto"></script>
               <% end %>
             </div>
