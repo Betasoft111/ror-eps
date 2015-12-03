@@ -73,7 +73,7 @@ class CompaniesController < ApplicationController
 				# Add New  Staff Member  #
 				##########################
 				@check_company = CompanyStaff.where(:email => plan_params[:email]).first
-				if @check_company.empty?
+				if @check_company.blank?
 					@check_company = CompanyStaff.new(plan_params)
 					if @check_company.save
 						redirect_to "/company_home", :notice => "Staff member added successfully"
