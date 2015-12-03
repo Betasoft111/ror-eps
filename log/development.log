@@ -5666,3 +5666,1397 @@ Started GET "/assets/right.png" for 127.0.0.1 at 2015-12-03 04:15:19 +0530
 
 
 Started GET "/assets/footerbg.jpg" for 127.0.0.1 at 2015-12-03 04:15:19 +0530
+
+
+Started GET "/join" for 127.0.0.1 at 2015-12-03 04:29:47 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by SessionsController#new as HTML
+  Rendered layouts/_application.html.erb (25.5ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+  Rendered sessions/new.html.erb (49.3ms)
+Completed 200 OK in 66ms (Views: 53.2ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/assets/bootstrap.css?body=1" for 127.0.0.1 at 2015-12-03 04:29:47 +0530
+
+
+Started GET "/assets/bootstrap-theme.min.css?body=1" for 127.0.0.1 at 2015-12-03 04:29:47 +0530
+
+
+Started GET "/assets/bootstrap-theme.css?body=1" for 127.0.0.1 at 2015-12-03 04:29:47 +0530
+
+
+Started GET "/assets/sweetalert.css?body=1" for 127.0.0.1 at 2015-12-03 04:29:47 +0530
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2015-12-03 04:29:47 +0530
+
+
+Started GET "/assets/style.css?body=1" for 127.0.0.1 at 2015-12-03 04:29:47 +0530
+
+
+Started GET "/assets/jquery.validate.js?body=1" for 127.0.0.1 at 2015-12-03 04:29:47 +0530
+
+
+Started GET "/assets/jquery.min.js?body=1" for 127.0.0.1 at 2015-12-03 04:29:47 +0530
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2015-12-03 04:29:47 +0530
+
+
+Started GET "/assets/charges.js?body=1" for 127.0.0.1 at 2015-12-03 04:29:47 +0530
+
+
+Started GET "/assets/sweetalert-dev.js?body=1" for 127.0.0.1 at 2015-12-03 04:29:47 +0530
+
+
+Started GET "/assets/logo.png" for 127.0.0.1 at 2015-12-03 04:29:47 +0530
+
+
+Started GET "/assets/create.png" for 127.0.0.1 at 2015-12-03 04:29:47 +0530
+
+
+Started GET "/assets/line.png" for 127.0.0.1 at 2015-12-03 04:29:47 +0530
+
+
+Started GET "/assets/right.png" for 127.0.0.1 at 2015-12-03 04:29:47 +0530
+
+
+Started GET "/assets/footerbg.jpg" for 127.0.0.1 at 2015-12-03 04:29:47 +0530
+
+
+Started GET "/company_home" for 127.0.0.1 at 2015-12-03 04:29:52 +0530
+Processing by CompaniesController#index as HTML
+Redirected to http://localhost:3000/join
+Filter chain halted as :authenticate_user! rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/join" for 127.0.0.1 at 2015-12-03 04:29:52 +0530
+Processing by SessionsController#new as HTML
+  Rendered layouts/_application.html.erb (9.3ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+  Rendered sessions/new.html.erb (13.5ms)
+Completed 200 OK in 15ms (Views: 14.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bootstrap.css?body=1" for 127.0.0.1 at 2015-12-03 04:29:52 +0530
+
+
+Started GET "/assets/bootstrap-theme.min.css?body=1" for 127.0.0.1 at 2015-12-03 04:29:52 +0530
+
+
+Started GET "/assets/sweetalert.css?body=1" for 127.0.0.1 at 2015-12-03 04:29:52 +0530
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2015-12-03 04:29:52 +0530
+
+
+Started GET "/assets/bootstrap-theme.css?body=1" for 127.0.0.1 at 2015-12-03 04:29:52 +0530
+
+
+Started GET "/assets/style.css?body=1" for 127.0.0.1 at 2015-12-03 04:29:52 +0530
+
+
+Started GET "/assets/jquery.min.js?body=1" for 127.0.0.1 at 2015-12-03 04:29:52 +0530
+
+
+Started GET "/assets/jquery.validate.js?body=1" for 127.0.0.1 at 2015-12-03 04:29:52 +0530
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2015-12-03 04:29:52 +0530
+
+
+Started GET "/assets/sweetalert-dev.js?body=1" for 127.0.0.1 at 2015-12-03 04:29:52 +0530
+
+
+Started GET "/assets/logo.png" for 127.0.0.1 at 2015-12-03 04:29:52 +0530
+
+
+Started GET "/assets/charges.js?body=1" for 127.0.0.1 at 2015-12-03 04:29:52 +0530
+
+
+Started GET "/assets/create.png" for 127.0.0.1 at 2015-12-03 04:29:52 +0530
+
+
+Started GET "/assets/line.png" for 127.0.0.1 at 2015-12-03 04:29:52 +0530
+
+
+Started GET "/assets/right.png" for 127.0.0.1 at 2015-12-03 04:29:52 +0530
+
+
+Started GET "/assets/footerbg.jpg" for 127.0.0.1 at 2015-12-03 04:29:52 +0530
+
+
+Started GET "/" for 127.0.0.1 at 2015-12-03 04:29:59 +0530
+Processing by WelcomeController#index as HTML
+  Rendered layouts/_application.html.erb (8.0ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+  Rendered welcome/index.html.erb (19.1ms)
+Completed 200 OK in 21ms (Views: 20.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/style.css?body=1" for 127.0.0.1 at 2015-12-03 04:29:59 +0530
+
+
+Started GET "/assets/bootstrap.css?body=1" for 127.0.0.1 at 2015-12-03 04:29:59 +0530
+
+
+Started GET "/assets/bootstrap-theme.css?body=1" for 127.0.0.1 at 2015-12-03 04:29:59 +0530
+
+
+Started GET "/assets/bootstrap-theme.min.css?body=1" for 127.0.0.1 at 2015-12-03 04:29:59 +0530
+
+
+Started GET "/assets/sweetalert.css?body=1" for 127.0.0.1 at 2015-12-03 04:29:59 +0530
+
+
+Started GET "/assets/jquery.min.js?body=1" for 127.0.0.1 at 2015-12-03 04:29:59 +0530
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2015-12-03 04:29:59 +0530
+
+
+Started GET "/assets/jquery.validate.js?body=1" for 127.0.0.1 at 2015-12-03 04:29:59 +0530
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2015-12-03 04:29:59 +0530
+
+
+Started GET "/assets/sweetalert-dev.js?body=1" for 127.0.0.1 at 2015-12-03 04:29:59 +0530
+
+
+Started GET "/assets/video.png" for 127.0.0.1 at 2015-12-03 04:29:59 +0530
+
+
+Started GET "/assets/img1.png" for 127.0.0.1 at 2015-12-03 04:29:59 +0530
+
+
+Started GET "/assets/charges.js?body=1" for 127.0.0.1 at 2015-12-03 04:29:59 +0530
+
+
+Started GET "/assets/logo.png" for 127.0.0.1 at 2015-12-03 04:29:59 +0530
+
+
+Started GET "/assets/img2.png" for 127.0.0.1 at 2015-12-03 04:29:59 +0530
+
+
+Started GET "/assets/img3.jpg" for 127.0.0.1 at 2015-12-03 04:29:59 +0530
+
+
+Started GET "/assets/img4.jpg" for 127.0.0.1 at 2015-12-03 04:29:59 +0530
+
+
+Started GET "/assets/banner.png" for 127.0.0.1 at 2015-12-03 04:29:59 +0530
+
+
+Started GET "/assets/img.jpg" for 127.0.0.1 at 2015-12-03 04:29:59 +0530
+
+
+Started GET "/assets/footerbg.jpg" for 127.0.0.1 at 2015-12-03 04:29:59 +0530
+
+
+Started GET "/" for 127.0.0.1 at 2015-12-03 20:41:16 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by WelcomeController#index as HTML
+  Rendered layouts/_application.html.erb (159.5ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+  Rendered welcome/index.html.erb (193.8ms)
+Completed 200 OK in 212ms (Views: 205.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/style.css?body=1" for 127.0.0.1 at 2015-12-03 20:41:16 +0530
+
+
+Started GET "/assets/bootstrap.css?body=1" for 127.0.0.1 at 2015-12-03 20:41:17 +0530
+
+
+Started GET "/assets/jquery.min.js?body=1" for 127.0.0.1 at 2015-12-03 20:41:17 +0530
+
+
+Started GET "/assets/bootstrap-theme.min.css?body=1" for 127.0.0.1 at 2015-12-03 20:41:17 +0530
+
+
+Started GET "/assets/charges.js?body=1" for 127.0.0.1 at 2015-12-03 20:41:17 +0530
+
+
+Started GET "/assets/bootstrap-theme.css?body=1" for 127.0.0.1 at 2015-12-03 20:41:17 +0530
+
+
+Started GET "/assets/jquery.validate.js?body=1" for 127.0.0.1 at 2015-12-03 20:41:17 +0530
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2015-12-03 20:41:17 +0530
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2015-12-03 20:41:17 +0530
+
+
+Started GET "/assets/logo.png" for 127.0.0.1 at 2015-12-03 20:41:17 +0530
+
+
+Started GET "/assets/img1.png" for 127.0.0.1 at 2015-12-03 20:41:17 +0530
+
+
+Started GET "/assets/video.png" for 127.0.0.1 at 2015-12-03 20:41:17 +0530
+
+
+Started GET "/assets/img3.jpg" for 127.0.0.1 at 2015-12-03 20:41:17 +0530
+
+
+Started GET "/assets/img2.png" for 127.0.0.1 at 2015-12-03 20:41:17 +0530
+
+
+Started GET "/assets/img4.jpg" for 127.0.0.1 at 2015-12-03 20:41:17 +0530
+
+
+Started GET "/assets/banner.png" for 127.0.0.1 at 2015-12-03 20:41:17 +0530
+
+
+Started GET "/assets/img.jpg" for 127.0.0.1 at 2015-12-03 20:41:17 +0530
+
+
+Started GET "/assets/footerbg.jpg" for 127.0.0.1 at 2015-12-03 20:41:17 +0530
+
+
+Started GET "/join" for 127.0.0.1 at 2015-12-03 21:17:44 +0530
+Processing by SessionsController#new as HTML
+  Rendered layouts/_application.html.erb (3.8ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+  Rendered sessions/new.html.erb (97.3ms)
+Completed 200 OK in 142ms (Views: 119.2ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/assets/style.css?body=1" for 127.0.0.1 at 2015-12-03 21:17:45 +0530
+
+
+Started GET "/assets/bootstrap-theme.min.css?body=1" for 127.0.0.1 at 2015-12-03 21:17:45 +0530
+
+
+Started GET "/assets/bootstrap-theme.css?body=1" for 127.0.0.1 at 2015-12-03 21:17:45 +0530
+
+
+Started GET "/assets/bootstrap.css?body=1" for 127.0.0.1 at 2015-12-03 21:17:45 +0530
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2015-12-03 21:17:45 +0530
+
+
+Started GET "/assets/logo.png" for 127.0.0.1 at 2015-12-03 21:17:45 +0530
+
+
+Started GET "/assets/jquery.validate.js?body=1" for 127.0.0.1 at 2015-12-03 21:17:45 +0530
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2015-12-03 21:17:45 +0530
+
+
+Started GET "/assets/jquery.min.js?body=1" for 127.0.0.1 at 2015-12-03 21:17:45 +0530
+
+
+Started GET "/assets/charges.js?body=1" for 127.0.0.1 at 2015-12-03 21:17:45 +0530
+
+
+Started GET "/assets/create.png" for 127.0.0.1 at 2015-12-03 21:17:45 +0530
+
+
+Started GET "/assets/right.png" for 127.0.0.1 at 2015-12-03 21:17:45 +0530
+
+
+Started GET "/assets/line.png" for 127.0.0.1 at 2015-12-03 21:17:45 +0530
+
+
+Started GET "/assets/footerbg.jpg" for 127.0.0.1 at 2015-12-03 21:17:45 +0530
+
+
+Started POST "/sessions" for 127.0.0.1 at 2015-12-03 21:17:54 +0530
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"bLZVhp9OlN5eRBmqXNxwaiz3jwUgkqo/VYamYs9Y9kg=", "email"=>"randhir@betasoftsystems.com", "password"=>"[FILTERED]", "commit"=>"Log in"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`email` = 'randhir@betasoftsystems.com' LIMIT 1
+Redirected to http://localhost:3000/
+Completed 302 Found in 116ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-12-03 21:17:54 +0530
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  Rendered layouts/_application.html.erb (4.5ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+  Rendered welcome/index.html.erb (6.2ms)
+Completed 200 OK in 8ms (Views: 7.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/style.css?body=1" for 127.0.0.1 at 2015-12-03 21:17:54 +0530
+
+
+Started GET "/assets/bootstrap.css?body=1" for 127.0.0.1 at 2015-12-03 21:17:54 +0530
+
+
+Started GET "/assets/bootstrap-theme.min.css?body=1" for 127.0.0.1 at 2015-12-03 21:17:54 +0530
+
+
+Started GET "/assets/jquery.min.js?body=1" for 127.0.0.1 at 2015-12-03 21:17:54 +0530
+
+
+Started GET "/assets/bootstrap-theme.css?body=1" for 127.0.0.1 at 2015-12-03 21:17:54 +0530
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2015-12-03 21:17:54 +0530
+
+
+Started GET "/assets/jquery.validate.js?body=1" for 127.0.0.1 at 2015-12-03 21:17:54 +0530
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2015-12-03 21:17:54 +0530
+
+
+Started GET "/assets/charges.js?body=1" for 127.0.0.1 at 2015-12-03 21:17:54 +0530
+
+
+Started GET "/assets/video.png" for 127.0.0.1 at 2015-12-03 21:17:54 +0530
+
+
+Started GET "/assets/img1.png" for 127.0.0.1 at 2015-12-03 21:17:54 +0530
+
+
+Started GET "/assets/img3.jpg" for 127.0.0.1 at 2015-12-03 21:17:54 +0530
+
+
+Started GET "/assets/img2.png" for 127.0.0.1 at 2015-12-03 21:17:54 +0530
+
+
+Started GET "/assets/img4.jpg" for 127.0.0.1 at 2015-12-03 21:17:54 +0530
+
+
+Started GET "/assets/logo.png" for 127.0.0.1 at 2015-12-03 21:17:54 +0530
+
+
+Started GET "/assets/banner.png" for 127.0.0.1 at 2015-12-03 21:17:54 +0530
+
+
+Started GET "/assets/footerbg.jpg" for 127.0.0.1 at 2015-12-03 21:17:54 +0530
+
+
+Started GET "/assets/img.jpg" for 127.0.0.1 at 2015-12-03 21:17:54 +0530
+
+
+Started GET "/company_home" for 127.0.0.1 at 2015-12-03 21:17:58 +0530
+Processing by CompaniesController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  Rendered layouts/_application.html.erb (7.7ms)
+  [1m[36mCompanyStaff Load (0.4ms)[0m  [1mSELECT `company_staffs`.* FROM `company_staffs`[0m
+  Rendered layouts/_footer.html.erb (0.0ms)
+  Rendered companies/index.html.erb (21.7ms)
+Completed 200 OK in 72ms (Views: 41.5ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/assets/style.css?body=1" for 127.0.0.1 at 2015-12-03 21:17:58 +0530
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2015-12-03 21:17:58 +0530
+
+
+Started GET "/assets/bootstrap.css?body=1" for 127.0.0.1 at 2015-12-03 21:17:58 +0530
+
+
+Started GET "/assets/jquery.min.js?body=1" for 127.0.0.1 at 2015-12-03 21:17:58 +0530
+
+
+Started GET "/assets/bootstrap-theme.css?body=1" for 127.0.0.1 at 2015-12-03 21:17:58 +0530
+
+
+Started GET "/assets/bootstrap-theme.min.css?body=1" for 127.0.0.1 at 2015-12-03 21:17:58 +0530
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2015-12-03 21:17:58 +0530
+
+
+Started GET "/assets/charges.js?body=1" for 127.0.0.1 at 2015-12-03 21:17:58 +0530
+
+
+Started GET "/assets/jquery.validate.js?body=1" for 127.0.0.1 at 2015-12-03 21:17:58 +0530
+
+
+Started GET "/assets/create.png" for 127.0.0.1 at 2015-12-03 21:17:58 +0530
+
+
+Started GET "/assets/line.png" for 127.0.0.1 at 2015-12-03 21:17:58 +0530
+
+
+Started GET "/assets/logo.png" for 127.0.0.1 at 2015-12-03 21:17:58 +0530
+
+
+Started GET "/assets/right.png" for 127.0.0.1 at 2015-12-03 21:17:58 +0530
+
+
+Started GET "/assets/add.png" for 127.0.0.1 at 2015-12-03 21:17:58 +0530
+
+
+Started GET "/assets/edit.png" for 127.0.0.1 at 2015-12-03 21:17:58 +0530
+
+
+Started GET "/assets/footerbg.jpg" for 127.0.0.1 at 2015-12-03 21:17:58 +0530
+
+
+Started GET "/assets/delete.png" for 127.0.0.1 at 2015-12-03 21:17:58 +0530
+
+
+Started GET "/add_staff" for 127.0.0.1 at 2015-12-03 21:18:00 +0530
+Processing by CompaniesController#add_staff as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  Rendered layouts/_application.html.erb (14.2ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+  Rendered companies/add_staff.html.erb (17.7ms)
+Completed 200 OK in 21ms (Views: 19.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/style.css?body=1" for 127.0.0.1 at 2015-12-03 21:18:00 +0530
+
+
+Started GET "/assets/bootstrap.css?body=1" for 127.0.0.1 at 2015-12-03 21:18:00 +0530
+
+
+Started GET "/assets/bootstrap-theme.min.css?body=1" for 127.0.0.1 at 2015-12-03 21:18:00 +0530
+
+
+Started GET "/assets/jquery.min.js?body=1" for 127.0.0.1 at 2015-12-03 21:18:00 +0530
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2015-12-03 21:18:00 +0530
+
+
+Started GET "/assets/bootstrap-theme.css?body=1" for 127.0.0.1 at 2015-12-03 21:18:00 +0530
+
+
+Started GET "/assets/jquery.validate.js?body=1" for 127.0.0.1 at 2015-12-03 21:18:00 +0530
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2015-12-03 21:18:00 +0530
+
+
+Started GET "/assets/charges.js?body=1" for 127.0.0.1 at 2015-12-03 21:18:00 +0530
+
+
+Started GET "/assets/create.png" for 127.0.0.1 at 2015-12-03 21:18:00 +0530
+
+
+Started GET "/assets/line.png" for 127.0.0.1 at 2015-12-03 21:18:00 +0530
+
+
+Started GET "/assets/right.png" for 127.0.0.1 at 2015-12-03 21:18:00 +0530
+
+
+Started GET "/assets/logo.png" for 127.0.0.1 at 2015-12-03 21:18:00 +0530
+
+
+Started GET "/assets/footerbg.jpg" for 127.0.0.1 at 2015-12-03 21:18:00 +0530
+
+
+Started POST "/add_staff/create" for 127.0.0.1 at 2015-12-03 21:18:12 +0530
+Processing by CompaniesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"bLZVhp9OlN5eRBmqXNxwaiz3jwUgkqo/VYamYs9Y9kg=", "first_name"=>"Randhir", "last_name"=>"Singh", "email"=>"parmarth1993@gmail.com", "skills"=>"Nodejs, Ruby, Rails", "availability"=>"40", "is_private"=>"0", "qualification"=>"Post Graduate", "experience"=>"3", "upload"=>"", "company_id"=>"1", "commit"=>"Add Staff"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mUsersStaffPlans Load (0.4ms)[0m  SELECT `users_staff_plans`.* FROM `users_staff_plans` WHERE `users_staff_plans`.`user_id` = 1 ORDER BY `users_staff_plans`.`id` ASC LIMIT 1
+DEPRECATION WARNING: Relation#all is deprecated. If you want to eager-load a relation, you can call #load (e.g. `Post.where(published: true).load`). If you want to get an array of records from a relation, you can call #to_a (e.g. `Post.where(published: true).to_a`). (called from create at /var/www/html/eps2/app/controllers/companies_controller.rb:41)
+  [1m[36mCompanyStaff Load (0.4ms)[0m  [1mSELECT `company_staffs`.* FROM `company_staffs` WHERE `company_staffs`.`company_id` = 1[0m
+  [1m[35mAdmin::StaffPlans Load (0.3ms)[0m  SELECT `admin_staff_plans`.* FROM `admin_staff_plans` WHERE `admin_staff_plans`.`id` = 1 LIMIT 1
+Redirected to http://localhost:3000/company_home
+Completed 302 Found in 55ms (ActiveRecord: 4.1ms)
+
+
+Started GET "/company_home" for 127.0.0.1 at 2015-12-03 21:18:12 +0530
+Processing by CompaniesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  Rendered layouts/_application.html.erb (3.5ms)
+  [1m[35mCompanyStaff Load (0.1ms)[0m  SELECT `company_staffs`.* FROM `company_staffs`
+  Rendered layouts/_footer.html.erb (0.0ms)
+  Rendered companies/index.html.erb (5.4ms)
+Completed 200 OK in 8ms (Views: 6.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/style.css?body=1" for 127.0.0.1 at 2015-12-03 21:18:12 +0530
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2015-12-03 21:18:12 +0530
+
+
+Started GET "/assets/bootstrap-theme.min.css?body=1" for 127.0.0.1 at 2015-12-03 21:18:12 +0530
+
+
+Started GET "/assets/jquery.validate.js?body=1" for 127.0.0.1 at 2015-12-03 21:18:12 +0530
+
+
+Started GET "/assets/jquery.min.js?body=1" for 127.0.0.1 at 2015-12-03 21:18:12 +0530
+
+
+Started GET "/assets/bootstrap.css?body=1" for 127.0.0.1 at 2015-12-03 21:18:12 +0530
+
+
+Started GET "/assets/bootstrap-theme.css?body=1" for 127.0.0.1 at 2015-12-03 21:18:12 +0530
+
+
+Started GET "/assets/charges.js?body=1" for 127.0.0.1 at 2015-12-03 21:18:12 +0530
+
+
+Started GET "/assets/create.png" for 127.0.0.1 at 2015-12-03 21:18:12 +0530
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2015-12-03 21:18:12 +0530
+
+
+Started GET "/assets/line.png" for 127.0.0.1 at 2015-12-03 21:18:12 +0530
+
+
+Started GET "/assets/logo.png" for 127.0.0.1 at 2015-12-03 21:18:12 +0530
+
+
+Started GET "/assets/right.png" for 127.0.0.1 at 2015-12-03 21:18:12 +0530
+
+
+Started GET "/assets/add.png" for 127.0.0.1 at 2015-12-03 21:18:12 +0530
+
+
+Started GET "/assets/delete.png" for 127.0.0.1 at 2015-12-03 21:18:12 +0530
+
+
+Started GET "/assets/edit.png" for 127.0.0.1 at 2015-12-03 21:18:12 +0530
+
+
+Started GET "/assets/footerbg.jpg" for 127.0.0.1 at 2015-12-03 21:18:12 +0530
+
+
+Started GET "/companies/delete/11" for 127.0.0.1 at 2015-12-03 21:27:37 +0530
+Processing by CompaniesController#destroy as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mCompanyStaff Load (0.3ms)[0m  SELECT `company_staffs`.* FROM `company_staffs` WHERE `company_staffs`.`id` = 11 LIMIT 1
+  [1m[36m (0.7ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (28.7ms)[0m  DELETE FROM `company_staffs` WHERE `company_staffs`.`id` = 11
+  [1m[36m (40.9ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/company_home
+Completed 302 Found in 74ms (ActiveRecord: 70.7ms)
+
+
+Started GET "/company_home" for 127.0.0.1 at 2015-12-03 21:27:37 +0530
+Processing by CompaniesController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  Rendered layouts/_application.html.erb (5.2ms)
+  [1m[36mCompanyStaff Load (0.4ms)[0m  [1mSELECT `company_staffs`.* FROM `company_staffs`[0m
+  Rendered layouts/_footer.html.erb (0.0ms)
+  Rendered companies/index.html.erb (7.8ms)
+Completed 200 OK in 10ms (Views: 8.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/bootstrap.css?body=1" for 127.0.0.1 at 2015-12-03 21:27:37 +0530
+
+
+Started GET "/assets/bootstrap-theme.min.css?body=1" for 127.0.0.1 at 2015-12-03 21:27:37 +0530
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2015-12-03 21:27:37 +0530
+
+
+Started GET "/assets/bootstrap-theme.css?body=1" for 127.0.0.1 at 2015-12-03 21:27:37 +0530
+
+
+Started GET "/assets/jquery.min.js?body=1" for 127.0.0.1 at 2015-12-03 21:27:37 +0530
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2015-12-03 21:27:37 +0530
+
+
+Started GET "/assets/charges.js?body=1" for 127.0.0.1 at 2015-12-03 21:27:37 +0530
+
+
+Started GET "/assets/jquery.validate.js?body=1" for 127.0.0.1 at 2015-12-03 21:27:37 +0530
+
+
+Started GET "/assets/create.png" for 127.0.0.1 at 2015-12-03 21:27:37 +0530
+
+
+Started GET "/assets/line.png" for 127.0.0.1 at 2015-12-03 21:27:37 +0530
+
+
+Started GET "/assets/style.css?body=1" for 127.0.0.1 at 2015-12-03 21:27:37 +0530
+
+
+Started GET "/assets/logo.png" for 127.0.0.1 at 2015-12-03 21:27:37 +0530
+
+
+Started GET "/assets/right.png" for 127.0.0.1 at 2015-12-03 21:27:37 +0530
+
+
+Started GET "/assets/edit.png" for 127.0.0.1 at 2015-12-03 21:27:37 +0530
+
+
+Started GET "/assets/delete.png" for 127.0.0.1 at 2015-12-03 21:27:37 +0530
+
+
+Started GET "/assets/footerbg.jpg" for 127.0.0.1 at 2015-12-03 21:27:37 +0530
+
+
+Started GET "/assets/add.png" for 127.0.0.1 at 2015-12-03 21:27:37 +0530
+
+
+Started GET "/companies/delete/10" for 127.0.0.1 at 2015-12-03 21:27:40 +0530
+Processing by CompaniesController#destroy as HTML
+  Parameters: {"id"=>"10"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mCompanyStaff Load (0.3ms)[0m  [1mSELECT `company_staffs`.* FROM `company_staffs` WHERE `company_staffs`.`id` = 10 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM `company_staffs` WHERE `company_staffs`.`id` = 10[0m
+  [1m[35m (9.5ms)[0m  COMMIT
+Redirected to http://localhost:3000/company_home
+Completed 302 Found in 13ms (ActiveRecord: 10.2ms)
+
+
+Started GET "/company_home" for 127.0.0.1 at 2015-12-03 21:27:40 +0530
+Processing by CompaniesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  Rendered layouts/_application.html.erb (5.0ms)
+  [1m[35mCompanyStaff Load (0.4ms)[0m  SELECT `company_staffs`.* FROM `company_staffs`
+  Rendered layouts/_footer.html.erb (0.0ms)
+  Rendered companies/index.html.erb (7.8ms)
+Completed 200 OK in 10ms (Views: 8.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/bootstrap-theme.min.css?body=1" for 127.0.0.1 at 2015-12-03 21:27:40 +0530
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2015-12-03 21:27:40 +0530
+
+
+Started GET "/assets/jquery.min.js?body=1" for 127.0.0.1 at 2015-12-03 21:27:40 +0530
+
+
+Started GET "/assets/bootstrap.css?body=1" for 127.0.0.1 at 2015-12-03 21:27:40 +0530
+
+
+Started GET "/assets/style.css?body=1" for 127.0.0.1 at 2015-12-03 21:27:40 +0530
+
+
+Started GET "/assets/bootstrap-theme.css?body=1" for 127.0.0.1 at 2015-12-03 21:27:41 +0530
+
+
+Started GET "/assets/jquery.validate.js?body=1" for 127.0.0.1 at 2015-12-03 21:27:41 +0530
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2015-12-03 21:27:41 +0530
+
+
+Started GET "/assets/charges.js?body=1" for 127.0.0.1 at 2015-12-03 21:27:41 +0530
+
+
+Started GET "/assets/create.png" for 127.0.0.1 at 2015-12-03 21:27:41 +0530
+
+
+Started GET "/assets/line.png" for 127.0.0.1 at 2015-12-03 21:27:41 +0530
+
+
+Started GET "/assets/right.png" for 127.0.0.1 at 2015-12-03 21:27:41 +0530
+
+
+Started GET "/assets/logo.png" for 127.0.0.1 at 2015-12-03 21:27:41 +0530
+
+
+Started GET "/assets/add.png" for 127.0.0.1 at 2015-12-03 21:27:41 +0530
+
+
+Started GET "/assets/edit.png" for 127.0.0.1 at 2015-12-03 21:27:41 +0530
+
+
+Started GET "/assets/footerbg.jpg" for 127.0.0.1 at 2015-12-03 21:27:41 +0530
+
+
+Started GET "/assets/delete.png" for 127.0.0.1 at 2015-12-03 21:27:41 +0530
+
+
+Started GET "/add_staff" for 127.0.0.1 at 2015-12-03 21:27:43 +0530
+Processing by CompaniesController#add_staff as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  Rendered layouts/_application.html.erb (4.5ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+  Rendered companies/add_staff.html.erb (6.7ms)
+Completed 200 OK in 10ms (Views: 7.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/style.css?body=1" for 127.0.0.1 at 2015-12-03 21:27:43 +0530
+
+
+Started GET "/assets/bootstrap.css?body=1" for 127.0.0.1 at 2015-12-03 21:27:43 +0530
+
+
+Started GET "/assets/jquery.min.js?body=1" for 127.0.0.1 at 2015-12-03 21:27:43 +0530
+
+
+Started GET "/assets/bootstrap-theme.css?body=1" for 127.0.0.1 at 2015-12-03 21:27:43 +0530
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2015-12-03 21:27:43 +0530
+
+
+Started GET "/assets/bootstrap-theme.min.css?body=1" for 127.0.0.1 at 2015-12-03 21:27:43 +0530
+
+
+Started GET "/assets/charges.js?body=1" for 127.0.0.1 at 2015-12-03 21:27:43 +0530
+
+
+Started GET "/assets/create.png" for 127.0.0.1 at 2015-12-03 21:27:43 +0530
+
+
+Started GET "/assets/jquery.validate.js?body=1" for 127.0.0.1 at 2015-12-03 21:27:43 +0530
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2015-12-03 21:27:43 +0530
+
+
+Started GET "/assets/line.png" for 127.0.0.1 at 2015-12-03 21:27:43 +0530
+
+
+Started GET "/assets/logo.png" for 127.0.0.1 at 2015-12-03 21:27:43 +0530
+
+
+Started GET "/assets/right.png" for 127.0.0.1 at 2015-12-03 21:27:43 +0530
+
+
+Started GET "/assets/footerbg.jpg" for 127.0.0.1 at 2015-12-03 21:27:43 +0530
+
+
+Started POST "/add_staff/create" for 127.0.0.1 at 2015-12-03 21:28:00 +0530
+Processing by CompaniesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"bLZVhp9OlN5eRBmqXNxwaiz3jwUgkqo/VYamYs9Y9kg=", "first_name"=>"New", "last_name"=>"New", "email"=>"newnew@gmail.com", "skills"=>"Nodejs, Ruby, Rails", "availability"=>"40", "is_private"=>"0", "qualification"=>"Post Graduate", "experience"=>"3", "upload"=>"", "company_id"=>"1", "commit"=>"Add Staff"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mUsersStaffPlans Load (0.1ms)[0m  [1mSELECT `users_staff_plans`.* FROM `users_staff_plans` WHERE `users_staff_plans`.`user_id` = 1 ORDER BY `users_staff_plans`.`id` ASC LIMIT 1[0m
+DEPRECATION WARNING: Relation#all is deprecated. If you want to eager-load a relation, you can call #load (e.g. `Post.where(published: true).load`). If you want to get an array of records from a relation, you can call #to_a (e.g. `Post.where(published: true).to_a`). (called from create at /var/www/html/eps2/app/controllers/companies_controller.rb:41)
+  [1m[35mCompanyStaff Load (0.4ms)[0m  SELECT `company_staffs`.* FROM `company_staffs` WHERE `company_staffs`.`company_id` = 1
+  [1m[36mAdmin::StaffPlans Load (0.1ms)[0m  [1mSELECT `admin_staff_plans`.* FROM `admin_staff_plans` WHERE `admin_staff_plans`.`id` = 1 LIMIT 1[0m
+Unpermitted parameters: utf8, authenticity_token, upload, commit
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM `company_staffs` WHERE `company_staffs`.`email` = 'newnew@gmail.com'
+Unpermitted parameters: utf8, authenticity_token, upload, commit
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `company_staffs` (`availability`, `company_id`, `created_at`, `email`, `experience`, `first_name`, `is_private`, `last_name`, `qualification`, `skills`, `updated_at`) VALUES ('40', 1, '2015-12-03 15:58:00', 'newnew@gmail.com', '3', 'New', 0, 'New', 'Post Graduate', 'Nodejs, Ruby, Rails', '2015-12-03 15:58:00')
+  [1m[36m (62.5ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/company_home
+Completed 302 Found in 158ms (ActiveRecord: 63.8ms)
+
+
+Started GET "/company_home" for 127.0.0.1 at 2015-12-03 21:28:00 +0530
+Processing by CompaniesController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  Rendered layouts/_application.html.erb (5.2ms)
+  [1m[36mCompanyStaff Load (0.5ms)[0m  [1mSELECT `company_staffs`.* FROM `company_staffs`[0m
+  Rendered layouts/_footer.html.erb (0.1ms)
+  Rendered companies/index.html.erb (8.6ms)
+Completed 200 OK in 12ms (Views: 9.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/style.css?body=1" for 127.0.0.1 at 2015-12-03 21:28:00 +0530
+
+
+Started GET "/assets/bootstrap.css?body=1" for 127.0.0.1 at 2015-12-03 21:28:00 +0530
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2015-12-03 21:28:00 +0530
+
+
+Started GET "/assets/bootstrap-theme.min.css?body=1" for 127.0.0.1 at 2015-12-03 21:28:00 +0530
+
+
+Started GET "/assets/bootstrap-theme.css?body=1" for 127.0.0.1 at 2015-12-03 21:28:00 +0530
+
+
+Started GET "/assets/jquery.validate.js?body=1" for 127.0.0.1 at 2015-12-03 21:28:00 +0530
+
+
+Started GET "/assets/jquery.min.js?body=1" for 127.0.0.1 at 2015-12-03 21:28:00 +0530
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2015-12-03 21:28:00 +0530
+
+
+Started GET "/assets/charges.js?body=1" for 127.0.0.1 at 2015-12-03 21:28:00 +0530
+
+
+Started GET "/assets/create.png" for 127.0.0.1 at 2015-12-03 21:28:00 +0530
+
+
+Started GET "/assets/line.png" for 127.0.0.1 at 2015-12-03 21:28:00 +0530
+
+
+Started GET "/assets/logo.png" for 127.0.0.1 at 2015-12-03 21:28:00 +0530
+
+
+Started GET "/assets/right.png" for 127.0.0.1 at 2015-12-03 21:28:00 +0530
+
+
+Started GET "/assets/add.png" for 127.0.0.1 at 2015-12-03 21:28:00 +0530
+
+
+Started GET "/assets/footerbg.jpg" for 127.0.0.1 at 2015-12-03 21:28:00 +0530
+
+
+Started GET "/assets/delete.png" for 127.0.0.1 at 2015-12-03 21:28:00 +0530
+
+
+Started GET "/assets/edit.png" for 127.0.0.1 at 2015-12-03 21:28:00 +0530
+
+
+Started GET "/companies/delete/12" for 127.0.0.1 at 2015-12-03 21:28:15 +0530
+Processing by CompaniesController#destroy as HTML
+  Parameters: {"id"=>"12"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mCompanyStaff Load (0.3ms)[0m  [1mSELECT `company_staffs`.* FROM `company_staffs` WHERE `company_staffs`.`id` = 12 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM `company_staffs` WHERE `company_staffs`.`id` = 12[0m
+  [1m[35m (18.5ms)[0m  COMMIT
+Redirected to http://localhost:3000/company_home
+Completed 302 Found in 23ms (ActiveRecord: 19.3ms)
+
+
+Started GET "/company_home" for 127.0.0.1 at 2015-12-03 21:28:15 +0530
+Processing by CompaniesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  Rendered layouts/_application.html.erb (4.7ms)
+  [1m[35mCompanyStaff Load (0.4ms)[0m  SELECT `company_staffs`.* FROM `company_staffs`
+  Rendered layouts/_footer.html.erb (0.0ms)
+  Rendered companies/index.html.erb (7.1ms)
+Completed 200 OK in 10ms (Views: 8.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/bootstrap.css?body=1" for 127.0.0.1 at 2015-12-03 21:28:15 +0530
+
+
+Started GET "/assets/bootstrap-theme.css?body=1" for 127.0.0.1 at 2015-12-03 21:28:15 +0530
+
+
+Started GET "/assets/bootstrap-theme.min.css?body=1" for 127.0.0.1 at 2015-12-03 21:28:15 +0530
+
+
+Started GET "/assets/jquery.min.js?body=1" for 127.0.0.1 at 2015-12-03 21:28:15 +0530
+
+
+Started GET "/assets/style.css?body=1" for 127.0.0.1 at 2015-12-03 21:28:15 +0530
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2015-12-03 21:28:15 +0530
+
+
+Started GET "/assets/jquery.validate.js?body=1" for 127.0.0.1 at 2015-12-03 21:28:15 +0530
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2015-12-03 21:28:15 +0530
+
+
+Started GET "/assets/charges.js?body=1" for 127.0.0.1 at 2015-12-03 21:28:15 +0530
+
+
+Started GET "/assets/create.png" for 127.0.0.1 at 2015-12-03 21:28:15 +0530
+
+
+Started GET "/assets/line.png" for 127.0.0.1 at 2015-12-03 21:28:15 +0530
+
+
+Started GET "/assets/logo.png" for 127.0.0.1 at 2015-12-03 21:28:15 +0530
+
+
+Started GET "/assets/right.png" for 127.0.0.1 at 2015-12-03 21:28:15 +0530
+
+
+Started GET "/assets/delete.png" for 127.0.0.1 at 2015-12-03 21:28:15 +0530
+
+
+Started GET "/assets/add.png" for 127.0.0.1 at 2015-12-03 21:28:15 +0530
+
+
+Started GET "/assets/footerbg.jpg" for 127.0.0.1 at 2015-12-03 21:28:15 +0530
+
+
+Started GET "/assets/edit.png" for 127.0.0.1 at 2015-12-03 21:28:15 +0530
+
+
+Started GET "/company_home" for 127.0.0.1 at 2015-12-03 22:08:00 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by CompaniesController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  Rendered layouts/_application.html.erb (148.3ms)
+  [1m[36mCompanyStaff Load (0.6ms)[0m  [1mSELECT `company_staffs`.* FROM `company_staffs`[0m
+  Rendered layouts/_footer.html.erb (0.3ms)
+  Rendered companies/index.html.erb (195.0ms)
+Completed 200 OK in 223ms (Views: 198.6ms | ActiveRecord: 3.6ms)
+
+
+Started GET "/company_home" for 127.0.0.1 at 2015-12-03 22:08:01 +0530
+Processing by CompaniesController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  Rendered layouts/_application.html.erb (5.7ms)
+  [1m[36mCompanyStaff Load (0.1ms)[0m  [1mSELECT `company_staffs`.* FROM `company_staffs`[0m
+  Rendered layouts/_footer.html.erb (0.1ms)
+  Rendered companies/index.html.erb (8.8ms)
+Completed 200 OK in 12ms (Views: 10.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/bootstrap.css?body=1" for 127.0.0.1 at 2015-12-03 22:08:01 +0530
+
+
+Started GET "/assets/bootstrap-theme.min.css?body=1" for 127.0.0.1 at 2015-12-03 22:08:01 +0530
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2015-12-03 22:08:01 +0530
+
+
+Started GET "/assets/style.css?body=1" for 127.0.0.1 at 2015-12-03 22:08:01 +0530
+
+
+Started GET "/assets/jquery.min.js?body=1" for 127.0.0.1 at 2015-12-03 22:08:01 +0530
+
+
+Started GET "/assets/bootstrap-theme.css?body=1" for 127.0.0.1 at 2015-12-03 22:08:01 +0530
+
+
+Started GET "/assets/jquery.validate.js?body=1" for 127.0.0.1 at 2015-12-03 22:08:01 +0530
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2015-12-03 22:08:01 +0530
+
+
+Started GET "/assets/charges.js?body=1" for 127.0.0.1 at 2015-12-03 22:08:01 +0530
+
+
+Started GET "/assets/create.png" for 127.0.0.1 at 2015-12-03 22:08:01 +0530
+
+
+Started GET "/assets/line.png" for 127.0.0.1 at 2015-12-03 22:08:01 +0530
+
+
+Started GET "/assets/right.png" for 127.0.0.1 at 2015-12-03 22:08:01 +0530
+
+
+Started GET "/assets/logo.png" for 127.0.0.1 at 2015-12-03 22:08:01 +0530
+
+
+Started GET "/assets/add.png" for 127.0.0.1 at 2015-12-03 22:08:01 +0530
+
+
+Started GET "/assets/delete.png" for 127.0.0.1 at 2015-12-03 22:08:01 +0530
+
+
+Started GET "/assets/footerbg.jpg" for 127.0.0.1 at 2015-12-03 22:08:01 +0530
+
+
+Started GET "/assets/edit.png" for 127.0.0.1 at 2015-12-03 22:08:01 +0530
+
+
+Started GET "/companies/delete/9" for 127.0.0.1 at 2015-12-03 22:08:04 +0530
+Processing by CompaniesController#destroy as HTML
+  Parameters: {"id"=>"9"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mCompanyStaff Load (0.3ms)[0m  [1mSELECT `company_staffs`.* FROM `company_staffs` WHERE `company_staffs`.`id` = 9 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mDELETE FROM `company_staffs` WHERE `company_staffs`.`id` = 9[0m
+  [1m[35m (51.9ms)[0m  COMMIT
+Redirected to http://localhost:3000/company_home
+Completed 302 Found in 57ms (ActiveRecord: 52.7ms)
+
+
+Started GET "/company_home" for 127.0.0.1 at 2015-12-03 22:08:04 +0530
+Processing by CompaniesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  Rendered layouts/_application.html.erb (4.7ms)
+  [1m[35mCompanyStaff Load (0.3ms)[0m  SELECT `company_staffs`.* FROM `company_staffs`
+  Rendered layouts/_footer.html.erb (0.0ms)
+  Rendered companies/index.html.erb (7.0ms)
+Completed 200 OK in 11ms (Views: 8.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2015-12-03 22:08:04 +0530
+
+
+Started GET "/assets/bootstrap-theme.css?body=1" for 127.0.0.1 at 2015-12-03 22:08:04 +0530
+
+
+Started GET "/assets/bootstrap-theme.min.css?body=1" for 127.0.0.1 at 2015-12-03 22:08:04 +0530
+
+
+Started GET "/assets/bootstrap.css?body=1" for 127.0.0.1 at 2015-12-03 22:08:04 +0530
+
+
+Started GET "/assets/style.css?body=1" for 127.0.0.1 at 2015-12-03 22:08:04 +0530
+
+
+Started GET "/assets/jquery.min.js?body=1" for 127.0.0.1 at 2015-12-03 22:08:04 +0530
+
+
+Started GET "/assets/jquery.validate.js?body=1" for 127.0.0.1 at 2015-12-03 22:08:04 +0530
+
+
+Started GET "/assets/charges.js?body=1" for 127.0.0.1 at 2015-12-03 22:08:04 +0530
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2015-12-03 22:08:04 +0530
+
+
+Started GET "/assets/create.png" for 127.0.0.1 at 2015-12-03 22:08:04 +0530
+
+
+Started GET "/assets/line.png" for 127.0.0.1 at 2015-12-03 22:08:04 +0530
+
+
+Started GET "/assets/logo.png" for 127.0.0.1 at 2015-12-03 22:08:04 +0530
+
+
+Started GET "/assets/right.png" for 127.0.0.1 at 2015-12-03 22:08:04 +0530
+
+
+Started GET "/assets/add.png" for 127.0.0.1 at 2015-12-03 22:08:04 +0530
+
+
+Started GET "/assets/edit.png" for 127.0.0.1 at 2015-12-03 22:08:04 +0530
+
+
+Started GET "/assets/footerbg.jpg" for 127.0.0.1 at 2015-12-03 22:08:04 +0530
+
+
+Started GET "/assets/delete.png" for 127.0.0.1 at 2015-12-03 22:08:04 +0530
+
+
+Started GET "/companies/delete/8" for 127.0.0.1 at 2015-12-03 22:08:06 +0530
+Processing by CompaniesController#destroy as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mCompanyStaff Load (0.4ms)[0m  SELECT `company_staffs`.* FROM `company_staffs` WHERE `company_staffs`.`id` = 8 LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  DELETE FROM `company_staffs` WHERE `company_staffs`.`id` = 8
+  [1m[36m (18.4ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/company_home
+Completed 302 Found in 24ms (ActiveRecord: 19.4ms)
+
+
+Started GET "/company_home" for 127.0.0.1 at 2015-12-03 22:08:06 +0530
+Processing by CompaniesController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  Rendered layouts/_application.html.erb (4.6ms)
+  [1m[36mCompanyStaff Load (0.3ms)[0m  [1mSELECT `company_staffs`.* FROM `company_staffs`[0m
+  Rendered layouts/_footer.html.erb (0.0ms)
+  Rendered companies/index.html.erb (6.8ms)
+Completed 200 OK in 9ms (Views: 7.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/style.css?body=1" for 127.0.0.1 at 2015-12-03 22:08:06 +0530
+
+
+Started GET "/assets/bootstrap-theme.css?body=1" for 127.0.0.1 at 2015-12-03 22:08:06 +0530
+
+
+Started GET "/assets/bootstrap-theme.min.css?body=1" for 127.0.0.1 at 2015-12-03 22:08:06 +0530
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2015-12-03 22:08:06 +0530
+
+
+Started GET "/assets/bootstrap.css?body=1" for 127.0.0.1 at 2015-12-03 22:08:06 +0530
+
+
+Started GET "/assets/jquery.min.js?body=1" for 127.0.0.1 at 2015-12-03 22:08:06 +0530
+
+
+Started GET "/assets/jquery.validate.js?body=1" for 127.0.0.1 at 2015-12-03 22:08:06 +0530
+
+
+Started GET "/assets/charges.js?body=1" for 127.0.0.1 at 2015-12-03 22:08:06 +0530
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2015-12-03 22:08:06 +0530
+
+
+Started GET "/assets/create.png" for 127.0.0.1 at 2015-12-03 22:08:06 +0530
+
+
+Started GET "/assets/logo.png" for 127.0.0.1 at 2015-12-03 22:08:06 +0530
+
+
+Started GET "/assets/line.png" for 127.0.0.1 at 2015-12-03 22:08:06 +0530
+
+
+Started GET "/assets/right.png" for 127.0.0.1 at 2015-12-03 22:08:06 +0530
+
+
+Started GET "/assets/add.png" for 127.0.0.1 at 2015-12-03 22:08:06 +0530
+
+
+Started GET "/assets/edit.png" for 127.0.0.1 at 2015-12-03 22:08:06 +0530
+
+
+Started GET "/assets/footerbg.jpg" for 127.0.0.1 at 2015-12-03 22:08:06 +0530
+
+
+Started GET "/assets/delete.png" for 127.0.0.1 at 2015-12-03 22:08:06 +0530
+
+
+Started GET "/companies/delete/5" for 127.0.0.1 at 2015-12-03 22:08:09 +0530
+Processing by CompaniesController#destroy as HTML
+  Parameters: {"id"=>"5"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mCompanyStaff Load (0.4ms)[0m  [1mSELECT `company_staffs`.* FROM `company_staffs` WHERE `company_staffs`.`id` = 5 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mDELETE FROM `company_staffs` WHERE `company_staffs`.`id` = 5[0m
+  [1m[35m (30.7ms)[0m  COMMIT
+Redirected to http://localhost:3000/company_home
+Completed 302 Found in 36ms (ActiveRecord: 31.6ms)
+
+
+Started GET "/company_home" for 127.0.0.1 at 2015-12-03 22:08:09 +0530
+Processing by CompaniesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  Rendered layouts/_application.html.erb (5.3ms)
+  [1m[35mCompanyStaff Load (0.3ms)[0m  SELECT `company_staffs`.* FROM `company_staffs`
+  Rendered layouts/_footer.html.erb (0.0ms)
+  Rendered companies/index.html.erb (7.3ms)
+Completed 200 OK in 11ms (Views: 8.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/style.css?body=1" for 127.0.0.1 at 2015-12-03 22:08:09 +0530
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2015-12-03 22:08:09 +0530
+
+
+Started GET "/assets/bootstrap.css?body=1" for 127.0.0.1 at 2015-12-03 22:08:09 +0530
+
+
+Started GET "/assets/bootstrap-theme.css?body=1" for 127.0.0.1 at 2015-12-03 22:08:09 +0530
+
+
+Started GET "/assets/bootstrap-theme.min.css?body=1" for 127.0.0.1 at 2015-12-03 22:08:09 +0530
+
+
+Started GET "/assets/jquery.min.js?body=1" for 127.0.0.1 at 2015-12-03 22:08:09 +0530
+
+
+Started GET "/assets/jquery.validate.js?body=1" for 127.0.0.1 at 2015-12-03 22:08:09 +0530
+
+
+Started GET "/assets/charges.js?body=1" for 127.0.0.1 at 2015-12-03 22:08:09 +0530
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2015-12-03 22:08:09 +0530
+
+
+Started GET "/assets/create.png" for 127.0.0.1 at 2015-12-03 22:08:09 +0530
+
+
+Started GET "/assets/line.png" for 127.0.0.1 at 2015-12-03 22:08:09 +0530
+
+
+Started GET "/assets/right.png" for 127.0.0.1 at 2015-12-03 22:08:09 +0530
+
+
+Started GET "/assets/logo.png" for 127.0.0.1 at 2015-12-03 22:08:09 +0530
+
+
+Started GET "/assets/add.png" for 127.0.0.1 at 2015-12-03 22:08:09 +0530
+
+
+Started GET "/assets/edit.png" for 127.0.0.1 at 2015-12-03 22:08:09 +0530
+
+
+Started GET "/assets/footerbg.jpg" for 127.0.0.1 at 2015-12-03 22:08:09 +0530
+
+
+Started GET "/assets/delete.png" for 127.0.0.1 at 2015-12-03 22:08:09 +0530
+
+
+Started GET "/companies/delete/2" for 127.0.0.1 at 2015-12-03 22:08:11 +0530
+Processing by CompaniesController#destroy as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mCompanyStaff Load (0.6ms)[0m  SELECT `company_staffs`.* FROM `company_staffs` WHERE `company_staffs`.`id` = 2 LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  DELETE FROM `company_staffs` WHERE `company_staffs`.`id` = 2
+  [1m[36m (37.1ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/company_home
+Completed 302 Found in 42ms (ActiveRecord: 38.3ms)
+
+
+Started GET "/company_home" for 127.0.0.1 at 2015-12-03 22:08:11 +0530
+Processing by CompaniesController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  Rendered layouts/_application.html.erb (3.9ms)
+  [1m[36mCompanyStaff Load (0.3ms)[0m  [1mSELECT `company_staffs`.* FROM `company_staffs`[0m
+  Rendered layouts/_footer.html.erb (0.0ms)
+  Rendered companies/index.html.erb (5.6ms)
+Completed 200 OK in 8ms (Views: 6.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/style.css?body=1" for 127.0.0.1 at 2015-12-03 22:08:11 +0530
+
+
+Started GET "/assets/bootstrap.css?body=1" for 127.0.0.1 at 2015-12-03 22:08:11 +0530
+
+
+Started GET "/assets/bootstrap-theme.min.css?body=1" for 127.0.0.1 at 2015-12-03 22:08:11 +0530
+
+
+Started GET "/assets/jquery.min.js?body=1" for 127.0.0.1 at 2015-12-03 22:08:11 +0530
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2015-12-03 22:08:11 +0530
+
+
+Started GET "/assets/bootstrap-theme.css?body=1" for 127.0.0.1 at 2015-12-03 22:08:11 +0530
+
+
+Started GET "/assets/jquery.validate.js?body=1" for 127.0.0.1 at 2015-12-03 22:08:11 +0530
+
+
+Started GET "/assets/charges.js?body=1" for 127.0.0.1 at 2015-12-03 22:08:11 +0530
+
+
+Started GET "/assets/create.png" for 127.0.0.1 at 2015-12-03 22:08:11 +0530
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2015-12-03 22:08:11 +0530
+
+
+Started GET "/assets/right.png" for 127.0.0.1 at 2015-12-03 22:08:11 +0530
+
+
+Started GET "/assets/logo.png" for 127.0.0.1 at 2015-12-03 22:08:11 +0530
+
+
+Started GET "/assets/line.png" for 127.0.0.1 at 2015-12-03 22:08:11 +0530
+
+
+Started GET "/assets/add.png" for 127.0.0.1 at 2015-12-03 22:08:11 +0530
+
+
+Started GET "/assets/footerbg.jpg" for 127.0.0.1 at 2015-12-03 22:08:11 +0530
+
+
+Started GET "/add_staff" for 127.0.0.1 at 2015-12-03 22:08:13 +0530
+Processing by CompaniesController#add_staff as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  Rendered layouts/_application.html.erb (5.1ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+  Rendered companies/add_staff.html.erb (8.7ms)
+Completed 200 OK in 12ms (Views: 9.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/bootstrap.css?body=1" for 127.0.0.1 at 2015-12-03 22:08:13 +0530
+
+
+Started GET "/assets/jquery.min.js?body=1" for 127.0.0.1 at 2015-12-03 22:08:13 +0530
+
+
+Started GET "/assets/bootstrap-theme.css?body=1" for 127.0.0.1 at 2015-12-03 22:08:13 +0530
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2015-12-03 22:08:13 +0530
+
+
+Started GET "/assets/bootstrap-theme.min.css?body=1" for 127.0.0.1 at 2015-12-03 22:08:13 +0530
+
+
+Started GET "/assets/style.css?body=1" for 127.0.0.1 at 2015-12-03 22:08:13 +0530
+
+
+Started GET "/assets/jquery.validate.js?body=1" for 127.0.0.1 at 2015-12-03 22:08:13 +0530
+
+
+Started GET "/assets/charges.js?body=1" for 127.0.0.1 at 2015-12-03 22:08:13 +0530
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2015-12-03 22:08:13 +0530
+
+
+Started GET "/assets/create.png" for 127.0.0.1 at 2015-12-03 22:08:13 +0530
+
+
+Started GET "/assets/logo.png" for 127.0.0.1 at 2015-12-03 22:08:13 +0530
+
+
+Started GET "/assets/line.png" for 127.0.0.1 at 2015-12-03 22:08:13 +0530
+
+
+Started GET "/assets/right.png" for 127.0.0.1 at 2015-12-03 22:08:13 +0530
+
+
+Started GET "/assets/footerbg.jpg" for 127.0.0.1 at 2015-12-03 22:08:13 +0530
+
+
+Started POST "/add_staff/create" for 127.0.0.1 at 2015-12-03 22:08:21 +0530
+Processing by CompaniesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"bLZVhp9OlN5eRBmqXNxwaiz3jwUgkqo/VYamYs9Y9kg=", "first_name"=>"Randhir", "last_name"=>"Singh", "email"=>"parmarth1993@gmail.com", "skills"=>"Nodejs, Ruby, Rails", "availability"=>"40", "is_private"=>"1", "qualification"=>"Post Graduate", "experience"=>"3", "upload"=>"", "company_id"=>"1", "commit"=>"Add Staff"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mUsersStaffPlans Load (0.1ms)[0m  SELECT `users_staff_plans`.* FROM `users_staff_plans` WHERE `users_staff_plans`.`user_id` = 1 ORDER BY `users_staff_plans`.`id` ASC LIMIT 1
+DEPRECATION WARNING: Relation#all is deprecated. If you want to eager-load a relation, you can call #load (e.g. `Post.where(published: true).load`). If you want to get an array of records from a relation, you can call #to_a (e.g. `Post.where(published: true).to_a`). (called from create at /var/www/html/eps2/app/controllers/companies_controller.rb:41)
+  [1m[36mCompanyStaff Load (0.3ms)[0m  [1mSELECT `company_staffs`.* FROM `company_staffs` WHERE `company_staffs`.`company_id` = 1[0m
+  [1m[35mAdmin::StaffPlans Load (0.1ms)[0m  SELECT `admin_staff_plans`.* FROM `admin_staff_plans` WHERE `admin_staff_plans`.`id` = 1 LIMIT 1
+Unpermitted parameters: utf8, authenticity_token, upload, commit
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM `company_staffs` WHERE `company_staffs`.`email` = 'parmarth1993@gmail.com'[0m
+Unpermitted parameters: utf8, authenticity_token, upload, commit
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO `company_staffs` (`availability`, `company_id`, `created_at`, `email`, `experience`, `first_name`, `is_private`, `last_name`, `qualification`, `skills`, `updated_at`) VALUES ('40', 1, '2015-12-03 16:38:21', 'parmarth1993@gmail.com', '3', 'Randhir', 1, 'Singh', 'Post Graduate', 'Nodejs, Ruby, Rails', '2015-12-03 16:38:21')[0m
+  [1m[35m (27.5ms)[0m  COMMIT
+Redirected to http://localhost:3000/company_home
+Completed 302 Found in 57ms (ActiveRecord: 30.8ms)
+
+
+Started GET "/company_home" for 127.0.0.1 at 2015-12-03 22:08:21 +0530
+Processing by CompaniesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  Rendered layouts/_application.html.erb (4.6ms)
+  [1m[35mCompanyStaff Load (0.3ms)[0m  SELECT `company_staffs`.* FROM `company_staffs`
+  Rendered layouts/_footer.html.erb (0.2ms)
+  Rendered companies/index.html.erb (7.6ms)
+Completed 200 OK in 11ms (Views: 8.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/style.css?body=1" for 127.0.0.1 at 2015-12-03 22:08:21 +0530
+
+
+Started GET "/assets/bootstrap.css?body=1" for 127.0.0.1 at 2015-12-03 22:08:21 +0530
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2015-12-03 22:08:21 +0530
+
+
+Started GET "/assets/jquery.validate.js?body=1" for 127.0.0.1 at 2015-12-03 22:08:21 +0530
+
+
+Started GET "/assets/bootstrap-theme.css?body=1" for 127.0.0.1 at 2015-12-03 22:08:21 +0530
+
+
+Started GET "/assets/bootstrap-theme.min.css?body=1" for 127.0.0.1 at 2015-12-03 22:08:21 +0530
+
+
+Started GET "/assets/jquery.min.js?body=1" for 127.0.0.1 at 2015-12-03 22:08:21 +0530
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2015-12-03 22:08:21 +0530
+
+
+Started GET "/assets/charges.js?body=1" for 127.0.0.1 at 2015-12-03 22:08:21 +0530
+
+
+Started GET "/assets/create.png" for 127.0.0.1 at 2015-12-03 22:08:21 +0530
+
+
+Started GET "/assets/logo.png" for 127.0.0.1 at 2015-12-03 22:08:21 +0530
+
+
+Started GET "/assets/right.png" for 127.0.0.1 at 2015-12-03 22:08:21 +0530
+
+
+Started GET "/assets/line.png" for 127.0.0.1 at 2015-12-03 22:08:21 +0530
+
+
+Started GET "/assets/add.png" for 127.0.0.1 at 2015-12-03 22:08:22 +0530
+
+
+Started GET "/assets/edit.png" for 127.0.0.1 at 2015-12-03 22:08:22 +0530
+
+
+Started GET "/assets/delete.png" for 127.0.0.1 at 2015-12-03 22:08:22 +0530
+
+
+Started GET "/assets/footerbg.jpg" for 127.0.0.1 at 2015-12-03 22:08:22 +0530
