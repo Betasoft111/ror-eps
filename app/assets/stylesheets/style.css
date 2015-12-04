@@ -1020,17 +1020,21 @@ p.nn1 {
     min-height: 450px;
     box-shadow: 0 0 1px #fff;
 }
-.l1 {
-    background: rgba(101,109,148,0.7);
+.l1.hvr-shutter-in-vertical::before , .l1{
+    background: rgba(101,109,148,0.7) !important;
+    opacity: 0.7;
 }
-.l2 {
-    background: rgba(0,122,135,0.7);
+.l2.hvr-shutter-in-vertical::before, .l2 {
+    background: rgba(0,122,135,0.7) !important;
+    opacity: 0.7;
 }
-.l3 {
-    background: rgba(0,140,216,0.7);
+.l3.hvr-shutter-in-vertical::before , .l3{
+    background: rgba(0,140,216,0.7) !important;
+    opacity: 0.7;
 }
-.l4 {
-    background:rgba(57,60,61,0.7);
+.l4.hvr-shutter-in-vertical::before , .l4{
+    background:rgba(57,60,61,0.7) !important;
+    opacity: 0.7;
 }
 .happy_client li span {
     
@@ -1065,7 +1069,7 @@ p.nn1 {
     color: #2C2D2F;
 }
 .happy_client ul li:hover {
-    opacity: 0.6;
+    opacity: 1;
 }
 .header-top.inner {
     position: relative;

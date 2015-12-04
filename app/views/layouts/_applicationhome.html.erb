@@ -8,6 +8,7 @@
     <title>Employee Placement System</title>
 <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
 
+<%= stylesheet_link_tag    "hover.css" %>
 <%= stylesheet_link_tag    "style.css" %>
 <%= stylesheet_link_tag    "bootstrap.css" %>
 <%= stylesheet_link_tag    "bootstrap.min.css" %>
@@ -95,15 +96,15 @@ $(window).scroll(function() {
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
-        <li class=""><a href="/company_home"> Home  <span class="sr-only">(current)</span></a></li>
-        <li><a href="#">About Us</a></li>
-        <li><a href="#">Contact Us</a></li>
-        <li><a href="#">Pricing </a></li>
+        <li class="hvr-overline-from-center"><a href="/company_home"> Home  <span class="sr-only">(current)</span></a></li>
+        <li class="hvr-overline-from-center"><a href="#">About Us</a></li>
+        <li class="hvr-overline-from-center"><a href="#">Contact Us</a></li>
+        <li class="hvr-overline-from-center"><a href="#">Pricing </a></li>
         <% if session[:user_id] && session[:user_id] != nil %>
-          <li><a href="/log_out" >Logout</a></li>
+          <li class="hvr-overline-from-center"><a href="/log_out" >Logout</a></li>
         <% else %>
           <!-- <li><a href="/join" class="login-tab">Login</a></li> -->
-          <li><a href="/join" class="login-tab">Join</a>
+          <li class=""><a href="/join" class="login-tab">Join</a>
 
             <ul>
               <li><a href="/join" class="login-tab">Login</a></li>
