@@ -195,6 +195,19 @@ border: medium none;
     padding: 10px;
     width: 170px;
 }
+.ng-emd button {
+/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#4fc3ff+0,0376b0+100 */
+background: #4fc3ff!important; /* Old browsers */
+background: -moz-linear-gradient(top, #4fc3ff 0%, #0376b0 100%)!important; /* FF3.6-15 */
+background: -webkit-linear-gradient(top, #4fc3ff 0%,#0376b0 100%)!important; /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom, #4fc3ff 0%,#0376b0 100%)!important; /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4fc3ff', endColorstr='#0376b0',GradientType=0 )!important; /* IE6-9 */
+border: medium none;
+    color: #fff !important;
+    height: 50px;
+    padding: 10px;
+    width: auto;
+}
 .happy_client {
     text-align: center;
     float: left;
@@ -1090,6 +1103,9 @@ h4.flash {
 }
 .header-top.inner .nav ul::after {
     border-color: -moz-use-text-color transparent #010101;
+}
+.ng-pic img {
+    width: 100%;
 }
 /**** media start *****/
 

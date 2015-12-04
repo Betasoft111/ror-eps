@@ -24,19 +24,18 @@
 			</span></h4>
 			<div class="col-lg-3 ng-pic">
 				<!-- <img src="img/emp1.jpg"> -->
-				<%= image_tag("emp1.jpg" , :alt => 'emp1.jpg') %>
+				<%= image_tag(@user_detail.image.url , :alt => 'emp1.jpg') %>
 			</div>
 			<div class="col-lg-8 col-lg-offset-1">
 				<strong>Contact Information</strong>
-				<p><label>Email :</label>amazingservice@email.com</p>
-				<p><label>Contact Number :</label></p>
+				<p><label>Email : </label><%= @user_detail.email %></p>
 				<strong>General Information</strong>
-				<p><label>Name :</label>John Deo</p>
-				<p><label>Skills :</label>Nodejs RoR </p>
-				<p><label>Availability :</label>40 Hours/Week</p>
-				<p><label>Experience :</label>3 Years</p>
+				<p><label>Name : </label><%= @user_detail.first_name+' '+@user_detail.last_name %></p>
+				<p><label>Skills : </label><%= @user_detail.skills %></p>
+				<p><label>Availability : </label><%= @user_detail.availability %></p>
+				<p><label>Experience : </label><%= @user_detail.experience %></p>
 				<strong>Other Information</strong>
-				<p><label>Other details: </label> </p>
+				<p><label>Other details : </label> </p>
 				<button class="btn btn-default" type="submit">Contact To Company</button>
 			</div>
 		</div>

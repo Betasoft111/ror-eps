@@ -5,7 +5,7 @@ class Admin::StaffPlansController < ApplicationController
 	#  	        List Plans          #
 	#################################
 	def index
-		@plans = Admin::StaffPlans.all
+		@plans = Admin::StaffPlan.all
 	end
 
 	#################################
@@ -18,7 +18,7 @@ class Admin::StaffPlansController < ApplicationController
 	#  	     Render Create Plan     #
 	#################################
 	def new
-		@staff_plans = Admin::StaffPlans.new
+		@staff_plans = Admin::StaffPlan.new
 	end
 
 
@@ -28,9 +28,9 @@ class Admin::StaffPlansController < ApplicationController
 	#################################
 	def create
 
-		@check_plan = Admin::StaffPlans.where(:plan_name => plan_params[:plan_name]).where(:no_of_staff => plan_params[:no_of_staff]).where(:plan_price => plan_params[:plan_price])
+		@check_plan = Admin::StaffPlan.where(:plan_name => plan_params[:plan_name]).where(:no_of_staff => plan_params[:no_of_staff]).where(:plan_price => plan_params[:plan_price])
 		if @check_plan.empty?
-			@StaffPlans = Admin::StaffPlans.new(plan_params)
+			@StaffPlans = Admin::StaffPlan.new(plan_params)
 			if @StaffPlans.save
 				redirect_to "/admin/staff_plans", :notice => "New Staff plan is added successfully"
 			else
@@ -46,7 +46,7 @@ class Admin::StaffPlansController < ApplicationController
 	#  	     Render Edit staff Plan #
 	#################################
 	def edit
-		@staff_plan = Admin::StaffPlans.find(params[:id])
+		@staff_plan = Admin::StaffPlan.find(params[:id])
 		@staff_path = '/admin/staff_plans/update/' + @staff_plan.id.to_s
 	end
 
@@ -54,7 +54,7 @@ class Admin::StaffPlansController < ApplicationController
 	#     	   Update staff Plan    #
 	#################################
 	def update
-		Admin::StaffPlans.where(:id => params[:id]).update_all(plan_name: params[:plan_name], no_of_staff: params[:no_of_staff], plan_price: params[:plan_price])
+		Admin::StaffPlan.where(:id => params[:id]).update_all(plan_name: params[:plan_name], no_of_staff: params[:no_of_staff], plan_price: params[:plan_price])
 		redirect_to "/admin/staff_plans", :notice => "Staff Plan is updated successfully"
 	end
 
@@ -63,7 +63,7 @@ class Admin::StaffPlansController < ApplicationController
 	#################################
 
 	def destroy
-	    Admin::StaffPlans.find(params[:id]).destroy
+	    Admin::StaffPlan.find(params[:id]).destroy
 	    redirect_to "/admin/staff_plans", :notice => "Staff Record Deleted successfully"
 	end
 

@@ -82,14 +82,14 @@ class UsersController < ApplicationController
 	#  	  Render Choose Plan        #
 	#################################
 	def choose_plan
-		@plans = SubscriptionPlans.all
+		@plans = SubscriptionPlan.all
 	end
 
 	#################################
 	#  	  Select Payment Method     #
 	#################################
 	def payment_method
-		@plan_details = SubscriptionPlans.find(params[:selected_plan])
+		@plan_details = SubscriptionPlan.find(params[:selected_plan])
 		new_price = @plan_details.plan_price * 100
 	end
 

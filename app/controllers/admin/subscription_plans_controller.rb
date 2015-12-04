@@ -5,7 +5,7 @@ class Admin::SubscriptionPlansController < ApplicationController
 	#  	        List Plans          #
 	#################################
 	def index
-		@plans = SubscriptionPlans.all
+		@plans = SubscriptionPlan.all
 	end
 
 	#################################
@@ -18,7 +18,7 @@ class Admin::SubscriptionPlansController < ApplicationController
 	#  	     Render Create Plan     #
 	#################################
 	def new
-		@subscription_plan = SubscriptionPlans.new
+		@subscription_plan = SubscriptionPlan.new
 	end
 
 	#################################
@@ -26,9 +26,9 @@ class Admin::SubscriptionPlansController < ApplicationController
 	#################################
 	def create
 
-		@check_plan = SubscriptionPlans.where(:plan_name => plan_params[:plan_name]).where(:plan_price => plan_params[:plan_price]).where(:plan_type => plan_params[:plan_type])
+		@check_plan = SubscriptionPlan.where(:plan_name => plan_params[:plan_name]).where(:plan_price => plan_params[:plan_price]).where(:plan_type => plan_params[:plan_type])
 		if @check_plan.empty?
-			@subscription_plan = SubscriptionPlans.new(plan_params)
+			@subscription_plan = SubscriptionPlan.new(plan_params)
 			if @subscription_plan.save
 				redirect_to "/admin/subscription_plans", :notice => "New plan is added successfully"
 			else
@@ -43,7 +43,7 @@ class Admin::SubscriptionPlansController < ApplicationController
 	#  	     Render Edit Plan       #
 	#################################
 	def edit
-		@subscription_plan = SubscriptionPlans.find(params[:id])
+		@subscription_plan = SubscriptionPlan.find(params[:id])
 		@subscription_path = '/admin/subscription_plans/update/' + @subscription_plan.id.to_s
 	end
 
@@ -51,19 +51,19 @@ class Admin::SubscriptionPlansController < ApplicationController
 	#     	   Update Plan          #
 	#################################
 	def update
-		SubscriptionPlans.where(:id => params[:id]).update_all(plan_name: params[:plan_name], plan_price: params[:plan_price], plan_type: params[:plan_type])
+		SubscriptionPlan.where(:id => params[:id]).update_all(plan_name: params[:plan_name], plan_price: params[:plan_price], plan_type: params[:plan_type], total_profiles: params[:total_profiles])
 		redirect_to "/admin/subscription_plans", :notice => "Plan is updated successfully"
 	end
 
 	def destroy
 	    # @subscription_plan.destroy
-	    SubscriptionPlans.find(params[:id]).destroy
+	    SubscriptionPlan.find(params[:id]).destroy
 	    redirect_to "/admin/subscription_plans", :notice => "Record Deleted successfully"
 	end
 
 	private
 
 	  def plan_params
-	    params.permit(:plan_name, :plan_price, :plan_type)
+	    params.permit(:plan_name, :plan_price, :plan_type, :total_profiles)
 	  end
 end
