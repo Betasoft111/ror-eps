@@ -9,7 +9,7 @@ class WelcomeController < ApplicationController
 	def index
 		
 			# if @current_user.plan_id != nil
-			# 	@plan_details = SubscriptionPlans.find()
+			# 	@plan_details = SubscriptionPlan.find()
 			# else
 			# 	redirect_to "/choose_plan", :notice => "Please choose a membership plan"
 			# end

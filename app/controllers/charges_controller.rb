@@ -11,7 +11,7 @@ class ChargesController < ApplicationController
 
 	def create
 	  @plan_id = params[:plan_id]
-	  @plan_details = SubscriptionPlans.find(@plan_id)
+	  @plan_details = SubscriptionPlan.find(@plan_id)
 
   		#################################
 		#      Check Payment Method     #
@@ -85,7 +85,7 @@ class ChargesController < ApplicationController
 	################################# 
 	def payment_ipn
 		if params[:txnid] && params[:txnid] != nil && params[:orderid] && params[:orderid] != nil && params[:amount] && params[:amount] != nil
-			@plan_details = SubscriptionPlans.where(:plan_price => params[:amount]) #.where(:email => plan_params[:email])
+			@plan_details = SubscriptionPlan.where(:plan_price => params[:amount]) #.where(:email => plan_params[:email])
 			if @plan_details && @plan_details[0]
 				@plan_id = @plan_details[0].id
 				User.where(:id => @current_user.id).update_all(plan_id: @plan_id)
@@ -107,7 +107,7 @@ class ChargesController < ApplicationController
 								:payment_json => params.to_json
 							})
 		# if params[:txnid] && params[:txnid] != nil && params[:orderid] && params[:orderid] != nil && params[:amount] && params[:amount] != nil
-		# 	@plan_details = SubscriptionPlans.where(:plan_price => params[:amount]) #.where(:email => plan_params[:email])
+		# 	@plan_details = SubscriptionPlan.where(:plan_price => params[:amount]) #.where(:email => plan_params[:email])
 		# 	if @plan_details && @plan_details[0]
 		# 		@plan_id = @plan_details[0].id
 		# 		User.where(:id => @current_user.id).update_all(plan_id: @plan_id)

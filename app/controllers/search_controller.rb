@@ -11,7 +11,7 @@ class SearchController < ApplicationController
 
 
 	def show_details
-		
-
+		@user_detail = CompanyStaff.find(params[:id])
+	 	logger.info(@user_detail.inspect)
 	end
 end

@@ -29,28 +29,22 @@ class CompaniesController < ApplicationController
 	#   Add New Company staff    #
 	#################################
 	def create
-		if current_user
-		logger.info("&&&&&&&&&&&&&&&&&&&&&&")
-		logger.info(current_user.inspect)
-		end
 		####################################################
 		# Check The Current Plan For Adding Staff Members  #
 		####################################################
-		@current_plan = UsersStaffPlans.where(:user_id => @current_user.id).first
+		@current_plan = UsersStaffPlan.where(:user_id => @current_user.id).first
 
 		##########################
 		# Get Total Staff Added  #
 		##########################
-		@total_staff = CompanyStaff.where(:company_id => @current_user.id).load
-
+		@total_staff = CompanyStaff.where(:company_id => @current_user.id)
 		if @current_plan && @current_plan != nil
 			####################################
 			# Get No. Of Staff Allowed To Add  #
 			####################################
 			@allowed_staff = Admin::StaffPlans.find(@current_plan.plan_id)
 			if @total_staff.size >= @allowed_staff.no_of_staff
-				logger.info("11111111111111111")
-				redirect_to "/company_home", :notice => "Your plan is not allows to add new members, please upgrade your plan"
+				redirect_to "/company_home", :notice => "Your plan does not allow you to add new members, please upgrade your plan"
 			else
 				##########################
 				# Add New  Staff Member  #
@@ -69,10 +63,8 @@ class CompaniesController < ApplicationController
 			end
 
 		else
-			
-			if @current_plan.nil? && @total_staff.size > 9
-				logger.info("22222222222222222")
-				redirect_to "/company_home", :notice => "Your plan is not allows to add new members, please upgrade your plan"
+			if current_user && current_user.subscription_plan.present? && @current_plan.nil? && current_user.subscription_plan.total_profiles.to_i <= @total_staff.size
+				redirect_to "/company_home", :notice => "Your plan does not allow you to add new members, please upgrade your plan"
 			else
 				##########################
 				# Add New  Staff Member  #

@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
   #attr_accessible :email, :password, :password_confirmation
   has_many :company_staffs, :foreign_key => :company_id
-  #has_one :subscription_plan, :foreign_key => :plan_id
+  belongs_to :subscription_plan, :foreign_key => :plan_id
   attr_accessor :password
   before_save :encrypt_password
   before_update :encrypt_password
