@@ -42,7 +42,7 @@ class CompaniesController < ApplicationController
 			####################################
 			# Get No. Of Staff Allowed To Add  #
 			####################################
-			@allowed_staff = Admin::StaffPlans.find(@current_plan.plan_id)
+			@allowed_staff = Admin::StaffPlan.find(@current_plan.plan_id)
 			if @total_staff.size >= @allowed_staff.no_of_staff
 				redirect_to "/company_home", :notice => "Your plan does not allow you to add new members, please upgrade your plan"
 			else
