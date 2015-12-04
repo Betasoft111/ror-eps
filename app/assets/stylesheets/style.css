@@ -1018,6 +1018,7 @@ p.nn1 {
 }
 .happy_client ul li {
     min-height: 450px;
+    box-shadow: 0 0 1px #fff;
 }
 .l1 {
     background: rgba(101,109,148,0.7);
@@ -1051,7 +1052,44 @@ p.nn1 {
 }
 .happy_client ul li p {
     color: #fff;
+    font-size: 13px;
+    line-height: 20px;
     margin-top: 20px;
+}
+.happy_client ul li img {
+    display: block;
+    margin: 20px auto;
+    width: 64%;
+}
+.happy_client ul li a {
+    color: #2C2D2F;
+}
+.happy_client ul li:hover {
+    opacity: 0.6;
+}
+.header-top.inner {
+    position: relative;
+}
+.header-top.inner .navbar-default .navbar-nav > li > a {
+ color: #010101 !important;
+
+}
+.header-top.inner {
+    margin-bottom: 0;
+}
+.header .header-top.inner .navbar li a {
+    height: 48px;
+}
+h4.flash {
+    left: 0;
+    margin: auto;
+    position: absolute;
+    right: 0;
+    top: 47px;
+    z-index: 100000000000;
+}
+.header-top.inner .nav ul::after {
+    border-color: -moz-use-text-color transparent #010101;
 }
 /**** media start *****/
 
@@ -1193,46 +1231,4 @@ li.selected-tab {
 }
 
 
-}
-
-
-
-
-/************* employee profile **********/
-
-.ng-emd h4 {
-    color: #0e81bb;
-    margin-bottom: 50px;
-}
-.ng-pic img {
-    border: 1px solid #b0b0b0;
-    box-shadow: 0 0 3px #3e3e3e;
-    padding: 10px;
-    margin-top: 20px;
-}
-.ng-emd strong {
-    display: block;
-    font-size: 20px;
-    margin-bottom: 10px;
-    margin-top: 20px;
-}
-.ng-emd p {
-    line-height: 20px;
-    margin: 0;
-}
-.ng-emd label {
-    width: 25%;
-    font-weight: normal;
-}
-.ng-emd button{
-      background: rgba(0, 0, 0, 0) linear-gradient(to bottom, #4fc3ff 0%, #0376b0 100%) repeat scroll 0 0;
-    border: 1px solid #0a7db7;
-    border-radius: 0;
-    color: #fff;
-    font-size: 20px;
-    font-weight: normal;
-    height: 45px;
-    margin-top: 20px;
-    text-shadow: none;
-    width: auto;
 }
