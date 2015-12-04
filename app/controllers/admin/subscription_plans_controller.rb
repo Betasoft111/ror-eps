@@ -56,11 +56,9 @@ class Admin::SubscriptionPlansController < ApplicationController
 	end
 
 	def destroy
-	    @subscription_plan.destroy
-	    # respond_to do |format|
-	    #   format.html { redirect_to admin_companies_url, notice: 'Company was successfully deleted.' }
-	    #   format.json { head :no_content }
-	    # end
+	    # @subscription_plan.destroy
+	    SubscriptionPlans.find(params[:id]).destroy
+	    redirect_to "/admin/subscription_plans", :notice => "Record Deleted successfully"
 	end
 
 	private

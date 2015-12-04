@@ -29,7 +29,10 @@ class CompaniesController < ApplicationController
 	#   Add New Company staff    #
 	#################################
 	def create
-
+		if current_user
+		logger.info("&&&&&&&&&&&&&&&&&&&&&&")
+		logger.info(current_user.inspect)
+		end
 		####################################################
 		# Check The Current Plan For Adding Staff Members  #
 		####################################################
@@ -46,6 +49,7 @@ class CompaniesController < ApplicationController
 			####################################
 			@allowed_staff = Admin::StaffPlans.find(@current_plan.plan_id)
 			if @total_staff.size >= @allowed_staff.no_of_staff
+				logger.info("11111111111111111")
 				redirect_to "/company_home", :notice => "Your plan is not allows to add new members, please upgrade your plan"
 			else
 				##########################
@@ -67,6 +71,7 @@ class CompaniesController < ApplicationController
 		else
 			
 			if @current_plan.nil? && @total_staff.size > 9
+				logger.info("22222222222222222")
 				redirect_to "/company_home", :notice => "Your plan is not allows to add new members, please upgrade your plan"
 			else
 				##########################
