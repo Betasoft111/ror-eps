@@ -386,6 +386,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4fc3ff', end
     width: 100%;
     float: left;
     position: relative;
+    margin-top: 5.5%;
 }
 .banner-innerpage {
     position: absolute;
@@ -1110,6 +1111,12 @@ h4.flash {
 }
 .ng-pic img {
     width: 100%;
+}
+.inner-pages-ng .header-top .navbar-default .navbar-nav > li > a {
+    color: #000 !important;
+}
+.inner-pages-ng .header-top.sticky .navbar-default .navbar-nav > li > a {
+    color: #fff !important;
 }
 /**** media start *****/
 

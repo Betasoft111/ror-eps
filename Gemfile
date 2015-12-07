@@ -8,14 +8,14 @@ gem 'mysql2'
 #gem 'devise'
 #gem 'pushmeup'
 #gem 'urbanairship'
-#gem 'therubyracer'
+gem 'therubyracer'
 #gem 'execjs'
 #for sending notification on titanium devices
 #gem 'ruby-mpns'
-
+gem 'will_paginate', '~> 3.0.5'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.2'
-
+gem 'jquery-turbolinks'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 

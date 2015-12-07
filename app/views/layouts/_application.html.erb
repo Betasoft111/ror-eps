@@ -18,10 +18,8 @@
 <%#= stylesheet_link_tag    "sweetalert.css" %>
 
 
-<%= javascript_include_tag "jquery.min.js" %>
-<%= javascript_include_tag "jquery.validate.js" %>
-<%= javascript_include_tag "bootstrap.js" %>
-<%= javascript_include_tag "charges.js" %>
+<%= javascript_include_tag "application.js" %>
+
 <%#= javascript_include_tag "sweetalert-dev.js" %>
 <script type="text/javascript">
 $(document).ready(function () {
@@ -55,13 +53,23 @@ $(document).ready(function () {
 });
 </script>
 <%#= javascript_include_tag "angular/routes.js" %>
+<script>
+$(window).scroll(function() {
+    if ($(this).scrollTop() > 1){  
+        $('.header-top').addClass("sticky");
+    }
+    else{
+        $('.header-top').removeClass("sticky");
+    }
+});
+</script>
 
 
 
 </head>
   <body>
-    <div class="header">
-      <div class="header-top inner">
+    <div class="header inner-pages-ng">
+      <div class="header-top">
       <div class="container">
         <div class="row">
           <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">

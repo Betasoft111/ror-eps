@@ -7,7 +7,8 @@ class CompaniesController < ApplicationController
 	#  	        List Plans          #
 	#################################
 	def index
-		@staff_list = CompanyStaff.all
+		params[:page] ||= 1
+		@staff_list = CompanyStaff.paginate(:page => params[:page], :per_page => 2)
 	end
 
 	#################################
@@ -92,6 +93,9 @@ class CompaniesController < ApplicationController
 	def edit
 		@staff_data = CompanyStaff.find(params[:id])
 		@staff_url = '/companies/update/' + @staff_data.id.to_s
+		respond_to do |format|
+        	format.js
+    	end
 	end
 
 	#################################
@@ -106,9 +110,12 @@ class CompaniesController < ApplicationController
 	#################################
 	def destroy
 	    CompanyStaff.find(params[:id]).destroy
-	    redirect_to "/company_home", :notice => "Staff Record Deleted successfully"
+	    # @staff_list = CompanyStaff.all
+		respond_to do |format|
+        	format.html { redirect_to "/company_home", :notice => "Staff Record Deleted successfully" }
+        	format.js
+    	end
 	end
-
 
 	private
 

@@ -1,16 +1,5 @@
-<%= render 'layouts/application' %>
-<div class="innerpage_banner">
-        <%= image_tag("create.png" , :alt => 'create.png') %>
-        <div class="container">
-          <div class="row">
-            <div class="banner-innerpage">
-              <h2>Be<span>St</span>aff</h2>
-            </div>
-          </div>
-        </div>
-        
-        </div><!-- end .innerpage_banner -->
-        </div><!-- end. header -->
+<%#= render 'layouts/application' %>
+
   <div class="content inner-page">
     <div class="container">
       <div class="row">
@@ -89,7 +78,7 @@
       <div class="form-group">
         <div class="col-sm-offset-2 col-sm-10">
           <%= submit_tag "Update", :class => 'btn btn-default' %>
-          <a href="/company_home" class="btn btn-default">Cancel</a>
+           <%= link_to "Cancel", "/company_home", class: "btn btn-default" %>
         </div>
       </div>
       <% end %>
@@ -103,4 +92,3 @@
       $('#editStaff').validate();
     });
     </script>
-    <%= render 'layouts/footer' %>

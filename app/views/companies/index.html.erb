@@ -2,51 +2,18 @@
 </div>
 </div>
 </div>
-<div class="innerpage_banner">
-<%= image_tag("create.png" , :alt => 'create.png') %>
-<div class="container">
-<div class="row">
-<div class="banner-innerpage">
-  <h2>Be<span>St</span>aff</h2>
-</div>
-</div>
-</div>
-</div><!-- end .innerpage_banner -->
-</div><!-- end. header -->
-<div class="content inner-page">
-<div class="container">
-<div class="row">
-  <h4><span>
-    <%= image_tag("line.png" , :alt => 'line.png') %>
-    </span>Company Staffing Plans <span><%= image_tag("right.png" , :alt => 'right.png') %></span></h4>
-    <span class="q1">This will be the Staff 
-    <a href="/add_staff" class="add-new"> Add New</a>
-    <div class="table-responsive">
-      <table class="table">
-        <thead>
-          <tr>
-            <th>Name</th>
-            <th>Email</th>
-            <th>Skills</th>
-            <th>Availability</th>
-            <th>Actions</th>
-          </tr>
-        </thead>
-        <tbody>
-          <% @staff_list.each do |staff_list| %>
-          <tr>
-            <td><%= staff_list.first_name+" "+staff_list.last_name %></td>
-            <td><%= staff_list.email %></td>
-            <td><%= staff_list.skills %></td>
-            <td><%= staff_list.availability %></td>
-            <td><a class="edit" href="/companies/<%= staff_list.id %>/edit"></a> <a class="delete" href="/companies/delete/<%= staff_list.id %>"></a></td>            
-          </tr>
-          <% end %>
-          
-        </tbody>
-      </table>
+  <div class="innerpage_banner">
+    <%= image_tag("create.png" , :alt => 'create.png') %>
+    <div class="container">
+      <div class="row">
+        <div class="banner-innerpage">
+          <h2>Be<span>St</span>aff</h2>
+        </div>
+      </div>
     </div>
-  </div>
-</div>
+  </div><!-- end .innerpage_banner -->
+</div><!-- end. header -->
+<div id="company_data">
+  <%= render "index" %>
 </div>
 <%= render 'layouts/footer' %>
