@@ -64,7 +64,9 @@ $(document).ready(function (){
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
         <li class=""><a href="/admin"> Home  <span class="sr-only">(current)</span></a></li>
-        <% if @current_user && @current_user.id != nil %>
+        <li class=""><a href="/admin/subscription_plans"> Membership Plans  <span class="sr-only">(current)</span></a></li>
+        <li class=""><a href="/admin/staff_plans"> Addon Plans  <span class="sr-only">(current)</span></a></li>
+        <% if session[:user_id] != nil && session[:user_role] == 'admin' %>
           <li><a href="/admin/log_out">Logout</a></li>
         <% end %>
         <!-- <li><a href="#">About Us</a></li>

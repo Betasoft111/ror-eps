@@ -9,7 +9,9 @@ class SearchController < ApplicationController
 			INNER JOIN company_staffs ON users.id = company_staffs.company_id where company_staffs.skills like '%#{params[:skills]}%' AND company_staffs.availability like '%#{params[:availability]}%' AND company_staffs.experience like '%#{params[:experience]}%' AND company_staffs.qualification like '%#{params[:staff_quf]}%'"
 	end
 
-
+	#################################
+	#  	Details Of Select Member    #
+	#################################
 	def show_details
 		@user_detail = CompanyStaff.find(params[:id])
 	 	logger.info(@user_detail.inspect)

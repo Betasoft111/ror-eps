@@ -73,6 +73,8 @@ EPS::Application.routes.draw do
     post "subscription_plans/update/:id" => "subscription_plans#update"
     post "staff_plans/update/:id" => "staff_plans#update"
 
+    get "company/:id/edit" => "admin#edit_company"
+
   end
 
   # #url's we are using in web

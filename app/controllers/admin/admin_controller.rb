@@ -1,14 +1,28 @@
 class Admin::AdminController < ApplicationController
 	#before_filter :check_admin!, only: [:choose_plan, :payment_method]
 
+	#################################
+	#  	       Render Index Page    #
+	#################################
 	def index
 		admin_id = session[:user_id]
 		user_role = session[:user_role]
 
 		if admin_id != '' && user_role && user_role == 'admin' && user_role != nil
+			#################################
+			#  Get The List Of Comapnies    #
+			#################################
+			@companies = User.all 
 		else
 			redirect_to '/admin/log_in'
 		end
+	end
+
+	#################################
+	#  	   Show Selected Company    #
+	#################################
+	def edit_company
+		@company = User.find(params[:id]) 
 	end
 
 	def create

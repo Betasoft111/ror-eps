@@ -680,7 +680,7 @@ a.add-new:hover {
     margin-bottom: 0;
 }
 .inner-page thead {
-    background: #00bff3;
+    background: #008bd8;
     border: medium none;
     color: #fff;
 }
@@ -801,7 +801,7 @@ input[type=radio]:not(old):checked +  label > span > span{
     margin-bottom: 40px;
     margin-top: 46px;
     text-align: center;
-    text-shadow: 1px 1px 1px #3e3e3e;
+    /*text-shadow: 1px 1px 1px #3e3e3e;*/
 }
 .inner-page button[type="submit"] {
     background: transparent none repeat scroll 0 0;
@@ -1110,6 +1110,9 @@ h4.flash {
 }
 .ng-pic img {
     width: 100%;
+}
+.table td {
+    color: #000;
 }
 /**** media start *****/
 
