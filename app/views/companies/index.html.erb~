@@ -1,0 +1,18 @@
+<%= render 'layouts/application' %>
+</div>
+</div>
+</div>
+  <div class="innerpage_banner">
+    <%= image_tag("create.png" , :alt => 'create.png') %>
+    <div class="container">
+      <div class="row">
+        <div class="banner-innerpage">
+          <h2>Be<span>St</span>aff</h2>
+        </div>
+      </div>
+    </div>
+  </div><!-- end .innerpage_banner -->
+</div><!-- end. header -->
+<%= render "index" %>
+<div id="test"></div>
+<%= render 'layouts/footer' %>

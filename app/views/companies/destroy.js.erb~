@@ -1,0 +1,4 @@
+//$('.delete').bind('ajax:success', function() {
+//alert('Anirudh');   
+ //$(this).closest('tr').fadeOut();
+//});
