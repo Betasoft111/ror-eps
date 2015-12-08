@@ -1133,7 +1133,7 @@ h4.flash {
     position: absolute;
 
 }
-
+.header .navbar-toggle {margin-top: 0;}
 
 
 /**** media start *****/
@@ -1164,12 +1164,35 @@ h4.flash {
     width: 100%;
 }
 .c2-main, .banner {background-attachment: scroll; background-size:unset;}
-
+.banner {min-height: auto;}
+.banner-bottom {position: relative;}
  }
 
 
+@media screen and (max-width: 767px) {
+.header-top .navbar-header {display: block;}
+.header-top img {
+    width: 90px;
+}
+.header .navbar li a {
+    height: auto;
+}
+.banner-bottom ul {margin: auto;}
+.banner-bottom {bottom: auto;}
+.banner-inner {top: 15%;}
+}
+
+
+@media screen and (max-width: 600px) {
+.banner-inner {
+    top: 8%;
+}
+}
 @media screen and (max-width: 480px) {
     .col-xs-4, .col-xs-8 {width: 100% !important;}
+    .banner-inner {display: none;}
+    
+
 }
 
 
