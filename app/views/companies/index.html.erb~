@@ -13,7 +13,6 @@
     </div>
   </div><!-- end .innerpage_banner -->
 </div><!-- end. header -->
-<div id="company_data">
-  <%= render "index" %>
-</div>
+<%= render "index" %>
+<div id="test"></div>
 <%= render 'layouts/footer' %>

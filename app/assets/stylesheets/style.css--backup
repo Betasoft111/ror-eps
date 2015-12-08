@@ -303,8 +303,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4fc3ff', end
 
 
 .footer {
-   /* background: rgba(0, 0, 0, 0) url(footerbg.jpg) repeat scroll 0 0;*/
-   background: #202020;
+    background: rgba(0, 0, 0, 0) url(footerbg.jpg) repeat scroll 0 0;
     color: #fff;
     float: left;
     margin-top: 40px;
@@ -318,12 +317,10 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4fc3ff', end
     margin: 10px 0;
     padding-left: 10px;
     width: 100%;
-    /*color: #656565;*/
-    color: #fff;
+    color: #656565;
 }
 .footer p , .footer li a{
-    /*color: #656565;*/
-    color: #fff;
+    color: #656565;
     font-size: 17px;
 }
 .footer ul {
@@ -1137,13 +1134,9 @@ h4.flash {
 
 
 /**** media start *****/
-@media screen and (max-width: 1200px) {
-.banner video {position: relative;}
-
-}
 
 @media screen and (max-width: 800px) {
-    .header .navbar li a { padding: 5px 10px; }
+    .header .navbar li a { padding: 5px 10px; font-size: 12px;}
     .porro_inner {width: 80%;}
     .content a {margin:10px 0 20px; }
     .banner-innerpage h2 {font-size: 30px;}

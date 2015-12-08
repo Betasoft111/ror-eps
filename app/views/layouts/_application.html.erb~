@@ -8,19 +8,21 @@
     <title>Employee Placement System</title>
 <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
 
+<%= stylesheet_link_tag    "hover.css" %>
 <%= stylesheet_link_tag    "style.css" %>
 <%= stylesheet_link_tag    "bootstrap.css" %>
 <%= stylesheet_link_tag    "bootstrap.min.css" %>
 <%= stylesheet_link_tag    "bootstrap-theme.css" %>
 <%= stylesheet_link_tag    "bootstrap-theme.min.css" %>
 <%= stylesheet_link_tag    "https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" %>
+<%#= stylesheet_link_tag    "sweetalert.css" %>
 
 
 <%= javascript_include_tag "jquery.min.js" %>
 <%= javascript_include_tag "jquery.validate.js" %>
 <%= javascript_include_tag "bootstrap.js" %>
 <%= javascript_include_tag "charges.js" %>
-<%= javascript_include_tag "sweetalert-dev.js" %>
+<%#= javascript_include_tag "sweetalert-dev.js" %>
 <script type="text/javascript">
 $(document).ready(function () {
   $(".login-tab").click(function() {
@@ -29,18 +31,42 @@ $(document).ready(function () {
   $(".register-tab").click(function() {
     document.cookie="opentab=register;path=/";
   });
+
+  $('.delete').click(function () {
+      var confirmBox = confirm('Are you sure, you want to delete ??');
+      if(confirmBox) {
+        return true;
+      }else{
+        return false;
+      }
+        // swal({   title: "Are you sure?",
+        //          text: "You will not be able to recover this imaginary file!",
+        //          type: "warning",
+        //          showCancelButton: true,
+        //          confirmButtonColor: "#DD6B55",
+        //          confirmButtonText: "Yes, delete it!",
+        //          closeOnConfirm: false }, 
+        //          function(){   
+        //           //swal("Deleted!", "Your imaginary file has been deleted.", "success"); 
+        //           return true;
+        //     });
+  });
+
 });
 </script>
 <%#= javascript_include_tag "angular/routes.js" %>
 
+
+
 </head>
   <body>
     <div class="header">
+      <div class="header-top inner">
       <div class="container">
         <div class="row">
           <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-            <a href="#"><!-- <img src="images/logo.png"> -->
-              <%= image_tag("logo.png" , :alt => 'EPS Logo') %>
+            <a href="/"><!-- <img src="images/logo.png"> -->
+              <%= image_tag("small-logo.png" , :alt => 'EPS Logo') %>
             </a>
           </div>
           <div class="col-lg-9 col-md-9 col-sm-9">
@@ -54,7 +80,7 @@ $(document).ready(function () {
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#"></a>
+      <a class="navbar-brand" href="/"></a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -68,7 +94,30 @@ $(document).ready(function () {
           <li><a href="/log_out" >Logout</a></li>
         <% else %>
           <li><a href="/join" class="login-tab">Login</a></li>
-          <li><a href="/join" class="register-tab">Register</a></li>
+          <li><a href="/join" class="login-tab">Register</a>
+
+            <ul>
+              <li><a href="">Action</a></li>
+              <li><a href="">Another action</a></li>
+
+            </ul>
+
+          </li>
+         
+
+
+          <!-- <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Register <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Action</a></li>
+            <li><a href="#">Another action</a></li>
+            <li><a href="#">Something else here</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">Separated link</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">One more separated link</a></li>
+          </ul>
+        </li> -->
         <% end %>
        
       </ul>
@@ -79,9 +128,10 @@ $(document).ready(function () {
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
+</div>
           </div>
         </div>
-      </div>
+      </div><!-- end. header-top -->
 
      <% flash.each do |name, msg| %>
       <div class="">

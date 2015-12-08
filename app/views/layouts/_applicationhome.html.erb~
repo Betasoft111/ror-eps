@@ -17,9 +17,11 @@
 <%= stylesheet_link_tag    "https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" %>
 <%#= stylesheet_link_tag    "sweetalert.css" %>
 
-
 <%= javascript_include_tag "application.js" %>
-
+<%= javascript_include_tag "jquery.min.js" %>
+<%= javascript_include_tag "jquery.validate.js" %>
+<%= javascript_include_tag "bootstrap.js" %>
+<%= javascript_include_tag "charges.js" %>
 <%#= javascript_include_tag "sweetalert-dev.js" %>
 <script type="text/javascript">
 $(document).ready(function () {
@@ -65,16 +67,16 @@ $(window).scroll(function() {
 </script>
 
 
-
 </head>
   <body>
-    <div class="header inner-pages-ng">
+    <div class="header">
       <div class="header-top">
       <div class="container">
         <div class="row">
           <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
             <a href="/"><!-- <img src="images/logo.png"> -->
               <%= image_tag("new-logo.png" , :alt => 'EPS Logo') %>
+
             </a>
           </div>
           <div class="col-lg-9 col-md-9 col-sm-9">
@@ -94,19 +96,19 @@ $(window).scroll(function() {
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
-        <li class=""><a href="/company_home"> Home  <span class="sr-only">(current)</span></a></li>
-        <li><a href="#">About Us</a></li>
-        <li><a href="#">Contact Us</a></li>
-        <li><a href="#">Pricing </a></li>
+        <li class="hvr-overline-from-center"><a href="/company_home"> Home  <span class="sr-only">(current)</span></a></li>
+        <li class="hvr-overline-from-center"><a href="#">About Us</a></li>
+        <li class="hvr-overline-from-center"><a href="#">Contact Us</a></li>
+        <li class="hvr-overline-from-center"><a href="#">Pricing </a></li>
         <% if session[:user_id] && session[:user_id] != nil %>
-          <li><a href="/log_out" >Logout</a></li>
+          <li class="hvr-overline-from-center"><a href="/log_out" >Logout</a></li>
         <% else %>
-          <li><a href="/join" class="login-tab">Login</a></li>
-          <li><a href="/join" class="login-tab">Register</a>
+          <!-- <li><a href="/join" class="login-tab">Login</a></li> -->
+          <li class=""><a href="/join" class="login-tab">Join</a>
 
             <ul>
-              <li><a href="">Action</a></li>
-              <li><a href="">Another action</a></li>
+              <li><a href="/join" class="login-tab">Login</a></li>
+              <li><a href="/join" class="register-tab">Register</a></li>
 
             </ul>
 

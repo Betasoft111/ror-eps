@@ -13,5 +13,50 @@
 				</div>
 		</div><!-- end .innerpage_banner -->
 	</div><!-- end. header -->
-
+  <div class="content inner-page">
+    <div class="container">
+      <div class="row">
+        <h4><span><%= image_tag("line.png" , :alt => 'line.png') %></span>Edit Company Page<span><!-- <img src="img/right.png"> -->
+        <%= image_tag("right.png" , :alt => 'right.png') %>
+      </span></h4>
+<!--       <span class="q1">Company will Edit employee of their team on this page.</span> -->
+	  <form action="" method="POST">
+      <%#= form_tag @company_edit_url, {:class => 'form-horizontal add-employee', :id => 'editStaff'} do %>
+      <div class="form-group">
+        <%= label_tag :first_name, 'First Name', :class => "control-label col-sm-2" %>
+        <div class="col-sm-7">
+          <%= text_field_tag :first_name, @company.first_name, :class => 'form-control', :placeholder => 'Enter First Name', :required => 'required' %>
+        </div>
+      </div>
+      <div class="form-group">
+        <%= label_tag :last_name, 'Last Name', :class => "control-label col-sm-2", :required => 'required' %>
+        <div class="col-sm-7">
+          <%= text_field_tag :last_name, @company.last_name, :class => 'form-control', :placeholder => 'Enter Last Name', :required => 'required' %>
+        </div>
+        
+      </div>
+      <div class="form-group">
+        <%= label_tag :email, 'Email', :class => "control-label col-sm-2" %>
+        <div class="col-sm-7">
+          <%= email_field_tag :email, @company.email, class:'form-control', :placeholder => 'Enter Email', :required => 'required' %>
+        </div>
+      </div>
+      <div class="form-group">
+        <%= label_tag :user_type, 'Company Type', :class => "control-label col-sm-2" %>
+        <div class="col-sm-7">
+          <%= text_field_tag :user_type, @company.user_type, class:'form-control', :placeholder => 'Enter Skills', :required => 'required' %>
+        </div>
+      </div>
+      
+      <input type="hidden" name="company_id" value="<%= params[:id] %>">
+      <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+          <%= submit_tag "Update", :class => 'btn btn-default' %>
+          <a href="/company_home" class="btn btn-default">Cancel</a>
+        </div>
+      </div>
+      </form>
+    </div>
+  </div>
+  
 <%= render 'admin/layouts/footer' %>
