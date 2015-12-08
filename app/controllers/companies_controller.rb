@@ -102,6 +102,11 @@ class CompaniesController < ApplicationController
 	#  		update Compnay staff    #
 	#################################
 	def update
+		if params[:is_private] == "Yes"
+			params[:is_private] = 1
+		else
+		 	params[:is_private] = 0
+		end
 		CompanyStaff.where(:id => params[:id]).update_all(plan_params)
 		redirect_to "/company_home", :notice => "Updated successfully"
 	end
