@@ -1,0 +1,89 @@
+<%= render 'layouts/application' %>
+
+
+<%#= RAILS_ROOT %>
+<div class="innerpage_banner">
+        <%= image_tag("create.png" , :alt => 'create.png') %>
+        <div class="container">
+          <div class="row">
+            <div class="banner-innerpage">
+              <h2>Be<span>St</span>aff</h2>
+            </div>
+          </div>
+        </div>
+        
+        </div><!-- end .innerpage_banner -->
+        </div><!-- end. header -->
+  <div class="content inner-page">
+    <div class="container">
+      <div class="row">
+        <h4><span><%= image_tag("line.png" , :alt => 'line.png') %></span>Send Request<span><!-- <img src="img/right.png"> -->
+        <%= image_tag("right.png" , :alt => 'right.png') %>
+        </span></h4>
+        <span class="q1">Company will request a employ</span>
+
+            <%= form_tag '/company_requests', { :multipart => true, :class => 'form-horizontal add-employee', :id => 'addStaff'} do %>
+      <div class="form-group">
+        <%= label_tag :name, 'Name', :class => "control-label col-sm-2" %>
+        <div class="col-sm-7">
+          <%= text_field_tag :name, nil, :class => 'form-control', :placeholder => 'Enter Name', :required => 'required' %>
+        </div>
+      </div>
+      <div class="form-group">
+        <%= label_tag :amount, 'Propsed Amount', :class => "control-label col-sm-2" %>
+        <div class="col-sm-7">
+          <%= text_field_tag :amount, nil, class:'form-control', :placeholder => 'Enter Propsed Amount', :required => 'required' %>
+        </div>
+      </div>
+
+        <div class="form-group">
+        <%= label_tag :total_emp, 'Number of Employees', :class => "control-label col-sm-2" %>
+        <div class="col-sm-7">
+          <%= text_field_tag :total_emp, nil, class:'form-control', :placeholder => 'Enter Number of Employees', :required => 'required' %>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <%= label_tag :selected_emp, 'Select Employees', :class => "control-label col-sm-2" %>
+        <div class="col-sm-7">
+          <select name="selected_emp" id="selected_emp" class="form-control" required="required">
+              <option value="">Select </option>
+              <option value="1" >Johan</option>
+              <option value="2" >Deo</option>
+            </select>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <%= label_tag :total_days, 'No. of days', :class => "control-label col-sm-2" %>
+        <div class="col-sm-7">
+          <%= text_field_tag :total_days, nil, class:'form-control', :placeholder => 'Enter No. of days', :required => 'required' %>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <%= label_tag :additional, 'Additional Notes', :class => "control-label col-sm-2" %>
+        <div class="col-sm-7">
+          <%= text_field_tag :additional, nil, class:'form-control', :placeholder => 'Enter Additional Notes', :required => 'required' %>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+        	
+          <%= submit_tag "Send Request", :class => 'btn btn-default' %>          
+          <%= link_to "Cancel", root_url , class: "btn btn-default" %>
+        </div>
+      </div>
+      <% end %>
+
+        </div>
+      </div>
+      
+    </div>
+<script type="text/javascript">
+$(document).ready(function () {
+  $('#addStaff').validate();
+});
+</script>
+<%= render 'layouts/footer' %>
+

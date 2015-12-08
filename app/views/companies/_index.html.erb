@@ -24,7 +24,7 @@
                 <td><%= staff_list.email %></td>
                 <td><%= staff_list.skills %></td>
                 <td><%= staff_list.availability %></td>
-                <td><%= link_to "", edit_company_path(staff_list), remote: true, class: "edit" %> <%= link_to "", "/companies/delete/#{staff_list.id}",remote: true, class: "delete" %>
+                <td><%= link_to "", edit_company_path(staff_list), class: "edit" %> <%= link_to "", "/companies/delete/#{staff_list.id}", class: "delete" %>
                 </td>
               </tr>
               <% end %>

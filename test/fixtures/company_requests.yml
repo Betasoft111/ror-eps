@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  amount: 1
+  total_emp: 1
+  selected_emp: 1
+  total_days: 1
+  additional: MyText
+
+two:
+  name: MyString
+  amount: 1
+  total_emp: 1
+  selected_emp: 1
+  total_days: 1
+  additional: MyText
