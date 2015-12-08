@@ -150,22 +150,20 @@ input {
     <div class="row ">
       <div class="box-one sign-up">
         <h3>Come join the ESP ! Already have one? <a href="javascript:void(0)" class="clickform login-tab" ng-click="refreshScope()"> Sign in here.</a></h3>
-        <h4><span><!-- <img src="img/line.png"> --><%= image_tag("line.png" , :alt => 'line.png') %></span>CREATE A NEW ACCOUNT<span><!-- <img src="img/right.png"> --><%= image_tag("right.png" , :alt => 'right.png') %></span></h4>
+        <h4><span><%= image_tag("line.png" , :alt => 'line.png') %></span>CREATE A NEW ACCOUNT<span>
+          <%= image_tag("right.png" , :alt => 'right.png') %></span></h4>
         <%= form_for User.new, :html => { :class => "loginForm", :name => "new_user" } do |f| %>
         <div class = "form-group col-md-5"  ng-class="{'has-error': new_user.first_name.$invalid && new_user.first_name.$dirty}">
           <input type = "text" class = "form-control" id = "first_name" name="first_name" ng-model="user.first_name" placeholder = "Enter First Name" required="required">
-          <!-- <span style="color:red" ng-show="new_user.first_name.$dirty && new_user.first_name.$invalid">
-          <span ng-show="new_user.first_name.$error.required">First Name is required.</span>
-          </span> -->
-          <%#= f.text_field :first_name, :class => 'form-control', :placeholder => 'First Name', :required => 'required' %>
+
         </div>
         <div class = "form-group col-md-5" ng-class="{'has-error': new_user.last_name.$invalid && new_user.last_name.$dirty}">
           <input type = "last_name" class = "form-control" ng-model="user.last_name" id = "last_name" name="last_name" placeholder = "Enter Last Name" required="required">
-          <%#= f.text_field :last_name, :class => 'form-control', :placeholder => 'Last Name', :required => 'required' %>
+
         </div>
         <div class = "form-group col-md-5" ng-class="{'has-error': new_user.email.$invalid && new_user.email.$dirty}">
           <input type = "email" class = "form-control" name="email" ng-model="user.email" id = "name" placeholder = "Enter Your Email" required="required">
-          <%#= f.email_field :email, :class => 'form-control ', :placeholder => 'Email', :required => 'required' %>
+   
         </div>
         <div class = "form-group col-md-5" ng-class="{'has-error': new_user.user_type.$invalid && new_user.user_type.$dirty}">
           <select name="user_type" ng-model="user.user_type" class="form-control" required="required">
@@ -176,20 +174,13 @@ input {
           </select>
         </div>
         <div class = "form-group col-md-5" ng-class="{'has-error': new_user.password.$invalid && new_user.password.$dirty}">
-          <input type="password" name="password" ng-model="user.password" class="form-control immediate-help" id="exampleInputPassword1" placeholder="Password"  password-validate required="required">
-          <div class="input-help">
-          <h4>Password must meet the following requirements:</h4>
-          <ul>
-            <li ng-class="pwdHasLetter">At least <strong>one letter</strong></li>
-            <li ng-class="pwdHasNumber">At least <strong>one number</strong></li>
-            <li ng-class="pwdValidLength">At least <strong>8 characters long</strong></li>
-          </ul>
+          <input type="password" name="password" ng-model="user.password" class="form-control immediate-help" id="exampleInputPassword1" placeholder="Password"  required="required">
+  
         </div>
-          <%#= f.password_field :password, :class => 'form-control', :placeholder => 'Password', :required => 'required' %>
-        </div>
-        <div class = "form-group col-md-5" ng-class="{'has-error': new_user.confrim_password.$invalid && new_user.confrim_password.$dirty}">
-          <input type="password" name="confrim_password" ng-model="user.confrim_password" class="form-control col-sm-10 immediate-help" id="exampleInputPassword1"  placeholder="confirm password" required="required">
-          <%#= f.password_field :password_confirmation, :class => 'form-control', :placeholder => 'Confirm Password', :required => 'required' %>
+        <div class = "form-group col-md-5" >
+          <div ng-password-strength="user.password"></div>
+         <!--  <input type="password" name="confrim_password" ng-model="user.confrim_password" class="form-control col-sm-10 immediate-help" id="exampleInputPassword1"  placeholder="confirm password" required="required"> -->
+          
         </div>
         
         <div class = "form-group col-md-12" ng-class="{'has-error': new_user.agree.$invalid && new_user.agree.$dirty}">
@@ -216,12 +207,12 @@ input {
           <%= form_tag sessions_path, :id => 'loginForm', :name => 'loginForm' do %>
           <div class="form-group col-md-10" ng-class="{'has-error': loginForm.email.$invalid && loginForm.email.$dirty}">
             <input type="email" name="email" ng-model="login.email" class="form-control" id="exampleInputEmail1" placeholder="Enter Your Email" required="required">
-            <%#= email_field_tag :email, params[:email], :class => 'form-control', :placeholder => 'Email', :required => 'required' %>
+            
           </div>
           <div class="form-group col-md-10" ng-class="{'has-error': loginForm.password.$invalid && loginForm.password.$dirty}">
             
             <input type="password" name="password" ng-model="login.password" class="form-control" id="exampleInputPassword1" placeholder="Enter Your Password" required="required">
-            <%#= password_field_tag :password, nil, class:'form-control', :placeholder => 'Password', :required => 'required' %>
+            
           </div>
           
           <div class="checkbox col-lg-12">
@@ -230,7 +221,6 @@ input {
             </label>
           </div>
           <div class = "form-group col-md-12">
-            <%#= submit_tag "Log in", :class => 'btn btn-default login-tab' %>
             <input type="submit" name="submit" class="btn btn-default login-tab" value ="Log In" ng-disabled="loginForm.$invalid">
           </div>
           <% end %>
@@ -242,7 +232,7 @@ input {
   </div>
   <script type="text/javascript">
   $(document).ready(function () {
-  $("#loginForm").validate();
+  //$("#loginForm").validate();
  // $("#new_user").validate();
   });
   </script>

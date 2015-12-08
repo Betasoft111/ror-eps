@@ -425,7 +425,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4fc3ff', end
     font-weight: bold;
     margin-bottom: 40px;
     margin-top: 46px;
-    text-shadow: 1px 1px 1px #3e3e3e;
+/*    text-shadow: 1px 1px 1px #3e3e3e;*/
 }
 .register .form-control {
     border-radius: 0;
@@ -669,9 +669,9 @@ a.add-new:hover {
     margin-bottom: 30px;
     width: 100%;
 }
-.add-employee .form-group:nth-child(5) {
+/*.add-employee .form-group:nth-child(5) {
     margin-bottom: 6px !important;
-}
+}*/
 
 /****** new *****/
 .inner-page .table-responsive {
@@ -1006,6 +1006,7 @@ ul.tabs {
             padding: 10px 0;
             margin: 0;
             height: 50px;
+            top: 0;
 
         }
         .header-top.sticky img {
@@ -1134,7 +1135,27 @@ h4.flash {
 
 }
 .header .navbar-toggle {margin-top: 0;}
-
+.pagination span, .pagination em, .pagination a {
+    float: left;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 0;
+     text-decoration: none;
+}
+em.current {
+    background: #008bd8;
+    color: #fff;
+    font-style: normal;
+    padding: 1px 5px;
+}
+.pagination{
+    float: right;
+}
+#addStaff input[type="file"] {
+    border: medium none;
+    height: auto;
+    padding-left: 0;
+}
 
 /**** media start *****/
 @media screen and (max-width: 1200px) {
