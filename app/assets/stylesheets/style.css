@@ -195,7 +195,7 @@ border: medium none;
     padding: 10px;
     width: 170px;
 }
-.ng-emd button {
+.ng-emd button, .ng-emd a {
 /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#4fc3ff+0,0376b0+100 */
 background: #4fc3ff!important; /* Old browsers */
 background: -moz-linear-gradient(top, #4fc3ff 0%, #0376b0 100%)!important; /* FF3.6-15 */
@@ -203,11 +203,16 @@ background: -webkit-linear-gradient(top, #4fc3ff 0%,#0376b0 100%)!important; /* 
 background: linear-gradient(to bottom, #4fc3ff 0%,#0376b0 100%)!important; /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4fc3ff', endColorstr='#0376b0',GradientType=0 )!important; /* IE6-9 */
 border: medium none;
+text-decoration: none;
     color: #fff !important;
-    height: 50px;
+/*    height: 50px;*/
     padding: 10px;
     width: auto;
+    display: inline;
+    font-size: 14px;
+    text-shadow: none;
 }
+
 .happy_client {
     text-align: center;
     float: left;
@@ -633,7 +638,7 @@ a.add-new:hover {
     box-shadow: none;
     height: 55px;
 }
-.add-employee .btn {
+.add-employee .btn, .add-employee input[type="submit"] {
     background: rgba(0, 0, 0, 0) linear-gradient(to bottom, #4fc3ff 0%, #0376b0 100%) repeat scroll 0 0;
     border: 1px solid #0a7db7;
     border-radius: 0;
@@ -643,7 +648,7 @@ a.add-new:hover {
     height: 45px;
     margin-top: 20px;
     text-shadow: none;
-    width: 20%;
+    width: auto%;
     float:left;
     text-decoration: none;
     margin-right: 20px;
@@ -807,10 +812,10 @@ input[type=radio]:not(old):checked +  label > span > span{
     text-align: center;
     /*text-shadow: 1px 1px 1px #3e3e3e;*/
 }
-.inner-page button[type="submit"] {
+/*.inner-page button[type="submit"] {
     background: transparent none repeat scroll 0 0;
     border: medium none;
-}
+}*/
 .card h2 , .epay input[type="button"],form.ng-pristine button.stripe-button-el span, .epay button[type="submit"]{
      /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#4fc3ff+0,0376b0+100 */
 background: #4fc3ff; /* Old browsers */

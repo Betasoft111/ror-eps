@@ -1,0 +1,2 @@
+module FavouriteSearchesHelper
+end

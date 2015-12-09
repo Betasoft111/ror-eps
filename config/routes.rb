@@ -38,6 +38,12 @@ EPS::Application.routes.draw do
   get "/staff_details/:id" => "search#show_details"
 
 
+   #################################
+  #         fav search routes     #
+  #################################
+   resources :favourite_searches
+
+
 
   #################################
   #         Company Routes        #
@@ -53,6 +59,7 @@ EPS::Application.routes.draw do
   resources :users
   resources :sessions
   resources :charges
+  resources :company_requests
 
   #################################
   #          Admin Routes         #
