@@ -8,7 +8,7 @@ class CompaniesController < ApplicationController
 	#################################
 	def index
 		params[:page] ||= 1
-		@staff_list = CompanyStaff.paginate(:page => params[:page], :per_page => 2)
+		@staff_list = CompanyStaff.paginate(:page => params[:page], :per_page => 10)
 	end
 
 	#################################
@@ -34,6 +34,9 @@ class CompaniesController < ApplicationController
 		# Check The Current Plan For Adding Staff Members  #
 		####################################################
 		@current_plan = UsersStaffPlan.where(:user_id => @current_user.id).first
+
+		
+		params[:skills] = params[:skills] + ',' + params[:skills1] + ',' +  params[:skills2] + ',' + params[:skills3] + ',' + params[:skills4]
 
 		##########################
 		# Get Total Staff Added  #
