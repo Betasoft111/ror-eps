@@ -13,7 +13,7 @@
   	 * Refresh The Scope
   	 */
   	 $scope.refreshScope = function() {
-  	 	$scope.$apply();
+  	 	//$scope.$apply();
   	 }
 
   	 /* 

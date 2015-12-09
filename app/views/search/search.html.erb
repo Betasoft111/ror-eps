@@ -38,7 +38,7 @@
 				<div class="form-group">
 					<label class="control-label col-sm-3" for="pwd">Skill</label>
 					<div class="col-sm-9">
-						<input type="text" name="skills" class="form-control" id="pwd" placeholder="">
+						<input type="text" name="skills" class="form-control autoComplete" id="pwd" placeholder="">
 					</div>
 				</div>
 				<div class="form-group">
@@ -116,4 +116,40 @@
 </div>
 
 </div>
+     <% finalArr = []  %>
+      <% @skills.each do |skill| %>
+          <% @singlearr =  skill.split(",") %>
+            <% @singlearr.each do |arr|  %>
+              <% finalArr.push(arr) %>
+            <% end %>
+        <% end %>
+        <%#=debug finalArr %>
+        <input type="hidden" id="hiddenComplete" value="<%= finalArr %>"> 
+  <script type="text/javascript">
+
+    $(document).ready(function () {
+      var autCompleteArr = [];
+      var autoCompleteData = $('#hiddenComplete').val();
+      if(autoCompleteData && autoCompleteData !='') {
+        
+        var newArr = autoCompleteData.split(',');
+       $.each(newArr, function (index, value) {
+        var newValue = value.replace(/[^a-z0-9\s]/gi, '');
+        autCompleteArr.push(newValue);
+       });
+
+        var unique=autCompleteArr.filter(function(itm,i,a){
+          return i==autCompleteArr.indexOf(itm);
+      });
+        //console.log('Here ', unique);
+       $( "#skilsComplete" ).autocomplete({
+        source: unique
+       });
+       $(".autoComplete").autocomplete({
+        source: unique
+       });
+      }
+
+    });
+    </script>
 <%= render 'layouts/footer' %>

@@ -95,19 +95,19 @@ $(window).scroll(function() {
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
-        <li class=""><a href="/company_home"> Home  <span class="sr-only">(current)</span></a></li>
+        <li class=""><a href="/"> Home  <span class="sr-only">(current)</span></a></li>
         <li><a href="#">About Us</a></li>
         <li><a href="#">Contact Us</a></li>
         <li><a href="#">Pricing </a></li>
         <% if session[:user_id] && session[:user_id] != nil %>
           <li><a href="/log_out" >Logout</a></li>
         <% else %>
-          <li><a href="/join" class="login-tab">Login</a></li>
-          <li><a href="/join" class="login-tab">Register</a>
+          
+          <li><a href="/join" class="login-tab">Join</a>
 
             <ul>
-              <li><a href="">Action</a></li>
-              <li><a href="">Another action</a></li>
+              <li><a href="/join" class="login-tab">Login</a></li>
+              <li><a href="/join" class="register-tab">Register</a></li>
 
             </ul>
 
