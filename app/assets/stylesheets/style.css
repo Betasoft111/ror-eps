@@ -1000,7 +1000,7 @@ ul.tabs {
             line-height: 48px;
             height: 48px; */
             width: 100%;
-            background: #000;
+            background: rgba(0, 0, 0, 0.4);
             /*text-align: left;
             padding-left: 20px;*/
             padding: 10px 0;
@@ -1300,6 +1300,16 @@ li.selected-tab {
     margin-bottom: 40px;
 }
 
+p.Week {
+    color: #337ab7;
+}
+p.Good {
+    color: #f0ad4e;
+}
+p.Strong {
+    color: #5cb85c;
+}
+
 @media screen and (max-width: 980px) {
     .company-search {
    
@@ -1323,5 +1333,12 @@ li.selected-tab {
       bottom: auto;
 }
 
+
+}
+
+
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+    .banner {background: url(/assets/banner.png);}
 
 }

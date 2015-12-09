@@ -145,7 +145,7 @@ input {
     </div>
   </div>
 </div>
-<div class="content" ng-app="joinApp">
+<div class="content" ng-app="joinApp" ng-controller="joinController">
   <div class="container register">
     <div class="row ">
       <div class="box-one sign-up">
@@ -175,12 +175,13 @@ input {
         </div>
         <div class = "form-group col-md-5" ng-class="{'has-error': new_user.password.$invalid && new_user.password.$dirty}">
           <input type="password" name="password" ng-model="user.password" class="form-control immediate-help" id="exampleInputPassword1" placeholder="Password"  required="required">
-  
+                
         </div>
+
         <div class = "form-group col-md-5" >
-          <div ng-password-strength="user.password"></div>
-         <!--  <input type="password" name="confrim_password" ng-model="user.confrim_password" class="form-control col-sm-10 immediate-help" id="exampleInputPassword1"  placeholder="confirm password" required="required"> -->
-          
+          <div ng-password-strength="user.password" strength="passStrength" inner-class="progress-bar" inner-class-prefix="progress-bar-">
+         </div>        
+          <p class="{{passStatus}}"> Password Strength: {{ passStatus }} </p>
         </div>
         
         <div class = "form-group col-md-12" ng-class="{'has-error': new_user.agree.$invalid && new_user.agree.$dirty}">

@@ -28,9 +28,9 @@ class ChargesController < ApplicationController
 				  config.signature = "AFcWxV21C7fd0v3bYYYRCpSSRl31AboldMqHUE-HNrXcXG79zqSK-x33"
 				end
 				ppr = PayPal::Recurring.new({
-				  :return_url   => "http://localhost:3000/company_home",
-				  :cancel_url   => "http://localhost:3000/charges/payment_method",
-				  :ipn_url      => "http://localhost:3000/charges/payment_ipn",
+				  :return_url   => "http://system.jobkeeper.dk:3000/company_home",
+				  :cancel_url   => "http://system.jobkeeper.dk:3000/charges/payment_method",
+				  :ipn_url      => "http://system.jobkeeper.dk:3000/charges/payment_ipn",
 				  :description  => @plan_details.plan_name,
 				  :amount       => @plan_details.plan_price.to_i,
 				  :currency     => "USD"

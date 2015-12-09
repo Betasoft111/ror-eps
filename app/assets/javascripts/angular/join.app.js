@@ -16,28 +16,22 @@
   	 	$scope.$apply();
   	 }
 
+  	 /* 
+  	  * When Password Changed
+  	  */
+  	  $scope.$watch('user.password', function (newVal, oldVal) {
+  	  	var style = $(".progress-bar").width() / $('.progress-bar').parent().width() * 100;
+  	  	if(parseInt(style) > 0 && parseInt(style) <= 40 ) {
+  	  		$scope.passStatus = "Week";
+  	  	}else if (parseInt(style) > 40 && parseInt(style) <= 70) {
+  	  		$scope.passStatus = "Good";
+  	  	}else if(parseInt(style) > 75) {
+  	  		$scope.passStatus = "Strong";
+  	  	}else {
+  	  		$scope.passStatus = "Week";
+  	  	}
+  	  });
   	
   });
 
- //  app.directive('passwordValidate', function() {
-	//     return {
-	//         require: 'ngModel',
-	//         link: function(scope, elm, attrs, ctrl) {
-	//             ctrl.$parsers.unshift(function(viewValue) {
-
-	//                 scope.pwdValidLength = (viewValue && viewValue.length >= 8 ? 'valid' : undefined);
-	//                 scope.pwdHasLetter = (viewValue && /[A-z]/.test(viewValue)) ? 'valid' : undefined;
-	//                 scope.pwdHasNumber = (viewValue && /\d/.test(viewValue)) ? 'valid' : undefined;
-
-	//                 if(scope.pwdValidLength && scope.pwdHasLetter && scope.pwdHasNumber) {
-	//                     ctrl.$setValidity('pwd', true);
-	//                     return viewValue;
-	//                 } else {
-	//                     ctrl.$setValidity('pwd', false);                    
-	//                     return undefined;
-	//                 }
-
-	//             });
-	//         }
-	//     };
-	// });
+ 
