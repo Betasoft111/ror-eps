@@ -3,6 +3,10 @@ class CompanyRequestsController < ApplicationController
 	def new 
 	end
 
+	def show
+		@staff_lists = CompanyStaff.all.where(company_id: params[:id]) if params[:id]
+	end
+
 	def create
 		@request = CompanyRequest.new(request_params)
 	  	if @request.save
@@ -15,6 +19,6 @@ class CompanyRequestsController < ApplicationController
 	private
 
 		def request_params
-	    	params.permit(:name, :amount, :total_emp, :selected_emp, :total_days, :additional)
+	    	params.permit(:name, :amount, :total_emp, :selected_emp[], :total_days, :additional)
 		end
 end

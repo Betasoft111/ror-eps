@@ -36,8 +36,7 @@
 				<p><label>Experience : </label><%= @user_detail.experience %></p>
 				<strong>Other Information</strong>
 				<p><label>Other details : </label> </p>
-				<!-- <button class="btn btn-default" type="submit">Contact To Company</button> -->
-				<%= link_to "Contact To Company", new_company_request_path, class: "btn btn-default" %>
+				<%= link_to "Contact To Company", company_request_path(@user_detail.company_id), class: "btn btn-default" %>
 			</div>
 		</div>
 	</div>
