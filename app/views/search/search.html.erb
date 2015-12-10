@@ -50,7 +50,7 @@
 				<div class="form-group">
 					<label class="control-label col-sm-3" for="pwd">Qualification</label>
 					<div class="col-sm-9">
-						<input type="text" name="staff_quf" class="form-control" id="pwd" placeholder="" value="<%= params[:staff_quf] %>">
+						<input type="text" name="staff_quf" id="staffQualitication" class="form-control" id="pwd" placeholder="" value="<%= params[:staff_quf] %>">
 					</div>
 				</div>
 				<div class="form-group">
@@ -116,20 +116,34 @@
 </div>
 
 </div>
-     <% finalArr = []  %>
-      <% @skills.each do |skill| %>
-          <% @singlearr =  skill.split(",") %>
+     <% finalArr = [] 
+         qualification = []
+       %>
+      <% @staff_data.each do |staff| %>
+      <%#= debug staff %>
+          <% @singlearr =  staff.skills.split(",") 
+            qualification.push(staff.qualification)
+          %>
             <% @singlearr.each do |arr|  %>
               <% finalArr.push(arr) %>
             <% end %>
         <% end %>
-        <%#=debug finalArr %>
         <input type="hidden" id="hiddenComplete" value="<%= finalArr %>"> 
-  <script type="text/javascript">
+               <input type="hidden" id="hiddenQua" value="<%= qualification %>"> 
 
+
+ <script type="text/javascript">
+    function delete_cookie( name ) {
+      document.cookie = name + '=; expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+    }
+    $(function() {
+      delete_cookie('opentab');
+    });
     $(document).ready(function () {
-      var autCompleteArr = [];
-      var autoCompleteData = $('#hiddenComplete').val();
+      var autCompleteArr = [],
+          autoQompleteQua = [];
+      var autoCompleteData = $('#hiddenComplete').val()
+          autoCompleteDataQua  = $('#hiddenQua').val()    ;
       if(autoCompleteData && autoCompleteData !='') {
         
         var newArr = autoCompleteData.split(',');
@@ -149,6 +163,23 @@
         source: unique
        });
       }
+
+        if(autoCompleteDataQua && autoCompleteDataQua !='') {
+           var newArrQua = autoCompleteDataQua.split(',');
+           $.each(newArrQua, function (index, value) {
+            var newValueQa = value.replace(/[^a-z0-9\s]/gi, '');
+            autoQompleteQua.push(newValueQa);
+           });
+
+            var uniqueQa = autoQompleteQua.filter(function(itm,i,a){
+              return i==autoQompleteQua.indexOf(itm);
+          });
+
+            $("#staffQualitication").autocomplete({
+              source: uniqueQa
+           });
+        }
+
 
     });
     </script>
