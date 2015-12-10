@@ -8,7 +8,7 @@
   <div class="banner-inner">
     <div class="container">
       <div class="row">
-        <%= image_tag("video.png" , :alt => 'video.png') %>
+        <%#= image_tag("video.png" , :alt => 'video.png') %>
         <h2>Welcome home</h2>
         <span></span>
         <p>Etiam scelerisque nulla non dolor ornare, interdum porta metus tempus.</p>
@@ -21,7 +21,7 @@
           <form method="get" action="/search">
             <ul>
               <li><input type="text" name="skills" id="skilsComplete" placeholder="Skills (Want to hire for)"></li>
-              <li><input type="text" name="staff_quf" placeholder="Enter the staff Qualification"></li>
+              <li><input type="text" name="staff_quf" id="staffQualitication" placeholder="Enter the staff Qualification"></li>
               <li><input type="text" name="experience" placeholder="Enter the work experience"></li>
               <li><input type="text" name="availability" placeholder="Enter  the availability"></li>
               <li><input type="submit" placeholder="Search"></li>
@@ -74,15 +74,22 @@
     </div>
     <div class="happy_client">
       <h3>Happy Customers</h3>
-      <% finalArr = []  %>
-      <% @skills.each do |skill| %>
-          <% @singlearr =  skill.split(",") %>
+      <% finalArr = [] 
+         qualification = []
+       %>
+      <% @staff_data.each do |staff| %>
+      <%#= debug staff %>
+          <% @singlearr =  staff.skills.split(",") 
+            qualification.push(staff.qualification)
+          %>
             <% @singlearr.each do |arr|  %>
               <% finalArr.push(arr) %>
             <% end %>
         <% end %>
-        <%#=debug finalArr %>
+        
         <input type="hidden" id="hiddenComplete" value="<%= finalArr %>"> 
+        <input type="hidden" id="hiddenQua" value="<%= qualification %>"> 
+
       <p class="nn1"><span class="hp"></span></p>
       <ul>
         <li class="col-md-6 col-lg-3 space-md-4 l1 text-center hvr-shutter-in-vertical">
@@ -120,8 +127,10 @@
       delete_cookie('opentab');
     });
     $(document).ready(function () {
-      var autCompleteArr = [];
-      var autoCompleteData = $('#hiddenComplete').val();
+      var autCompleteArr = [],
+          autoQompleteQua = [];
+      var autoCompleteData = $('#hiddenComplete').val()
+          autoCompleteDataQua  = $('#hiddenQua').val()    ;
       if(autoCompleteData && autoCompleteData !='') {
         
         var newArr = autoCompleteData.split(',');
@@ -141,6 +150,23 @@
         source: unique
        });
       }
+
+        if(autoCompleteDataQua && autoCompleteDataQua !='') {
+           var newArrQua = autoCompleteDataQua.split(',');
+           $.each(newArrQua, function (index, value) {
+            var newValueQa = value.replace(/[^a-z0-9\s]/gi, '');
+            autoQompleteQua.push(newValueQa);
+           });
+
+            var uniqueQa = autoQompleteQua.filter(function(itm,i,a){
+              return i==autoQompleteQua.indexOf(itm);
+          });
+
+            $("#staffQualitication").autocomplete({
+              source: uniqueQa
+           });
+        }
+
 
     });
     </script>
