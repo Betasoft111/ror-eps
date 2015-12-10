@@ -96,9 +96,9 @@ class CompaniesController < ApplicationController
 	def edit
 		@staff_data = CompanyStaff.find(params[:id])
 		@staff_url = '/companies/update/' + @staff_data.id.to_s
-		respond_to do |format|
-        	format.js
-    	end
+		# respond_to do |format|
+  #       	format.js
+  #   	end
 	end
 
 	#################################
