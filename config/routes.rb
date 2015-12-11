@@ -81,7 +81,24 @@ EPS::Application.routes.draw do
     post "staff_plans/update/:id" => "staff_plans#update"
 
     get "company/:id/edit" => "admin#edit_company"
+    post "/companies/update" => 'admin#update'
+    get "company/:id/delete" => "admin#delete"
 
+
+    #route for add skills and qualificartion from admin 
+
+    #skills section
+     resources :skills
+      post "/skills/add" => 'skills#add'
+      post "/skills/update" => 'skills#update'
+      get "/skills/:id/delete" => "skills#delete"
+
+
+      #qualifications section
+       resources :qualifications
+       post "/qualifications/add" => 'qualifications#add'
+       post "/qualifications/update" => 'qualifications#update'
+       get "/qualifications/:id/delete" => "qualifications#delete"
   end
 
   # #url's we are using in web

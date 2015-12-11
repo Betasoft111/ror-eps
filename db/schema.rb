@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151208175928) do
+ActiveRecord::Schema.define(version: 20151211222858) do
 
   create_table "admin_admin_users", force: true do |t|
     t.string   "first_name"
@@ -21,6 +21,18 @@ ActiveRecord::Schema.define(version: 20151208175928) do
     t.string   "reset_password_token"
     t.string   "password_hash"
     t.string   "password_salt"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "admin_qualifications", force: true do |t|
+    t.string   "qualification"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "admin_skills", force: true do |t|
+    t.string   "skill"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -60,9 +72,20 @@ ActiveRecord::Schema.define(version: 20151208175928) do
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
+    t.string   "location"
   end
 
   add_index "company_staffs", ["company_id"], name: "fk_staff", using: :btree
+
+  create_table "favourite_searches", force: true do |t|
+    t.string   "skills"
+    t.string   "qualification"
+    t.string   "experience"
+    t.string   "availability"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "subscription_plans", force: true do |t|
     t.string   "plan_name"

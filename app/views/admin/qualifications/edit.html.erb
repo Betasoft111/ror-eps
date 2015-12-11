@@ -1,0 +1,37 @@
+<%= render 'admin/layouts/application' %>
+<div class="content inner-page">
+	<div class="container">
+
+		<%#= debug @Editedskill%>
+		
+		<div class="row">
+			<h4><span><%= image_tag("line.png" , :alt => 'line.png') %></span>Edit Qualification Page<span><%= image_tag("right.png" , :alt => 'right.png') %></span></h4>
+			<!-- <span class="q1">admin will add new skills.</span> -->
+			<%= form_tag  admin_qualifications_update_path , {:class => 'form-horizontal add-employee' , :id => 'loginForm'} do %>
+			<div class="form-group">
+				<%= label_tag :skill, 'Skill', :class => "control-label col-sm-2" %>
+				<div class="col-sm-7">
+					<%= text_field_tag :qualification, @Editedskill.qualification, :class => 'form-control', :placeholder => 'Enter Skill Title', :required => 'required' %>
+					<input type="hidden" name="skillid" value ="<%= @Editedskill.id %>">
+				</div>
+			</div>
+			<div class="form-group">
+				<div class="col-sm-offset-2 col-sm-10">
+					<%= submit_tag "Update Qualification", :class => 'btn btn-default' %>
+					<a href="/admin/qualifications/" class="btn btn-default">Cancel</a>
+				</div>
+			</div>
+			
+			<% end %>
+		</div>
+	</div>
+	
+</div>
+
+<script type="text/javascript">
+$(document).ready(function () {
+  $("#loginForm").validate();  
+});
+</script> 
+
+<%= render 'admin/layouts/footer' %>

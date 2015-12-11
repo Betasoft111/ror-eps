@@ -66,6 +66,8 @@ $(document).ready(function (){
         <li class=""><a href="/admin"> Home  <span class="sr-only">(current)</span></a></li>
         <li class=""><a href="/admin/subscription_plans"> Membership Plans  <span class="sr-only">(current)</span></a></li>
         <li class=""><a href="/admin/staff_plans"> Addon Plans  <span class="sr-only">(current)</span></a></li>
+         <li class=""><a href="/admin/skills"> Skills  <span class="sr-only">(current)</span></a></li>
+          <li class=""><a href="/admin/qualifications"> Qualifications  <span class="sr-only">(current)</span></a></li>
         <% if session[:user_id] != nil && session[:user_role] == 'admin' %>
           <li><a href="/admin/log_out">Logout</a></li>
         <% end %>

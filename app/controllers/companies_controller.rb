@@ -128,7 +128,7 @@ class CompaniesController < ApplicationController
 	private
 
 	  def plan_params
-	    params.permit(:first_name, :last_name, :email, :company_id, :skills, :availability, :is_private, :qualification, :experience, :image)
+	    params.permit(:first_name, :last_name, :email, :company_id, :skills, :availability, :is_private, :qualification, :experience, :image, :location)
 	 end
 
 end

@@ -74,17 +74,25 @@
     </div>
     <div class="happy_client">
       <h3>Happy Customers</h3>
+      <%#= debug @staff_data%>
+
       <% finalArr = [] 
          qualification = []
+
+         @qualifications.each do |quff|
+              qualification.push(quff.qualification)
+         end
        %>
       <% @staff_data.each do |staff| %>
       <%#= debug staff %>
-          <% @singlearr =  staff.skills.split(",") 
-            qualification.push(staff.qualification)
+
+       <% finalArr.push(staff.skill) %>
+          <% #@singlearr =  staff.skills.split(",") 
+            #qualification.push(staff.qualification)
           %>
-            <% @singlearr.each do |arr|  %>
-              <% finalArr.push(arr) %>
-            <% end %>
+            <% #@singlearr.each do |arr|  %>
+             
+            <% #end %>
         <% end %>
         
         <input type="hidden" id="hiddenComplete" value="<%= finalArr %>"> 

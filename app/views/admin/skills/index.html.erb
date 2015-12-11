@@ -1,0 +1,50 @@
+<%= render 'admin/layouts/application' %>
+</div>
+</div>
+</div>
+<div class="innerpage_banner">
+<%= image_tag("create.png" , :alt => 'create.png') %>
+<div class="container">
+<div class="row">
+<div class="banner-innerpage">
+	<h2>Be<span>St</span>aff</h2>
+</div>
+</div>
+</div>
+</div><!-- end .innerpage_banner -->
+</div><!-- end. header -->
+<div class="content inner-page">
+<div class="container">
+<div class="row">
+	<h4><span>
+		<%= image_tag("line.png" , :alt => 'line.png') %>
+		</span>Skills Page<span><%= image_tag("right.png" , :alt => 'right.png') %></span></h4>
+		<span class="q1">Admin will see list and will add new skills from here
+		</span>
+		<a class="add-new" href="/admin/skills/new" > Add Skills</a>
+		<div class="table-responsive">
+
+			<%#= debug @all_skills  %>
+			<table class="table">
+				<thead>
+					<tr>
+						<th>No</th>
+						<th>Skill</th>
+						<th>Actions</th>
+					</tr>
+				</thead>
+				<tbody>
+					<% @all_skills.each do |skill| %>
+					<tr>
+						<td><%= skill.id %></td>
+						<td><%= skill.skill %></td>
+						<td><a class="edit" href="/admin/skills/<%= skill.id  %>/edit"></a> <a class="delete" href="/admin/skills/<%= skill.id  %>/delete"></a></td>						
+					</tr>
+					<% end %>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>
+</div>
+<%= render 'admin/layouts/footer' %>

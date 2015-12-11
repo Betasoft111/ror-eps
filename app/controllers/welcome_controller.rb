@@ -14,7 +14,8 @@ class WelcomeController < ApplicationController
 			# 	redirect_to "/choose_plan", :notice => "Please choose a membership plan"
 			# end
 	     #else
-	     	@staff_data = CompanyStaff.all
+	     	@staff_data = AdminSkills.all
+	     	@qualifications = AdminQualifications.all
 			render :template => "welcome/index", :locals => { :user => @current_user }
 
 		 #end

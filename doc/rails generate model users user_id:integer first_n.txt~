@@ -27,3 +27,14 @@
 	rails generate model users_staff_plans user_id:integer plan_id:integer
 	ALTER TABLE users_staff_plans ADD CONSTRAINT fk_user FOREIGN KEY (user_id) REFERENCES users (id)
 	ALTER TABLE users_staff_plans ADD CONSTRAINT fk_plan FOREIGN KEY (plan_id) REFERENCES admin_staff_plans (id)
+
+
+
+
+
+
+
+rails generate model admin_skills skill:string skill_status:string user_id:string payment_json:text
+
+
+

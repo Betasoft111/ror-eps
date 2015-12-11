@@ -25,6 +25,22 @@ class Admin::AdminController < ApplicationController
 		@company = User.find(params[:id]) 
 	end
 
+
+	def update
+
+		User.where(:id => params[:id]).update_all(first_name: params[:first_name], last_name: params[:last_name], email: params[:email],user_type: params[:user_type])
+		redirect_to '/admin' , :notice => "Record Updated!"
+
+	end
+
+	def delete 
+		 User.find(params[:id]).destroy
+		redirect_to '/admin' , :notice => "Record Deleted!"
+	end
+
+
+
+
 	def create
 		@new_admin = Admin::AdminUser.create!({
           :email=>'epsadmin@admin.com',
@@ -60,4 +76,15 @@ class Admin::AdminController < ApplicationController
 		session[:user_role] = nil
 	  	redirect_to "/admin", :notice => "Logged out!"
 	end
+
+
+
+
+
+
+	private
+
+	  def plan_params
+	    params.permit(:first_name, :last_name, :email, :user_type)
+	 end
 end
