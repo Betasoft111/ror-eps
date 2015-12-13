@@ -43,7 +43,7 @@
         <div class="form-group">
         <%= label_tag :skills, 'Skills', :class => "control-label col-sm-2" %>
         <div class="col-sm-7">
-          <%= text_field_tag :skills, @staff_data.skills, class:'form-control', :placeholder => 'Enter Skills', :required => 'required' %>
+          <%= text_field_tag :skills, @staff_data.skills, class:'form-control', :placeholder => 'Enter Skills', :required => 'required', :id =>'skilsComplete'%>
         </div>
       </div>
 
@@ -64,7 +64,7 @@
       <div class="form-group">
         <%= label_tag :qualification, 'Qualification', :class => "control-label col-sm-2" %>
         <div class="col-sm-7">
-          <%= text_field_tag :qualification, @staff_data.qualification, class:'form-control', :placeholder => 'Enter Qualification', :required => 'required' %>
+          <%= text_field_tag :qualification, @staff_data.qualification, class:'form-control', :placeholder => 'Enter Qualification', :required => 'required', :id =>'staffQualitication' %>
         </div>
       </div>
 
@@ -95,9 +95,74 @@
       </div>
       
     </div>
+     <% finalArr = [] 
+         qualification = []
+
+         @qualifications.each do |quff|
+              qualification.push(quff.qualification)
+         end
+       %>
+      <% @staff_data1.each do |staff| %>
+      <%#= debug staff %>
+
+       <% finalArr.push(staff.skill) %>
+          <% #@singlearr =  staff.skills.split(",") 
+            #qualification.push(staff.qualification)
+          %>
+            <% #@singlearr.each do |arr|  %>
+             
+            <% #end %>
+        <% end %>
+        
+        <input type="hidden" id="hiddenComplete" value="<%= finalArr %>"> 
+        <input type="hidden" id="hiddenQua" value="<%= qualification %>"> 
+
+
     <script type="text/javascript">
+
     $(document).ready(function () {
-      $('#editStaff').validate();
+        $('#editStaff').validate();
+      var autCompleteArr = [],
+          autoQompleteQua = [];
+      var autoCompleteData = $('#hiddenComplete').val()
+          autoCompleteDataQua  = $('#hiddenQua').val()    ;
+      if(autoCompleteData && autoCompleteData !='') {
+        
+        var newArr = autoCompleteData.split(',');
+       $.each(newArr, function (index, value) {
+        var newValue = value.replace(/[^a-z0-9\s]/gi, '');
+        autCompleteArr.push(newValue);
+       });
+
+        var unique=autCompleteArr.filter(function(itm,i,a){
+          return i==autCompleteArr.indexOf(itm);
+      });
+        //console.log('Here ', unique);
+       $( "#skilsComplete" ).autocomplete({
+        source: unique
+       });
+       $(".autoComplete").autocomplete({
+        source: unique
+       });
+      }
+
+        if(autoCompleteDataQua && autoCompleteDataQua !='') {
+           var newArrQua = autoCompleteDataQua.split(',');
+           $.each(newArrQua, function (index, value) {
+            var newValueQa = value.replace(/[^a-z0-9\s]/gi, '');
+            autoQompleteQua.push(newValueQa);
+           });
+
+            var uniqueQa = autoQompleteQua.filter(function(itm,i,a){
+              return i==autoQompleteQua.indexOf(itm);
+          });
+
+            $("#staffQualitication").autocomplete({
+              source: uniqueQa
+           });
+        }
+
+
     });
     </script>
     <%= render 'layouts/footer' %>

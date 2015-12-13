@@ -11,6 +11,12 @@ class CompaniesController < ApplicationController
 		@staff_list = CompanyStaff.paginate(:page => params[:page], :per_page => 10)
 	end
 
+
+	def add_staff
+			@staff_data = AdminSkills.all
+	     	@qualifications = AdminQualifications.all
+	end
+
 	#################################
 	#  	        Show Plan           #
 	#################################
@@ -36,7 +42,7 @@ class CompaniesController < ApplicationController
 		@current_plan = UsersStaffPlan.where(:user_id => @current_user.id).first
 
 		
-		params[:skills] = params[:skills] + ',' + params[:skills1] + ',' +  params[:skills2] + ',' + params[:skills3] + ',' + params[:skills4]
+		
 
 		##########################
 		# Get Total Staff Added  #
@@ -48,7 +54,7 @@ class CompaniesController < ApplicationController
 			####################################
 			@allowed_staff = Admin::StaffPlan.find(@current_plan.plan_id)
 			if @total_staff.size >= @allowed_staff.no_of_staff
-				redirect_to "/company_home", :notice => "Your plan does not allow you to add new members, please upgrade your plan"
+				redirect_to "/company_home", :notice => "plan_is_expired"
 			else
 				##########################
 				# Add New  Staff Member  #
@@ -68,7 +74,7 @@ class CompaniesController < ApplicationController
 
 		else
 			if current_user && current_user.subscription_plan.present? && @current_plan.nil? && current_user.subscription_plan.total_profiles.to_i <= @total_staff.size
-				redirect_to "/company_home", :notice => "Your plan does not allow you to add new members, please upgrade your plan"
+				redirect_to "/company_home", :notice => "plan_is_expired"
 			else
 				##########################
 				# Add New  Staff Member  #
@@ -94,6 +100,8 @@ class CompaniesController < ApplicationController
 	#  		Edit Compnay staff     #
 	#################################
 	def edit
+		@staff_data1 = AdminSkills.all
+	    @qualifications = AdminQualifications.all
 		@staff_data = CompanyStaff.find(params[:id])
 		@staff_url = '/companies/update/' + @staff_data.id.to_s
 		# respond_to do |format|
@@ -125,10 +133,17 @@ class CompaniesController < ApplicationController
     	end
 	end
 
+	def upgrade_plan
+		@plans = Admin::StaffPlan.all
+	end
+
+
+
+
 	private
 
 	  def plan_params
-	    params.permit(:first_name, :last_name, :email, :company_id, :skills, :availability, :is_private, :qualification, :experience, :image, :location)
+	    params.permit(:first_name, :last_name, :email, :company_id, :skills, :availability, :is_private, :qualification, :experience, :image, :location, :skills)
 	 end
 
 end
