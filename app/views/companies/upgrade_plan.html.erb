@@ -1,19 +1,14 @@
 <%= render 'layouts/application' %>
-<div class="innerpage_banner">
-   <!-- <img src="img/ourplan.png"> -->
-   <%= image_tag("ourplan.png" , :alt => 'ourplan.png') %>
-   <div class="container">
-      <div class="row">
-         <div class="banner-innerpage">
-            <h2>Our<span>Plan</span></h2>
-         </div>
-      </div>
-   </div>
-</div>
-<!-- end .innerpage_banner -->
+
 </div><!-- end. header -->
 <div class="content inner-page" ng-app="epsPayment" ng-controller="paymentController">
    <div class="container">
+<% flash.each do |name, msg| %>
+      <div class="">
+        <h4 align="center" class="flash"><%= content_tag :div, msg, :id => "flash_#{name}" %>
+        </h4>
+      </div>
+    <% end %>    
       <div class="row">
         <ul class="tabs">
           <li ng-class="{'selected-tab': selectedTab == '1' }"><a ng-click="changeTab('1')" href="javascript:void(0)">Choose Plan</a></li>

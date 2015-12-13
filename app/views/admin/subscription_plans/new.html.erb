@@ -1,6 +1,12 @@
 <%= render 'admin/layouts/application' %>
 <div class="content inner-page">
 	<div class="container">
+<% flash.each do |name, msg| %>
+      <div class="">
+        <h4 align="center" class="flash"><%= content_tag :div, msg, :id => "flash_#{name}" %>
+        </h4>
+      </div>
+    <% end %>
 		<% if @subscription_plan.errors.any? %>
 		<div id="error_explanation">
 			<h2><%= pluralize(@subscription_plan.errors.count, "error") %> prohibited this subscription_plan from being saved:</h2>

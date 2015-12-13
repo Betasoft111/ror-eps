@@ -1,19 +1,13 @@
 <%= render 'layouts/application' %>
-<div class="innerpage_banner">
-   <!-- <img src="img/ourplan.png"> -->
-   <%= image_tag("ourplan.png" , :alt => 'ourplan.png') %>
-   <div class="container">
-      <div class="row">
-         <div class="banner-innerpage">
-            <h2>Our<span>Plan</span></h2>
-         </div>
-      </div>
-   </div>
-</div>
-<!-- end .innerpage_banner -->
-</div><!-- end. header -->
+
 <div class="content inner-page">
    <div class="container">
+<% flash.each do |name, msg| %>
+      <div class="">
+        <h4 align="center" class="flash"><%= content_tag :div, msg, :id => "flash_#{name}" %>
+        </h4>
+      </div>
+    <% end %>
    		<div class="row">
    			<h2 class="text-center"> Pay with your favorite payment gateway </h2>
 			<%= form_tag charges_path do %>

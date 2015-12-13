@@ -14,7 +14,15 @@
 	</div><!-- end. header -->
 	<div class="content inner-page">
 		<div class="container">
-			<div class="row">
+
+
+<% flash.each do |name, msg| %>
+      <div class="">
+        <h4 align="center" class="flash"><%= content_tag :div, msg, :id => "flash_#{name}" %>
+        </h4>
+      </div>
+    <% end %>
+    			<div class="row">
 				
 				
 				<div class="col-lg-7">

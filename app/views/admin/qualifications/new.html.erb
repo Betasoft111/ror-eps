@@ -1,7 +1,12 @@
 <%= render 'admin/layouts/application' %>
 <div class="content inner-page">
 	<div class="container">
-		
+    <% flash.each do |name, msg| %>
+      <div class="">
+        <h4 align="center" class="flash"><%= content_tag :div, msg, :id => "flash_#{name}" %>
+        </h4>
+      </div>
+    <% end %>		
 		<div class="row">
 			<h4><span><%= image_tag("line.png" , :alt => 'line.png') %></span>Add Qualification Page<span><%= image_tag("right.png" , :alt => 'right.png') %></span></h4>
 			<span class="q1">admin will add new Qualifications.</span>

@@ -2,7 +2,13 @@
 <%= render 'admin/layouts/application' %>
 <div class="content inner-page">
 	<div class="container">
-		<% if @staff_plan && @staff_plan.id != nil %>
+		
+    <% flash.each do |name, msg| %>
+      <div class="">
+        <h4 align="center" class="flash"><%= content_tag :div, msg, :id => "flash_#{name}" %>
+        </h4>
+      </div>
+    <% end %>		<% if @staff_plan && @staff_plan.id != nil %>
 		<div class="row">
 			<h4><span><%= image_tag("line.png" , :alt => 'line.png') %></span>Edit Plan Details<span><%= image_tag("right.png" , :alt => 'right.png') %></span></h4>
 			<span class="q1">Company will Edit  Staff Plan on this page.</span>

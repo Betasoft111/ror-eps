@@ -143,10 +143,3 @@ $(window).scroll(function() {
         </div>
       </div><!-- end. header-top -->
 
-     <% flash.each do |name, msg| %>
-      <div class="">
-        <h4 align="center" class="flash"><%= content_tag :div, msg, :id => "flash_#{name}" %>
-        </h4>
-      </div>
-    <% end %>
-  

@@ -237,6 +237,7 @@ text-decoration: none;
 .content {
     float: left;
     width: 100%;
+    margin-top: 5.5%;
 }
 .c3 img {
     width: 100%;
@@ -387,7 +388,17 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4fc3ff', end
     margin-top: 15px;
     width: 100%;
 }
-
+h4.flash {
+    border: 2px solid red;
+    border-radius: 10px;
+    
+    font-size: 12px;
+    font-weight: normal;
+    margin: 138px auto auto;
+    max-width: 1144px;
+    padding: 5px;
+    width: 100%;
+}
 /***** new ******/
 
 .innerpage_banner {
@@ -395,6 +406,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4fc3ff', end
     float: left;
     position: relative;
     margin-top: 5.5%;
+    display: none;
 }
 .banner-innerpage {
     position: absolute;
@@ -1108,12 +1120,13 @@ p.nn1 {
     height: 48px;
 }
 h4.flash {
-    left: 0;
+    font-size: 12px;
+   /* left: 0;
     margin: auto;
     position: absolute;
     right: 0;
     top: 47px;
-    z-index: 100000000000;
+    z-index: 100000000000;*/margin: 0;
 }
 .header-top.inner .nav ul::after {
     border-color: -moz-use-text-color transparent #010101;

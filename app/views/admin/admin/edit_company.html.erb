@@ -2,19 +2,15 @@
 		</div>
 	</div>
 </div>
-		<div class="innerpage_banner">
-			<%= image_tag("create.png" , :alt => 'create.png') %>
-				<div class="container">
-					<div class="row">
-						<div class="banner-innerpage">
-							<h2>Com<span>pa</span>nies</h2>
-						</div>
-					</div>
-				</div>
-		</div><!-- end .innerpage_banner -->
-	</div><!-- end. header -->
+
   <div class="content inner-page">
     <div class="container">
+    <% flash.each do |name, msg| %>
+      <div class="">
+        <h4 align="center" class="flash"><%= content_tag :div, msg, :id => "flash_#{name}" %>
+        </h4>
+      </div>
+    <% end %>
       <div class="row">
         <h4><span><%= image_tag("line.png" , :alt => 'line.png') %></span>Edit Company Page<span><!-- <img src="img/right.png"> -->
         <%= image_tag("right.png" , :alt => 'right.png') %>

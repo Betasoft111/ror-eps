@@ -14,7 +14,14 @@
 	</div><!-- end. header -->
 	<div class="content inner-page ng-emd">
 		<div class="container">
-			<div class="row">
+
+<% flash.each do |name, msg| %>
+      <div class="">
+        <h4 align="center" class="flash"><%= content_tag :div, msg, :id => "flash_#{name}" %>
+        </h4>
+      </div>
+    <% end %>
+    			<div class="row">
 				<h4><span>
 					<!-- <img src="img/line.png"> -->
 					<%= image_tag("line.png" , :alt => 'line.png') %>

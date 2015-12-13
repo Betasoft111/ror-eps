@@ -1,15 +1,12 @@
 <%= render 'admin/layouts/application' %>
-<div class="innerpage_banner">
-	<%= image_tag("create.png" , :alt => 'create.png') %>
-	<div class="container">
-		<div class="row">
-			<div class="banner-innerpage">
-				<h2>Be<span>St</span>aff</h2>
-			</div>
-		</div>
-	</div>
-</div>
+
 <div class="container">
+    <% flash.each do |name, msg| %>
+      <div class="">
+        <h4 align="center" class="flash"><%= content_tag :div, msg, :id => "flash_#{name}" %>
+        </h4>
+      </div>
+    <% end %>
 	<div class="content">
 		<div class="container register">
 			<div class="row ">
