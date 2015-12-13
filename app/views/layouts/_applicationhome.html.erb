@@ -62,6 +62,46 @@ $(document).ready(function () {
     }
     });
     </script>
+
+    <script type="text/javascript">
+$(window).scroll(function() {    
+    var scroll = $(window).scrollTop();
+console.log('From top ', scroll);
+    if (scroll >= 1) {
+        $(".banner").addClass("animated fadeInDown");
+    } else {
+        $(".banner").removeClass("animated fadeInDown");
+    }
+    if (scroll >= 2) {
+        $(".banner-bottom").addClass("animated fadeInUp");
+    } else {
+        $(".banner-bottom").removeClass("animated fadeInUp");
+    }
+    if (scroll >= 1000) {
+        $(".c3left").addClass("animated fadeInLeft");
+    } else {
+        $(".c3left").removeClass("animated fadeInLeft");
+    }
+    if (scroll >= 1000) {
+        $(".c3right").addClass("animated fadeInRight");
+    } else {
+        $(".c3right").removeClass("animated fadeInRight");
+    }
+    if (scroll >= 2000) {
+        $(".c2-main").addClass("animated fadeInDown");
+    } else {
+        $(".c2-main").removeClass("animated fadeInDown");
+    }
+});
+
+
+
+
+
+
+
+
+    </script>
   </head>
   <body>
     <div class="header">
