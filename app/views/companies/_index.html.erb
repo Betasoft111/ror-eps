@@ -1,5 +1,35 @@
 <div class="content inner-page">
   <div class="container">
+        <% flash.each do |name, msg| %>
+          <% if msg == 'plan_is_expired' %>
+            <!-- <a class="text-center" href ="/upgrade_plan">Your add staff limit is reached, please upgrade your plan</a> -->
+            <script>
+              $(document).ready(function () {
+
+              swal({  
+                 title: 'Plan Expired',   
+                 text: 'You add staff limit is reached for the current plan, please upgrade you plan',   
+                 type: 'warning',   
+                 //showCancelButton: true,   
+                 confirmButtonColor: '#3085d6',   
+                 cancelButtonColor: '#d33',   
+                 confirmButtonText: 'Yes, Upgrade!',  
+                 //cancelButtonText: 'No, cancel plx!',   
+                 confirmButtonClass: 'confirm-class',   
+                 cancelButtonClass: 'cancel-class',   
+                 closeOnConfirm: true,   
+                 closeOnCancel: true 
+               }, function(isConfirm) {   
+                if (isConfirm) {     
+                  window.location.href = "/upgrade_plan";
+                } else { 
+                } 
+              });
+
+              });
+            </script>
+          <% end %>
+        <% end %>
     <div class="row">
       <h4><span>
         <%= image_tag("line.png", :alt => 'line.png') %>
@@ -35,3 +65,4 @@
     </div>
   </div>
 </div>
+        

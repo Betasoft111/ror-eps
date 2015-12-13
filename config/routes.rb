@@ -53,6 +53,7 @@ EPS::Application.routes.draw do
   get "/company_home" => "companies#index"
   post "companies/update/:id" => "companies#update"
   get "/companies/delete/:id" => "companies#destroy"
+  get '/upgrade_plan' => "companies#upgrade_plan"
 
 
 
