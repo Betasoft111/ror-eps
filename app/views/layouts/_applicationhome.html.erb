@@ -82,7 +82,13 @@ $(document).ready(function () {
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                   <ul class="nav navbar-nav navbar-right">
-                    <li class="hvr-overline-from-center"><a href="/"> Home  <span class="sr-only">(current)</span></a></li>
+                    <li class="hvr-overline-from-center">
+                      <% if session[:user_id] && session[:user_id] != nil %>
+                        <a href="/company_home"> Home  <span class="sr-only">(current)</span></a>
+                      <% else %>
+                        <a href="/"> Home  <span class="sr-only">(current)</span></a>
+                      <% end %>                      
+                    </li>
                     <li class="hvr-overline-from-center"><a href="#">About Us</a></li>
                     <li class="hvr-overline-from-center"><a href="#">Contact Us</a></li>
                     <li class="hvr-overline-from-center"><a href="#">Pricing </a></li>
