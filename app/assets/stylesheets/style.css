@@ -238,6 +238,15 @@ text-decoration: none;
     float: left;
     width: 100%;
     margin-top: 5.5%;
+    border-top: 3px solid #010101;
+}
+.arrow-down {
+    width: 0; 
+    height: 0; 
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    
+    border-top: 20px solid #f00;
 }
 .c3 img {
     width: 100%;
