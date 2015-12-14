@@ -1,4 +1,5 @@
 <div class="content inner-page">
+  <div class="content-down"></div>
   <div class="container">
     
         <% flash.each do |name, msg| %>
@@ -32,6 +33,12 @@
           <% end %>
         <% end %>
     <div class="row">
+     <% flash.each do |name, msg| %>
+      <div class="">
+        <h4 align="center" class="flash success"><%= content_tag :div, msg, :id => "flash_#{name}" %>
+        </h4>
+      </div>
+    <% end %>
       <h4><span>
         <%= image_tag("line.png", :alt => 'line.png') %>
         </span>Company Staffing Plans <span><%= image_tag("right.png" , :alt => 'right.png') %></span></h4>

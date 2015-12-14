@@ -49,7 +49,7 @@
               <script type="text/javascript">
               $(document).ready(function(){
               	var cookieVal = getCookie('opentab');
-              	if(cookieVal === 'login') {
+              	if(cookieVal === 'login' || !cookieVal) {
               		$(".box-two").show();
               		$(".sign-up").hide();              
               	}else{

@@ -2,6 +2,7 @@
 
 </div><!-- end. header -->
 <div class="content inner-page" ng-app="epsPayment" ng-controller="paymentController">
+  <div class="content-down"></div>
    <div class="container">
 <% flash.each do |name, msg| %>
       <div class="">
@@ -51,7 +52,8 @@
           <div class="col-lg-3">
             <div class="card stripe">
               <!-- <h2><span>S</span>Connect to Stripe</h2> -->
-              <%= form_tag charges_path do %>
+              <%#= form_tag charges_path do %>
+              <form action="/upgrade_addstaff_plan" method="POST">
               <article>
                 <% if flash[:error].present? %>
                 <div id="error_explanation">
@@ -68,7 +70,8 @@
               data-image="https://stripe.com/favicon.ico"
               data-name="Stripe Payment"
               data-locale="auto"></script>
-              <% end %>
+              <%# end %>
+              </form>
             </div>
           </div>
           <div class="col-lg-3">

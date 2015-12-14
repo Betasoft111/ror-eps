@@ -23,7 +23,10 @@
               <li><input type="text" name="skills" id="skilsComplete" placeholder="Skills (Want to hire for)"></li>
               <li><input type="text" name="staff_quf" id="staffQualitication" placeholder="Enter the staff Qualification"></li>
               <li><input type="text" name="experience" placeholder="Enter the work experience"></li>
-              <li><input type="text" name="availability" placeholder="Enter  the availability"></li>
+              <li><input type="text" id="availability" name="availability" placeholder="Enter  the availability" value="" >
+                <input type="hidden" name="availability_to" id="availability_to">
+                <input type="hidden" name="availability_from" id="availability_from" >
+              </li>
               <li><input type="submit" placeholder="Search"></li>
             </ul>
           </form>
@@ -175,7 +178,18 @@
            });
         }
 
+        $(function() {
+            $('#availability').daterangepicker();
+        });
 
+            $('#availability').change(function () {
+            //alert($(this).val());
+            var selectedDate = $(this).val().split('-'); 
+            $('#availability_from').val(selectedDate[0]);
+            $('#availability_to').val(selectedDate[1]);
+            //console.log('selected dates are', selectedDate[0], selectedDate[1]);
+
+          });
     });
     </script>
     <%= render 'layouts/footer' %>

@@ -240,13 +240,16 @@ text-decoration: none;
     margin-top: 5.5%;
     border-top: 3px solid #010101;
 }
-.arrow-down {
-    width: 0; 
-    height: 0; 
-    border-left: 20px solid transparent;
-    border-right: 20px solid transparent;
-    
-    border-top: 20px solid #f00;
+.content-down {
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-top: 15px solid #010101;
+    height: 0;
+    left: 0;
+    margin-left: auto;
+    margin-right: auto;
+    right: 0;
+    width: 0;
 }
 .c3 img {
     width: 100%;
@@ -450,7 +453,7 @@ h4.flash {
     font-size: 22px;
     font-weight: bold;
     margin-bottom: 40px;
-    margin-top: 46px;
+    margin-top: 35px;
 /*    text-shadow: 1px 1px 1px #3e3e3e;*/
 }
 .register .form-control {
@@ -926,6 +929,7 @@ ul.tabs {
 }
 .content.c3 {
     margin: 20px 0 0;
+    border: none;
 }
 .header-top  .navbar-default .navbar-nav > li > a {
     color: #fff !important;
@@ -1128,8 +1132,14 @@ p.nn1 {
 .header .header-top.inner .navbar li a {
     height: 48px;
 }
+#new_user {
+    float: left;
+    margin-top: 30px;
+    width: 100%;
+}
 h4.flash {
     font-size: 12px;
+    margin: 20px 0 0;
    /* left: 0;
     margin: auto;
     position: absolute;

@@ -42,8 +42,6 @@ class CompaniesController < ApplicationController
 		@current_plan = UsersStaffPlan.where(:user_id => @current_user.id).first
 
 		
-		
-
 		##########################
 		# Get Total Staff Added  #
 		##########################
@@ -53,7 +51,7 @@ class CompaniesController < ApplicationController
 			# Get No. Of Staff Allowed To Add  #
 			####################################
 			@allowed_staff = Admin::StaffPlan.find(@current_plan.plan_id)
-			if @total_staff.size >= @allowed_staff.no_of_staff
+			if @total_staff.size >= @current_plan.no_of_profiles.to_i 
 				redirect_to "/company_home", :notice => "plan_is_expired"
 			else
 				##########################
@@ -73,7 +71,7 @@ class CompaniesController < ApplicationController
 			end
 
 		else
-			if current_user && current_user.subscription_plan.present? && @current_plan.nil? && current_user.subscription_plan.total_profiles.to_i <= @total_staff.size
+			if @current_user && @current_user.subscription_plan.present? && @current_plan.nil? && @current_user.subscription_plan.total_profiles.to_i <= @total_staff.size
 				redirect_to "/company_home", :notice => "plan_is_expired"
 			else
 				##########################
@@ -133,17 +131,112 @@ class CompaniesController < ApplicationController
     	end
 	end
 
+	#################################
+	#  		Render Upgrade Plan     #
+	#################################
 	def upgrade_plan
 		@plans = Admin::StaffPlan.all
 	end
 
+	#################################
+	#  		Upgrade AddOn Plans     #
+	#################################
+	def upgrade_staff_plan
+		@plan_id = params[:plan_id]
+	  	@plan_details = Admin::StaffPlan.find(@plan_id)
 
+  		#################################
+		#      Check Payment Method     #
+		#################################	
+	  	if params[:pay_type] && params[:pay_type] == 'paypal'
+	  		#################################
+			#      Paypal Configuration     #
+			#################################	
+			if @plan_details.id != nil
+			  	PayPal::Recurring.configure do |config|
+				  config.sandbox = true
+				  config.username = "randhir_api1.betasoftsystems.com"
+				  config.password = "N9JPT5UCNRMUXPRK"
+				  config.signature = "AFcWxV21C7fd0v3bYYYRCpSSRl31AboldMqHUE-HNrXcXG79zqSK-x33"
+				end
+				ppr = PayPal::Recurring.new({
+				  :return_url   => "http://system.jobkeeper.dk:3000/company_home",
+				  :cancel_url   => "http://system.jobkeeper.dk:3000/charges/payment_method",
+				  :ipn_url      => "http://system.jobkeeper.dk:3000/charges/payment_ipn",
+				  :description  => @plan_details.plan_name,
+				  :amount       => @plan_details.plan_price.to_i,
+				  :currency     => "USD"
+				})
 
+				response = ppr.checkout
+				@current_sub_plan = UsersStaffPlan.where(:user_id => @current_user.id)#.update_all(plan_id: @plan_id)
+				if @current_sub_plan.empty?
+					UsersStaffPlan.create({
+			          :user_id=> @current_user.id,
+			          :plan_id=> @plan_id
+			        })
+			        #redirect_to "/company_home", :notice => "Membership is updated successfully"
+				else
+					@new_profiles = @current_sub_plan[0].no_of_profiles.to_i + @plan_details.no_of_staff.to_i
+					 UsersStaffPlan.where(:user_id => @current_user.id).update_all(plan_id: @plan_id, no_of_profiles: @new_profiles)
+					 #redirect_to "/company_home", :notice => "Membership is updated successfully"
+				end
+				#:notice => "Membership is updated successfully"
+				#redirect_to "/company_home", :notice => "Membership is updated successfully"
+				redirect_to response.checkout_url if response.valid?
+			end
+			#################################
+			#           Paypal Ends         #
+			#################################
+	    elsif @plan_details.id != nil && params[:pay_type] && params[:pay_type] == 'stripe'
+
+			#################################
+			#         Stripe Checkout       #
+			#################################
+
+			@amount = @plan_details.plan_price.to_i * 100 
+			customer = Stripe::Customer.create(
+			  :email => params[:stripeEmail],
+			  :source  => params[:stripeToken]
+			)
+			charge = Stripe::Charge.create(
+			  :customer    => customer.id,
+			  :amount      => @amount.to_i,
+			  :description => @plan_details.plan_name,
+			  :currency    => 'usd'
+			)
+				#################################
+			    #         Save In Database      #
+			    #################################
+				@current_sub_plan = UsersStaffPlan.where(:user_id => @current_user.id)#.update_all(plan_id: @plan_id)
+				if @current_sub_plan.empty?
+					UsersStaffPlan.create({
+			          :user_id=> @current_user.id,
+			          :plan_id=> @plan_id
+			        })
+			        redirect_to "/company_home", :notice => "Membership is updated successfully"
+				else
+					@new_profiles = @current_sub_plan[0].no_of_profiles.to_i + @plan_details.no_of_staff.to_i
+					 UsersStaffPlan.where(:user_id => @current_user.id).update_all(plan_id: @plan_id, no_of_profiles: @new_profiles)
+					 redirect_to "/company_home", :notice => "Membership is updated successfully"
+				end
+				
+		  end
+			
+			#################################
+			#         Stripe Ends           #
+			################################# 
+			rescue Stripe::CardError => e
+			  #if error delete user membership
+			  User.where(:id => @current_user.id).update_all(plan_id: nil)
+			  flash[:error] = e.message
+			  redirect_to '/choose_plan'
+	end
 
 	private
 
 	  def plan_params
-	    params.permit(:first_name, :last_name, :email, :company_id, :skills, :availability, :is_private, :qualification, :experience, :image, :location, :skills)
+	    params.permit(:first_name, :last_name, :email, :company_id, :skills, :availability, :is_private, :qualification, :experience, :image, :location, :skills, :availability_to, :availability_from)
 	 end
 
 end

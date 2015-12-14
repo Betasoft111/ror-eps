@@ -26,6 +26,7 @@ EPS::Application.routes.draw do
   post "/charges/payment_ipn" => "charges#payment_ipn"  
   get "/payment_ipn" => "charges#payment_ipn"  
   post "/payment_ipn_stripe" => "charges#payment_ipn_stripe"  
+  post "/upgrade_addstaff_plan" =>  "companies#upgrade_staff_plan"
 
 
 

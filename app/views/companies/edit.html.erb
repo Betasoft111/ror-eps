@@ -1,6 +1,7 @@
 <%= render 'layouts/application' %>
 
   <div class="content inner-page">
+    <div class="content-down"></div>
     <div class="container">
 
 <% flash.each do |name, msg| %>
@@ -48,6 +49,8 @@
         <%= label_tag :availability, 'Availability', :class => "control-label col-sm-2" %>
         <div class="col-sm-7">
           <%= text_field_tag :availability, @staff_data.availability, class:'form-control', :placeholder => 'Enter Availability', :required => 'required' %>
+          <input type="hidden" name="availability_to" id="availability_to" value="<%= @staff_data.availability_to %>">
+          <input type="hidden" name="availability_from" id="availability_from" value="<%= @staff_data.availability_from %>">
         </div>
       </div>
 
@@ -159,7 +162,18 @@
            });
         }
 
+  $(function() {
+        $('#availability').daterangepicker();
+    });
 
+    $('#availability').change(function () {
+      //alert($(this).val());
+      var selectedDate = $(this).val().split('-'); 
+      $('#availability_from').val(selectedDate[0]);
+      $('#availability_to').val(selectedDate[1]);
+      //console.log('selected dates are', selectedDate[0], selectedDate[1]);
+
+    });
     });
     </script>
     <%= render 'layouts/footer' %>

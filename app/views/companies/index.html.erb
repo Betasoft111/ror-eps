@@ -5,9 +5,9 @@
   <div class="innerpage_banner">
     <%= image_tag("create.png" , :alt => 'create.png') %>
     <div class="container">
-<% flash.each do |name, msg| %>
+     <% flash.each do |name, msg| %>
       <div class="">
-        <h4 align="center" class="flash"><%= content_tag :div, msg, :id => "flash_#{name}" %>
+        <h4 align="center" class="flash success"><%= content_tag :div, msg, :id => "flash_#{name}" %>
         </h4>
       </div>
     <% end %>

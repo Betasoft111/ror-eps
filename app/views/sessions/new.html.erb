@@ -13,6 +13,7 @@
   </div>
 </div>
 <div class="content" ng-app="joinApp" ng-controller="joinController">
+  <div class="content-down"></div>
   <div class="container register">
     <% flash.each do |name, msg| %>
       <div class="">
@@ -22,9 +23,10 @@
     <% end %>
     <div class="row ">
       <div class="box-one sign-up">
-        <h3>Come join the ESP ! Already have one? <a href="javascript:void(0)" class="clickform login-tab" ng-click="refreshScope()"> Sign in here.</a></h3>
+        
         <h4><span><%= image_tag("line.png" , :alt => 'line.png') %></span>CREATE A NEW ACCOUNT<span>
           <%= image_tag("right.png" , :alt => 'right.png') %></span></h4>
+          <h3>Come join the ESP ! Already have one? <a href="javascript:void(0)" class="clickform login-tab" ng-click="refreshScope()"> Sign in here.</a></h3>
         <%= form_for User.new, :html => { :class => "loginForm", :name => "new_user" } do |f| %>
         <div class = "form-group col-md-5"  ng-class="{'has-error': new_user.first_name.$invalid && new_user.first_name.$dirty}">
           <input type = "text" class = "form-control" id = "first_name" name="first_name" ng-model="user.first_name" placeholder = "Enter First Name" required="required">

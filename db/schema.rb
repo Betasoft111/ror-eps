@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151211222858) do
+ActiveRecord::Schema.define(version: 20151214193306) do
 
   create_table "admin_admin_users", force: true do |t|
     t.string   "first_name"
@@ -73,6 +73,8 @@ ActiveRecord::Schema.define(version: 20151211222858) do
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
     t.string   "location"
+    t.string   "availability_to"
+    t.string   "availability_from"
   end
 
   add_index "company_staffs", ["company_id"], name: "fk_staff", using: :btree
@@ -130,6 +132,7 @@ ActiveRecord::Schema.define(version: 20151211222858) do
     t.integer  "plan_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "no_of_profiles", default: 0
   end
 
   add_index "users_staff_plans", ["user_id"], name: "fk_user", using: :btree
