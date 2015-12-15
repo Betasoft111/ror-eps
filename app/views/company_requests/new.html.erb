@@ -80,6 +80,9 @@
 <script type="text/javascript">
 $(document).ready(function () {
   $('#addStaff').validate();
+  $('#selected_emp').change(function () {
+    console.log('Here ', $(this).val());
+  });
 });
 </script>
 <%= render 'layouts/footer' %>

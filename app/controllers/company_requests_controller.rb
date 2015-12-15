@@ -8,6 +8,7 @@ class CompanyRequestsController < ApplicationController
 	end
 
 	def create
+		#logger.info(request_params)
 		@request = CompanyRequest.new(request_params)
 	  	if @request.save
 	    	redirect_to root_url, :notice => "Request Sent Successfully."
@@ -19,6 +20,6 @@ class CompanyRequestsController < ApplicationController
 	private
 
 		def request_params
-	    	params.permit(:name, :amount, :total_emp, :selected_emp[], :total_days, :additional)
+	    	params.permit(:name, :amount, :total_emp, :selected_emp, :total_days, :additional)
 		end
 end
