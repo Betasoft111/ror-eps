@@ -8,7 +8,7 @@ class CompaniesController < ApplicationController
 	#################################
 	def index
 		params[:page] ||= 1
-		@staff_list = CompanyStaff.paginate(:page => params[:page], :per_page => 10)
+		@staff_list = CompanyStaff.where(:company_id => @current_user.id).paginate(:page => params[:page], :per_page => 10)
 	end
 
 
