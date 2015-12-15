@@ -1,0 +1,52 @@
+
+<%= render '/layouts/application' %>
+</div>
+</div>
+</div>
+
+<div class="content inner-page">
+	<div class="content-down"></div>
+<div class="container">
+	    <% flash.each do |name, msg| %>
+      <div class="">
+        <!-- <h4 align="center" class="flash"><%= content_tag :div, msg, :id => "flash_#{name}" %> -->
+        </h4>
+      </div>
+    <% end %>
+<div class="row">
+	<h4><span>
+		<%= image_tag("line.png" , :alt => 'line.png') %>
+		</span>Your Searches <span><%= image_tag("right.png" , :alt => 'right.png') %></span></h4>
+		<!-- <span class="q1"><a class="add-new" href="/admin/staff_plans/new" > Add New</a> -->
+		</span>
+		
+		<div class="table-responsive">
+			<table class="table">
+				<thead>
+					<tr>
+						<th>Skills</th>
+						<th>Qualification</th>
+						<th>Experience</th>
+						<th>Availability</th>
+						<th>Action</th>
+					</tr>
+				</thead>
+				<%#= @current_user.id %>
+				<tbody>
+					<%#= @logedinusers_FavouriteSearch.inspect %>
+					<% @logedinusers_FavouriteSearch.each do |search| %>
+					<tr>
+						<td><%= search.skills %></td>
+						<td><%= search.qualification %></td>
+						<td><%= search.experience %></td>
+						<td><%= search.availability %></td>
+						<td><a class="" href="search?skills=<%= search.skills %>&staff_quf=<%= search.qualification %>&experience= <%= search.experience %> &availability=<%= search.availability %>">Open</a> </td>						
+					</tr>
+					<% end %>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>
+</div>
+<%= render '/layouts/footer' %>

@@ -132,7 +132,7 @@ ActiveRecord::Schema.define(version: 20151214193306) do
     t.integer  "plan_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "no_of_profiles", default: 0
+    t.integer  "no_of_profiles"
   end
 
   add_index "users_staff_plans", ["user_id"], name: "fk_user", using: :btree
