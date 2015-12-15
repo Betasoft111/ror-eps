@@ -1,0 +1,48 @@
+<%= render 'layouts/application' %>
+<%#= RAILS_ROOT %>
+<div class="content inner-page">
+  <div class="content-down"></div>
+  <div class="container">
+      <div class="content inner-page ng-emd">
+        <div class="container">
+          <% flash.each do |name, msg| %>
+          <div class="">
+            <h4 align="center" class="flash"><%= content_tag :div, msg, :id => "flash_#{name}" %>
+            </h4>
+          </div>
+          <% end %>
+          <div class="row">
+            <h4><span>
+              <%= image_tag("line.png" , :alt => 'line.png') %>
+            </span>
+            <%#=debug @request_details[0] %>
+            <%= @request_details[0].company_fn+" "+@request_details[0].company_ln %>
+            <span>
+              <%= image_tag("right.png" , :alt => 'right.png') %>
+              <!-- <img src="img/right.png"> -->
+            </span></h4>
+            <div class="col-lg-3 ng-pic">
+              <!-- <img src="img/emp1.jpg"> -->
+              <%#= image_tag(@request_details.request_by , :alt => 'emp1.jpg', :style => "opacity: 0.2") %>
+            </div>
+            <div class="col-lg-8 col-lg-offset-1">
+              <strong>Contact Information</strong>
+              <p><label>Email : </label>
+                <%= @request_details[0].company_email %>
+            </p>
+            <strong>General Information</strong>
+            <p><label>Name : </label>
+                <%= @request_details[0].company_fn+" "+@request_details[0].company_ln %>
+            </p>
+          <p><label>Propsed Rate : </label><%= @request_details[0].amount %></p>
+          <p><label>No. of Staff : </label><%= @request_details[0].total_emp %></p>
+          <p><label>Additional Notes : </label><%= @request_details[0].additional %></p>
+          <p><a href="">Approve</a> &nbsp; <a href="">Reject</a></p>
+        </div>
+      </div>
+  </div>
+</div>
+
+</div>
+</script>
+<%= render 'layouts/footer' %>

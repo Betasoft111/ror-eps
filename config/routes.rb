@@ -55,6 +55,8 @@ EPS::Application.routes.draw do
   post "companies/update/:id" => "companies#update"
   get "/companies/delete/:id" => "companies#destroy"
   get '/upgrade_plan' => "companies#upgrade_plan"
+  get "/hiring_requests" => "company_requests#index"
+  get "/hiring_requests/:id/show" => "company_requests#request_details"
 
 
 

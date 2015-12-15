@@ -6,145 +6,104 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title>Employee Placement System</title>
-<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
-
-<%= stylesheet_link_tag    "hover.css" %>
-<%= stylesheet_link_tag    "style.css" %>
-<%= stylesheet_link_tag    "bootstrap.css" %>
-<%= stylesheet_link_tag    "bootstrap.min.css" %>
-<%= stylesheet_link_tag    "bootstrap-theme.css" %>
-<%= stylesheet_link_tag    "bootstrap-theme.min.css" %>
-<%= stylesheet_link_tag    "sweetalert2.css" %>
-<%= stylesheet_link_tag    "jquery-ui.css" %>
-<%= stylesheet_link_tag    "daterangepicker.css" %>
-
-<%= stylesheet_link_tag    "autocompletes/jquery.tag-editor.css" %>
-<%= stylesheet_link_tag    "autocompletes/pure-min.css" %>
-
-<%= stylesheet_link_tag    "https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" %>
-<%#= stylesheet_link_tag    "sweetalert.css" %>
-
-<%= javascript_include_tag "moment.min.js" %>
-<%= javascript_include_tag "application.js" %>
-
-<%#= javascript_include_tag "sweetalert-dev.js" %>
-<script type="text/javascript">
-$(document).ready(function () {
-  $(".login-tab").click(function() {
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
+    <%= stylesheet_link_tag    "hover.css" %>
+    <%= stylesheet_link_tag    "style.css" %>
+    <%= stylesheet_link_tag    "bootstrap.css" %>
+    <%= stylesheet_link_tag    "bootstrap.min.css" %>
+    <%= stylesheet_link_tag    "bootstrap-theme.css" %>
+    <%= stylesheet_link_tag    "bootstrap-theme.min.css" %>
+    <%= stylesheet_link_tag    "sweetalert2.css" %>
+    <%= stylesheet_link_tag    "jquery-ui.css" %>
+    <%= stylesheet_link_tag    "daterangepicker.css" %>
+    <%= stylesheet_link_tag    "autocompletes/jquery.tag-editor.css" %>
+    <%= stylesheet_link_tag    "autocompletes/pure-min.css" %>
+    <%= stylesheet_link_tag    "https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" %>
+    <%#= stylesheet_link_tag    "sweetalert.css" %>
+    <%= javascript_include_tag "moment.min.js" %>
+    <%= javascript_include_tag "application.js" %>
+    <%#= javascript_include_tag "sweetalert-dev.js" %>
+    <script type="text/javascript">
+    $(document).ready(function () {
+    $(".login-tab").click(function() {
     document.cookie="opentab=login;path=/";
-  });
-  $(".register-tab").click(function() {
+    });
+    $(".register-tab").click(function() {
     document.cookie="opentab=register;path=/";
-  });
-
-  $('.delete').click(function () {
-      var confirmBox = confirm('Are you sure, you want to delete ??');
-      if(confirmBox) {
-        return true;
-      }else{
-        return false;
-      }
-        // swal({   title: "Are you sure?",
-        //          text: "You will not be able to recover this imaginary file!",
-        //          type: "warning",
-        //          showCancelButton: true,
-        //          confirmButtonColor: "#DD6B55",
-        //          confirmButtonText: "Yes, delete it!",
-        //          closeOnConfirm: false }, 
-        //          function(){   
-        //           //swal("Deleted!", "Your imaginary file has been deleted.", "success"); 
-        //           return true;
-        //     });
-  });
-
-});
-</script>
-<%#= javascript_include_tag "angular/routes.js" %>
-<script>
-$(window).scroll(function() {
-    if ($(this).scrollTop() > 1){  
-        $('.header-top').addClass("sticky");
+    });
+    $('.delete').click(function () {
+    var confirmBox = confirm('Are you sure, you want to delete ??');
+    if(confirmBox) {
+    return true;
+    }else{
+    return false;
+    }
+    });
+    });
+    </script>
+    <%#= javascript_include_tag "angular/routes.js" %>
+    <script>
+    $(window).scroll(function() {
+    if ($(this).scrollTop() > 1){
+    $('.header-top').addClass("sticky");
     }
     else{
-        $('.header-top').removeClass("sticky");
+    $('.header-top').removeClass("sticky");
     }
-});
-</script>
-
-
-
-</head>
+    });
+    </script>
+  </head>
   <body>
     <div class="header inner-pages-ng">
       <div class="header-top">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-            <a href="/"><!-- <img src="images/logo.png"> -->
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+              <a href="/"><!-- <img src="images/logo.png"> -->
               <%= image_tag("small-logo.png" , :alt => 'EPS Logo') %>
             </a>
           </div>
           <div class="col-lg-9 col-md-9 col-sm-9">
             <nav class="navbar navbar-default">
-  <div class="container-fluid">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="/"></a>
-    </div>
-
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav navbar-right">
-        <li class=""><a href="/company_home"> Home  <span class="sr-only">(current)</span></a></li>
-        <li><a href="#">About Us</a></li>
-        <li><a href="#">Contact Us</a></li>
-        <li><a href="#">Pricing </a></li>
-        <% if session[:user_id] && session[:user_id] != nil %>
-          <li><a href="/log_out" >Logout</a></li>
-        <% else %>
-          
-          <li><a href="/join" class="login-tab">Join</a>
-
-            <ul>
-              <li><a href="/join" class="login-tab">Login</a></li>
-              <li><a href="/join" class="register-tab">Register</a></li>
-
+              <div class="container-fluid">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                  <span class="sr-only">Toggle navigation</span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  </button>
+                  <a class="navbar-brand" href="/"></a>
+                </div>
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                  <ul class="nav navbar-nav navbar-right">
+                    <li class=""><a href="/company_home"> Home  <span class="sr-only">(current)</span></a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Pricing </a></li>
+                    <% if session[:user_id] && session[:user_id] != nil %>
+                    <li><a href="/hiring_requests">Requests</a></li>
+                    <li><a href="/log_out" >Logout</a></li>
+                    <% else %>
+                    
+                    <li><a href="/join" class="login-tab">Join</a>
+                    <ul>
+                      <li><a href="/join" class="login-tab">Login</a></li>
+                      <li><a href="/join" class="register-tab">Register</a></li>
+                    </ul>
+                  </li>
+                  <% end %>
+                  
+                </ul>
+                
+                
+              </li>
             </ul>
-
-          </li>
-         
-
-
-          <!-- <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Register <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="#">Action</a></li>
-            <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
-            <li role="separator" class="divider"></li>
-            <li><a href="#">Separated link</a></li>
-            <li role="separator" class="divider"></li>
-            <li><a href="#">One more separated link</a></li>
-          </ul>
-        </li> -->
-        <% end %>
-       
-      </ul>
-    
-     
-        </li>
-      </ul>
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
-</nav>
-</div>
-          </div>
+            </div><!-- /.navbar-collapse -->
+            </div><!-- /.container-fluid -->
+          </nav>
         </div>
-      </div><!-- end. header-top -->
-
+      </div>
+    </div>
+    </div><!-- end. header-top -->

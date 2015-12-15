@@ -13,8 +13,8 @@ class CompaniesController < ApplicationController
 
 
 	def add_staff
-			@staff_data = AdminSkills.all
-	     	@qualifications = AdminQualifications.all
+		@staff_data = AdminSkills.all
+	    @qualifications = AdminQualifications.all
 	end
 
 	#################################
