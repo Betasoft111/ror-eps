@@ -10,17 +10,16 @@
     <% end %>
 		<div class="row">
 			<h4><span><%= image_tag("line.png" , :alt => 'line.png') %></span>Add Skill Page<span><%= image_tag("right.png" , :alt => 'right.png') %></span></h4>
-			<span class="q1">admin will add new skills.</span>
 			<%= form_tag admin_skills_add_path, {:class => 'form-horizontal add-employee' , :id => 'loginForm'} do %>
 			<div class="form-group">
-				<%= label_tag :skill, 'Skill', :class => "control-label col-sm-2" %>
-				<div class="col-sm-7">
+				<%= label_tag :skill, 'Skill', :class => "control-label col-sm-2 col-sm-offset-1" %>
+				<div class="col-sm-6">
 					<%= text_field_tag :skill, nil, :class => 'form-control', :placeholder => 'Enter Skill Title', :required => 'required' %>
 				</div>
 			</div>
 			<div class="form-group">
-				<div class="col-sm-offset-2 col-sm-10">
-					<%= submit_tag "Add Skills", :class => 'btn btn-default' %>
+				<div class="frm-lat">
+					<%= submit_tag "Add Skill", :class => 'btn btn-default' %>
 					<a href="/admin/skills/" class="btn btn-default">Cancel</a>
 				</div>
 			</div>

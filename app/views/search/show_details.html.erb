@@ -14,30 +14,52 @@
 	</div><!-- end. header -->
 	<div class="content inner-page ng-emd">
 		<div class="container">
-
-<% flash.each do |name, msg| %>
-      <div class="">
-        <h4 align="center" class="flash"><%= content_tag :div, msg, :id => "flash_#{name}" %>
-        </h4>
-      </div>
-    <% end %>
-    			<div class="row">
+			<% flash.each do |name, msg| %>
+			<div class="">
+				<h4 align="center" class="flash"><%= content_tag :div, msg, :id => "flash_#{name}" %>
+				</h4>
+			</div>
+			<% end %>
+			<div class="row">
 				<h4><span>
 					<!-- <img src="img/line.png"> -->
 					<%= image_tag("line.png" , :alt => 'line.png') %>
-				</span><%= @user_detail.first_name+' '+@user_detail.last_name %><span>
-				<%= image_tag("right.png" , :alt => 'right.png') %>
+				</span>
+					<% if @user_detail.is_private %>
+						User Is Private	
+					<% else %>
+						<%= @user_detail.first_name+' '+@user_detail.last_name %>
+					<% end %>
+
+				<span>
+					<%= image_tag("right.png" , :alt => 'right.png') %>
 				<!-- <img src="img/right.png"> -->
 			</span></h4>
 			<div class="col-lg-3 ng-pic">
 				<!-- <img src="img/emp1.jpg"> -->
-				<%= image_tag(@user_detail.image.url , :alt => 'emp1.jpg') %>
+				<% if @user_detail.is_private %>
+					<%= image_tag(@user_detail.image.url , :alt => 'emp1.jpg', :style => "opacity: 0.2") %>
+				<% else %>
+					<%= image_tag(@user_detail.image.url , :alt => 'emp1.jpg') %>
+				<% end %>
 			</div>
 			<div class="col-lg-8 col-lg-offset-1">
 				<strong>Contact Information</strong>
-				<p><label>Email : </label><%= @user_detail.email %></p>
+				<p><label>Email : </label>
+					<% if @user_detail.is_private %>
+						User Is Private
+					<% else %>
+						<%= @user_detail.email %>
+					<% end %>
+				</p>
 				<strong>General Information</strong>
-				<p><label>Name : </label><%= @user_detail.first_name+' '+@user_detail.last_name %></p>
+				<p><label>Name : </label>
+						<% if @user_detail.is_private %>
+							User Is Private
+						<% else %>
+							<%= @user_detail.first_name+' '+@user_detail.last_name %>
+						<% end %>
+					</p>
 				<p><label>Skills : </label><%= @user_detail.skills %></p>
 				<p><label>Availability : </label><%= @user_detail.availability %></p>
 				<p><label>Experience : </label><%= @user_detail.experience %></p>

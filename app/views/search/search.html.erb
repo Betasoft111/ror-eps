@@ -1,7 +1,7 @@
 <%= render 'layouts/application' %>
 <div class="innerpage_banner">
 	<!-- <img src="img/staff.png"> -->
-	 <%= image_tag("staff.png" , :alt => 'staff.png') %>
+	<%= image_tag("staff.png" , :alt => 'staff.png') %>
 	<div class="container">
 		<div class="row">
 			<div class="banner-innerpage">
@@ -14,208 +14,176 @@
 	</div><!-- end. header -->
 	<div class="content inner-page">
 		<div class="container">
-
-
-<% flash.each do |name, msg| %>
-      <div class="">
-        <h4 align="center" class="flash"><%= content_tag :div, msg, :id => "flash_#{name}" %>
-        </h4>
-      </div>
-    <% end %>
-    			<div class="row">
-				
+			<% flash.each do |name, msg| %>
+			<div class="">
+				<h4 align="center" class="flash"><%= content_tag :div, msg, :id => "flash_#{name}" %>
+				</h4>
+			</div>
+			<% end %>
+			<div class="row">			
 				
 				<div class="col-lg-7">
 					<form class="form-horizontal add-employee search-employee" role="form" action="/search">
-						<!--div class="form-group">
-							<label class="control-label col-sm-3" for="">Dates</label>
-							<div class="col-sm-3">
-								<input type="email" class="form-control" id="email" placeholder="11-6-2015">
-							</div><div class="col-sm-3">
-							<input type="email" class="form-control" id="email" placeholder="28-6-2015">
-						</div><div class="col-sm-3">
-						<!-- <input type="email" class="form-control" id="email" placeholder=""> -->
-						<!--select>
-							<option value="">Select Years</option>
-							<option value="">Less than 5 years</option>
-							<option selected="">More than 5 years</option>
-							
-						</select>
-					</div>
-				</div-->
-				<div class="form-group">
-					<label class="control-label col-sm-3" for="pwd">Skill</label>
-					<div class="col-sm-9">
-						<input type="text" name="skills" class="form-control autoComplete" id="pwd" placeholder="Skills (Want to hire for)" value="<%= params[:skills] %>">
-					</div>
-				</div>
-				<div class="form-group">
-					<label class="control-label col-sm-3" for="pwd">Experience</label>
-					<div class="col-sm-9">
-						<input type="text" name="experience" class="form-control" id="pwd" placeholder="Enter the work experience" value="<%= params[:experience] %>">
-					</div>
-				</div>
-				<div class="form-group">
-					<label class="control-label col-sm-3" for="pwd">Qualification</label>
-					<div class="col-sm-9">
-						<input type="text" name="staff_quf" id="staffQualitication" class="form-control" id="pwd" placeholder="Enter the staff Qualification" value="<%= params[:staff_quf] %>" >
-					</div>
-				</div>
-				<div class="form-group">
-					<label class="control-label col-sm-3" for="pwd">Availability</label>
-					<div class="col-sm-9">
-						<input type="text" name="availability" id="availability" class="form-control" id="pwd" placeholder="" value="<%= params[:availability] %>">
-						 <input type="hidden" name="availability_to" id="availability_to">
-                		<input type="hidden" name="availability_from" id="availability_from" >
-					</div>
-				</div>
-				<!--div class="form-group">
-					<label class="control-label col-sm-3" for="pwd">Price level</label>
-					<div class="col-sm-9">
 						
-						<% #image_tag("rang.png" , :alt => 'rang.png') %>
+						<div class="form-group">
+							<label class="control-label col-sm-3" for="pwd">Skill</label>
+							<div class="col-sm-9">
+								<input type="text" name="skills" class="form-control autoComplete" id="pwd" placeholder="Skills (Want to hire for)" value="<%= params[:skills] %>">
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="control-label col-sm-3" for="pwd">Experience</label>
+							<div class="col-sm-9">
+								<input type="text" name="experience" class="form-control" id="pwd" placeholder="Enter the work experience" value="<%= params[:experience] %>">
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="control-label col-sm-3" for="pwd">Qualification</label>
+							<div class="col-sm-9">
+								<input type="text" name="staff_quf" id="staffQualitication" class="form-control" id="pwd" placeholder="Enter the staff Qualification" value="<%= params[:staff_quf] %>" >
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="control-label col-sm-3" for="pwd">Availability</label>
+							<div class="col-sm-9">
+								<input type="text" name="availability" id="availability" class="form-control" id="pwd" placeholder="" value="<%= params[:availability] %>">
+								<input type="hidden" name="availability_to" id="availability_to">
+								<input type="hidden" name="availability_from" id="availability_from" >
+							</div>
+						</div>
+						<!--div class="form-group">
+							<label class="control-label col-sm-3" for="pwd">Price level</label>
+							<div class="col-sm-9">
+										
+										<% #image_tag("rang.png" , :alt => 'rang.png') %>
+							</div>
+					</div-->
+					
+					<div class="form-group">
+						<div class="col-sm-offset-2 col-sm-10 ">
+							<button type="submit" class="btn btn-default  pull-right">Search Staff</button>
+						</div>
 					</div>
-				</div-->
-				
-				<div class="form-group">
-					<div class="col-sm-offset-2 col-sm-10 ">
-						<button type="submit" class="btn btn-default  pull-right">Search Staff</button>
-					</div>
-				</div>
-			</form>
+				</form>
+			</div>
+			<div class="col-lg-5 map">
+				<!-- <img src="img/map.png"> -->
+				<%= image_tag("map.png" , :alt => 'map.png') %>
+			</div>
 		</div>
-		<div class="col-lg-5 map">
-			<!-- <img src="img/map.png"> -->
-			<%= image_tag("map.png" , :alt => 'map.png') %>
-		</div>
-		
-		
-	</div>
-<div class="row">
-  	 <% if current_user %>
-		<%= form_tag '/favourite_searches' do %>
+		<div class="row">
+			<% if current_user %>
+			<%= form_tag '/favourite_searches' do %>
 			<% if @search_results != nil && @search_results.first != nil %>
-				<%= hidden_field_tag 'skills', @search_results.first.skills %>
-				<%= hidden_field_tag 'qualification', @search_results.first.qualification %>
-				<%= hidden_field_tag 'experience', @search_results.first.experience %>
-				<%= hidden_field_tag 'availability', @search_results.first.availability %>
-				<%= hidden_field_tag 'user_id', current_user.id %>
-				<%= submit_tag "Save Search Result", :class => 'btn btn-default' %>
+			<%= hidden_field_tag 'skills', @search_results.first.skills %>
+			<%= hidden_field_tag 'qualification', @search_results.first.qualification %>
+			<%= hidden_field_tag 'experience', @search_results.first.experience %>
+			<%= hidden_field_tag 'availability', @search_results.first.availability %>
+			<%= hidden_field_tag 'user_id', current_user.id %>
+			<%= submit_tag "Save Search Result", :class => 'btn btn-default' %>
 			<% end %>
-		<% end %>
-		<a href="/favourite_searches">MY Recent Searches</a>
-	<% end %> 
-
-
-
-</div>
-
-	<div class="row">
-		
-
-		<% @search_results.each do |data| %> 
+			<% end %>
+			<% end %>
+		</div>
+		<div class="row">
+			<% @search_results.each do |data| %>
 			<div class="col-lg-4 col-sm-4 search-result">
 				<!-- <img src="img/search1.jpg"> -->
 				<%= image_tag("search1.jpg" , :alt => 'search1.jpg') %>
 				<div class="company-search">
-					<span><%= image_tag(data.image.url , :alt => 'company1.png') %></span>
+					<span>
+						<% if data.is_private %>
+							<%= image_tag(data.image.url , :alt => 'company1.png', :style => "opacity: 0.2") %>
+						<% else %>
+							<%= image_tag(data.image.url , :alt => 'company1.png') %>
+						<% end %>
+					</span>
 					<a href="/staff_details/<%= data.id%>">View More</a>
 				</div>
 				<span class="rate-search">6,300 <sup>kr</sup></span>
-				<h5><%= data.company_fn %> <%= data.company_ln %>/ <%= data.first_name %> <%= data.last_name %></h5>
+				<h5><%= data.company_fn %> <%= data.company_ln %>/ 
+					<% if data.is_private %>
+						User is private
+					<% else %>
+						<%= data.first_name %> <%= data.last_name %>
+					<% end %>
+				</h5>
 			</div>
-		<% end %>  
-
-
+			<% end %>
+		</div>
 	</div>
-	
 </div>
-
-</div>
-     <% finalArr = [] 
-         qualification = []
-
-         
-       %>
-      <% @staff_data.each do |staff| %>
-      <%#= debug staff %>
-      	<% finalArr.push(staff.skill) %>
-          <% #@singlearr =  staff.skills.split(",") 
-            #qualification.push(staff.qualification)
-          %>
-            <% #@singlearr.each do |arr|  %>
-              
-            <% #end %>
-        <% end %>
-        <% 
-        @qualifications.each do |quff|
-              qualification.push(quff.qualification)
-         end
-        %>
-        <input type="hidden" id="hiddenComplete" value="<%= finalArr %>"> 
-               <input type="hidden" id="hiddenQua" value="<%= qualification %>"> 
-
-
- <script type="text/javascript">
-    function delete_cookie( name ) {
-      document.cookie = name + '=; expires=Thu, 01 Jan 1970 00:00:01 GMT;';
-    }
-    $(function() {
-      delete_cookie('opentab');
-    });
-    $(document).ready(function () {
-      var autCompleteArr = [],
-          autoQompleteQua = [];
-      var autoCompleteData = $('#hiddenComplete').val()
-          autoCompleteDataQua  = $('#hiddenQua').val()    ;
-      if(autoCompleteData && autoCompleteData !='') {
-        
-        var newArr = autoCompleteData.split(',');
-       $.each(newArr, function (index, value) {
-        var newValue = value.replace(/[^a-z0-9\s]/gi, '');
-        autCompleteArr.push(newValue);
-       });
-
-        var unique=autCompleteArr.filter(function(itm,i,a){
-          return i==autCompleteArr.indexOf(itm);
-      });
-        //console.log('Here ', unique);
-       $( "#skilsComplete" ).autocomplete({
-        source: unique
-       });
-       $(".autoComplete").autocomplete({
-        source: unique
-       });
-      }
-
-        if(autoCompleteDataQua && autoCompleteDataQua !='') {
-           var newArrQua = autoCompleteDataQua.split(',');
-           $.each(newArrQua, function (index, value) {
-            var newValueQa = value.replace(/[^a-z0-9\s]/gi, '');
-            autoQompleteQua.push(newValueQa);
-           });
-
-            var uniqueQa = autoQompleteQua.filter(function(itm,i,a){
-              return i==autoQompleteQua.indexOf(itm);
-          });
-
-            $("#staffQualitication").autocomplete({
-              source: uniqueQa
-           });
-        }
-
- $(function() {
-            $('#availability').daterangepicker();
-        });
-
-            $('#availability').change(function () {
-            //alert($(this).val());
-            var selectedDate = $(this).val().split('-'); 
-            $('#availability_from').val(selectedDate[0]);
-            $('#availability_to').val(selectedDate[1]);
-            //console.log('selected dates are', selectedDate[0], selectedDate[1]);
-
-          });
-    });
-    </script>
+<% finalArr = []
+qualification = []
+%>
+<% @staff_data.each do |staff| %>
+<%#= debug staff %>
+<% finalArr.push(staff.skill) %>
+<% #@singlearr =  staff.skills.split(",")
+#qualification.push(staff.qualification)
+%>
+<% #@singlearr.each do |arr|  %>
+<% #end %>
+<% end %>
+<%
+@qualifications.each do |quff|
+qualification.push(quff.qualification)
+end
+%>
+<input type="hidden" id="hiddenComplete" value="<%= finalArr %>">
+<input type="hidden" id="hiddenQua" value="<%= qualification %>">
+<script type="text/javascript">
+function delete_cookie( name ) {
+document.cookie = name + '=; expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+}
+$(function() {
+delete_cookie('opentab');
+});
+$(document).ready(function () {
+var autCompleteArr = [],
+autoQompleteQua = [];
+var autoCompleteData = $('#hiddenComplete').val()
+autoCompleteDataQua  = $('#hiddenQua').val()    ;
+if(autoCompleteData && autoCompleteData !='') {
+var newArr = autoCompleteData.split(',');
+$.each(newArr, function (index, value) {
+var newValue = value.replace(/[^a-z0-9\s]/gi, '');
+autCompleteArr.push(newValue);
+});
+var unique=autCompleteArr.filter(function(itm,i,a){
+return i==autCompleteArr.indexOf(itm);
+});
+//console.log('Here ', unique);
+$( "#skilsComplete" ).autocomplete({
+source: unique
+});
+$(".autoComplete").autocomplete({
+source: unique
+});
+}
+if(autoCompleteDataQua && autoCompleteDataQua !='') {
+var newArrQua = autoCompleteDataQua.split(',');
+$.each(newArrQua, function (index, value) {
+var newValueQa = value.replace(/[^a-z0-9\s]/gi, '');
+autoQompleteQua.push(newValueQa);
+});
+var uniqueQa = autoQompleteQua.filter(function(itm,i,a){
+return i==autoQompleteQua.indexOf(itm);
+});
+$("#staffQualitication").autocomplete({
+source: uniqueQa
+});
+}
+$(function() {
+$('#availability').daterangepicker();
+});
+$('#availability').change(function () {
+//alert($(this).val());
+var selectedDate = $(this).val().split('-');
+$('#availability_from').val(selectedDate[0]);
+$('#availability_to').val(selectedDate[1]);
+//console.log('selected dates are', selectedDate[0], selectedDate[1]);
+});
+});
+</script>
 <%= render 'layouts/footer' %>
