@@ -5,48 +5,81 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Employee Placement System | Admin</title>
+    <title>Employee Placement System</title>
 <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
 
+<%= stylesheet_link_tag    "hover.css" %>
 <%= stylesheet_link_tag    "style.css" %>
 <%= stylesheet_link_tag    "bootstrap.css" %>
 <%= stylesheet_link_tag    "bootstrap.min.css" %>
 <%= stylesheet_link_tag    "bootstrap-theme.css" %>
 <%= stylesheet_link_tag    "bootstrap-theme.min.css" %>
+<%= stylesheet_link_tag    "sweetalert2.css" %>
+<%= stylesheet_link_tag    "jquery-ui.css" %>
 <%= stylesheet_link_tag    "https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" %>
+<%#= stylesheet_link_tag    "sweetalert.css" %>
 
 
-<%#= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-<%#= javascript_include_tag "application", "data-turbolinks-track" => true %>
-<%#= javascript_include_tag "angular/lib/angular.min.js" %>
-<%#= javascript_include_tag "angular/lib/angular-route.js" %>
-<%= javascript_include_tag "jquery.min.js" %>
-<%= javascript_include_tag "bootstrap.js" %>
-<%= javascript_include_tag "jquery.validate.js" %>
-<%#= javascript_include_tag "angular/routes.js" %>
+<%= javascript_include_tag "application.js" %>
+
+<%#= javascript_include_tag "sweetalert-dev.js" %>
 <script type="text/javascript">
-$(document).ready(function (){
-  $('.delete').click(function () {
-    var confirmBox = confirm('Are you sure, you want to delete ??');
-    if(confirmBox) {
-      return true;
-    }else{
-      return false;
-    }
+$(document).ready(function () {
+  $(".login-tab").click(function() {
+    document.cookie="opentab=login;path=/";
   });
+  $(".register-tab").click(function() {
+    document.cookie="opentab=register;path=/";
+  });
+
+  $('.delete').click(function () {
+      var confirmBox = confirm('Are you sure, you want to delete ??');
+      if(confirmBox) {
+        return true;
+      }else{
+        return false;
+      }
+        // swal({   title: "Are you sure?",
+        //          text: "You will not be able to recover this imaginary file!",
+        //          type: "warning",
+        //          showCancelButton: true,
+        //          confirmButtonColor: "#DD6B55",
+        //          confirmButtonText: "Yes, delete it!",
+        //          closeOnConfirm: false }, 
+        //          function(){   
+        //           //swal("Deleted!", "Your imaginary file has been deleted.", "success"); 
+        //           return true;
+        //     });
+  });
+
 });
 </script>
+<%#= javascript_include_tag "angular/routes.js" %>
+<script>
+$(window).scroll(function() {
+    if ($(this).scrollTop() > 1){  
+        $('.header-top').addClass("sticky");
+    }
+    else{
+        $('.header-top').removeClass("sticky");
+    }
+});
+</script>
+
+
+
 </head>
   <body>
-    <div class="header">
+    <div class="header inner-pages-ng">
+      <div class="header-top">
       <div class="container">
         <div class="row">
-          <div class="col-lg-3">
-            <a href="#"><!-- <img src="images/logo.png"> -->
-              <%= image_tag("logo.png" , :alt => 'EPS Logo') %>
+          <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+            <a href="/"><!-- <img src="images/logo.png"> -->
+              <%= image_tag("small-logo.png" , :alt => 'EPS Logo') %>
             </a>
           </div>
-          <div class="col-lg-9">
+          <div class="col-lg-9 col-md-9 col-sm-9">
             <nav class="navbar navbar-default">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
@@ -57,28 +90,28 @@ $(document).ready(function (){
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#"></a>
+      <a class="navbar-brand" href="/"></a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav navbar-right">
-        <li class=""><a href="/admin"> Home  <span class="sr-only">(current)</span></a></li>
-        <li class=""><a href="/admin/subscription_plans"> Membership Plans  <span class="sr-only">(current)</span></a></li>
-        <li class=""><a href="/admin/staff_plans"> Addon Plans  <span class="sr-only">(current)</span></a></li>
-         <li class=""><a href="/admin/skills"> Skills  <span class="sr-only">(current)</span></a></li>
-          <li class=""><a href="/admin/qualifications"> Qualifications  <span class="sr-only">(current)</span></a></li>
-        <% if session[:user_id] != nil && session[:user_role] == 'admin' %>
-          <li><a href="/admin/log_out">Logout</a></li>
-        <% end %>
-        <!-- <li><a href="#">About Us</a></li>
-        <li><a href="#">Contact Us</a></li>
-        <li><a href="/log_in">Login</a></li>
-        <li><a href="/sign_up">Register</a></li>
-        <li><a href="#">Pricing </a></li> -->
+       <ul class="nav navbar-nav navbar-right">
+                    <li class=""><a href="/admin"> Home  <span class="sr-only">(current)</span></a></li>
+                    <li class=""><a href="/admin/subscription_plans"> Membership Plans  <span class="sr-only">(current)</span></a></li>
+                    <li class=""><a href="/admin/staff_plans"> Addon Plans  <span class="sr-only">(current)</span></a></li>
+                     <li class=""><a href="/admin/skills"> Skills  <span class="sr-only">(current)</span></a></li>
+                      <li class=""><a href="/admin/qualifications"> Qualifications  <span class="sr-only">(current)</span></a></li>
+                    <% if session[:user_id] != nil && session[:user_role] == 'admin' %>
+                      <li><a href="/admin/log_out">Logout</a></li>
+                    <% end %>
+                    <!-- <li><a href="#">About Us</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="/log_in">Login</a></li>
+                    <li><a href="/sign_up">Register</a></li>
+                    <li><a href="#">Pricing </a></li> -->
 
-       
-      </ul>
+                   
+                  </ul>
     
      
         </li>
@@ -86,14 +119,8 @@ $(document).ready(function (){
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
+</div>
           </div>
         </div>
-      </div>
+      </div><!-- end. header-top -->
 
-     <% flash.each do |name, msg| %>
-  <!--     <div class="">
-        <h4 align="center" class="flash"><%#= content_tag :div, msg, :id => "flash_#{name}" %>
-        </h4>
-      </div> -->
-    <% end %>
-  

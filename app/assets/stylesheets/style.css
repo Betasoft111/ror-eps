@@ -1,3 +1,6 @@
+body {
+    font-family: open sans !important;
+}
 p {
 	color: #2a2a2a;
 	font-family: Open Sans;
@@ -13,6 +16,9 @@ h3 {
 .main-c1 {
     width:100%;
     float:left;
+}
+.tabs.ch-tab {
+     margin-top: 40px;
 }
 .three-sap {
     width:80%;
@@ -401,15 +407,15 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4fc3ff', end
     width: 100%;
 }
 h4.flash {
-    border: 2px solid red;
-    border-radius: 10px;
-    
-    font-size: 12px;
-    font-weight: normal;
-    margin: 138px auto auto;
+    background: #82d2ff none repeat scroll 0 0;
+    border: 2px solid #008bd8;
+    border-radius: 0;
+    color: #000 !important;
+    font-size: 16px !important;
+    font-weight: normal !important;
+    margin: 37px auto auto !important;
     max-width: 1144px;
-    padding: 5px;
-    width: 100%;
+    padding: 10px;
 }
 /***** new ******/
 
@@ -443,6 +449,7 @@ h4.flash {
     font-size: 17px !important;
     font-weight: normal !important;
     font-family: open sans;
+    text-align: center;
 }
 .register h4 span {
     margin: 0 22px;
@@ -510,9 +517,10 @@ color: #0a7db7;
 .inner-page h3 {
     color: #4a4a4a !important;
     font-family: open sans;
-    font-size: 25px !important;
-    text-shadow: 1px 1px 1px #cecece;
+    font-size: 15px !important;
+    font-weight: normal !important;
     margin-bottom: 15px !important;
+   
 }
 
 .inner-page p {
@@ -539,6 +547,9 @@ p.plan-price {
     color: #666666;
     font-size: 29px;
     margin: 45px 0;
+}
+p.plan-price-bottom {
+    font-size: 20px;
 }
 p.plan-price span {
     color: #000;
@@ -633,6 +644,8 @@ a.add-new {
     text-decoration: none;
     width: 200px;
     border: 1px solid #fff;
+    margin: auto;
+    float: right;
 }
 a.add-new:hover {
     color: #fff;
@@ -649,8 +662,11 @@ a.add-new:hover {
     display: inline-block;
     font-family: open sans;
     font-size: 15px;
-    margin-top: 35px;
+   /* margin-top: 35px;*/
     width: 100%;
+}
+#company_data .table-responsive {
+    margin-top: 0;
 }
 .add-employee {
     float: left;
@@ -691,21 +707,41 @@ a.add-new:hover {
     
 }
 .form-horizontal.add-employee .control-label {
-    padding-top: 8px;
+    padding-top: 14px;
+}
+#editStaff .control-label {
+    padding-top: 17px;
 }
 .add-employee .form-group {
     float: left;
     margin-bottom: 30px;
     width: 100%;
 }
+.tag-editor {
+    height: 55px;
+}
+.tag-editor li {
+     margin: 15px 0 !important;
+}
+.k1 #loginForm {
+    margin-top: 0;
+}
 /*.add-employee .form-group:nth-child(5) {
     margin-bottom: 6px !important;
 }*/
 
 /****** new *****/
-.inner-page .table-responsive {
-    margin-top: 30px;
+.btn-default.disabled, .btn-default.disabled.active, .btn-default.disabled.focus, .btn-default.disabled:active, .btn-default.disabled:focus, .btn-default.disabled:hover, .btn-default[disabled], .btn-default.active[disabled], .btn-default.focus[disabled], .btn-default[disabled]:active, .btn-default[disabled]:focus, .btn-default[disabled]:hover, fieldset[disabled] .btn-default, fieldset[disabled] .btn-default.active, fieldset[disabled] .btn-default.focus, fieldset[disabled] .btn-default:active, fieldset[disabled] .btn-default:focus, fieldset[disabled] .btn-default:hover {
+     background: rgba(0, 0, 0, 0.4) none repeat scroll 0 0 !important;
 }
+a.add-new.add-new11 {
+    background-position: left 15px center;
+}
+    .add-employee .frm-lat .btn {
+        float: none;
+        display: inline-block;
+    }
+
 .table-responsive {
     border: 1px solid #cacaca;
 }
@@ -1132,10 +1168,19 @@ p.nn1 {
 .header .header-top.inner .navbar li a {
     height: 48px;
 }
-#new_user {
+#new_user , #loginForm{
     float: left;
     margin-top: 30px;
     width: 100%;
+}
+#loginForm input[type="checkbox"] {
+    margin-left: -25px;
+    margin-top: 4px;
+    opacity: 1;
+   
+}
+#loginForm .checkbox, #loginForm .form-group{
+    text-align: center;
 }
 h4.flash {
     font-size: 12px;
@@ -1561,5 +1606,5 @@ p.Strong {
     width: auto%;
     float: left;
     text-decoration: none;
-    margin-right: 174px !important;
+   
 }

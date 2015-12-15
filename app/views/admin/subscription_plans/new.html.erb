@@ -20,20 +20,21 @@
 		<% end %>
 		<div class="row">
 			<h4><span><%= image_tag("line.png" , :alt => 'line.png') %></span>New Plan Page<span><%= image_tag("right.png" , :alt => 'right.png') %></span></h4>
-			<span class="q1">Company will add new employee to their team on this page.</span>
+			
 			<%= form_tag '/admin/subscription_plans/create', {:class => 'form-horizontal add-employee' , :id => 'loginForm'} do %>
 			<div class="form-group">
-				<%= label_tag :plan_name, 'Plan Name', :class => "control-label col-sm-2" %>
-				<div class="col-sm-7">
+				<div class="col-lg-6">
+				<%= label_tag :plan_name, 'Plan Name', :class => "control-label col-sm-3" %>
+				<div class="col-sm-9">
 					<%= text_field_tag :plan_name, nil, :class => 'form-control', :placeholder => 'Enter Plan Name', :required => 'required' %>
 				</div>
 			</div>
-			<div class="form-group">
-				<%= label_tag :plan_type, 'Plan Type', :class => "control-label col-sm-2", :required => 'required' %>
+			<div class="col-lg-6">
+				<%= label_tag :plan_type, 'Plan Type', :class => "control-label col-sm-3", :required => 'required' %>
 				<!-- <div class="col-sm-7">
 					<%#= text_field_tag :plan_type, nil, :class => 'form-control', :placeholder => 'Enter Plan Details' %>
 				</div> -->
-				<div class="col-sm-7">
+				<div class="col-sm-9">
 					<select name="plan_type" class="form-control" required="required">
 						<option value="">Select Type</option>
 						<option value="1">Monthly</option>
@@ -42,21 +43,26 @@
 					</select>
 				</div>
 			</div>
+			</div>
+			
 			<div class="form-group">
-				<%= label_tag :plan_price, 'Plan Price', :class => "control-label col-sm-2" %>
-				<div class="col-sm-7">
+				<div class="col-lg-6">
+				<%= label_tag :plan_price, 'Plan Price', :class => "control-label col-sm-3" %>
+				<div class="col-sm-9">
 					<%= text_field_tag :plan_price, nil, class:'form-control', :placeholder => 'Enter Plan Price', :required => 'required' %>
 				</div>
 			</div>
-			<div class="form-group">
-				<%= label_tag :total_profiles, 'Total Profiles', :class => "control-label col-sm-2" %>
-				<div class="col-sm-7">
+			<div class="col-lg-6">
+				<%= label_tag :total_profiles, 'Total Profiles', :class => "control-label col-sm-3" %>
+				<div class="col-sm-9">
 					<%= text_field_tag :total_profiles, nil, class:'form-control', :placeholder => 'No of profiles allowed', :required => 'required' %>
 				</div>
 			</div>
+			</div>
+		
 			<div class="form-group">
-				<div class="col-sm-offset-2 col-sm-10">
-					<%= submit_tag "Add Plan", :class => 'btn btn-default' %>
+				<div class="col-sm-10">
+					<%= submit_tag "Add Plan", :class => 'btn btn-default col-sm-offset-2' %>
 					<a href="/admin/subscription_plans/" class="btn btn-default">Cancel</a>
 				</div>
 			</div>

@@ -28,19 +28,19 @@
           <%= image_tag("right.png" , :alt => 'right.png') %></span></h4>
           <h3>Come join the ESP ! Already have one? <a href="javascript:void(0)" class="clickform login-tab" ng-click="refreshScope()"> Sign in here.</a></h3>
         <%= form_for User.new, :html => { :class => "loginForm", :name => "new_user" } do |f| %>
-        <div class = "form-group col-md-5"  ng-class="{'has-error': new_user.first_name.$invalid && new_user.first_name.$dirty}">
+        <div class = "form-group col-md-6"  ng-class="{'has-error': new_user.first_name.$invalid && new_user.first_name.$dirty}">
           <input type = "text" class = "form-control" id = "first_name" name="first_name" ng-model="user.first_name" placeholder = "Enter First Name" required="required">
 
         </div>
-        <div class = "form-group col-md-5" ng-class="{'has-error': new_user.last_name.$invalid && new_user.last_name.$dirty}">
+        <div class = "form-group col-md-6" ng-class="{'has-error': new_user.last_name.$invalid && new_user.last_name.$dirty}">
           <input type = "last_name" class = "form-control" ng-model="user.last_name" id = "last_name" name="last_name" placeholder = "Enter Last Name" required="required">
 
         </div>
-        <div class = "form-group col-md-5" ng-class="{'has-error': new_user.email.$invalid && new_user.email.$dirty}">
+        <div class = "form-group col-md-6" ng-class="{'has-error': new_user.email.$invalid && new_user.email.$dirty}">
           <input type = "email" class = "form-control" name="email" ng-model="user.email" id = "name" placeholder = "Enter Your Email" required="required">
    
         </div>
-        <div class = "form-group col-md-5" ng-class="{'has-error': new_user.user_type.$invalid && new_user.user_type.$dirty}">
+        <div class = "form-group col-md-6" ng-class="{'has-error': new_user.user_type.$invalid && new_user.user_type.$dirty}">
           <select name="user_type" ng-model="user.user_type" class="form-control" required="required">
             <option value='' >Select User Type</option>
             <option value="1">I want to hire staff</option>
@@ -48,12 +48,12 @@
             <option value="3">I want to hire/sell staff</option>
           </select>
         </div>
-        <div class = "form-group col-md-5" ng-class="{'has-error': new_user.password.$invalid && new_user.password.$dirty}">
+        <div class = "form-group col-md-6" ng-class="{'has-error': new_user.password.$invalid && new_user.password.$dirty}">
           <input type="password" name="password" ng-model="user.password" class="form-control immediate-help" id="exampleInputPassword1" placeholder="Password"  required="required">
                 
         </div>
 
-        <div class = "form-group col-md-5" >
+        <div class = "form-group col-md-6" >
           <div ng-password-strength="user.password" strength="passStrength" inner-class="progress-bar" inner-class-prefix="progress-bar-">
          </div>        
           <p class="{{passStatus}}"> Password Strength: {{ passStatus }} </p>
@@ -78,14 +78,15 @@
 
 
         <div class="box-two" style="display:none;">
-          <h3>Come join the ESP ! Let's set up your account.<a href="javascript:void(0)" class="clickform register-tab" ng-click="refreshScope()"> Sign up here.</a></h3>
+          
           <h4><span><%= image_tag("line.png" , :alt => 'line.png') %></span>LOG IN<span><%= image_tag("right.png" , :alt => 'right.png') %></span></h4>
+          <h3>Come join the ESP ! Let's set up your account.<a href="javascript:void(0)" class="clickform register-tab" ng-click="refreshScope()"> Sign up here.</a></h3>
           <%= form_tag sessions_path, :id => 'loginForm', :name => 'loginForm' do %>
-          <div class="form-group col-md-10" ng-class="{'has-error': loginForm.email.$invalid && loginForm.email.$dirty}">
+          <div class="form-group col-md-6 col-lg-offset-3" ng-class="{'has-error': loginForm.email.$invalid && loginForm.email.$dirty}">
             <input type="email" name="email" ng-model="login.email" class="form-control" id="exampleInputEmail1" placeholder="Enter Your Email" required="required">
             
           </div>
-          <div class="form-group col-md-10" ng-class="{'has-error': loginForm.password.$invalid && loginForm.password.$dirty}">
+          <div class="form-group col-md-6 col-lg-offset-3" ng-class="{'has-error': loginForm.password.$invalid && loginForm.password.$dirty}">
             
             <input type="password" name="password" ng-model="login.password" class="form-control" id="exampleInputPassword1" placeholder="Enter Your Password" required="required">
             

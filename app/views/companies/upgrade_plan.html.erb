@@ -11,7 +11,7 @@
       </div>
     <% end %>    
       <div class="row">
-        <ul class="tabs">
+        <ul class="tabs ch-tab">
           <li ng-class="{'selected-tab': selectedTab == '1' }"><a ng-click="changeTab('1')" href="javascript:void(0)">Choose Plan</a></li>
           <li ng-class="{'selected-tab': selectedTab == '2' }"><a ng-click="changeTab('2')" href="javascript:void(0)">Payment Method</a></li>
           <li ng-class="{'selected-tab': selectedTab == '3' }"><a ng-click="changeTab('3')" href="javascript:void(0)">All Set</a></li>
@@ -30,7 +30,7 @@
                  <div class="plan">
                     <p class="plan-duration"><%= plan.plan_name %></p>
                     <p class="plan-price">$<span><%= plan.plan_price %></span>
-                    <p class="plan-price">Total Profiles Allowed<%= plan.no_of_staff %></p>
+                    <p class="plan-price-bottom">Total Profiles <br/><%= plan.no_of_staff %> Members</p>
                  </div>
                  <div class="overlay-plan <%= plan.id %>"  style="cursor:pointer">
                     <input type="hidden" name="plan_id" value="<%= plan.id %>">
