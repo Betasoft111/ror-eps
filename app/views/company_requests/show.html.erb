@@ -43,7 +43,8 @@
       <div class="form-group">
         <%= label_tag :selected_emp, 'Select Employees', :class => "control-label col-sm-2" %>
         <div class="col-sm-7">
-          <%= select_tag "selected_emp", options_for_select(@staff_lists.collect {|r| [ r.first_name+' '+r.last_name, r.id ] }), class: "form-control", multiple: true %>
+          <input type="hidden" id="hiddenEmp" name="selected_emp">
+          <%= select_tag "selected_emp_drop", options_for_select(@staff_lists.collect {|r| [ r.first_name+' '+r.last_name, r.id ] }), class: "form-control", multiple: true %>
         </div>
       </div>
 
@@ -75,6 +76,18 @@
 <script type="text/javascript">
 $(document).ready(function () {
   $('#addStaff').validate();
+    $('#selected_emp_drop').change(function () {          
+       var array = $(this).val();
+       var newVal = '';
+      for (var i = 0; i < array.length ; i++) {
+        if(i == array.length-1) {
+          newVal = newVal +  array[i];
+        }else {
+          newVal = newVal + array[i] + ',';
+        }
+      };
+      $('#hiddenEmp').val(newVal);
+    });
 });
 </script>
 <%= render 'layouts/footer' %>
