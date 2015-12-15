@@ -256,6 +256,7 @@ text-decoration: none;
     margin-right: auto;
     right: 0;
     width: 0;
+    margin-bottom: 30px;
 }
 .c3 img {
     width: 100%;
@@ -868,7 +869,7 @@ input[type=radio]:not(old):checked +  label > span > span{
     font-size: 22px;
     font-weight: bold;
     margin-bottom: 40px;
-    margin-top: 46px;
+    margin-top: 10px;
     text-align: center;
     /*text-shadow: 1px 1px 1px #3e3e3e;*/
 }
