@@ -57,6 +57,8 @@ EPS::Application.routes.draw do
   get '/upgrade_plan' => "companies#upgrade_plan"
   get "/hiring_requests" => "company_requests#index"
   get "/hiring_requests/:id/show" => "company_requests#request_details"
+  get "/hiring_requests/:id/approve" => "company_requests#approve"
+  get "/hiring_requests/:id/reject" => "company_requests#reject"
 
 
 

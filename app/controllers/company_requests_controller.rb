@@ -39,6 +39,22 @@ class CompanyRequestsController < ApplicationController
 		#CompanyRequest.find(params[:id])
 	end
 
+	############################
+	#   Approve The Reuest     #
+	############################
+	def approve
+		CompanyRequest.where(:request_to => @current_user.id).update_all(is_approved: 1)
+		redirect_to '/hiring_requests', :notice => "Request is approved"
+	end
+
+	############################
+	#   Reject The Request     #
+	############################
+	def reject
+		CompanyRequest.where(:request_to => @current_user.id).update_all(is_rejected: 1)
+		redirect_to '/hiring_requests', :notice => "Request is rejected"
+	end
+
 	private
 
 		def request_params

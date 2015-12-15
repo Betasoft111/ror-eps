@@ -48,7 +48,14 @@
                 <td><%= request.total_emp %></td>
                 <td><%= request.total_days %></td>
                 <td><%= request.additional %></td>
-                <td><a href="/hiring_requests/<%= request.id %>/show" >Details </a>/ Reject</td>
+                <td>
+                  <% if request.is_rejected %>
+                    Rejected
+                  <% elsif request.is_approved %>
+                    Approved
+                  <% else %>
+                    <a href="/hiring_requests/<%= request.id %>/show" > <i class="fa fa-eye"></i> </a></td>
+                  <% end %>                  
               </tr>
               <% end %>
             </tbody>

@@ -37,12 +37,33 @@
           <p><label>Propsed Rate : </label><%= @request_details[0].amount %></p>
           <p><label>No. of Staff : </label><%= @request_details[0].total_emp %></p>
           <p><label>Additional Notes : </label><%= @request_details[0].additional %></p>
-          <p><a href="">Approve</a> &nbsp; <a href="">Reject</a></p>
+          <p><a class="approve" href="/hiring_requests/1/approve">Approve</a> &nbsp; <a class="approve" href="/hiring_requests/1/reject">Reject</a></p>
         </div>
       </div>
   </div>
 </div>
 
 </div>
+<script>
+$(document).ready(function () {
+  $('.approve').click(function () {
+    var isConfirmed = confirm('Are you sure you want to approve this request ?');
+    if(isConfirmed) {
+      return true;
+    }else {
+      return false;
+    }
+  });
+
+  $('.reject').click(function () {
+    var isConfirmed = confirm('Are you sure you want to reject this request ?');
+    if(isConfirmed) {
+      return true;
+    }else {
+      return false;
+    }
+  });
+
+});
 </script>
 <%= render 'layouts/footer' %>
