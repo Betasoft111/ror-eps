@@ -60,8 +60,9 @@ EPS::Application.routes.draw do
   get "/hiring_requests/:id/show" => "company_requests#request_details"
   get "/hiring_requests/:id/approve" => "company_requests#approve"
   get "/hiring_requests/:id/reject" => "company_requests#reject"
-
   get '/my_requests'  => 'company_requests#myrequests'
+
+  get "/not_authorized" => 'companies#no_access'
 
 
 

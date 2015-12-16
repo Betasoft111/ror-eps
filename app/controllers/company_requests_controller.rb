@@ -7,8 +7,12 @@ class CompanyRequestsController < ApplicationController
 	#   Show the Hiring Request     #
 	################################# 
 	def index
-		params[:page] ||= 1
-		@requests = CompanyRequest.where(:request_to => @current_user.id).paginate(:page => params[:page], :per_page => 10)
+		if @current_user.user_type == 1
+			redirect_to '/not_authorized', :notice => "You are not authorized to view this page."
+		else
+			params[:page] ||= 1
+			@requests = CompanyRequest.where(:request_to => @current_user.id).paginate(:page => params[:page], :per_page => 10)
+		end
 	end
 
 	def new 
@@ -57,9 +61,11 @@ class CompanyRequestsController < ApplicationController
 
 	#function to show my requests
 	def myrequests
-
-		@request_by_details = CompanyRequest.find_by_sql "SELECT users.first_name as company_fn, users.last_name as company_ln, users.email as company_email, company_requests.* FROM users INNER JOIN company_requests ON users.id = company_requests.request_by where company_requests.request_by = '#{@current_user.id}'"
-
+		if @current_user.user_type == 2
+			redirect_to '/not_authorized', :notice => "You are not authorized to view this page."
+		else
+			@request_by_details = CompanyRequest.find_by_sql "SELECT users.first_name as company_fn, users.last_name as company_ln, users.email as company_email, company_requests.* FROM users INNER JOIN company_requests ON users.id = company_requests.request_by where company_requests.request_by = '#{@current_user.id}'"
+		end
 
 	end
 

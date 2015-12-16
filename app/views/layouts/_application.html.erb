@@ -83,8 +83,20 @@
                     <li><a href="#">About Us</a></li>
                     <li><a href="#">Pricing </a></li>
                     <% if session[:user_id] && session[:user_id] != nil %>
-                    <li><a href="/hiring_requests">Requests</a></li>
-                    <li><a href="/log_out" >Logout</a></li>
+                    <!-- <li><a href="/hiring_requests">Requests</a></li> -->
+                    
+                    <li><a href="/hiring_requests" >Requests</a>
+                    <ul>
+                      <li><a href="/hiring_requests" >Hiring Requests</a></li>
+                      <li><a href="/my_requests" >Sent Requests</a></li>
+                    </ul>
+
+                    <li><a href="#" >Settings</a>
+                    <ul>
+                      <li><a href="/favourite_searches" >Favourite Searches</a></li>
+                      <li><a href="/log_out" >Logout</a></li>
+                    </ul>
+
                     <% else %>
                     
                     <li><a href="/join" class="login-tab">Join</a>

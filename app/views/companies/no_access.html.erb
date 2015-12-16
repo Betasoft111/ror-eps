@@ -1,0 +1,15 @@
+<%= render 'layouts/application' %>
+<div class="content inner-page">
+	<div class="content-down"></div>
+	<div class="container">
+		<div class="row">
+			<% flash.each do |name, msg| %>
+			<div class="">
+				<h4 align="center" class="flash"><%= content_tag :div, msg, :id => "flash_#{name}" %>
+				</h4>
+			</div>
+			<% end %>
+		</div>
+	</div>
+</div>
+<%= render 'layouts/footer' %>

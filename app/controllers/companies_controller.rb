@@ -233,6 +233,9 @@ class CompaniesController < ApplicationController
 			  redirect_to '/choose_plan'
 	end
 
+	def no_access
+	end
+
 	private
 
 	  def plan_params
