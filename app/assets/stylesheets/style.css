@@ -1609,3 +1609,16 @@ p.Strong {
     text-decoration: none;
    
 }
+
+/******** 16-12-15 ********/
+.save-search {
+background: rgba(0, 0, 0, 0) linear-gradient(to bottom, #4fc3ff 0%, #0376b0 100%) repeat scroll 0 0;
+border: 1px solid #0a7db7;
+color: #ffffff;
+float: right;
+font-size: 17px;
+margin-bottom: 15px;
+margin-right: 17px;
+margin-top: 15px;
+padding: 4px 12px 7px;
+}

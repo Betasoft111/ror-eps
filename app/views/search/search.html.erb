@@ -82,7 +82,7 @@
 			<%= hidden_field_tag 'experience', @search_results.first.experience %>
 			<%= hidden_field_tag 'availability', @search_results.first.availability %>
 			<%= hidden_field_tag 'user_id', current_user.id %>
-			<%= submit_tag "Save Search Result", :class => 'btn btn-default' %>
+			<%= submit_tag "Save Search Result", :class => 'save-search' %>
 			<% end %>
 			<% end %>
 			<% end %>
@@ -235,10 +235,12 @@ function getParameterByName(name) {
     return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
 }
 
-function fillGeoMap(locations) { //console.log('calling map', locations);
+function fillGeoMap(locations) { 
+	 var centerLat = (locations[0] && locations[0].lat) ? locations[0].lat : 55.676097,
+	 	 centerLng = (locations[0] && locations[0].lng) ? locations[0].lng : 12.568337;
 	 var map = new google.maps.Map(document.getElementById('map'), {
       zoom: 10,
-      center: new google.maps.LatLng(locations[0].lat, locations[0].lng),
+      center: new google.maps.LatLng(centerLat, centerLng),
       mapTypeId: google.maps.MapTypeId.ROADMAP
     });
 
