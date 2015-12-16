@@ -25,10 +25,10 @@
 					<!-- <img src="img/line.png"> -->
 					<%= image_tag("line.png" , :alt => 'line.png') %>
 				</span>
-				<% if @user_detail.is_private %>
-				User Is Private
-				<% else %>
+				<% if @user_detail.is_private ||   current_user  %>
 				<%= @user_detail.first_name+' '+@user_detail.last_name %>
+				<% else %>
+				User Is Private
 				<% end %>
 				<span>
 					<%= image_tag("right.png" , :alt => 'right.png') %>
