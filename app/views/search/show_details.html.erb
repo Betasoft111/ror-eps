@@ -45,16 +45,16 @@
 				<div class="col-lg-8 col-lg-offset-1">
 					<strong>Contact Information</strong>
 					<p><label>Email : </label>
-					<% if @user_detail.is_private %>
-					User Is Private
+					<% if @user_detail.is_private  ||  @current_user = "" %>
+					Private
 					<% else %>
 					<%= @user_detail.email %>
 					<% end %>
 				</p>
 				<strong>General Information</strong>
 				<p><label>Name : </label>
-				<% if @user_detail.is_private %>
-				User Is Private
+				<% if @user_detail.is_private ||  @current_user = ""  %>
+				 Private
 				<% else %>
 				<%= @user_detail.first_name+' '+@user_detail.last_name %>
 				<% end %>

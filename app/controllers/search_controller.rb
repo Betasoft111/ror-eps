@@ -1,5 +1,5 @@
 class SearchController < ApplicationController
-
+	before_filter :current_user
 
 	#################################
 	#  	        Search method       #

@@ -49,7 +49,7 @@ ActiveRecord::Schema.define(version: 20151215212430) do
     t.string   "name"
     t.integer  "amount"
     t.integer  "total_emp"
-    t.integer  "selected_emp"
+    t.string   "selected_emp", limit: 11
     t.integer  "total_days"
     t.text     "additional"
     t.datetime "created_at"
@@ -137,7 +137,7 @@ ActiveRecord::Schema.define(version: 20151215212430) do
     t.integer  "plan_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "no_of_profiles", default: 0
+    t.integer  "no_of_profiles"
   end
 
   add_index "users_staff_plans", ["user_id"], name: "fk_user", using: :btree

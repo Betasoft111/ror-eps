@@ -102,7 +102,7 @@
 				</div>
 				<span class="rate-search">6,300 <sup>kr</sup></span>
 				<h5><%= data.company_fn %> <%= data.company_ln %>/ 
-					<% if data.is_private %>
+					<% if data.is_private ||  @current_user = "" %>
 						User is private
 					<% else %>
 						<%= data.first_name %> <%= data.last_name %>
