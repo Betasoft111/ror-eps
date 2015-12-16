@@ -1,0 +1,70 @@
+<%= render 'layouts/application' %>
+<body data-no-turbolink="true">
+</div>
+</div>
+</div>
+  <div class="innerpage_banner">
+    <%= image_tag("create.png" , :alt => 'create.png') %>
+    <div class="container">
+      <div class="row">
+        <div class="banner-innerpage">
+          <h2>Be<span>St</span>aff</h2>
+        </div>
+      </div>
+    </div>
+  </div><!-- end .innerpage_banner -->
+</div><!-- end. header -->
+<div id="company_data">
+  <div class="content inner-page">
+  <div class="content-down"></div>
+  <div class="container">
+     <% flash.each do |name, msg| %>
+      <div class="">
+        <h4 align="center" class="flash success"><%= content_tag :div, msg, :id => "flash_#{name}" %>
+        </h4>
+      </div>
+    <% end %>
+      <h4><span>
+        <%= image_tag("line.png", :alt => 'line.png') %>
+        </span>Hiring Requests by Yourself <span><%= image_tag("right.png" , :alt => 'right.png') %></span></h4>
+        <span class="q1">
+        <div class="table-responsive">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Propsed Amount</th>
+                <th>No. Of Emp.</th>
+                <th>Duration</th>
+                <th>Additional Notes</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% @request_by_details.each do |request| %>
+              <tr id="emp_<%= request.id%>">
+                <td><%= request.name %></td>
+                <td><%= request.amount %></td>
+                <td><%= request.total_emp %></td>
+                <td><%= request.total_days %></td>
+                <td><%= request.additional %></td>
+                <td>
+                  <% if request.is_rejected %>
+                    Rejected
+                  <% elsif request.is_approved %>
+                    Approved
+                  <% else %>
+                    <!-- <a href="/hiring_requests/<%= request.id %>/show" > <i class="fa fa-eye"></i> </a></td> -->
+                  <% end %>                  
+              </tr>
+              <% end %>
+            </tbody>
+          </table>
+        </div>
+          <%#= will_paginate @requests %>
+    </div>
+  </div>
+</div>
+        
+</div>
+<%= render 'layouts/footer' %>

@@ -61,6 +61,8 @@ EPS::Application.routes.draw do
   get "/hiring_requests/:id/approve" => "company_requests#approve"
   get "/hiring_requests/:id/reject" => "company_requests#reject"
 
+  get '/my_requests'  => 'company_requests#myrequests'
+
 
 
   resources :users
