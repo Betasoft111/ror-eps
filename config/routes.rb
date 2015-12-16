@@ -37,6 +37,7 @@ EPS::Application.routes.draw do
   #################################
   get "/search" => "search#search"
   get "/staff_details/:id" => "search#show_details"
+  get "/search_json" => "search#search_json"
 
 
    #################################
