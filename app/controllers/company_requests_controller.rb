@@ -55,6 +55,14 @@ class CompanyRequestsController < ApplicationController
 		redirect_to '/hiring_requests', :notice => "Request is rejected"
 	end
 
+	#function to show my requests
+	def myrequests
+
+		@request_by_details = CompanyRequest.find_by_sql "SELECT users.first_name as company_fn, users.last_name as company_ln, users.email as company_email, company_requests.* FROM users INNER JOIN company_requests ON users.id = company_requests.request_by where company_requests.request_by = '#{@current_user.id}'"
+
+
+	end
+
 	private
 
 		def request_params
