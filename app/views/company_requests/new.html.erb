@@ -43,7 +43,8 @@
       <div class="form-group">
         <%= label_tag :selected_emp, 'Select Employees', :class => "control-label col-sm-2" %>
         <div class="col-sm-7">
-          <select name="selected_emp" id="selected_emp" class="form-control" required="required">
+          <input type="hidden" id="hiddenEmp" name="selected_emp">
+          <select name="selected_emp_drop" id="selected_emp_drop" class="form-control" required="required">
               <option value="">Select </option>
               <option value="1" >Johan</option>
               <option value="2" >Deo</option>
@@ -80,9 +81,19 @@
 <script type="text/javascript">
 $(document).ready(function () {
   $('#addStaff').validate();
-  $('#selected_emp').change(function () {
-    console.log('Here ', $(this).val());
-  });
+      $('#selected_emp_drop').change(function () {          
+       var array = $(this).val();
+       var newVal = '';
+      for (var i = 0; i < array.length ; i++) {
+        if(i == array.length-1) {
+          newVal = newVal +  array[i];
+        }else {
+          newVal = newVal + array[i] + ',';
+        }
+      };
+      $('#hiddenEmp').val(newVal);
+    });
+
 });
 </script>
 <%= render 'layouts/footer' %>
