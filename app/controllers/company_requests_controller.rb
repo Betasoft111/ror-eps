@@ -19,15 +19,34 @@ class CompanyRequestsController < ApplicationController
 	end
 
 	def show
-		@staff_lists = CompanyStaff.all.where(company_id: params[:id]) if params[:id]
+		puts params[:id]
+		if params[:id] == @current_user.id
+			redirect_to '/not_authorized', :notice => "You can't make request for you own employees"
+		else
+			@staff_lists = CompanyStaff.all.where(company_id: params[:id]) if params[:id]
+		end
 	end
 
 	#######################################
 	#   Create New Request To Company     #
 	####################################### 
 	def create
-		#logger.info(request_params)
-		@request = CompanyRequest.new(request_params)
+		@request_by = User.find(params[:company_id])
+		@request = CompanyRequest.new({
+					:name => params[:name],
+					:amount => params[:amount] ,
+					:total_emp => params[:total_emp],
+					:selected_emp => params[:selected_emp],
+					:total_days => params[:total_days],
+					:additional => params[:additional],
+					:request_by => @current_user.id,
+					:request_to => @request_by.id,
+					:is_rejected => 0,
+					:is_approved => 0,
+					:is_paid => 0,
+					:user_emailTo => @request_by.email,
+					:user_emailBy => @current_user.email
+					})
 	  	if @request.save
 	    	redirect_to root_url, :notice => "Request Sent Successfully."
 	  	else
