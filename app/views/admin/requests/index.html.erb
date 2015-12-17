@@ -22,35 +22,29 @@
 			            <th>Name</th>
 			            <th>Amount</th>
 			            <th>Total Staff</th>
-			            <th>Company Type</th>
-			            <th>Joined On</th>
-			            <th>Actions</th>
+			            <th>Total days</th>
+			            <th>Requested by</th>
+			            <th>Requested by</th>
+			            <th>Action</th>
+
 			          </tr>
 			        </thead>
 				        <tbody>
-				        	<%=debug   @requests %>
-				        	<% @final_array.each do |company| %>
-				        		<%=debug company %>
-				        	<% end %>
-
-				        
+				        	<%#=debug   @requests %>
+				        	<% @requests.each do |company| %>
+				        						        
 				        		<tr>
-				        			<td><%#= company.first_name %>&nbsp;<%#= company.last_name %></td>
-				        			<td><%#= company.email %></td>
-				        			<td><%#= company.company_staffs.length %></td>
-				        			<td>
-				        				<% #if company.user_type == 1 %>
-				        					To Hire Staff 
-				        				<% #elsif company.user_type == 2 %>
-				        					To Rent Staff 
-				        				<% #else %> 
-				        					To Hire/Rent Staff
-				        				<% #end %> 
-				        			</td>
-				        			<td><%#= company.created_at.strftime("%d-%m-%Y") %></td>
-				        			<td><a href="/admin/company/<%#= company.id %>/edit" class="edit"> </a> <a href="/admin/company/<%#= company.id %>/delete" class="delete"> </a></td>
+				        			<td><%= company.name %></td>
+				        			<td><%= company.amount %></td>
+				        			<td><%= company.total_emp %></td>
+				        			<td><%= company.total_days %></td>
+				        			<td><%= company.user_emailTo %></td>
+				        			<td><%= company.user_emailBy %></td>
+				        			
+				        			
+				        			<td><a href="" class="">View</a> </td>
 				        		</tr>
-				        	<% #end %>
+				        	<% end %>
 				        </tbody>
 				  </table>
 			</div>
