@@ -95,6 +95,9 @@ EPS::Application.routes.draw do
     get "company/:id/delete" => "admin#delete"
 
 
+    resources :requests
+
+
     #route for add skills and qualificartion from admin 
 
     #skills section

@@ -2,6 +2,10 @@ class User < ActiveRecord::Base
   #attr_accessible :email, :password, :password_confirmation
   has_many :company_staffs, :foreign_key => :company_id
   belongs_to :subscription_plan, :foreign_key => :plan_id
+  
+  belongs_to :company_requests, :foreign_key => :request_by
+  belongs_to :company_requests, :foreign_key => :request_to
+
   attr_accessor :password
   before_save :encrypt_password
   before_update :encrypt_password

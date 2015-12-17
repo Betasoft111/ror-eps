@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151215212430) do
+ActiveRecord::Schema.define(version: 20151217220245) do
 
   create_table "admin_admin_users", force: true do |t|
     t.string   "first_name"
@@ -59,7 +59,12 @@ ActiveRecord::Schema.define(version: 20151215212430) do
     t.integer  "is_rejected"
     t.integer  "is_approved"
     t.integer  "is_paid"
+    t.string   "user_emailTo"
+    t.string   "user_emailBy"
   end
+
+  add_index "company_requests", ["request_by"], name: "fk_request_by", using: :btree
+  add_index "company_requests", ["request_to"], name: "fk_request_to", using: :btree
 
   create_table "company_staffs", force: true do |t|
     t.string   "first_name"

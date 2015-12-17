@@ -1,0 +1,60 @@
+<%= render 'admin/layouts/application' %>
+		</div>
+	</div>
+</div>
+
+	<div class="content inner-page">
+		<div class="content-down"></div>
+		<div class="container">
+    <% flash.each do |name, msg| %>
+      <div class="">
+        <h4 align="center" class="flash"><%= content_tag :div, msg, :id => "flash_#{name}" %>
+        </h4>
+      </div>
+    <% end %>
+
+
+			<div class="row">
+				<div class="table-responsive"><%#=debug @companies %>
+			      <table class="table">
+			        <thead>
+			          <tr>
+			            <th>Name</th>
+			            <th>Amount</th>
+			            <th>Total Staff</th>
+			            <th>Company Type</th>
+			            <th>Joined On</th>
+			            <th>Actions</th>
+			          </tr>
+			        </thead>
+				        <tbody>
+				        	<%=debug   @requests %>
+				        	<% @final_array.each do |company| %>
+				        		<%=debug company %>
+				        	<% end %>
+
+				        
+				        		<tr>
+				        			<td><%#= company.first_name %>&nbsp;<%#= company.last_name %></td>
+				        			<td><%#= company.email %></td>
+				        			<td><%#= company.company_staffs.length %></td>
+				        			<td>
+				        				<% #if company.user_type == 1 %>
+				        					To Hire Staff 
+				        				<% #elsif company.user_type == 2 %>
+				        					To Rent Staff 
+				        				<% #else %> 
+				        					To Hire/Rent Staff
+				        				<% #end %> 
+				        			</td>
+				        			<td><%#= company.created_at.strftime("%d-%m-%Y") %></td>
+				        			<td><a href="/admin/company/<%#= company.id %>/edit" class="edit"> </a> <a href="/admin/company/<%#= company.id %>/delete" class="delete"> </a></td>
+				        		</tr>
+				        	<% #end %>
+				        </tbody>
+				  </table>
+			</div>
+		</div>
+	</div>
+
+<%= render 'admin/layouts/footer' %>
