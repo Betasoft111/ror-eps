@@ -72,6 +72,6 @@ class CompanyRequestsController < ApplicationController
 	private
 
 		def request_params
-	    	params.permit(:name, :amount, :total_emp, :selected_emp, :total_days, :additional)
+	    	params.permit(:name, :amount, :total_emp, :selected_emp, :total_days, :additional, :request_by, :request_to, :is_rejected, :is_approved, :is_paid, :user_emailTo, :user_emailBy)
 		end
 end
