@@ -94,7 +94,7 @@ class Admin::AdminController < ApplicationController
 	########################################
 	def update_page
 		Admin::GeneralPages.where(:id => params[:id]).update_all(page_params)
-		redirect_to "/admin", :notice => "Page details has been updated"
+		redirect_to "/admin/pages", :notice => "Page details has been updated"
 	end
 
 	##############################

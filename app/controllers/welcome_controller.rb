@@ -27,4 +27,11 @@ class WelcomeController < ApplicationController
 	def about
 		@page_details = Admin::GeneralPages.where(:page_name => 'about').first
 	end
+
+	#################
+	#  	Contact Page  #
+	#################
+	def contact
+		@page_details = Admin::GeneralPages.where(:page_name => 'contact').first
+	end
 end

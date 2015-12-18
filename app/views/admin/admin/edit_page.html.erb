@@ -19,11 +19,11 @@
             <input type="text" name="page_name" value="<%= @page_details.page_name %>" readonly></p>
           <p>
             <label>Page Title</label>
-            <input type="text" name="page_title" value="<%= @page_details.page_title %>">
+            <input type="text" name="page_title" value="<%= @page_details.page_title %>" required="required">
           </p>
           <p class="content-area">
             <label>Page Content</label>
-            <textarea id="editor" class="ckeditor"  name="page_content">
+            <textarea id="editor" class="ckeditor"  name="page_content" required="required">
               <%= @page_details.page_content %>
             </textarea>
             <input type="hidden" name="id" value="<%= @page_details.id %>">
@@ -31,7 +31,7 @@
           <p class="btns-cont">
             <input type="submit" name="" value="submit">
             <!-- <input type="submit" name="" value="cancel"> -->
-            <a href="/admin" class="cancel">Cancel</a>
+            <a href="/admin/pages" class="cancel">Cancel</a>
           </p>
           </form>
       </div>

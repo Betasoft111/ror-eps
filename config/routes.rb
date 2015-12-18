@@ -9,6 +9,7 @@ EPS::Application.routes.draw do
   #      General Routes    #
   ##########################
   get "about_us" => "welcome#about"
+  get "contact_us" => "welcome#contact"
 
   #################################
   #      Authentication Routes    #
