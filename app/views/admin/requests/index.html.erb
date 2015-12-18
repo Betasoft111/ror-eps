@@ -24,8 +24,8 @@
 			            <th>Total Staff</th>
 			            <th>Total days</th>
 			            <th>Requested by</th>
-			            <th>Requested by</th>
-			            <th>Action</th>
+			            <th>Requested to</th>
+			            <th>Payment</th>
 
 			          </tr>
 			        </thead>
@@ -41,8 +41,11 @@
 				        			<td><%= company.user_emailTo %></td>
 				        			<td><%= company.user_emailBy %></td>
 				        			
-				        			
-				        			<td><a href="" class="">View</a> </td>
+				        			<% if company.is_paid == 0 %>
+				        			<td><a href="/admin/requests/<%= company.id %>/edit" onclick="return confirm('Have you recived your fees from this user ??? ');" class="">Approve payment</a> </td>
+				        			<% else %>
+				        					<td>Payment Approved</td>
+				        			<% end %>
 				        		</tr>
 				        	<% end %>
 				        </tbody>

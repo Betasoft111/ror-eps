@@ -1,1 +1,57 @@
-bhfxdhnfxnd
+<%= render 'admin/layouts/application' %>
+		</div>
+	</div>
+</div>
+
+	<div class="content inner-page">
+		<div class="content-down"></div>
+		<div class="container">
+    <% flash.each do |name, msg| %>
+      <div class="">
+        <h4 align="center" class="flash"><%= content_tag :div, msg, :id => "flash_#{name}" %>
+        </h4>
+      </div>
+    <% end %>
+
+
+			<div class="row">
+				<div class="table-responsive"><%#=debug @companies %>
+			      <table class="table">
+			        <thead>
+			          <tr>
+			            <th>Name</th>
+			            <th>Amount</th>
+			            <th>Total Staff</th>
+			            <th>Total days</th>
+			            <th>Requested by</th>
+			            <th>Requested to</th>
+			            <th>Payment</th>
+
+			          </tr>
+			        </thead>
+				        <tbody>
+				        	<%#=debug   @requests %>
+				        	<% @requests.each do |company| %>
+				        						        
+				        		<tr>
+				        			<td><%= company.name %></td>
+				        			<td><%= company.amount %></td>
+				        			<td><%= company.total_emp %></td>
+				        			<td><%= company.total_days %></td>
+				        			<td><%= company.user_emailTo %></td>
+				        			<td><%= company.user_emailBy %></td>
+				        			
+				        			<% if company.is_paid == 0 %>
+				        			<td><a href="/admin/requests/<%= company.id %>/edit" onclick="return confirm('Have you recived your fees from this user ??? ');" class="">Approve payment</a> </td>
+				        			<% else %>
+				        					<td>Payment Approved</td>
+				        			<% end %>
+				        		</tr>
+				        	<% end %>
+				        </tbody>
+				  </table>
+			</div>
+		</div>
+	</div>
+
+<%= render 'admin/layouts/footer' %>
