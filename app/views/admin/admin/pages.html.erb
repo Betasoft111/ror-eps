@@ -40,9 +40,13 @@
 				</tr>
 			</thead>
 			<tbody>
-				<% @pages.each do |page, index| %>
+				<% 	
+					@counter = 0;
+					@pages.each do |page, index| 
+					@counter = @counter + 1
+				%>
 				<tr>
-					<td><%= index %></td>
+					<td><%= @counter %></td>
 					<td><%= page.page_name %></td>
 					<td><%= page.page_title %></td>
 					<td>
