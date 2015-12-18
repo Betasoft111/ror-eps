@@ -47,7 +47,12 @@
       <div class="col-lg-6">
         <%= label_tag :user_type, 'Company Type', :class => "control-label col-sm-3" %>
         <div class="col-sm-9">
-          <%= text_field_tag :user_type, @company.user_type, class:'form-control', :placeholder => 'Enter Skills', :required => 'required' %>
+          <%#= text_field_tag :user_type, @company.user_type, class:'form-control', :placeholder => 'Enter Skills', :required => 'required' %>
+          <select name="user_type"  class="form-control" required="required">
+            <option value="1" <% if @company.user_type == 1 %> selected="selected"  <% end %>>I want to hire staff</option>
+            <option value="2" <% if @company.user_type == 2 %> selected="selected"  <% end %>>I want to sell staff</option>
+            <option value="3" <% if @company.user_type == 3 %> selected="selected"  <% end %>>I want to hire/sell staff</option>
+          </select>
         </div>
       </div>
       </div>

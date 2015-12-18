@@ -24,7 +24,7 @@ class CompaniesController < ApplicationController
   	end
 
 	#################################
-	#  	     Render Create Plan     #
+	#  	     Render Add Staff       #
 	#################################
 	def new
 		@staff_plans = CompanyStaff.new

@@ -3,9 +3,9 @@ class WelcomeController < ApplicationController
 	#before_filter :authenticate_user!
 	before_filter :check_membership
 
-	#################################
-	#  	     Render Edit Plan       #
-	#################################
+	################
+	#  	Home Page  #
+	################
 	def index
 		
 			# if @current_user.plan_id != nil
@@ -21,5 +21,10 @@ class WelcomeController < ApplicationController
 		 #end
 	end
 
-
+	#################
+	#  	About Page  #
+	#################
+	def about
+		@page_details = Admin::GeneralPages.where(:page_name => 'about').first
+	end
 end

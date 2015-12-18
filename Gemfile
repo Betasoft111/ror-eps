@@ -65,3 +65,5 @@ gem 'stripe'
 gem 'paypal-recurring'
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+#gem 'ckeditor_rails'
+gem "ckeditor"

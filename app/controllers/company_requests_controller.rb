@@ -19,7 +19,7 @@ class CompanyRequestsController < ApplicationController
 	end
 
 	def show
-		puts params[:id]
+		#puts params[:id]
 		if params[:id] == @current_user.id
 			redirect_to '/not_authorized', :notice => "You can't make request for you own employees"
 		else

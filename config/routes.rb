@@ -5,6 +5,11 @@ EPS::Application.routes.draw do
   #################################
   root :to => "welcome#index"
 
+  ##########################
+  #      General Routes    #
+  ##########################
+  get "about_us" => "welcome#about"
+
   #################################
   #      Authentication Routes    #
   #################################
@@ -84,6 +89,10 @@ EPS::Application.routes.draw do
     get "log_out" => "admin#destroy"
     get "staff_plans/delete/:id" => "staff_plans#destroy"
     post "subscription_plans/update/:id" => "subscription_plans#update"
+
+    get "pages" => "admin#pages"
+    get "page/:page_name/edit" => "admin#edit_page"
+    post "/page/update" => "admin#update_page"
 
     resources :subscription_plans
     resources :staff_plans

@@ -1406,9 +1406,61 @@ em.current {
 .fadeInRight {
     animation-name: fadeInRight;
 }
+
+.container p {
+  display: inline-block;
+  margin-right: 30px;
+  width: 47%;
+}
+
+.container p label {
+  font-weight: normal;
+}
+
+.container p input {
+  border: 1px solid #ccc;
+  margin-left: 20px;
+  padding: 10px 12px;
+  width: 80%;
+}
+
+.container .content-area {
+  margin-right: 0;
+  margin-top: 20px;
+  width: 100%;
+}
+
+.container .btns-cont input {
+  background: rgba(0, 0, 0, 0) linear-gradient(to bottom, #4fc3ff 0%, #0376b0 100%) repeat scroll 0 0;
+  border: 1px solid #0a7db7;
+  color: #fff;
+  float: left;
+  font-size: 24px;
+  margin: 15px 20px 0 0;
+  padding: 12px 20px;
+  text-transform: capitalize;
+  width: auto;
+}
+
+.container .btns-cont input:hover{
+    background: #fff none repeat scroll 0 0;
+    border: 1px solid #0a7db7;
+    color: #0a7db7;    
+}
+
 /**** media start *****/
 @media screen and (max-width: 1200px) {
 .banner video {position: relative;}
+
+.container p input {
+  margin-left: 0;
+  width: 100%;
+}
+
+.container p {
+  margin-right: 0;
+  width: 100%;
+}
 
 }
 
@@ -1621,4 +1673,24 @@ p.Strong {
     margin-right: 17px;
     margin-top: 15px;
     padding: 4px 12px 7px;
+}
+
+.container .btns-cont .cancel {
+
+    background: rgba(0, 0, 0, 0) linear-gradient(to bottom, #4fc3ff 0%, #0376b0 100%) repeat scroll 0 0;
+    border: 1px solid #0a7db7;
+    color: #fff;
+    float: left;
+    font-size: 24px;
+    margin: 15px 20px 0 0;
+    padding: 12px 20px;
+    text-transform: capitalize;
+    width: auto;
+    text-decoration: none;
+}
+
+.container .btns-cont .cancel:hover {
+    background: #fff none repeat scroll 0 0;
+    border: 1px solid #0a7db7;
+    color: #0a7db7;
 }

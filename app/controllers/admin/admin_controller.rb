@@ -1,5 +1,5 @@
 class Admin::AdminController < ApplicationController
-	#before_filter :check_admin!, only: [:choose_plan, :payment_method]
+	before_filter :check_admin!, only: [:edit_company, :edit_page]
 
 	#################################
 	#  	       Render Index Page    #
@@ -39,8 +39,9 @@ class Admin::AdminController < ApplicationController
 	end
 
 
-
-
+	#################################
+	#  Create Demo Login For Admin  #
+	#################################
 	def create
 		@new_admin = Admin::AdminUser.create!({
           :email=>'epsadmin@admin.com',
@@ -59,6 +60,9 @@ class Admin::AdminController < ApplicationController
 		@admin = Admin::AdminUser.new	
 	end
 
+	#################################
+	#         Login For Admin       #
+	#################################
 	def do_login
 	admin = Admin::AdminUser.authenticate(params[:email], params[:password])
 	  if admin
@@ -71,20 +75,44 @@ class Admin::AdminController < ApplicationController
 	  end
 	end
 
+	###############################
+	#  Get The List General Page  #
+	###############################
+	def pages
+		@pages = Admin::GeneralPages.all
+	end
+
+	#######################################
+	#  Edit The Content Of General Pages  #
+	#######################################
+	def edit_page
+		@page_details = Admin::GeneralPages.where(:page_name => params[:page_name]).first
+	end
+
+	########################################
+	#  Update The Content Of General Pages #
+	########################################
+	def update_page
+		Admin::GeneralPages.where(:id => params[:id]).update_all(page_params)
+		redirect_to "/admin", :notice => "Page details has been updated"
+	end
+
+	##############################
+	#          Logout Admin      #
+	##############################
 	def destroy
 		session[:user_id] = nil
 		session[:user_role] = nil
 	  	redirect_to "/admin", :notice => "Logged out!"
 	end
 
-
-
-
-
-
 	private
 
-	  def plan_params
+	 def plan_params
 	    params.permit(:first_name, :last_name, :email, :user_type)
+	 end
+
+	 def page_params
+	    params.permit(:page_name, :page_title, :page_content)
 	 end
 end

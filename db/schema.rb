@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151217220245) do
+ActiveRecord::Schema.define(version: 20151218165410) do
 
   create_table "admin_admin_users", force: true do |t|
     t.string   "first_name"
@@ -21,6 +21,14 @@ ActiveRecord::Schema.define(version: 20151217220245) do
     t.string   "reset_password_token"
     t.string   "password_hash"
     t.string   "password_salt"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "admin_general_pages", force: true do |t|
+    t.string   "page_name"
+    t.string   "page_title"
+    t.string   "page_content"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
