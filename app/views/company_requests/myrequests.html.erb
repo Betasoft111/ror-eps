@@ -38,6 +38,7 @@
                 <th>Duration</th>
                 <th>Additional Notes</th>
                 <th>Status</th>
+                <th>Paid To Admin??</th>
               </tr>
             </thead>
             <tbody>
@@ -52,10 +53,11 @@
                   <% if request.is_rejected %>
                     Rejected
                   <% elsif request.is_approved %>
-                    Your Request Approved Please Contact And Pay 
+                    Your Request Approved 
                   <% else %>
                     <!-- <a href="/hiring_requests/<%= request.id %>/show" > <i class="fa fa-eye"></i> </a></td> -->
                   <% end %>                  
+                   <td><% if request.is_paid == 1 %> Yes <% else %> No <% end %></td>
               </tr>
               <% end %>
             </tbody>
