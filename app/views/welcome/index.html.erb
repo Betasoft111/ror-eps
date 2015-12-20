@@ -20,10 +20,10 @@
         <div class="row">
           <form method="get" action="/search">
             <ul>
-              <li><input type="text" name="skills" id="skilsComplete" placeholder="Skills (Want to hire for)"></li>
-              <li><input type="text" name="staff_quf" id="staffQualitication" placeholder="Enter the staff Qualification"></li>
+              <li><input type="text" name="skills" id="skilsComplete" placeholder="Skills (Want to hire For)"></li>
+              <li><input type="text" name="staff_quf" id="staffQualitication" placeholder="Enter the Staff Qualification"></li>
               <li><input type="text" name="experience" placeholder="Enter the work experience"></li>
-              <li><input type="text" id="availability" name="availability" placeholder="Enter  the availability" value="" >
+              <li><input type="text" id="availability" name="availability" placeholder="Select The Availability Dates" value="" >
                 <input type="hidden" name="availability_to" id="availability_to">
                 <input type="hidden" name="availability_from" id="availability_from" >
               </li>
@@ -179,7 +179,12 @@
         }
 
         $(function() {
-            $('#availability').daterangepicker();
+            $('#availability').daterangepicker({
+                autoUpdateInput: false,
+                locale: {
+                    cancelLabel: 'Clear'
+                }
+            });
         });
 
             $('#availability').change(function () {

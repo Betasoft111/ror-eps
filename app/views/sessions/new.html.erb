@@ -49,7 +49,7 @@
           </select>
         </div>
         <div class = "form-group col-md-6" ng-class="{'has-error': new_user.password.$invalid && new_user.password.$dirty}">
-          <input type="password" name="password" ng-model="user.password" class="form-control immediate-help" id="exampleInputPassword1" placeholder="Password"  required="required">
+          <input type="password" name="password" ng-model="user.password" class="form-control immediate-help" id="exampleInputPassword1" placeholder="Password"  required="required" autocomplete="off">
                 
         </div>
 
@@ -68,7 +68,7 @@
           <label><input type = "checkbox"> Check me out</label>
         </div> -->
         <div class = "form-group col-md-12">
-          <button type = "submit" ng-disabled="new_user.$invalid" class = "btn btn-default register">Join ESP!</button>
+          <button type = "submit" ng-disabled="new_user.$invalid || disabledJoin" class = "btn btn-default register">Join ESP!</button>
         </div>
         <% end %>
         </div><!-- end .box-one -->

@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
 	  if user
 	    session[:user_id] = user.id
 	    session[:user_role] = 'user'
-	    redirect_to root_url, :notice => "Logged in!"
+	    redirect_to '/company_home', :notice => "Logged in!"
 	  else
 	    flash.now.alert = "Invalid email or password"
 	    render "new"

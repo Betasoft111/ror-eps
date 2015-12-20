@@ -16,9 +16,15 @@ class UsersController < ApplicationController
 	  @user = User.new(user_params)
 	  if @user.save
 	    session[:user_id] = @user.id
-	    redirect_to "/", :notice => "Signed up!"
+	    redirect_to "/company_home", :notice => "Signed up!"
 	  else
-	    redirect_to "/join", :notice => "Please fill all details"
+	  	@errorMsg = ''
+	  	@user.errors.each do |key, message|
+	  		@errorMsg += key.to_s
+	  		@errorMsg += ' '
+	  		@errorMsg += message.to_s
+	  	end
+	    redirect_to "/join", :notice => @errorMsg # "Please fill all details"
 	  end
 	end
 
