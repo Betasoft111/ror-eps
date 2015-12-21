@@ -802,7 +802,7 @@ input[type=radio   ]:not(old){
   margin    : 0;
   padding   : 0;
   font-size : 1em;
-  opacity   : 0;
+  opacity   : 1;
 }
 
 input[type=checkbox]:not(old) + label,
@@ -985,14 +985,12 @@ ul.tabs {
   min-width: 142px;
   padding: 0;
   position: absolute;
-  right: 13px;
 }
 .header-top .nav ul::after {
     content: "";
   display: inline-block;
   position: absolute;
   top:0px;
-  right: 14px;
   bottom: auto;
   border: 10px solid transparent;
   border-top: 0;
@@ -1010,7 +1008,6 @@ ul.tabs {
     content: "";
     display: inline-block;
     position: absolute;
-      right: 12px;
     top: 0px;
 }
 .header-top .nav ul:after {
