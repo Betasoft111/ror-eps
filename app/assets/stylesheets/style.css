@@ -1797,3 +1797,10 @@ p.Strong {
     border: 1px solid #0a7db7;
     color: #0a7db7;
 }
+
+/***** 22 Dec ***/
+.home-video {
+    bottom: 0;
+    height: auto;
+    position: absolute;
+}
