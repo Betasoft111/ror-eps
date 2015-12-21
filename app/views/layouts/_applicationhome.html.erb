@@ -26,12 +26,6 @@
 <%#= javascript_include_tag "sweetalert-dev.js" %>
 <script type="text/javascript">
 $(document).ready(function () {
-  $(".login-tab").click(function() {
-    document.cookie="opentab=login;path=/";
-    });
-    $(".register-tab").click(function() {
-    document.cookie="opentab=register;path=/";
-    });
     $('.delete').click(function () {
     var confirmBox = confirm('Are you sure, you want to delete ??');
     if(confirmBox) {
@@ -98,7 +92,7 @@ $(document).ready(function () {
                     <!-- <li><a href="/join" class="login-tab">Login</a></li> -->
                     <li class=""><a href="/join" class="login-tab">Join</a>
                     <ul>
-                      <li><a href="/join" class="login-tab">Login</a></li>
+                      <li><a href="/sign_in" class="login-tab">Login</a></li>
                       <li><a href="/join" class="register-tab">Register</a></li>
                     </ul>
                   </li>
@@ -112,13 +106,7 @@ $(document).ready(function () {
         </div>
       </div>
     </div>
-    </div><!-- end. header-top -->
-    <% flash.each do |name, msg| %>
-    <div class="">
-      <h4 align="center" class="flash"><%#= content_tag :div, msg, :id => "flash_#{name}" %>
-      </h4>
-    </div>
-    <% end %>
+    </div><!-- end. header-top -->    
 <style>
 .sweet-container {
   display: none;

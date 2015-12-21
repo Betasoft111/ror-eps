@@ -1,0 +1,60 @@
+<%= render 'layouts/application' %>
+<style>
+
+</style>
+<div class="innerpage_banner">
+  <%= image_tag("create.png" , :alt => 'create.png') %>
+  <div class="container">
+    <div class="row">
+      <div class="banner-innerpage">
+        <h2>Be<span>St</span>aff</h2>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="content" ng-app="joinApp" ng-controller="joinController">
+  <div class="content-down"></div>
+  <div class="container register">
+    <% flash.each do |name, msg| %>
+      <div class="">
+        <h4 align="center" class="flash"><%= content_tag :div, msg, :id => "flash_#{name}" %>
+        </h4>
+      </div>
+    <% end %>
+    <div class="row ">
+      
+        <!-- login form start from here  -->
+
+
+        <div class="box-two" >
+          
+          <h4><span><%= image_tag("line.png" , :alt => 'line.png') %></span>LOG IN<span><%= image_tag("right.png" , :alt => 'right.png') %></span></h4>
+          <h3>Come join the ESP ! Let's set up your account.<a href="/join" class="clickform register-tab" ng-click="refreshScope()"> Sign up here.</a></h3>
+          <%= form_tag sessions_path, :id => 'loginForm', :name => 'loginForm' do %>
+          <div class="form-group col-md-6 col-lg-offset-3" ng-class="{'has-error': loginForm.email.$invalid && loginForm.email.$dirty}">
+            <input type="email" name="email" ng-model="login.email" class="form-control" id="exampleInputEmail1" placeholder="Enter Your Email" required="required">
+            
+          </div>
+          <div class="form-group col-md-6 col-lg-offset-3" ng-class="{'has-error': loginForm.password.$invalid && loginForm.password.$dirty}">
+            
+            <input type="password" name="password" ng-model="login.password" class="form-control" id="exampleInputPassword1" placeholder="Enter Your Password" required="required">
+            
+          </div>
+          
+          <div class="checkbox col-lg-12">
+            <label>
+              <input type="checkbox"> Remember me
+            </label>
+          </div>
+          <div class = "form-group col-md-12">
+            <input type="submit" name="submit" class="btn btn-default login-tab" value ="Log In" ng-disabled="loginForm.$invalid">
+          </div>
+          <% end %>
+          </div><!-- end .box-one -->
+        </div>
+      </div>
+      
+    </div>
+  </div>
+
+  <%= render 'layouts/footer' %>

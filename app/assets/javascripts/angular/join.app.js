@@ -7,34 +7,32 @@
  /*
   * Intialize The Controller
   */
-  app.controller('joinController', function($scope) {
+  app.controller('joinController', function ($scope, $timeout) {
 
-  	/*
-  	 * Refresh The Scope
-  	 */
-  	 $scope.refreshScope = function() {
-  	 	//$scope.$apply();
-  	 }
-
-  	 /* 
-  	  * When Password Changed
-  	  */
-      $scope.disabledJoin = true;
+     /*
+      * Set the submit button value
+      */     
+     $scope.disabledJoin = true;
+      
   	  $scope.$watch('user.password', function (newVal, oldVal) {
-  	  	var style = $(".progress-bar").width() / $('.progress-bar').parent().width() * 100;
-  	  	if(parseInt(style) > 0 && parseInt(style) <= 40 ) {
-  	  		$scope.passStatus = "Week";
-          $scope.disabledJoin = true;
-  	  	}else if (parseInt(style) > 40 && parseInt(style) <= 70) {
-  	  		$scope.passStatus = "Good";
-          $scope.disabledJoin = false;
-  	  	}else if(parseInt(style) > 75) {
-  	  		$scope.passStatus = "Strong";
-          $scope.disabledJoin = false;
-  	  	}else {
-  	  		$scope.passStatus = "Week";
-          $scope.disabledJoin = false;
-  	  	}
+        if(newVal !== oldVal) {          
+    	  	$timeout(function () {
+            var style = $(".progress-bar").width() / $('.progress-bar').parent().width() * 100;
+          	if(parseInt(style) > 0 && parseInt(style) <= 40 ) {
+      	  		$scope.passStatus = "Week";
+              $scope.disabledJoin = true;
+      	  	}else if (parseInt(style) > 40 && parseInt(style) <= 70) {
+      	  		$scope.passStatus = "Good";
+              $scope.disabledJoin = false;
+      	  	}else if(parseInt(style) > 75) {
+      	  		$scope.passStatus = "Strong";
+              $scope.disabledJoin = false;
+      	  	}else {
+      	  		$scope.passStatus = "Week";
+              $scope.disabledJoin = false;
+      	  	}
+          },500);
+        }
   	  });
   	
   });

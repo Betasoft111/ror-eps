@@ -22,11 +22,11 @@
       </div>
     <% end %>
     <div class="row ">
-      <div class="box-one sign-up">
+      <div class="box-one ">
         
         <h4><span><%= image_tag("line.png" , :alt => 'line.png') %></span>CREATE A NEW ACCOUNT<span>
           <%= image_tag("right.png" , :alt => 'right.png') %></span></h4>
-          <h3>Come join the ESP ! Already have one? <a href="javascript:void(0)" class="clickform login-tab" ng-click="refreshScope()"> Sign in here.</a></h3>
+          <h3>Come join the ESP ! Already have one? <a href="/sign_in" class="clickform login-tab" ng-click="refreshScope()"> Sign in here.</a></h3>
         <%= form_for User.new, :html => { :class => "loginForm", :name => "new_user" } do |f| %>
         <div class = "form-group col-md-6"  ng-class="{'has-error': new_user.first_name.$invalid && new_user.first_name.$dirty}">
           <input type = "text" class = "form-control" id = "first_name" name="first_name" ng-model="user.first_name" placeholder = "Enter First Name" required="required">
@@ -68,49 +68,15 @@
           <label><input type = "checkbox"> Check me out</label>
         </div> -->
         <div class = "form-group col-md-12">
-          <button type = "submit" ng-disabled="new_user.$invalid || disabledJoin" class = "btn btn-default register">Join ESP!</button>
+          <button type = "submit" ng-show="new_user.$invalid || disabledJoin" ng-disabled="new_user.$invalid || disabledJoin" class = "btn btn-default register">Fill all fields</button>
+           <button type = "submit" ng-show="!new_user.$invalid && !disabledJoin" class = "btn btn-default register">Join EPS!</button>
         </div>
         <% end %>
         </div><!-- end .box-one -->
 
-
-        <!-- login form start from here  -->
-
-
-        <div class="box-two" style="display:none;">
-          
-          <h4><span><%= image_tag("line.png" , :alt => 'line.png') %></span>LOG IN<span><%= image_tag("right.png" , :alt => 'right.png') %></span></h4>
-          <h3>Come join the ESP ! Let's set up your account.<a href="javascript:void(0)" class="clickform register-tab" ng-click="refreshScope()"> Sign up here.</a></h3>
-          <%= form_tag sessions_path, :id => 'loginForm', :name => 'loginForm' do %>
-          <div class="form-group col-md-6 col-lg-offset-3" ng-class="{'has-error': loginForm.email.$invalid && loginForm.email.$dirty}">
-            <input type="email" name="email" ng-model="login.email" class="form-control" id="exampleInputEmail1" placeholder="Enter Your Email" required="required">
-            
-          </div>
-          <div class="form-group col-md-6 col-lg-offset-3" ng-class="{'has-error': loginForm.password.$invalid && loginForm.password.$dirty}">
-            
-            <input type="password" name="password" ng-model="login.password" class="form-control" id="exampleInputPassword1" placeholder="Enter Your Password" required="required">
-            
-          </div>
-          
-          <div class="checkbox col-lg-12">
-            <label>
-              <input type="checkbox"> Remember me
-            </label>
-          </div>
-          <div class = "form-group col-md-12">
-            <input type="submit" name="submit" class="btn btn-default login-tab" value ="Log In" ng-disabled="loginForm.$invalid">
-          </div>
-          <% end %>
-          </div><!-- end .box-one -->
         </div>
       </div>
       
     </div>
   </div>
-  <script type="text/javascript">
-  $(document).ready(function () {
-  //$("#loginForm").validate();
- // $("#new_user").validate();
-  });
-  </script>
   <%= render 'layouts/footer' %>

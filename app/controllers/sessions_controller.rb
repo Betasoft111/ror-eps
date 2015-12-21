@@ -1,6 +1,10 @@
 class SessionsController < ApplicationController
 
-    def new
+    def register
+    	@user = User.new
+	end
+
+	def login
     	@user = User.new
 	end
 
@@ -19,6 +23,6 @@ class SessionsController < ApplicationController
 	def destroy
 	  session[:user_id] = nil
 	  session[:user_role] = nil
-	  redirect_to root_url, :notice => "Logged out!"
+	  redirect_to root_url
 	end
 end
