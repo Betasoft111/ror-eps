@@ -185,6 +185,14 @@
                     cancelLabel: 'Clear'
                 }
             });
+
+            $('#availability').on('apply.daterangepicker', function(ev, picker) {
+                $(this).val(picker.startDate.format('MM/DD/YYYY') + ' - ' + picker.endDate.format('MM/DD/YYYY'));
+            });
+
+            $('#availability').on('cancel.daterangepicker', function(ev, picker) {
+                $(this).val('');
+            });
         });
 
             $('#availability').change(function () {

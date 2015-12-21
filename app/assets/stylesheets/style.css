@@ -802,7 +802,7 @@ input[type=radio   ]:not(old){
   margin    : 0;
   padding   : 0;
   font-size : 1em;
-  opacity   : 0;
+  opacity   : 1;
 }
 
 input[type=checkbox]:not(old) + label,
@@ -978,24 +978,19 @@ ul.tabs {
     margin-top: 38%;
 }
 .header-top .nav ul {
-    display: none;
-    list-style: outside none none;
-    margin: 0;
-    padding: 0;
-    background: #fff;
-     position: absolute;
-    right: 13px;
-    top: 50px;
-    min-width: 148px;
-
-
+  background: #fff none repeat scroll 0 0;
+  display: none;
+  list-style: outside none none;
+  margin: 0;
+  min-width: 142px;
+  padding: 0;
+  position: absolute;
 }
 .header-top .nav ul::after {
     content: "";
   display: inline-block;
   position: absolute;
-  top: -10px;
-  right: 14px;
+  top:0px;
   bottom: auto;
   border: 10px solid transparent;
   border-top: 0;
@@ -1013,14 +1008,13 @@ ul.tabs {
     content: "";
     display: inline-block;
     position: absolute;
-      right: 12px;
-    top: -9px;
+    top: 0px;
 }
 .header-top .nav ul:after {
   content: "";
   display: inline-block;
   position: absolute;
-  top: -9px;
+  top: 0px;
   right: 15px;
   bottom: auto;
   border: 9px solid transparent;
@@ -1463,6 +1457,17 @@ em.current {
 }
 
 }
+@media screen and (max-width: 1000px) {
+.header .navbar li a {
+  font-size: 14px;
+  padding: 5px 7px;
+}
+.navbar-collapse {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+}
 
 @media screen and (max-width: 800px) {
     .header .navbar li a { padding: 5px 10px; }
@@ -1488,6 +1493,15 @@ em.current {
 .c2-main, .banner {background-attachment: scroll; background-size:unset;}
 .banner {min-height: auto;}
 .banner-bottom {position: relative;}
+.navbar-right {
+  margin-right: 0;
+}
+.header .navbar li a {
+  padding: 0 7px;
+}
+.header-top {
+  margin: 2px 0;
+}
  }
 
 
@@ -1502,6 +1516,20 @@ em.current {
 .banner-bottom ul {margin: auto;}
 .banner-bottom {bottom: auto;}
 .banner-inner {top: 15%;}
+.content {
+  margin-top: 9.5%;
+}
+.navbar-default .navbar-collapse, .navbar-default .navbar-form {
+  background: #e7e7e7 none repeat scroll 0 0;
+  border-color: #e7e7e7;
+}
+.navbar-nav {
+  margin: 7.5px 6px !important;
+}
+.tabs li {
+  padding: 10px 45px;
+
+}
 }
 
 
@@ -1509,14 +1537,54 @@ em.current {
 .banner-inner {
     top: 8%;
 }
+.content {
+  margin-top: 12.5%;
+}
+.register h4 span {
+  float: left;
+  width: 100%;
+}
+.register h4 {
+  margin-top: 0;
+
+}.content a {
+  font-size: 14px;
+}
+.tabs.ch-tab {
+  margin-top: 0;
+}
 }
 @media screen and (max-width: 480px) {
     .col-xs-4, .col-xs-8 {width: 100% !important;}
     .banner-inner {display: none;}
-    
+    .content {
+  margin-top: 17.5%;
+}
+.inner-pages-ng .header-top.sticky .navbar-default .navbar-nav > li > a {
+  color: #000 !important;
+}
+
+.tabs li {
+  padding: 10px 24px;
+}
+
+}
+@media screen and (max-width:400px) {
+.tabs li {
+  padding: 10px 7px;
+}
 
 }
 
+@media screen and (max-width:320px) {
+.tabs li {
+  padding: 10px 3px;
+}
+.content a {
+  font-size: 13px;
+}
+
+}
 
 
 

@@ -19,7 +19,7 @@ class ApplicationController < ActionController::Base
     if @current_user != nil
       @current_user
     else
-      redirect_to '/join', :notice => 'Please login to view this'
+      redirect_to '/sign_in', :notice => 'Please login to view this'
       ## if you want render 404 page
       ## render :file => File.join(Rails.root, 'public/404'), :formats => [:html], :status => 404, :layout => false
     end
@@ -33,7 +33,7 @@ class ApplicationController < ActionController::Base
       if @current_user != nil           
         if @current_user.plan_id != nil
         else
-          redirect_to "/choose_plan", :notice => "Please choose a membership plan"
+          redirect_to "/membership_plans", :notice => "Please choose a membership plan"
         end
       end
   end 

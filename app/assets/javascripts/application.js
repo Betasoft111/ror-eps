@@ -15,7 +15,6 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
-
 $(document).on("click", ".delete", function() {
 	$(this).closest('tr').fadeOut(400, function(){
     $(this).remove();
