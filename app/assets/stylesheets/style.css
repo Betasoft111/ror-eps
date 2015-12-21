@@ -1496,6 +1496,15 @@ em.current {
 .c2-main, .banner {background-attachment: scroll; background-size:unset;}
 .banner {min-height: auto;}
 .banner-bottom {position: relative;}
+.navbar-right {
+  margin-right: 0;
+}
+.header .navbar li a {
+  padding: 0 7px;
+}
+.header-top {
+  margin: 2px 0;
+}
  }
 
 
