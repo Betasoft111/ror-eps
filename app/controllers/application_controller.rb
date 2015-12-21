@@ -33,7 +33,7 @@ class ApplicationController < ActionController::Base
       if @current_user != nil           
         if @current_user.plan_id != nil
         else
-          redirect_to "/choose_plan", :notice => "Please choose a membership plan"
+          redirect_to "/membership_plans", :notice => "Please choose a membership plan"
         end
       end
   end 

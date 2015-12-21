@@ -230,7 +230,7 @@ class CompaniesController < ApplicationController
 			  #if error delete user membership
 			  User.where(:id => @current_user.id).update_all(plan_id: nil)
 			  flash[:error] = e.message
-			  redirect_to '/choose_plan'
+			  redirect_to '/membership_plans'
 	end
 
 	def no_access
