@@ -1,164 +1,158 @@
 <%= render 'layouts/application' %>
-
 </div><!-- end. header -->
 <div class="content inner-page" ng-app="epsPayment" id="pay" ng-controller="paymentController">
   <div class="content-down"></div>
-   <div class="container">
+  <div class="container">
     <% flash.each do |name, msg| %>
-      <div class="">
-        <h4 align="center" class="flash"><%= content_tag :div, msg, :id => "flash_#{name}" %>
-        </h4>
-      </div>
-    <% end %>
-      <div class="row">
-        <ul class="tabs ch-tab">
-          <li ng-class="{'selected-tab': selectedTab == '1' }"><a ng-click="changeTab('1')" href="#tab1">Choose Plan</a></li>
-          <li ng-class="{'selected-tab': selectedTab == '2' }"><a ng-click="changeTab('2')" href="#tab2">Payment Method</a></li>
-          <li ng-class="{'selected-tab': selectedTab == '3' }"><a ng-click="changeTab('3')" href="#tab3">All Set</a></li>
-
-        </ul>
-        
-         <!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras et sapien porttitor, aliquam lectus in, dapibus enim. Suspendisse potenti. Proin eleifend, erat et lobortis venenatis, arcu magna iaculis dolor, ac mollis tellus metus nec nisl. Sed eu consequat sapien. Fusce sit amet suscipit orci. Nam risus nibh, malesuada et dictum sed, lobortis quis velit. In orci ex, sodales nec ante in, faucibus dictum turpis. Nunc placerat sem vel libero commodo. </p> -->
-      </div>
-      <div class="row three-sap"  id="first-tab" ng-show="showFirstTab">
-        <h3>Select The Best Subscription Plan Suites Your Needs</h3>
-          <!-- <form action="/charges/payment_method" method="POST"> -->
-          <input type="hidden" id="hidden_amount">
-            <% @plans.each do |plan| %>
-             <div class="col-sm-4">
-              <div class="plan-main" id="<%= plan.id %>">
-                 <div class="plan">
-                    <p class="plan-duration"><%= plan.plan_name %></p>
-                    <p class="plan-price">$<span><%= plan.plan_price %></span>
-                    <% if plan.plan_type == 1 %>
-                      /monthly</p>
-                      <p class="plan-month">Monthly</p>
-                    <% elsif plan.plan_type == 2 %>
-                      /quaterly</p>
-                      <p class="plan-month">Quaterly</p>
-                    <% else %>
-                      /yearly</p>
-                      <p class="plan-month">Yearly</p>
-                    <% end %>
-                 </div>
-                 <div class="overlay-plan <%= plan.id %>" id="select<%= plan.id %>"  style="cursor:pointer">
-                    <input type="hidden" name="plan_id" value="<%= plan.id %>">
-                    <div>
-                      <input type="radio" class="selected_plan_radio"  name="selected_plan" value="<%= plan.id %>" id="select<%= plan.id %>" ng-click="selectPlan('<%= plan.id %>', '<%= plan.plan_name %>', '<%= plan.plan_price %>')" ng-required="required">
-					  	 <% if plan.plan_type == 1 %>
-						  	Monthly
-						<% elsif plan.plan_type == 2 %>
-							Quaterly
-						<% else %>
-						  Yearly
-						<% end %>
-                        <!--label for="radio1">
-                          <span >
-                            <span id="span<%= plan.id %>"></span>
-                          </span>Monthly
-                        </label-->
-                    </div>
-                 </div>
-              </div>
-             </div>
-           <% end %>
-            <input type="submit"  id="thistest" name="submit" ng-disabled="!selectedPlan.id" value="Proceed To Pay" class="btn btn-primary" ng-click="proceedToPay()">
-          <!-- </form> -->
-      </div>
-      <div class="row three-sap"  id="second-tab" ng-show="showSecondTab" data-target="#tab2">
-        <div class="text-payment">
-		<h3> Pay with your favourite <strong>Payment Gateway</strong> </h3>
-        <p><strong>Lorem Ipsum </strong>is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-		</div>
-		<div class="image-div">
-			<%= image_tag("paymentgateway-800x400.png") %>
-		</div>
-        <div class="row">
-          <!-- <h3>Payment Type</h3> -->
-          <div class="col-lg-3">
-            <div class="card stripe">
-              <!-- <h2><span>S</span>Connect to Stripe</h2> -->
-              <%= form_tag charges_path do %>
-              <article>
-                <% if flash[:error].present? %>
-                <div id="error_explanation">
-                  <p><%= flash[:error] %></p>
-                </div>
-                <% end %>
-              </article>
-              <input type="hidden" name="plan_id" id="plan_id" value="">
-              <input type="hidden" name="pay_type" id="pay_type" value="stripe">
-              <script id="script-key" src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-              data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-              data-description=""
-              data-amount=""
-              data-image="https://stripe.com/favicon.ico"
-              data-name="Stripe Payment"
-              data-locale="auto"></script>
-              <% end %>
-            </div>
-          </div>
-          <div class="col-lg-3">
-            <div class="card epay">
-                    <script type="text/javascript">
-                      function loadEpay() {
-                       $.getScript("https://ssl.ditonlinebetalingssystem.dk/integration/ewindow/paymentwindow.js");
-                         setTimeout(function() {
-                            var amount = $('#hidden_amount').val();
-                            paymentwindow = new PaymentWindow({
-                             'merchantnumber': "8020578",
-                             'amount': amount,
-                             'currency': "DKK",
-                             'ownreceipt' : "1",
-                             'accepturl' : "http://system.jobkeeper.dk:3000/company_home"
-                             });
-                            paymentwindow.open();
-                          },500);
-                    }
-                    </script>
-
-                    <!-- <input onclick="javascript: paymentwindow.open()" type="button" value="Pay With Epay"> -->
-                    <input onclick="loadEpay()" type="button" value="Pay With Epay">
-            </div>
-
-          </div>
-          <div class="col-lg-3 paypal">
-            <div class="card epay">
-              <!-- <h2><span>P</span>Pay Pal</h2> -->
-                <form action="/charges/create" method="POST">
-                  <input type="hidden" name="pay_type" value="paypal">
-                  <input type="hidden" name="plan_id" id="plan_id_paypal" value="">
-                  <button type="submit"  value="Pay With Pay Pal"/>Pay With Pay Pal
-                  </button>
-                </form>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="row three-sap" id="third-tab" ng-show="showThirdTab">
-      </div>
+    <div class="">
+      <h4 align="center" class="flash"><%= content_tag :div, msg, :id => "flash_#{name}" %>
+      </h4>
     </div>
-   </div>
+    <% end %>
+    <div class="row">
+      <ul class="tabs ch-tab">
+        <li ng-class="{'selected-tab': selectedTab == '1' }"><a ng-click="changeTab('1')" href="#tab1">Choose Plan</a></li>
+        <li ng-class="{'selected-tab': selectedTab == '2' }"><a ng-click="changeTab('2')" href="#tab2">Payment Method</a></li>
+        <li ng-class="{'selected-tab': selectedTab == '3' }"><a ng-click="changeTab('3')" href="#tab3">All Set</a></li>
+      </ul>
+      
+      <!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras et sapien porttitor, aliquam lectus in, dapibus enim. Suspendisse potenti. Proin eleifend, erat et lobortis venenatis, arcu magna iaculis dolor, ac mollis tellus metus nec nisl. Sed eu consequat sapien. Fusce sit amet suscipit orci. Nam risus nibh, malesuada et dictum sed, lobortis quis velit. In orci ex, sodales nec ante in, faucibus dictum turpis. Nunc placerat sem vel libero commodo. </p> -->
+    </div>
+    <div class="row three-sap"  id="first-tab" ng-show="showFirstTab">
+      <h3>Select The Best Subscription Plan Suites Your Needs</h3>
+      <!-- <form action="/charges/payment_method" method="POST"> -->
+      <input type="hidden" id="hidden_amount">
+      <% @plans.each do |plan| %>
+      <div class="col-sm-4 col-xs-12">
+        <div class="plan-main" id="<%= plan.id %>">
+          <div class="plan">
+            <p class="plan-duration"><%= plan.plan_name %></p>
+            <p class="plan-price">$<span><%= plan.plan_price %></span>
+            <% if plan.plan_type == 1 %>
+          /monthly</p>
+          <p class="plan-month">Monthly</p>
+          <% elsif plan.plan_type == 2 %>
+        /quaterly</p>
+        <p class="plan-month">Quaterly</p>
+        <% else %>
+      /yearly</p>
+      <p class="plan-month">Yearly</p>
+      <% end %>
+    </div>
+    <div class="overlay-plan <%= plan.id %>" id="select<%= plan.id %>"  style="cursor:pointer" ng-click="selectPlan('<%= plan.id %>', '<%= plan.plan_name %>', '<%= plan.plan_price %>')">
+      <input type="hidden" name="plan_id" value="<%= plan.id %>">
+      <div>
+        <input type="radio" class="selected_plan_radio"  name="selected_plan" value="<%= plan.id %>" id="select<%= plan.id %>" ng-click="selectPlan('<%= plan.id %>', '<%= plan.plan_name %>', '<%= plan.plan_price %>')" ng-required="required" ng-model="selected_plan">
+        <% if plan.plan_type == 1 %>
+        Monthly
+        <% elsif plan.plan_type == 2 %>
+        Quaterly
+        <% else %>
+        Yearly
+        <% end %>
+        <!--label for="radio1">
+        <span >
+          <span id="span<%= plan.id %>"></span>
+        </span>Monthly
+      </label-->
+    </div>
+  </div>
+</div>
+</div>
+<% end %>
+<input type="submit"  id="thistest" name="submit" ng-disabled="!selectedPlan.id" value="Proceed To Pay" class="btn btn-primary" ng-click="proceedToPay()">
+<!-- </form> -->
+</div>
+<div class="row three-sap"  id="second-tab" ng-show="showSecondTab" data-target="#tab2">
+<div class="payment-main-area">
+<div class="text-payment">
+  <h3> Pay with your favourite <strong>Payment Gateway</strong> </h3>
+  <p><strong>Lorem Ipsum </strong>is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+</div>
+<div class="image-div">
+  <%= image_tag("paymentgateway-800x400.png") %>
+</div>
+</div>
+<div class="row">
+<!-- <h3>Payment Type</h3> -->
+<div class="col-lg-3">
+  <div class="card stripe">
+    <!-- <h2><span>S</span>Connect to Stripe</h2> -->
+    <%= form_tag charges_path do %>
+    <article>
+      <% if flash[:error].present? %>
+      <div id="error_explanation">
+        <p><%= flash[:error] %></p>
+      </div>
+      <% end %>
+    </article>
+    <input type="hidden" name="plan_id" id="plan_id" value="">
+    <input type="hidden" name="pay_type" id="pay_type" value="stripe">
+    <script id="script-key" src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+    data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+    data-description=""
+    data-amount=""
+    data-image="https://stripe.com/favicon.ico"
+    data-name="Stripe Payment"
+    data-locale="auto"></script>
+    <% end %>
+  </div>
+</div>
+<div class="col-lg-3">
+  <div class="card epay">
+    <script type="text/javascript">
+    function loadEpay() {
+    $.getScript("https://ssl.ditonlinebetalingssystem.dk/integration/ewindow/paymentwindow.js");
+    setTimeout(function() {
+    var amount = $('#hidden_amount').val();
+    paymentwindow = new PaymentWindow({
+    'merchantnumber': "8020578",
+    'amount': amount,
+    'currency': "DKK",
+    'ownreceipt' : "1",
+    'accepturl' : "http://system.jobkeeper.dk:3000/company_home"
+    });
+    paymentwindow.open();
+    },500);
+    }
+    </script>
+    <!-- <input onclick="javascript: paymentwindow.open()" type="button" value="Pay With Epay"> -->
+    <input onclick="loadEpay()" type="button" value="Pay With Epay">
+  </div>
+</div>
+<div class="col-lg-3 paypal">
+  <div class="card epay">
+    <!-- <h2><span>P</span>Pay Pal</h2> -->
+    <form action="/charges/create" method="POST">
+      <input type="hidden" name="pay_type" value="paypal">
+      <input type="hidden" name="plan_id" id="plan_id_paypal" value="">
+      <button type="submit"  value="Pay With Pay Pal"/>Pay With Pay Pal
+      </button>
+    </form>
+  </div>
+</div>
+</div>
+</div>
+<div class="row three-sap" id="third-tab" ng-show="showThirdTab">
+</div>
+</div>
+</div>
 </div>
 <script>
 $(document).ready(function () {
-
-  $('.overlay-plan ').click(function () {
-    var divid = this.id;
-    var radioId = '#'+divid.toString();
-    $('.overlay-plan').removeClass('opacity');
-    $('#'+divid).addClass('opacity'); 
-    $(radioId).prop('checked', true); 
-    //$('#span'+radioId+':before').css('content', '✓'); //span
-  });
-  	
-	
+$('.overlay-plan ').click(function () {
+var divid = this.id;
+var radioId = '#'+divid.toString();
+$('.overlay-plan').removeClass('opacity');
+$('#'+divid).addClass('opacity');
+$(radioId).prop('checked', true);
+//$('#span'+radioId+':before').css('content', '✓'); //span
 });
-
+  
+  
+});
 </script>
-
 <!-- angular js stuff -->
 <%= javascript_include_tag "angular/angular.min.js" %>
 <%= javascript_include_tag "angular/payment.app.js" %>
-
 <%= render 'layouts/footer' %>

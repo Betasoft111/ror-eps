@@ -20,6 +20,7 @@
 	 	$scope.selectedPlan.id = id;
 	 	$scope.selectedPlan.name = name;
 	 	$scope.selectedPlan.price = price;
+        $scope.selected_plan = id;
 
 	 	$('#plan_id').val(id);
 	 	$('#plan_id_paypal').val(id);

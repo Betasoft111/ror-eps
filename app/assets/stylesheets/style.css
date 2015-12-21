@@ -559,13 +559,14 @@ p.plan-price span {
     
 }
 p.plan-month {
-    background: #323232 none repeat scroll 0 0;
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
-    color: #fff !important;
-    font-weight: bold;
-    margin: 50px 0 0;
-    padding: 10px;
+  background: #323232 none repeat scroll 0 0;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  color: #fff !important;
+  font-weight: bold;
+  margin: 50px 0 0;
+  padding: 10px 50px;
+  width: 100%;
 }
 .overlay-plan {
     background: rgba(0, 0, 0, 0.2) none repeat scroll 0 0;
@@ -610,20 +611,20 @@ background: linear-gradient(to bottom, #4fc3ff 0%,#0376b0 100%); /* W3C, IE10+, 
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4fc3ff', endColorstr='#0376b0',GradientType=0 ); /* IE6-9 */
 }
 
-.overlay-plan > p , .overlay-plan > div{
-     background: #008ed6 none repeat scroll 0 0;
-    border: medium none;
-    border-radius: 0 0 10px 10px;
-    color: #fff !important;
-    display: inline;
-    font-family: open sans;
-    font-size: 14px !important;
-    font-weight: bold;
-    padding: 7px 53px;
-    width: 100%;
-    position: absolute;
-    left: 0;
-    bottom: 0;
+.overlay-plan > p, .overlay-plan > div {
+  background: #008ed6 none repeat scroll 0 0;
+  border: medium none;
+  border-radius: 0 0 10px 10px;
+  bottom: 0;
+  color: #fff !important;
+  display: inline;
+  font-family: open sans;
+  font-size: 14px !important;
+  font-weight: bold;
+  left: 0;
+  padding: 13px 54px;
+  position: absolute;
+  width: 100%;
 }
 .plan-main {position: relative;}
 .plan-main:hover .overlay-plan {
@@ -1403,8 +1404,6 @@ em.current {
 
 .container p {
   display: inline-block;
-  margin-right: 30px;
-  width: 47%;
 }
 
 .container p label {
@@ -1441,6 +1440,23 @@ em.current {
     border: 1px solid #0a7db7;
     color: #0a7db7;    
 }
+.image-div {
+  float: left;
+  margin-top: 18px;
+  width: 50%;
+   margin-bottom: 18px;
+}
+.payment-main-area {
+  float: left;
+  width: 100%;
+}
+.image-div img {
+  width: 100%;
+}
+.text-payment {
+  float: left;
+  width: 50%;
+}
 
 /**** media start *****/
 @media screen and (max-width: 1200px) {
@@ -1465,6 +1481,9 @@ em.current {
 .navbar-collapse {
   padding-left: 0 !important;
   padding-right: 0 !important;
+}
+p.plan-price span {
+  font-size: 29px;
 }
 
 }
@@ -1502,6 +1521,7 @@ em.current {
 .header-top {
   margin: 2px 0;
 }
+
  }
 
 
@@ -1527,8 +1547,21 @@ em.current {
   margin: 7.5px 6px !important;
 }
 .tabs li {
-  padding: 10px 45px;
+  padding: 10px 40px;
 
+}
+.inner-page h3 {
+  text-align: center;
+}
+.row {
+  margin-left:0px !important;
+  margin-right:0px !important;
+}
+.three-sap input[type="submit"] {
+  width: auto;
+}
+.three-sap {
+  width: 100%;
 }
 }
 
@@ -1565,23 +1598,25 @@ em.current {
 }
 
 .tabs li {
-  padding: 10px 24px;
+  padding: 10px 10px;
 }
 
 }
 @media screen and (max-width:400px) {
 .tabs li {
-  padding: 10px 7px;
+  padding: 10px 0px;
 }
 
 }
 
 @media screen and (max-width:320px) {
-.tabs li {
-  padding: 10px 3px;
-}
+
 .content a {
   font-size: 13px;
+}
+.tabs li a {
+  padding: 0 10px;
+
 }
 
 }

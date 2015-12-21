@@ -28,14 +28,16 @@
              <div class="col-sm-4">
               <div class="plan-main" id="<%= plan.id %>">
                  <div class="plan">
-                    <p class="plan-duration"><%= plan.plan_name %></p>
-                    <p class="plan-price">$<span><%= plan.plan_price %></span>
+                    <p class="plan-duration"><%= plan.plan_name %></p><br>
+                    <p class="plan-price">$<span><%= plan.plan_price %></span></p><br>
                     <p class="plan-price-bottom">Total Profiles <br/><%= plan.no_of_staff %> Members</p>
                  </div>
-                 <div class="overlay-plan <%= plan.id %>"  style="cursor:pointer">
+                 <div class="overlay-plan <%= plan.id %>"  style="cursor:pointer" ng-click="selectPlan('<%= plan.id %>', '<%= plan.plan_name %>', '<%= plan.plan_price %>')">
                     <input type="hidden" name="plan_id" value="<%= plan.id %>">
                     <div>
-                      <input type="radio" class="selected_plan_radio"  name="selected_plan" value="<%= plan.id %>" id="<%= plan.id %>" ng-click="selectPlan('<%= plan.id %>', '<%= plan.plan_name %>', '<%= plan.plan_price %>')" ng-required="required"><label for="radio1"><span><span></span></span>Monthly</label>
+                      <input type="radio" class="selected_plan_radio"  name="selected_plan" value="<%= plan.id %>" id="<%= plan.id %>" ng-click="selectPlan('<%= plan.id %>', '<%= plan.plan_name %>', '<%= plan.plan_price %>')" ng-required="required" ng-model="selected_plan">
+                      <%= plan.plan_name %>
+                      <!-- <label for="radio1"><span><span></span></span>Monthly</label> -->
                     </div>
                  </div>
               </div>
@@ -119,10 +121,13 @@
 <script>
 $(document).ready(function () {
 
-  $('.selected_plan_radio').click(function () {
-    var id = $(this).attr('id').toString();
+  $('.overlay-plan ').click(function () {
+    var divid = this.id;
+    var radioId = '#'+divid.toString();
     $('.overlay-plan').removeClass('opacity');
-    $('.overlay-plan.'+id).addClass('opacity');    
+    $('#'+divid).addClass('opacity'); 
+    $(radioId).prop('checked', true); 
+    //$('#span'+radioId+':before').css('content', '✓'); //span
   });
 
   //$("#loginForm").validate();
