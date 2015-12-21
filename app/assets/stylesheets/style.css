@@ -978,23 +978,20 @@ ul.tabs {
     margin-top: 38%;
 }
 .header-top .nav ul {
-    display: none;
-    list-style: outside none none;
-    margin: 0;
-    padding: 0;
-    background: #fff;
-     position: absolute;
-    right: 13px;
-    top: 50px;
-    min-width: 148px;
-
-
+  background: #fff none repeat scroll 0 0;
+  display: none;
+  list-style: outside none none;
+  margin: 0;
+  min-width: 142px;
+  padding: 0;
+  position: absolute;
+  right: 13px;
 }
 .header-top .nav ul::after {
     content: "";
   display: inline-block;
   position: absolute;
-  top: -10px;
+  top:0px;
   right: 14px;
   bottom: auto;
   border: 10px solid transparent;
@@ -1014,13 +1011,13 @@ ul.tabs {
     display: inline-block;
     position: absolute;
       right: 12px;
-    top: -9px;
+    top: 0px;
 }
 .header-top .nav ul:after {
   content: "";
   display: inline-block;
   position: absolute;
-  top: -9px;
+  top: 0px;
   right: 15px;
   bottom: auto;
   border: 9px solid transparent;
