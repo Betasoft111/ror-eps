@@ -12,9 +12,9 @@
     <% end %>
       <div class="row">
         <ul class="tabs ch-tab">
-          <li ng-class="{'selected-tab': selectedTab == '1' }"><a ng-click="changeTab('1')" href="javascript:void(0)">Choose Plan</a></li>
-          <li ng-class="{'selected-tab': selectedTab == '2' }"><a ng-click="changeTab('2')" href="javascript:void(0)">Payment Method</a></li>
-          <li ng-class="{'selected-tab': selectedTab == '3' }"><a ng-click="changeTab('3')" href="javascript:void(0)">All Set</a></li>
+          <li ng-class="{'selected-tab': selectedTab == '1' }"><a ng-click="changeTab('1')" href="#tab1">Choose Plan</a></li>
+          <li ng-class="{'selected-tab': selectedTab == '2' }"><a ng-click="changeTab('2')" href="#tab2">Payment Method</a></li>
+          <li ng-class="{'selected-tab': selectedTab == '3' }"><a ng-click="changeTab('3')" href="#tab3">All Set</a></li>
 
         </ul>
         
@@ -41,10 +41,15 @@
                       <p class="plan-month">Yearly</p>
                     <% end %>
                  </div>
-                 <div class="overlay-plan <%= plan.id %>"  style="cursor:pointer">
+                 <div class="overlay-plan <%= plan.id %>" id="select<%= plan.id %>"  style="cursor:pointer">
                     <input type="hidden" name="plan_id" value="<%= plan.id %>">
                     <div>
-                      <input type="radio" class="selected_plan_radio"  name="selected_plan" value="<%= plan.id %>" id="<%= plan.id %>" ng-click="selectPlan('<%= plan.id %>', '<%= plan.plan_name %>', '<%= plan.plan_price %>')" ng-required="required"><label for="radio1"><span><span></span></span>Monthly</label>
+                      <input type="radio" class="selected_plan_radio"  name="selected_plan" value="<%= plan.id %>" id="select<%= plan.id %>" ng-click="selectPlan('<%= plan.id %>', '<%= plan.plan_name %>', '<%= plan.plan_price %>')" ng-required="required">
+                        <label for="radio1">
+                          <span >
+                            <span id="span<%= plan.id %>"></span>
+                          </span>Monthly
+                        </label>
                     </div>
                  </div>
               </div>
@@ -53,7 +58,7 @@
             <input type="submit"  id="thistest" name="submit" ng-disabled="!selectedPlan.id" value="Proceed To Pay" class="btn btn-primary" ng-click="proceedToPay()">
           <!-- </form> -->
       </div>
-      <div class="row three-sap" id="second-tab" ng-show="showSecondTab">
+      <div class="row three-sap"  id="second-tab" ng-show="showSecondTab" data-target="#tab2">
         <h3> Pay with your favourite <strong>Payment Gateway</strong> </h3>
         <p><strong>Lorem Ipsum </strong>is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
         <div class="row">
@@ -126,10 +131,13 @@
 <script>
 $(document).ready(function () {
 
-  $('.selected_plan_radio').click(function () {
-    var id = $(this).attr('id').toString();
+  $('.overlay-plan ').click(function () {
+    var divid = this.id;
+    var radioId = '#'+divid.toString();
     $('.overlay-plan').removeClass('opacity');
-    $('.overlay-plan.'+id).addClass('opacity');    
+    $('#'+divid).addClass('opacity'); 
+    $(radioId).prop('checked', true); 
+    $('#span'+radioId+':before').css('content', '✓'); //span
   });
 
   //$("#loginForm").validate();

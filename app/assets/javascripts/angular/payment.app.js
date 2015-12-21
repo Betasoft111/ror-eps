@@ -34,6 +34,8 @@
 	 	 $scope.showFirstTab = false;
 	 	 $scope.showSecondTab = true;
 	 	 $scope.selectedTab = 2;
+	 	 //$('body').scrollTo('#second-tab');
+	 	 
 	 }
 
 	 $scope.changeTab = function(value) {
