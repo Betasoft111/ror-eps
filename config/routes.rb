@@ -15,7 +15,8 @@ EPS::Application.routes.draw do
   #      Authentication Routes    #
   #################################
   get "log_out" => "sessions#destroy", :as => "log_out"
-  get "join" => "sessions#new", :as => "log_in"
+  get "join" => "sessions#register", :as => "register"
+  get "sign_in" => "sessions#login", :as => "login"
   get "forgot_password" => "users#forgot_password"
   post "request_password" => "users#request_password"
   get "reset_password/:reset_password_token" => "users#reset_password"
@@ -25,7 +26,7 @@ EPS::Application.routes.draw do
   #################################
   #         Payment Routes        #
   #################################
-  get "choose_plan" => "users#choose_plan"
+  get "membership_plans" => "users#choose_plan"
   post "/charges/payment_method" => "users#payment_method"
   post "/charges/create" => "charges#create"
   post "/add_staff/create" => "companies#create"
@@ -61,7 +62,7 @@ EPS::Application.routes.draw do
   get "/company_home" => "companies#index"
   post "companies/update/:id" => "companies#update"
   get "/companies/delete/:id" => "companies#destroy"
-  get '/upgrade_plan' => "companies#upgrade_plan"
+  get '/addon_plans' => "companies#upgrade_plan"
   get "/hiring_requests" => "company_requests#index"
   get "/hiring_requests/:id/show" => "company_requests#request_details"
   get "/hiring_requests/:id/approve" => "company_requests#approve"
