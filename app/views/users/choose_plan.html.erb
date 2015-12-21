@@ -1,7 +1,7 @@
 <%= render 'layouts/application' %>
 
 </div><!-- end. header -->
-<div class="content inner-page" ng-app="epsPayment" ng-controller="paymentController">
+<div class="content inner-page" ng-app="epsPayment" id="pay" ng-controller="paymentController">
   <div class="content-down"></div>
    <div class="container">
     <% flash.each do |name, msg| %>
@@ -41,15 +41,29 @@
                       <p class="plan-month">Yearly</p>
                     <% end %>
                  </div>
-                 <div class="overlay-plan <%= plan.id %>" id="select<%= plan.id %>"  style="cursor:pointer">
+                 <div class="overlay-plan <%= plan.id %>" id="select<%= plan.id %>"  style="cursor:pointer" ng-click="changePlan(<%= plan.id %>)">
                     <input type="hidden" name="plan_id" value="<%= plan.id %>">
                     <div>
-                      <input type="radio" class="selected_plan_radio"  name="selected_plan" value="<%= plan.id %>" id="select<%= plan.id %>" ng-click="selectPlan('<%= plan.id %>', '<%= plan.plan_name %>', '<%= plan.plan_price %>')" ng-required="required">
-                        <label for="radio1">
+                      <input type="radio" class="selected_plan_radio"  name="selected_plan" value="<%= plan.id %>" id="select<%= plan.id %>" ng-click="selectPlan('<%= plan.id %>', '<%= plan.plan_name %>', '<%= plan.plan_price %>')" ng-model="selected_plan" ng-required="required">
+                         <% if plan.plan_type == 1 %>
+                              Monthly
+                          <% elsif plan.plan_type == 2 %>
+                              Quaterly
+                          <% else %>
+                              Yearly
+                          <% end %>
+                        <!-- <label for="radio1">
                           <span >
                             <span id="span<%= plan.id %>"></span>
-                          </span>Monthly
-                        </label>
+                          </span>
+                           <% if plan.plan_type == 1 %>
+                              Monthly
+                          <% elsif plan.plan_type == 2 %>
+                              Quaterly
+                          <% else %>
+                              Yearly
+                          <% end %>
+                        </label> -->
                     </div>
                  </div>
               </div>
