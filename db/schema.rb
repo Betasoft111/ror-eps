@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151218165410) do
+ActiveRecord::Schema.define(version: 20151221192134) do
 
   create_table "admin_admin_users", force: true do |t|
     t.string   "first_name"
@@ -144,6 +144,15 @@ ActiveRecord::Schema.define(version: 20151218165410) do
   end
 
   add_index "users", ["plan_id"], name: "fk_plan", using: :btree
+
+  create_table "users_payment_histories", force: true do |t|
+    t.integer  "plan_id"
+    t.integer  "user_id"
+    t.datetime "purchased_on"
+    t.datetime "expired_on"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users_staff_plans", force: true do |t|
     t.integer  "user_id"

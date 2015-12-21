@@ -11,8 +11,30 @@ class ChargesController < ApplicationController
 
 	def create
 	  @plan_id = params[:plan_id]
+	  
 	  @plan_details = SubscriptionPlan.find(@plan_id)
+	  
+	  if @plan_details.id != nil
+	  		if @plan_details.plan_type == 1
+	  			@pantype = Time.now + 30.days
+	  		elsif @plan_details.plan_type == 2
+	  			@pantype = Time.now + 15.days
+	  		else  @plan_details.plan_type == 3
+	  			@pantype = Time.now + 365.days
 
+	  		end
+	  # 		logger.info('******plan id')
+	  # logger.info(@pantype)
+		  @history = UsersPaymentHistory.create({
+									:plan_id =>  @plan_details.id,
+									:user_id => @current_user.id,
+									:purchased_on => Time.new,
+									:expired_on => @pantype
+								})
+		  @history.save
+		  logger.info('******saving history')
+		  logger.info(@history)
+		end
   		#################################
 		#      Check Payment Method     #
 		#################################	
