@@ -97,6 +97,8 @@ EPS::Application.routes.draw do
     get "pages" => "admin#pages"
     get "page/:page_name/edit" => "admin#edit_page"
     post "/page/update" => "admin#update_page"
+    get "/add_company" => "admin#add_user"
+    post "/companies/create" => "admin#create_company"
 
     resources :subscription_plans
     resources :staff_plans

@@ -1,0 +1,81 @@
+<%= render 'admin/layouts/application' %>
+		</div>
+	</div>
+</div>
+
+  <div class="content inner-page">
+    <div class="content-down"></div>
+    <div class="container">
+    <% flash.each do |name, msg| %>
+      <div class="">
+        <h4 align="center" class="flash"><%= content_tag :div, msg, :id => "flash_#{name}" %>
+        </h4>
+      </div>
+    <% end %>
+      <div class="row">
+        <h4><span><%= image_tag("line.png" , :alt => 'line.png') %></span>Add Company Page<span>
+        <%= image_tag("right.png" , :alt => 'right.png') %>
+      </span></h4>
+  	  <form id="editStaff" class="form-horizontal add-employee" action="/admin/companies/create" method="POST">
+
+      <div class="form-group">
+        <div class="col-lg-6">
+        <%= label_tag :first_name, 'First Name', :class => "control-label col-sm-3" %>
+        <div class="col-sm-9">
+          <%= text_field_tag :first_name, nil, :class => 'form-control', :placeholder => 'Enter First Name', :required => 'required' %>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <%= label_tag :last_name, 'Last Name', :class => "control-label col-sm-3", :required => 'required' %>
+        <div class="col-sm-9">
+          <%= text_field_tag :last_name, nil, :class => 'form-control', :placeholder => 'Enter Last Name', :required => 'required' %>
+        </div>
+      </div>
+      </div>
+      
+
+
+      <div class="form-group">
+        <div class="col-lg-6">
+        <%= label_tag :email, 'Email', :class => "control-label col-sm-3" %>
+        <div class="col-sm-9">
+          <%= email_field_tag :email, nil, class:'form-control', :placeholder => 'Enter Email', :required => 'required' %>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <%= label_tag :user_type, 'Company Type', :class => "control-label col-sm-3" %>
+        <div class="col-sm-9">
+          <%#= text_field_tag :user_type, @company.user_type, class:'form-control', :placeholder => 'Enter Skills', :required => 'required' %>
+          <select name="user_type"  class="form-control" required="required">
+            <option value="1" >I want to hire staff</option>
+            <option value="2" >I want to sell staff</option>
+            <option value="3">I want to hire/sell staff</option>
+          </select>
+        </div>
+      </div>
+      </div>
+
+      <div class="form-group">
+        <div class="col-lg-6">
+        <%= label_tag :password, 'Password', :class => "control-label col-sm-3" %>
+        <div class="col-sm-9">
+          <%= password_field_tag :password, nil, class:'form-control', :placeholder => 'Enter Password', :required => 'required' %>
+        </div>
+      </div>
+      </div>
+
+      <div class="form-group">
+        <div class="col-sm-10">
+          <%= submit_tag "Update", :class => 'btn btn-default col-sm-offset-2' %>
+          <a href="/admin" class="btn btn-default">Cancel</a>
+        </div>
+      </div>
+      </form>
+    </div>
+     
+      
+     
+    </div>
+  </div>
+  
+<%= render 'admin/layouts/footer' %>

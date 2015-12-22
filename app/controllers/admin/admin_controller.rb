@@ -106,6 +106,35 @@ class Admin::AdminController < ApplicationController
 	  	redirect_to "/admin", :notice => "Logged out!"
 	end
 
+	###################
+	#    Add Company  #
+	###################
+	def add_user		
+	end
+
+	##########################
+	#    Create New Copmany  #
+	##########################
+	def create_company		
+		@user = User.new({:first_name => params[:first_name],
+						  :last_name => params[:last_name],
+						  :email => params[:email],
+						  :user_type => params[:user_type],
+						  :password => params[:password]
+						})
+		  if @user.save
+		    redirect_to "/admin", :notice => "New Company is added"
+		  else
+		  	@errorMsg = ''
+		  	@user.errors.each do |key, message|
+		  		@errorMsg += key.to_s
+		  		@errorMsg += ' '
+		  		@errorMsg += message.to_s
+		  	end
+		    redirect_to "/admin/add_company", :notice => @errorMsg # "Please fill all details"
+		  end
+	end
+
 	private
 
 	 def plan_params

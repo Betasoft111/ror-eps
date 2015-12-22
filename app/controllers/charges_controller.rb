@@ -139,7 +139,7 @@ class ChargesController < ApplicationController
 										:payment_method => 'stripe',
 										:payment_status => 'paid',
 										:user_id => @user.id,
-										:payment_json => params.to_json
+										:payment_json => params[:data][:object].to_json
 									})
 		 		return render :json => {:success => true, :message => "data updated"}
 		 	end
