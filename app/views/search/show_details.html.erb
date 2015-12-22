@@ -25,10 +25,12 @@
 					<!-- <img src="img/line.png"> -->
 					<%= image_tag("line.png" , :alt => 'line.png') %>
 				</span>
-				<% if @user_detail.is_private ||   current_user  %>
-				<%= @user_detail.first_name+' '+@user_detail.last_name %>
+				<% if @user_detail.is_private %>
+					User Is Private					
+				<% elsif !current_user %>
+					User Is Private					
 				<% else %>
-				User Is Private
+					<%= @user_detail.first_name+' '+@user_detail.last_name %>					
 				<% end %>
 				<span>
 					<%= image_tag("right.png" , :alt => 'right.png') %>
@@ -45,18 +47,18 @@
 				<div class="col-lg-8 col-lg-offset-1">
 					<strong>Contact Information</strong>
 					<p><label>Email : </label>
-					<% if @user_detail.is_private  ||  current_user %>
-					<%= @user_detail.email %>
+					<% if @user_detail.is_private  ||  !current_user %>
+						User Is Private
 					<% else %>
-					Private
+						<%= @user_detail.email %>
 					<% end %>
 				</p>
 				<strong>General Information</strong>
 				<p><label>Name : </label>
-				<% if @user_detail.is_private ||   current_user  %>
-				 <%= @user_detail.first_name+' '+@user_detail.last_name %>
+				<% if @user_detail.is_private ||   !current_user  %>
+					User Is Private
 				<% else %>
-				Private
+				 <%= @user_detail.first_name+' '+@user_detail.last_name %>
 				<% end %>
 			</p>
 			<p><label>Skills : </label><%= @user_detail.skills %></p>
