@@ -125,7 +125,7 @@ class ChargesController < ApplicationController
 		@payment_generate = UserPayments.create({
 								:payment_method => 'stripe',
 								:payment_status => 'paid',
-								:user_id => @current_user.id,
+								#:user_id => @current_user.id,
 								:payment_json => params.to_json
 							})
 		# if params[:txnid] && params[:txnid] != nil && params[:orderid] && params[:orderid] != nil && params[:amount] && params[:amount] != nil
@@ -136,7 +136,7 @@ class ChargesController < ApplicationController
 		# 		redirect_to "/company_home", :notice => "Membership is updated successfully"
 		# 	end
 		# else
-		# 	return render :json => {:success => false, :message => "All field are required"}
+		 	return render :json => {:success => true, :message => "data updated"}
 		# end
 	end
 
