@@ -1,4 +1,6 @@
 require "paypal/recurring"
+require 'json'
+
 class ChargesController < ApplicationController
 	before_filter :authenticate_user!, only: [:new, :create]
 	before_filter :current_user
@@ -126,22 +128,21 @@ class ChargesController < ApplicationController
 	#     IPN Listner For Stripe    #
 	################################# 
 	def payment_ipn_stripe
-		@payment_generate = UserPayments.create({
-								:payment_method => 'stripe',
-								:payment_status => 'paid',
-								#:user_id => @current_user.id,
-								:payment_json => params.to_json
-							})
-		# if params[:txnid] && params[:txnid] != nil && params[:orderid] && params[:orderid] != nil && params[:amount] && params[:amount] != nil
-		# 	@plan_details = SubscriptionPlan.where(:plan_price => params[:amount]) #.where(:email => plan_params[:email])
-		# 	if @plan_details && @plan_details[0]
-		# 		@plan_id = @plan_details[0].id
-		# 		User.where(:id => @current_user.id).update_all(plan_id: @plan_id)
-		# 		redirect_to "/company_home", :notice => "Membership is updated successfully"
-		# 	end
-		# else
-		 	return render :json => {:success => true, :message => "data updated"}
-		# end
+		#event_json = JSON.parse params
+		logger.info('*****************')
+		logger.info(params[:data][:object][:source][:name])
+		payment_Status = params[:data][:object][:status]
+			if payment_Status == 'succeeded'
+				@user_email = params[:data][:object][:source][:name]
+				@user = User.where(:email => @user_email).first
+				@payment_generate = UserPayments.create({
+										:payment_method => 'stripe',
+										:payment_status => 'paid',
+										:user_id => @user.id,
+										:payment_json => params.to_json
+									})
+		 		return render :json => {:success => true, :message => "data updated"}
+		 	end
 	end
 
 	private
