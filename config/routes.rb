@@ -70,6 +70,7 @@ EPS::Application.routes.draw do
   get '/my_requests'  => 'company_requests#myrequests'
 
   get "/not_authorized" => 'companies#no_access'
+  get "/payment_history" => 'companies#payment_his'
 
 
 
