@@ -47,11 +47,11 @@ EPS::Application.routes.draw do
   get "/search_json" => "search#search_json"
 
 
-   #################################
+  #################################
   #         fav search routes     #
   #################################
-   resources :favourite_searches
-
+  resources :favourite_searches
+  get "/favourite_searches/destroy/:id" => "favourite_searches#destroy"
 
 
   #################################

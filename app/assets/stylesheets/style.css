@@ -1403,7 +1403,7 @@ em.current {
 }
 
 .container p {
-  display: inline-block;
+  /*display: inline-block;*/
 }
 
 .container p label {
@@ -1798,9 +1798,13 @@ p.Strong {
     color: #0a7db7;
 }
 
-/***** 22 Dec ***/
+/***** 21 Dec ***/
 .home-video {
     bottom: 0;
     height: auto;
     position: absolute;
+}
+/***** 22 Dec *****/
+a.icon-eye-open {
+    color: #000;
 }
