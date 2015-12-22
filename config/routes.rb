@@ -47,11 +47,11 @@ EPS::Application.routes.draw do
   get "/search_json" => "search#search_json"
 
 
-   #################################
+  #################################
   #         fav search routes     #
   #################################
-   resources :favourite_searches
-
+  resources :favourite_searches
+  get "/favourite_searches/destroy/:id" => "favourite_searches#destroy"
 
 
   #################################
@@ -85,6 +85,7 @@ EPS::Application.routes.draw do
   namespace :admin do
     root to: "admin#index"
     get "create" => "admin#create"
+    #get "subscription_plans" => "subscription_plans#index"
     post "subscription_plans/create" => "subscription_plans#create"
     post "staff_plans/create" => "staff_plans#create"
     get "log_in" => "admin#login"

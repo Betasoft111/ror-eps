@@ -7,12 +7,12 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title>Employee Placement System | Admin</title>
     <%= stylesheet_link_tag    "google-fonts.css" %>
-    <%= stylesheet_link_tag    "hover.css" %>
+    <%#= stylesheet_link_tag    "hover.css" %>
     <%= stylesheet_link_tag    "style.css" %>
     <%= stylesheet_link_tag    "bootstrap.css" %>
-    <%= stylesheet_link_tag    "bootstrap.min.css" %>
-    <%= stylesheet_link_tag    "bootstrap-theme.css" %>
-    <%= stylesheet_link_tag    "bootstrap-theme.min.css" %>
+    <%#= stylesheet_link_tag    "bootstrap.min.css" %>
+    <%#= stylesheet_link_tag    "bootstrap-theme.css" %>
+    <%#= stylesheet_link_tag    "bootstrap-theme.min.css" %>
     <%= stylesheet_link_tag    "sweetalert2.css" %>
     <%= stylesheet_link_tag    "jquery-ui.css" %>
     <%= stylesheet_link_tag    "font-awesome.min.css" %>
@@ -86,10 +86,17 @@
                       </ul>
                     </li> -->
 
-                    <li class=""><a >Add Data</a>
+                    <li class=""><a href="javascript:void(0)">Add Data</a>
                       <ul>
                         <li><a href="/admin/skills"> Skills</a></li>
                         <li><a href="/admin/qualifications"> Qualifications  </a></li>
+                      </ul>
+                    </li>
+
+                    <li class=""><a href="javascript:void(0)">Plans</a>
+                      <ul>
+                        <li><a href="/admin/subscription_plans"> Membership Plans</a></li>
+                        <li><a href="/admin/staff_plans"> Addon Plans  </a></li>
                       </ul>
                     </li>
 

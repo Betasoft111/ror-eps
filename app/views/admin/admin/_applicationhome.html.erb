@@ -85,7 +85,7 @@ $(document).ready(function () {
                     <li class="hvr-overline-from-center"><a href="#">Contact Us</a></li>
                     <li class="hvr-overline-from-center"><a href="#">Pricing </a></li>
                     <% if session[:user_id] && session[:user_id] != nil %>
-                    <li class="hvr-overline-from-center"><a href="/log_out" >Logout</a></li>
+                      <li class="hvr-overline-from-center"><a href="/log_out" >Logout</a></li>
                     <% else %>
                     <!-- <li><a href="/join" class="login-tab">Login</a></li> -->
                     <li class=""><a href="/join" class="login-tab">Join</a>
@@ -121,12 +121,7 @@ $(document).ready(function () {
       </div>
     </div>
     </div><!-- end. header-top -->
-    <% flash.each do |name, msg| %>
-    <div class="">
-      <h4 align="center" class="flash"><%#= content_tag :div, msg, :id => "flash_#{name}" %>
-      </h4>
-    </div>
-    <% end %>
+
 <style>
 .sweet-container {
   display: none;

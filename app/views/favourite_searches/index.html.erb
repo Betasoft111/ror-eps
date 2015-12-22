@@ -9,7 +9,7 @@
 <div class="container">
 	    <% flash.each do |name, msg| %>
       <div class="">
-        <!-- <h4 align="center" class="flash"><%= content_tag :div, msg, :id => "flash_#{name}" %> -->
+        <h4 align="center" class="flash"><%= content_tag :div, msg, :id => "flash_#{name}" %>
         </h4>
       </div>
     <% end %>
@@ -40,7 +40,7 @@
 						<td><%= search.qualification %></td>
 						<td><%= search.experience %></td>
 						<td><%= search.availability %></td>
-						<td><a class="" href="search?skills=<%= search.skills %>&staff_quf=<%= search.qualification %>&experience= <%= search.experience %> &availability=<%= search.availability %>">Open</a> </td>						
+						<td><a class="icon-eye-open" target="_blank" href="search?skills=<%= search.skills %>&staff_quf=<%= search.qualification %>&experience= <%= search.experience %> &availability=<%= search.availability %>"><i class="fa fa-eye"></i></a> &nbsp; <a href="/favourite_searches/destroy/<%= search.id %>" class="delete"></a> </td>						
 					</tr>
 					<% end %>
 				</tbody>

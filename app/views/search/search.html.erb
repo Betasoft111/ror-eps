@@ -77,10 +77,10 @@
 			<% if current_user %>
 			<%= form_tag '/favourite_searches' do %>
 			<% if @search_results != nil && @search_results.first != nil %>
-			<%= hidden_field_tag 'skills', @search_results.first.skills %>
-			<%= hidden_field_tag 'qualification', @search_results.first.qualification %>
-			<%= hidden_field_tag 'experience', @search_results.first.experience %>
-			<%= hidden_field_tag 'availability', @search_results.first.availability %>
+			<%= hidden_field_tag 'skills', params[:skills] %>
+			<%= hidden_field_tag 'qualification', params[:qualification] %>
+			<%= hidden_field_tag 'experience', params[:experience] %>
+			<%= hidden_field_tag 'availability', params[:availability] %>
 			<%= hidden_field_tag 'user_id', current_user.id %>
 			<%= submit_tag "Save Search Result", :class => 'save-search' %>
 			<% end %>
@@ -104,10 +104,12 @@
 				</div>
 				<span class="rate-search">6,300 <sup>kr</sup></span>
 				<h5><%= data.company_fn %> <%= data.company_ln %>/ 
-					<% if data.is_private ||  current_user %>
-						<%= data.first_name %> <%= data.last_name %>
-					<% else %>
+					<% if data.is_private %>
 						User is private
+					<% elsif !current_user %>
+						User is private
+					<% else %>
+						<%= data.first_name %> <%= data.last_name %>						
 					<% end %>
 				</h5>
 			</div>
