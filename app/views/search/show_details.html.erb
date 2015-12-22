@@ -66,7 +66,11 @@
 			<p><label>Experience : </label><%= @user_detail.experience %></p>
 			<strong>Other Information</strong>
 			<p><label>Other details : </label> </p>
-			<%= link_to "Contact To Company", company_request_path(@user_detail.company_id), class: "btn btn-default" %>
+			<% if !current_user %>
+				<%= link_to "Pleas Login First", company_request_path(@user_detail.company_id), class: "btn btn-default", disabled: "disabled" %>
+			<% else %>
+				<%= link_to "Contact To Company", company_request_path(@user_detail.company_id), class: "btn btn-default" %>
+			<% end %>
 		</div>
 	</div>
 </div>
