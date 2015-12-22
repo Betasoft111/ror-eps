@@ -75,7 +75,7 @@ class ChargesController < ApplicationController
 
 			@amount = @plan_details.plan_price.to_i * 100 
 			customer = Stripe::Customer.create(
-			  :email => params[:stripeEmail],
+			  :email => @current_user.email,
 			  :source  => params[:stripeToken]
 			)
 			charge = Stripe::Charge.create(
