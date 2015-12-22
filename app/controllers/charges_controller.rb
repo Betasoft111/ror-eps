@@ -16,12 +16,14 @@ class ChargesController < ApplicationController
 	  
 	  if @plan_details.id != nil
 	  		if @plan_details.plan_type == 1
+	  			@planname = "Monthly"
 	  			@pantype = Time.now + 30.days
 	  		elsif @plan_details.plan_type == 2
 	  			@pantype = Time.now + 15.days
+	  			@planname = "Quaterly"
 	  		else  @plan_details.plan_type == 3
 	  			@pantype = Time.now + 365.days
-
+	  			@planname = "Yearly"
 	  		end
 	  # 		logger.info('******plan id')
 	  # logger.info(@pantype)
@@ -29,11 +31,13 @@ class ChargesController < ApplicationController
 									:plan_id =>  @plan_details.id,
 									:user_id => @current_user.id,
 									:purchased_on => Time.new,
-									:expired_on => @pantype
+									:expired_on => @pantype,
+									:plan_name => @planname,
+									:plan_type => 'Subscription Plan'
 								})
 		  @history.save
-		  logger.info('******saving history')
-		  logger.info(@history)
+		  # logger.info('******saving history')
+		  # logger.info(@history)
 		end
   		#################################
 		#      Check Payment Method     #

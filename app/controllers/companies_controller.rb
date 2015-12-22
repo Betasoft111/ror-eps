@@ -31,6 +31,12 @@ class CompaniesController < ApplicationController
 	end
 
 
+	def payment_his
+		@userpaymentdetails = UsersPaymentHistory.where(:user_id => @current_user.id )
+	end
+
+
+
 
 	#################################
 	#   Add New Company staff    #
@@ -144,7 +150,28 @@ class CompaniesController < ApplicationController
 	def upgrade_staff_plan
 		@plan_id = params[:plan_id]
 	  	@plan_details = Admin::StaffPlan.find(@plan_id)
+	  	 if @plan_details.id != nil
+	  		if @plan_details.plan_type == 1
+	  			@planname = "Monthly"
+	  			@pantype = Time.now + 30.days
+	  		elsif @plan_details.plan_type == 2
+	  			@pantype = Time.now + 15.days
+	  			@planname = "Quaterly"
+	  		else  @plan_details.plan_type == 3
+	  			@pantype = Time.now + 365.days
+	  			@planname = "Yearly"
+	  		end
 
+	  	 @history = UsersPaymentHistory.create({
+									:plan_id =>  @plan_details.id,
+									:user_id => @current_user.id,
+									:purchased_on => Time.new,
+									:expired_on => @pantype,
+									:plan_name => @planname,
+									:plan_type => 'Staff Plan'
+								})
+		  @history.save
+		end
   		#################################
 		#      Check Payment Method     #
 		#################################	

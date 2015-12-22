@@ -1,0 +1,51 @@
+<%= render 'layouts/application' %>
+</div>
+</div>
+</div>
+
+<div class="content inner-page">
+	<div class="content-down"></div>
+<div class="container">
+	    <% flash.each do |name, msg| %>
+      <div class="">
+        <h4 align="center" class="flash"><%= content_tag :div, msg, :id => "flash_#{name}" %>
+        </h4>
+      </div>
+    <% end %>
+<div class="row">
+	<h4><span>
+		<%= image_tag("line.png" , :alt => 'line.png') %>
+		</span>User Payment History <span><%= image_tag("right.png" , :alt => 'right.png') %></span></h4>
+		<!-- <span class="q1"><a class="add-new" href="/admin/staff_plans/new" > Add New</a> -->
+		</span>
+		<%#=  debug @current_user %>
+		<div class="table-responsive">
+			<table class="table">
+				<thead>
+					<tr>
+						<th>Plan Type</th>
+						<th>Plan</th>
+						<th>Purchased on</th>
+						<th>Expires on</th>
+						<th>User Name</th>
+					</tr>
+				</thead>
+				<tbody>
+					<% @userpaymentdetails.each do |plan| %>
+					<tr>
+						<td><%= plan.plan_type %></td>
+						<td><%= plan.plan_name %></td>
+						<td><%= plan.purchased_on %></td>
+						<td><%= plan.expired_on %></td>
+						<td><%= @current_user.email %></td>
+
+												
+					</tr>
+					<%  end %>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>
+</div>
+<%= render 'layouts/footer' %>
