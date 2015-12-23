@@ -66,7 +66,7 @@ class ChargesController < ApplicationController
 				User.where(:id => @current_user.id).update_all(plan_id: @plan_id)
 				#:notice => "Membership is updated successfully"
 				#redirect_to "/company_home", :notice => "Membership is updated successfully"
-				redirect_to response.checkout_url if response.valid?
+				redirect_to response.checkout_url, :notice => "Membership is updated successfully" if response.valid?
 			end
 			#################################
 			#           Paypal Ends         #
