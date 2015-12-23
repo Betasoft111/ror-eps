@@ -7,6 +7,16 @@ class CompaniesController < ApplicationController
 	#  	        List Plans          #
 	#################################
 	def index
+		if params[:txnid] && params[:txnid] != nil && params[:orderid] && params[:orderid] != nil && params[:amount] && params[:amount] != nil
+			@plan_details = SubscriptionPlan.where(:plan_price => params[:amount]) #.where(:email => plan_params[:email])
+			if @plan_details && @plan_details[0]
+				@plan_id = @plan_details[0].id
+				User.where(:id => @current_user.id).update_all(plan_id: @plan_id)
+				:notice => "Membership is updated successfully"
+			end
+		else
+			#return render :json => {:success => false, :message => "All field are required"}
+		end
 		params[:page] ||= 1
 		@staff_list = CompanyStaff.where(:company_id => @current_user.id).paginate(:page => params[:page], :per_page => 10)
 	end
