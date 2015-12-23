@@ -1230,9 +1230,9 @@ em.current {
     float: right;
 }
 #addStaff input[type="file"] {
-    border: medium none;
+   /* border: medium none;
     height: auto;
-    padding-left: 0;
+    padding-left: 0;*/
 }
 .animated {
     animation-duration: 1s;

@@ -97,7 +97,7 @@
        <div class="col-lg-6">
          <%= label_tag :image, 'Upload Image', :class => "control-label col-sm-3" %>
         <div class="col-sm-9">
-          <%= file_field_tag :image, class:'form-control' %> 
+          <%= file_field_tag :image, class: 'form-control' %> 
         </div>
       </div>
       </div>
@@ -243,6 +243,11 @@ function geolocate() {
 }
 // [END region_geolocation]
 </script>
+<style type="text/css">
+.sweet-container {
+  display: none;
+}
+</style>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAaeRBXe6kIcRkaDZMMx9CbSvLgAXuSPAI&signed_in=true&libraries=places&callback=initAutocomplete"
         async defer></script>
             

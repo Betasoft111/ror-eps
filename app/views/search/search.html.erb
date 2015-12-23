@@ -52,6 +52,9 @@
 								<input type="hidden" name="availability_from" id="availability_from" >
 							</div>
 						</div>
+
+<%= logger.info(@parms_val)%>
+
 						<!--div class="form-group">
 							<label class="control-label col-sm-3" for="pwd">Price level</label>
 							<div class="col-sm-9">
@@ -109,7 +112,7 @@
 					<% elsif !current_user %>
 						User is private
 					<% else %>
-						<%= data.first_name %> <%= data.last_name %>						
+						<%= data.first_name %> <%= data.labelast_name %>						
 					<% end %>
 				</h5>
 			</div>
