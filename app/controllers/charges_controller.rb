@@ -62,7 +62,7 @@ class ChargesController < ApplicationController
 
 				response = ppr.checkout
 				User.where(:id => @current_user.id).update_all(plan_id: @plan_id)
-				@email = UserMailer.payment_email(@current_user, @plan_details.plan_price.to_i).deliver				
+				@email = UserMailer.payment_email(@current_user, @plan_details.plan_price).deliver				
 				redirect_to response.checkout_url, :notice => "Membership is updated successfully" if response.valid?
 			end
 			#################################
@@ -89,7 +89,10 @@ class ChargesController < ApplicationController
 			    #         Save In Database      #
 			    #################################
 				User.where(:id => @current_user.id).update_all(plan_id: @plan_id)
-				@email = UserMailer.payment_email(@current_user, @plan_details.plan_price.to_i).deliver
+				@email = UserMailer.payment_email(@current_user, @plan_details.plan_price).deliver
+				# logger.info('*****************  sending email')
+				# logger.info(@email)
+				# logger.info(@plan_details.plan_price)
 				redirect_to "/company_home", :notice => "Membership is updated successfully"
 		  end
 			
@@ -137,7 +140,7 @@ class ChargesController < ApplicationController
 				#end  
 				
 					User.where(:id => @current_user.id).update_all(plan_id: @plan_id)
-					@email = UserMailer.payment_email(@current_user, @plan_details.plan_price.to_i).deliver
+					@email = UserMailer.payment_email(@current_user, @plan_details.plan_price).deliver
 					redirect_to "/company_home", :notice => "Membership is updated successfully"
 			end
 		else
@@ -217,7 +220,7 @@ class ChargesController < ApplicationController
 				@new_allowed_staff = @plan_details.no_of_staff.to_i + @already_allow.to_i
 				UsersStaffPlan.where(:user_id => @current_user.id).update_all(plan_id: @plan_id, no_of_profiles: @new_allowed_staff)
 				User.where(:id => @current_user.id).update_all(plan_id: @plan_id)
-				@email = UserMailer.payment_email(@current_user, @plan_details.plan_price.to_i).deliver				
+				@email = UserMailer.payment_email(@current_user, @plan_details.plan_price).deliver				
 				redirect_to response.checkout_url, :notice => "Membership is updated successfully" if response.valid?
 			end
 	end
@@ -253,7 +256,7 @@ class ChargesController < ApplicationController
 					#User.where(:id => @current_user.id).update_all(plan_id: @plan_id)
 					@new_allowed_staff = @plan_details.no_of_staff.to_i + @current_user.
 					UsersStaffPlan.where(:user_id => @current_user.id).update_all(plan_id: @plan_id, no_of_profiles: @new_allowed_staff)
-					@email = UserMailer.payment_email(@current_user, @plan_details.plan_price.to_i).deliver
+					@email = UserMailer.payment_email(@current_user, @plan_details.plan_price).deliver
 					redirect_to "/company_home", :notice => "Membership is updated successfully"
 			end
 		else

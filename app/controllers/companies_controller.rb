@@ -260,7 +260,7 @@ class CompaniesController < ApplicationController
 				else
 					@new_profiles = @current_sub_plan[0].no_of_profiles.to_i + @plan_details.no_of_staff.to_i
 					 UsersStaffPlan.where(:user_id => @current_user.id).update_all(plan_id: @plan_id, no_of_profiles: @new_profiles)
-					 @email = UserMailer.payment_email(@current_user, @plan_details.plan_price.to_i).deliver
+					 @email = UserMailer.payment_email(@current_user, @amount).deliver
 					 redirect_to "/company_home", :notice => "Membership is updated successfully"
 				end
 				

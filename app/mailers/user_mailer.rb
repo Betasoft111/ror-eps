@@ -16,7 +16,7 @@ class UserMailer < ActionMailer::Base
   def payment_email(user, plan)
     @user = user
     @plan = plan
-    mail(to: @user.email, subject: 'Reset your password')
+    mail(to: @user.email, subject: 'Payment Recieved')
   end
 
 end
