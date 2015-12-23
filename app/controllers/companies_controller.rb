@@ -12,7 +12,7 @@ class CompaniesController < ApplicationController
 			if @plan_details && @plan_details[0]
 				@plan_id = @plan_details[0].id
 				User.where(:id => @current_user.id).update_all(plan_id: @plan_id)
-				:notice => "Membership is updated successfully"
+				redirect_to "/company_home", :notice => "Membership is updated successfully"
 			end
 		else
 			#return render :json => {:success => false, :message => "All field are required"}
