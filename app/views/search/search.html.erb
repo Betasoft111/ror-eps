@@ -91,7 +91,7 @@
 			<% @search_results.each do |data| %>
 			<div class="col-lg-4 col-sm-4 search-result">
 				<!-- <img src="img/search1.jpg"> -->
-				<%= image_tag("search1.jpg" , :alt => 'search1.jpg') %>
+				<%#= image_tag("search1.jpg" , :alt => 'search1.jpg') %>
 				<div class="company-search">
 					<span>
 						<% if data.is_private %>
@@ -178,9 +178,22 @@ $("#staffQualitication").autocomplete({
 source: uniqueQa
 });
 }
-$(function() {
-$('#availability').daterangepicker();
-});
+	$(function() {
+	    $('#availability').daterangepicker({
+	        autoUpdateInput: false,
+	        locale: {
+	            cancelLabel: 'Clear'
+	        }
+	    });
+
+	    $('#availability').on('apply.daterangepicker', function(ev, picker) {
+	        $(this).val(picker.startDate.format('MM/DD/YYYY') + ' - ' + picker.endDate.format('MM/DD/YYYY'));
+	    });
+
+	    $('#availability').on('cancel.daterangepicker', function(ev, picker) {
+	        $(this).val('');
+	    });
+	});
 $('#availability').change(function () {
 //alert($(this).val());
 var selectedDate = $(this).val().split('-');

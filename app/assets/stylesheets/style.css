@@ -1681,9 +1681,9 @@ li.selected-tab {
     margin-top: 20px;
 }
 .company-search {
-    bottom: 2px;
+    /*bottom: 2px;
     position: absolute;
-    right: 39px;
+    right: 39px;*/
 }
 .company-search a{
     margin-top: 0;
@@ -1807,4 +1807,49 @@ p.Strong {
 /***** 22 Dec *****/
 a.icon-eye-open {
     color: #000;
+}
+
+/**** 24 Dec *****/
+==========================================================
+.search-result img {
+display: none;
+}
+
+.company-search img {
+display: block;
+}
+
+.company-search img {
+background: #ffffff none repeat scroll 0 0;
+border: 1px solid #015e8e;
+border-radius: 50%;
+height: 200px;
+width: 200px;
+}
+
+.company-search {
+
+}
+
+.search-result h5 {
+color: #2a2a2a;
+display: block;
+font-size: 17px;
+margin-top: 20px;
+text-align: center;
+}
+
+.company-search a {
+color: #008ed6;
+font-size: 13px;
+margin-top: 0;
+text-align: center;
+text-decoration: none;
+}
+
+.company-search span {
+display: block;
+margin: 0 25% 20px;
+text-align: center;
+width: 50%;
 }
