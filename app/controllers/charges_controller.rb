@@ -12,10 +12,8 @@ class ChargesController < ApplicationController
 	end
 
 	def create
-	  @plan_id = params[:plan_id]
-	  
-	  @plan_details = SubscriptionPlan.find(@plan_id)
-	  
+	  @plan_id = params[:plan_id]	  
+	  @plan_details = SubscriptionPlan.find(@plan_id)	  
 	  if @plan_details.id != nil
 	  		if @plan_details.plan_type == 1
 	  			@planname = "Monthly"
@@ -64,8 +62,7 @@ class ChargesController < ApplicationController
 
 				response = ppr.checkout
 				User.where(:id => @current_user.id).update_all(plan_id: @plan_id)
-				#:notice => "Membership is updated successfully"
-				#redirect_to "/company_home", :notice => "Membership is updated successfully"
+				@email = UserMailer.payment_email(@current_user, @plan_details.plan_price.to_i).deliver				
 				redirect_to response.checkout_url, :notice => "Membership is updated successfully" if response.valid?
 			end
 			#################################
@@ -92,6 +89,7 @@ class ChargesController < ApplicationController
 			    #         Save In Database      #
 			    #################################
 				User.where(:id => @current_user.id).update_all(plan_id: @plan_id)
+				@email = UserMailer.payment_email(@current_user, @plan_details.plan_price.to_i).deliver
 				redirect_to "/company_home", :notice => "Membership is updated successfully"
 		  end
 			
@@ -139,6 +137,7 @@ class ChargesController < ApplicationController
 				#end  
 				
 					User.where(:id => @current_user.id).update_all(plan_id: @plan_id)
+					@email = UserMailer.payment_email(@current_user, @plan_details.plan_price.to_i).deliver
 					redirect_to "/company_home", :notice => "Membership is updated successfully"
 			end
 		else
@@ -150,9 +149,6 @@ class ChargesController < ApplicationController
 	#     IPN Listner For Stripe    #
 	################################# 
 	def payment_ipn_stripe
-		#event_json = JSON.parse params
-		#logger.info('*****************')
-		#logger.info(params[:data][:object][:source][:name])
 		payment_Status = params[:data][:object][:status]
 			if payment_Status == 'succeeded'
 				@user_email = params[:data][:object][:source][:name]
@@ -165,6 +161,55 @@ class ChargesController < ApplicationController
 									})
 		 		return render :json => {:success => true, :message => "data updated"}
 		 	end
+	end
+
+	#################################
+	#     IPN Listner For Stripe    #
+	################################# 
+	def buy_addon_paypal
+		  ##############################
+		  #   Create Paypal Charge     #
+		  ##############################
+		  @plan_id = params[:plan_id]	  
+		  @plan_details = Admin::StaffPlan.find(@plan_id)	  
+		  if @plan_details.id != nil
+			  @history = UsersPaymentHistory.create({
+										:plan_id =>  @plan_details.id,
+										:user_id => @current_user.id,
+										:purchased_on => Time.new,
+										#:expired_on => @pantype,
+										:plan_name => @plan_details.plan_name,
+										:plan_type => 'Add On Plan'
+									})
+			  @history.save
+			end
+
+			#################################
+			#      Paypal Configuration     #
+			#################################	
+			if @plan_details.id != nil
+			  	PayPal::Recurring.configure do |config|
+				  config.sandbox = true
+				  config.username = "randhir_api1.betasoftsystems.com"
+				  config.password = "N9JPT5UCNRMUXPRK"
+				  config.signature = "AFcWxV21C7fd0v3bYYYRCpSSRl31AboldMqHUE-HNrXcXG79zqSK-x33"
+				end
+				ppr = PayPal::Recurring.new({
+				  :return_url   => "http://system.jobkeeper.dk:3000/company_home",
+				  :cancel_url   => "http://system.jobkeeper.dk:3000/charges/payment_method",
+				  :ipn_url      => "http://system.jobkeeper.dk:3000/charges/payment_ipn",
+				  :description  => @plan_details.plan_name,
+				  :amount       => @plan_details.plan_price.to_i,
+				  :currency     => "USD"
+				})
+
+				response = ppr.checkout
+				#Calculate New Allowed No Of Profiles
+				@new_allowed_staff = @plan_details.no_of_staff.to_i + @current_user.
+				UsersStaffPlan.where(:user_id => @current_user.id).update_all(plan_id: @plan_id, no_of_profiles: @new_allowed_staff)
+				@email = UserMailer.payment_email(@current_user, @plan_details.plan_price.to_i).deliver				
+				redirect_to response.checkout_url, :notice => "Membership is updated successfully" if response.valid?
+			end
 	end
 
 	private

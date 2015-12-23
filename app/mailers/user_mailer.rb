@@ -13,4 +13,10 @@ class UserMailer < ActionMailer::Base
     mail(to: @user.email, subject: 'Reset your password')
   end
 
+  def payment_email(user, plan)
+    @user = user
+    @plan = plan
+    mail(to: @user.email, subject: 'Reset your password')
+  end
+
 end
