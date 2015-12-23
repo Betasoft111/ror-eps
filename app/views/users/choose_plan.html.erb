@@ -110,7 +110,7 @@
     'amount': amount,
     'currency': "DKK",
     'ownreceipt' : "1",
-    'accepturl' : "http://system.jobkeeper.dk:3000/company_home"
+    'accepturl' : "http://system.jobkeeper.dk:3000/payment_ipn"
     });
     paymentwindow.open();
     },500);
@@ -152,6 +152,11 @@ $(radioId).prop('checked', true);
   
 });
 </script>
+<style>
+.sweet-container {
+  display: none;
+}
+</style>
 <!-- angular js stuff -->
 <%= javascript_include_tag "angular/angular.min.js" %>
 <%= javascript_include_tag "angular/payment.app.js" %>

@@ -34,9 +34,8 @@ EPS::Application.routes.draw do
   get "/payment_ipn" => "charges#payment_ipn"  
   post "/payment_ipn_stripe" => "charges#payment_ipn_stripe"  
   post "/upgrade_addstaff_plan" =>  "companies#upgrade_staff_plan"
-
-
-
+  get "/charges/add_on/create" => "charges#buy_addon_paypal"  
+  get "/charges/epay_addon" => "charges#buy_epay_addon"
 
 
   #################################
@@ -97,6 +96,8 @@ EPS::Application.routes.draw do
     get "pages" => "admin#pages"
     get "page/:page_name/edit" => "admin#edit_page"
     post "/page/update" => "admin#update_page"
+    get "/add_company" => "admin#add_user"
+    post "/companies/create" => "admin#create_company"
 
     resources :subscription_plans
     resources :staff_plans

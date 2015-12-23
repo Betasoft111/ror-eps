@@ -88,7 +88,7 @@
                              'amount': amount,
                              'currency': "DKK",
                              'ownreceipt' : "1",
-                             'accepturl' : "http://system.jobkeeper.dk:3000/company_home"
+                             'accepturl' : "http://system.jobkeeper.dk:3000/charges/epay_addon"
                              });
                             paymentwindow.open();
                           },500);
@@ -102,8 +102,7 @@
           </div>
           <div class="col-lg-3 paypal">
             <div class="card epay">
-              <!-- <h2><span>P</span>Pay Pal</h2> -->
-                <form action="/charges/create" method="POST">
+                <form action="/charges/add_on/create" method="POST">
                   <input type="hidden" name="pay_type" value="paypal">
                   <input type="hidden" name="plan_id" id="plan_id_paypal" value="">
                   <button type="submit"  value="Pay With Pay Pal"/>Pay With Pay Pal
