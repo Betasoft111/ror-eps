@@ -27,8 +27,7 @@ class ChargesController < ApplicationController
 	  			@pantype = Time.now + 365.days
 	  			@planname = "Yearly"
 	  		end
-	  # 		logger.info('******plan id')
-	  # logger.info(@pantype)
+
 		  @history = UsersPaymentHistory.create({
 									:plan_id =>  @plan_details.id,
 									:user_id => @current_user.id,
@@ -38,8 +37,7 @@ class ChargesController < ApplicationController
 									:plan_type => 'Subscription Plan'
 								})
 		  @history.save
-		  # logger.info('******saving history')
-		  # logger.info(@history)
+
 		end
   		#################################
 		#      Check Payment Method     #
@@ -116,8 +114,32 @@ class ChargesController < ApplicationController
 			@plan_details = SubscriptionPlan.where(:plan_price => params[:amount]) #.where(:email => plan_params[:email])
 			if @plan_details && @plan_details[0]
 				@plan_id = @plan_details[0].id
-				User.where(:id => @current_user.id).update_all(plan_id: @plan_id)
-				redirect_to "/company_home", :notice => "Membership is updated successfully"
+
+				#if @plan_details.id != nil
+			  		if @plan_details[0].plan_type == 1
+			  			@planname = "Monthly"
+			  			@pantype = Time.now + 30.days
+			  		elsif @plan_details[0].plan_type == 2
+			  			@pantype = Time.now + 15.days
+			  			@planname = "Quaterly"
+			  		else  @plan_details[0].plan_type == 3
+			  			@pantype = Time.now + 365.days
+			  			@planname = "Yearly"
+			  		end
+
+				  @history = UsersPaymentHistory.create({
+											:plan_id =>  @plan_id,
+											:user_id => @current_user.id,
+											:purchased_on => Time.new,
+											:expired_on => @pantype,
+											:plan_name => @planname,
+											:plan_type => 'Subscription Plan'
+										})
+				  @history.save
+				#end  
+				
+					User.where(:id => @current_user.id).update_all(plan_id: @plan_id)
+					redirect_to "/company_home", :notice => "Membership is updated successfully"
 			end
 		else
 			return render :json => {:success => false, :message => "All field are required"}
@@ -129,8 +151,8 @@ class ChargesController < ApplicationController
 	################################# 
 	def payment_ipn_stripe
 		#event_json = JSON.parse params
-		logger.info('*****************')
-		logger.info(params[:data][:object][:source][:name])
+		#logger.info('*****************')
+		#logger.info(params[:data][:object][:source][:name])
 		payment_Status = params[:data][:object][:status]
 			if payment_Status == 'succeeded'
 				@user_email = params[:data][:object][:source][:name]
