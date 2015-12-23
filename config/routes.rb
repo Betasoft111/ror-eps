@@ -35,6 +35,7 @@ EPS::Application.routes.draw do
   post "/payment_ipn_stripe" => "charges#payment_ipn_stripe"  
   post "/upgrade_addstaff_plan" =>  "companies#upgrade_staff_plan"
   get "/charges/add_on/create" => "charges#buy_addon_paypal"  
+  get "/charges/epay_addon" => "charges#buy_epay_addon"
 
 
   #################################

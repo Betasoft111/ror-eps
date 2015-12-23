@@ -167,6 +167,15 @@ class ChargesController < ApplicationController
 	#     IPN Listner For Stripe    #
 	################################# 
 	def buy_addon_paypal
+
+		  #Get Curretn Plan Allowed Staff
+		  @sub_plan = SubscriptionPlan.find(@current_user.plan_id)
+		  if @sub_plan != nil
+		  	@already_allow = @sub_plan.total_profiles
+		  else
+		  	@sub_plan = Admin::StaffPlan.find(@current_user.plan_id)
+		  	@already_allow = @sub_plan.no_of_staff
+		  end
 		  ##############################
 		  #   Create Paypal Charge     #
 		  ##############################
@@ -205,11 +214,51 @@ class ChargesController < ApplicationController
 
 				response = ppr.checkout
 				#Calculate New Allowed No Of Profiles
-				@new_allowed_staff = @plan_details.no_of_staff.to_i + @current_user.
+				@new_allowed_staff = @plan_details.no_of_staff.to_i + @already_allow.to_i
 				UsersStaffPlan.where(:user_id => @current_user.id).update_all(plan_id: @plan_id, no_of_profiles: @new_allowed_staff)
+				User.where(:id => @current_user.id).update_all(plan_id: @plan_id)
 				@email = UserMailer.payment_email(@current_user, @plan_details.plan_price.to_i).deliver				
 				redirect_to response.checkout_url, :notice => "Membership is updated successfully" if response.valid?
 			end
+	end
+
+	#################################
+	#     AddOn Plan For Epay    #
+	################################# 
+	def buy_epay_addon
+		#Get Curretn Plan Allowed Staff
+		  @sub_plan = SubscriptionPlan.find(@current_user.plan_id)
+		  if @sub_plan != nil
+		  	@already_allow = @sub_plan.total_profiles
+		  else
+		  	@sub_plan = Admin::StaffPlan.find(@current_user.plan_id)
+		  	@already_allow = @sub_plan.no_of_staff
+		  end
+		if params[:txnid] && params[:txnid] != nil && params[:orderid] && params[:orderid] != nil && params[:amount] && params[:amount] != nil
+			@plan_details = Admin::StaffPlan.where(:plan_price => params[:amount]) #.where(:email => plan_params[:email])
+			if @plan_details && @plan_details[0]
+				@plan_id = @plan_details[0].id			
+
+				  @history = UsersPaymentHistory.create({
+											:plan_id =>  @plan_id,
+											:user_id => @current_user.id,
+											:purchased_on => Time.new,
+											#:expired_on => @pantype,
+											:plan_name => @plan_details.plan_name,
+											:plan_type => 'Addon Plan'
+										})
+				  @history.save
+				#end  
+				
+					#User.where(:id => @current_user.id).update_all(plan_id: @plan_id)
+					@new_allowed_staff = @plan_details.no_of_staff.to_i + @current_user.
+					UsersStaffPlan.where(:user_id => @current_user.id).update_all(plan_id: @plan_id, no_of_profiles: @new_allowed_staff)
+					@email = UserMailer.payment_email(@current_user, @plan_details.plan_price.to_i).deliver
+					redirect_to "/company_home", :notice => "Membership is updated successfully"
+			end
+		else
+			return render :json => {:success => false, :message => "All field are required"}
+		end
 	end
 
 	private
