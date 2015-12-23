@@ -47,21 +47,11 @@
 						<div class="form-group">
 							<label class="control-label col-sm-3" for="pwd">Availability</label>
 							<div class="col-sm-9">
-								<input type="text" name="availability" id="availability" class="form-control" id="pwd" placeholder="" value="<%= params[:availability] %>">
+								<input type="text" name="availability" id="availability" class="form-control" id="pwd" placeholder="Select The Date" value="<%= params[:availability] %>" >
 								<input type="hidden" name="availability_to" id="availability_to">
 								<input type="hidden" name="availability_from" id="availability_from" >
 							</div>
 						</div>
-
-<%= logger.info(@parms_val)%>
-
-						<!--div class="form-group">
-							<label class="control-label col-sm-3" for="pwd">Price level</label>
-							<div class="col-sm-9">
-										
-										<% #image_tag("rang.png" , :alt => 'rang.png') %>
-							</div>
-					</div-->
 					
 					<div class="form-group">
 						<div class="col-sm-offset-2 col-sm-10 ">
@@ -78,16 +68,16 @@
 		</div>
 		<div class="row">
 			<% if current_user %>
-			<%= form_tag '/favourite_searches' do %>
-			<% if @search_results != nil && @search_results.first != nil %>
-			<%= hidden_field_tag 'skills', params[:skills] %>
-			<%= hidden_field_tag 'qualification', params[:qualification] %>
-			<%= hidden_field_tag 'experience', params[:experience] %>
-			<%= hidden_field_tag 'availability', params[:availability] %>
-			<%= hidden_field_tag 'user_id', current_user.id %>
-			<%= submit_tag "Save Search Result", :class => 'save-search' %>
-			<% end %>
-			<% end %>
+				<%= form_tag '/favourite_searches' do %>
+					<% if @search_results != nil && @search_results.first != nil %>
+						<%= hidden_field_tag 'skills', params[:skills] %>
+						<%= hidden_field_tag 'qualification', params[:qualification] %>
+						<%= hidden_field_tag 'experience', params[:experience] %>
+						<%= hidden_field_tag 'availability', params[:availability] %>
+						<%= hidden_field_tag 'user_id', current_user.id %>
+						<%= submit_tag "Save Search Result", :class => 'save-search' %>
+					<% end %>
+				<% end %>
 			<% end %>
 		</div>
 		<div class="row">
@@ -112,8 +102,8 @@
 					<% elsif !current_user %>
 						User is private
 					<% else %>
-						<%= data.first_name %> <%= data.labelast_name %>						
-					<% end %>
+						<%= data.first_name %> <%= data.last_name %>						
+						<% end %>
 				</h5>
 			</div>
 			<% end %>
