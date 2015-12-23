@@ -117,12 +117,17 @@ class CompaniesController < ApplicationController
 	#  		update Compnay staff    #
 	#################################
 	def update
+			logger.info("-------------------------------");
+			logger.info(plan_params);
+
 		if params[:is_private] == "Yes"
 			params[:is_private] = 1
 		else
 		 	params[:is_private] = 0
 		end
-		CompanyStaff.where(:id => params[:id]).update_all(plan_params)
+		@user = CompanyStaff.find(params[:id])
+    	@user.update_attribute(:image, params[:image])
+		CompanyStaff.where(:id => params[:id]).update_all(:first_name => params[:first_name], :last_name => params[:last_name], :email => params[:email], :skills => params[:skills], :availability => params[:availability], :is_private => params[:is_private], :qualification => params[:qualification], :experience => params[:experience], :location => params[:location], :availability_to => params[:availability_to], :availability_from => params[:availability_from])
 		redirect_to "/company_home", :notice => "Updated successfully"
 	end
 	#################################
@@ -168,7 +173,7 @@ class CompaniesController < ApplicationController
 									:purchased_on => Time.new,
 									:expired_on => @pantype,
 									:plan_name => @planname,
-									:plan_type => 'Staff Plan'
+									:plan_type => 'StaffPlan'
 								})
 		  @history.save
 		end

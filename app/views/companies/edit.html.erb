@@ -17,7 +17,7 @@
         </span></h4>
         
 
-            <%= form_tag @staff_url, {:class => 'form-horizontal add-employee', :id => 'editStaff'} do %>
+            <%= form_tag @staff_url, { :multipart => true , :class => 'form-horizontal add-employee', :id => 'editStaff'} do %>
       <div class="form-group">
         <div class="col-lg-6">
         <%= label_tag :first_name, 'First Name', :class => "control-label col-sm-3" %>
@@ -92,6 +92,12 @@
         <%= label_tag :location, 'Location', :class => "control-label col-sm-3" %>
         <div class="col-sm-9">
           <%= text_field_tag :location,  @staff_data.location, class:'form-control', :placeholder => 'Enter Location', :required => 'required' %>
+        </div>
+      </div>
+       <div class="col-lg-6">
+         <%= label_tag :image, 'Upload Image', :class => "control-label col-sm-3" %>
+        <div class="col-sm-9">
+          <%= file_field_tag :image, class:'form-control' %> 
         </div>
       </div>
       </div>
