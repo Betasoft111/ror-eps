@@ -1876,10 +1876,10 @@ width: 50%;
 }
 
 .employee-inner-cont {
-  background: #cccccc none repeat scroll 0 0;
+  background: #ebebeb none repeat scroll 0 0;
   float: left;
   margin: 10px 0 15px;
-  padding: 10px 15px;
+  padding: 15px;
   width: 100%;
 }
 
@@ -1891,3 +1891,9 @@ width: 50%;
   margin: 0;
   padding: 12px 0 0;
 }
+
+.employee-inner-cont img {
+  float: left;
+  margin-right: 20px;
+}
+
