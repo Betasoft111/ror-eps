@@ -112,7 +112,9 @@ EPS::Application.routes.draw do
 
     resources :requests
     resources :help_center
-
+    post "/help_center/add" => "help_center#create"
+    post "/help_center/update" => "help_center#update"
+    get "/help_center/:id/delete" => "help_center#destroy"
 
     #route for add skills and qualificartion from admin 
 

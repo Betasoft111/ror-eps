@@ -1,5 +1,5 @@
 class Admin::AdminController < ApplicationController
-	before_filter :check_admin!, only: [:edit_company, :edit_page]
+	before_filter :check_admin!, only: [:edit_company, :edit_page, :update, :delete, :user_activiy]
 
 	#################################
 	#  	       Render Index Page    #

@@ -10,25 +10,26 @@
     <% end %>		
 		<div class="row">
 			<h4><span><%= image_tag("line.png" , :alt => 'line.png') %></span>Add New FAQ<span><%= image_tag("right.png" , :alt => 'right.png') %></span></h4>
-	
-			<%= form_tag  '/admin/help_center/add', {:class => 'form-horizontal add-employee' , :id => 'loginForm'} do %>
+
+			<%= form_tag  '/admin/help_center/update', {:class => 'form-horizontal add-employee' , :id => 'loginForm'} do %>
 			<div class="form-group">
 
 				<%= label_tag :question, 'Question', :class => "control-label col-sm-2 col-lg-offset-2" %>
 				<div class="col-sm-5">
-					<%= text_field_tag :question, nil, :class => 'form-control', :placeholder => 'Enter Question', :required => 'required' %>
+					<%= text_field_tag :question, @faq.question, :class => 'form-control', :placeholder => 'Enter Question', :required => 'required' %>
 				</div>
 			</div>
 			<div class="form-group">
 
 				<%= label_tag :answer, 'Answer', :class => "control-label col-sm-2 col-lg-offset-2" %>
 				<div class="col-sm-5">
-					<%= text_area_tag :answer, nil, :class => 'form-control', :placeholder => 'Enter Answer Details', :required => 'required' %>
+					<%= text_area_tag :answer, @faq.answer, :class => 'form-control', :placeholder => 'Enter Answer Details', :required => 'required' %>
+					<input type="hidden" name="id" value="<%= params[:id] %>">
 				</div>
 			</div>
 			<div class="form-group">
 				<div class="frm-lat">
-					<%= submit_tag "Add New", :class => 'btn btn-default' %>
+					<%= submit_tag "Update", :class => 'btn btn-default' %>
 					<a href="/admin/help_center" class="btn btn-default">Cancel</a>
 				</div>
 			</div>
