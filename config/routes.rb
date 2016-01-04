@@ -84,6 +84,7 @@ EPS::Application.routes.draw do
   namespace :admin do
     root to: "admin#index"
     get "create" => "admin#create"
+    get "user_activiy" => "admin#user_activiy"
     #get "subscription_plans" => "subscription_plans#index"
     post "subscription_plans/create" => "subscription_plans#create"
     post "staff_plans/create" => "staff_plans#create"

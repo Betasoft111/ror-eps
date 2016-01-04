@@ -28,7 +28,7 @@ ActiveRecord::Schema.define(version: 20151222160818) do
   create_table "admin_general_pages", force: true do |t|
     t.string   "page_name"
     t.string   "page_title"
-    t.text     "page_content", limit: 2147483647
+    t.text     "page_content"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -57,7 +57,7 @@ ActiveRecord::Schema.define(version: 20151222160818) do
     t.string   "name"
     t.integer  "amount"
     t.integer  "total_emp"
-    t.integer  "selected_emp"
+    t.string   "selected_emp", limit: 11
     t.integer  "total_days"
     t.text     "additional"
     t.datetime "created_at"
@@ -70,6 +70,9 @@ ActiveRecord::Schema.define(version: 20151222160818) do
     t.string   "user_emailTo"
     t.string   "user_emailBy"
   end
+
+  add_index "company_requests", ["request_by"], name: "fk_request_by", using: :btree
+  add_index "company_requests", ["request_to"], name: "fk_request_to", using: :btree
 
   create_table "company_staffs", force: true do |t|
     t.string   "first_name"
@@ -158,7 +161,7 @@ ActiveRecord::Schema.define(version: 20151222160818) do
     t.integer  "plan_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "no_of_profiles", default: 0
+    t.integer  "no_of_profiles"
   end
 
   add_index "users_staff_plans", ["user_id"], name: "fk_user", using: :btree
