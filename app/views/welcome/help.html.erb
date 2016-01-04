@@ -1,0 +1,32 @@
+<%= render 'layouts/application' %>
+</div>
+</div>
+</div>
+</div><!-- end. header -->
+<div class="content inner-page" >
+		<div class="content-down"></div>
+			<div class="container">
+				<% flash.each do |name, msg| %>
+				<div class="">
+					<h4 align="center" class="flash"><%= content_tag :div, msg, :id => "flash_#{name}" %>
+					</h4>
+				</div>
+				<% end %>
+
+				<div class="row">
+					<ul>
+			      		<% @faqs.each do |faq| %>
+				      		<li><b><%= faq.question %></b></li>
+				      	<% end %>
+			      	</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+
+<%= render 'layouts/footer' %>
+<style>
+.sweet-container {
+	display:none;
+}
+</style>

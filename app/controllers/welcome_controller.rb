@@ -28,10 +28,21 @@ class WelcomeController < ApplicationController
 		@page_details = Admin::GeneralPages.where(:page_name => 'about').first
 	end
 
-	#################
-	#  	Contact Page  #
-	#################
+	##################
+	#  	Contact Page #
+	##################
 	def contact
 		@page_details = Admin::GeneralPages.where(:page_name => 'contact').first
+	end
+
+	##################
+	#  	 Help  Page  #
+	##################
+	def help
+		@faqs = Admin::HelpCenter.all
+		@faqs.each do |faq|
+			logger.info('********************')
+			logger.info(faq.question)
+		end
 	end
 end

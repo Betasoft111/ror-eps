@@ -744,9 +744,9 @@ a.add-new.add-new11 {
         display: inline-block;
     }
 
-.table-responsive {
+/*.table-responsive {
     border: 1px solid #cacaca;
-}
+}*/
 .inner-page .table {
     margin-bottom: 0;
 }
@@ -1852,4 +1852,42 @@ display: block;
 margin: 0 25% 20px;
 text-align: center;
 width: 50%;
+}
+
+.employee-cont {
+  border: 1px solid #cccccc;
+  float: left;
+  margin-bottom: 30px;
+  padding: 15px 20px;
+  width: 100%;
+}
+
+.employee-cont h1 {
+  color: #008ed6;
+  font-size: 20px;
+  margin: 0;
+  text-transform: capitalize;
+}
+
+.employee-cont h2 {
+  font-size: 16px;
+  margin: 0;
+  padding: 10px 0;
+}
+
+.employee-inner-cont {
+  background: #cccccc none repeat scroll 0 0;
+  float: left;
+  margin: 10px 0 15px;
+  padding: 10px 15px;
+  width: 100%;
+}
+
+.time-cont {
+  float: right;
+}
+
+.employee-inner-cont h3 {
+  margin: 0;
+  padding: 12px 0 0;
 }

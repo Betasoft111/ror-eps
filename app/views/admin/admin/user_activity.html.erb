@@ -24,26 +24,19 @@
 		</span>
 		
 		<div class="table-responsive">
-			<table class="table">
-				<thead>
-					<tr>
-						<th>Name</th>
-						<th>Email</th>
-						<th>Joined At</th>
-					</tr>
-				</thead>
-				<tbody>
+			<div class="table">	
 					<% @user_act.each do |plan| %>
-					<tr>
-						<td><%= plan.first_name %> <%= plan.last_name %></td>
-						<td><%= plan.email %> </td>
-						<td><%= plan.created_at %> </td>
-						
-												
-					</tr>
-					<% end %>
-				</tbody>
-			</table>
+					<div class="employee-cont">
+						<h1><%= plan.first_name %> <%= plan.last_name %></h1>
+						<h2>Dummy content</h2>
+						<div class="employee-inner-cont">
+							<h1><%= plan.first_name %> <%= plan.last_name %></h1>
+							<h3>Dummy content</h3>							
+						</div>
+						<div class="time-cont"><%= plan.created_at %> </div>
+					</div>
+					<% end %>				
+			</div>
 		</div>
 	</div>
 </div>
