@@ -15,9 +15,8 @@
 
 				<div class="row">
 					<ul>
-			      		<% @faqs.each do |faq| %>
-				      		<li><b><a href="/help/<%= faq.id %>/<%= faq.question.gsub(/\s+/, '-') %>"><%= faq.question %></a></b></li>
-				      	<% end %>
+						<li><b><%= @faq.question %></b></li>				      	
+						<li><%= @faq.answer %></li>				      	
 			      	</ul>
 				</div>
 			</div>
