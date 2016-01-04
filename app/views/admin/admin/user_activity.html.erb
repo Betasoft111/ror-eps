@@ -27,12 +27,12 @@
 			<div class="table">	
 					<% @user_act.each do |plan| %>
 					<div class="employee-cont">
-						<h1><%= plan.first_name %> <%= plan.last_name %></h1>
-						<h2>Dummy content</h2>
+						<a href="company/<%= plan.id %>/edit"><h1><%= plan.first_name %> <%= plan.last_name %></h1></a>
+						<h2>New User added</h2>
 						<div class="employee-inner-cont">
 							<img src="../assets/dummy-img.png">
-							<h1><%= plan.first_name %> <%= plan.last_name %></h1>
-							<h3>Dummy content</h3>							
+							<a href="company/<%= plan.id %>/edit"><h1><%= plan.email %> </h1></a>
+							<!-- <h3>us</h3> -->							
 						</div>
 						<div class="time-cont"><%= plan.created_at %> </div>
 					</div>
