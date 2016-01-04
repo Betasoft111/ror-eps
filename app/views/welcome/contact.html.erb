@@ -1,21 +1,35 @@
 <%= render 'layouts/application' %>
-<title><%= @page_details.page_title %></title>
-<div class="content inner-page" >
-	<div class="content-down"></div>
-		<div class="container">
-			<% flash.each do |name, msg| %>
-			<div class="">
-				<h4 align="center" class="flash"><%= content_tag :div, msg, :id => "flash_#{name}" %>
-				</h4>
-			</div>
-			<% end %>
-
-			<div class="row">
-				<% if @page_details.page_content != nil %>
-					<%= @page_details.page_content.html_safe %>
+<% if @page_details && @page_details != nil %>
+	<script>
+	 var title ='<%= @page_details.page_title %>';
+	 document.title = title;
+ 	</script>
+<% else %>
+	<script>
+	 document.title = "EPS | About Us";
+ 	</script>
+<% end %>
+	<div class="content inner-page" >
+		<div class="content-down"></div>
+			<div class="container">
+				<% flash.each do |name, msg| %>
+				<div class="">
+					<h4 align="center" class="flash"><%= content_tag :div, msg, :id => "flash_#{name}" %>
+					</h4>
+				</div>
 				<% end %>
+
+				<div class="row">
+					<% if @page_details && @page_details.page_content != nil %>
+						<%= @page_details.page_content.html_safe %>
+					<% end %>
+				</div>
 			</div>
 		</div>
 	</div>
-</div>
 <%= render 'layouts/footer' %>
+<style>
+.sweet-container {
+	display:none;
+}
+</style>

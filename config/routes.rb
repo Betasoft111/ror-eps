@@ -110,6 +110,7 @@ EPS::Application.routes.draw do
 
 
     resources :requests
+    resources :help_center
 
 
     #route for add skills and qualificartion from admin 

@@ -35,7 +35,7 @@
     }else{
     return false;
     }
-  
+    
     });
     });
     </script>
@@ -78,43 +78,48 @@
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                   <ul class="nav navbar-nav navbar-right">
                     <li class=""><a href="/admin"> Home  <span class="sr-only">(current)</span></a></li>
-                    
-                    <!-- <li class=""><a >Plans</a>
-                      <ul>
-                        <li><a href="/admin/subscription_plans"> Membership Plans</a></li>
-                        <li><a href="/admin/staff_plans"> Addon Plans  </a></li>
-                      </ul>
-                    </li> -->
-
-                    <li class=""><a href="javascript:void(0)">Add Data</a>
-                      <ul>
-                        <li><a href="/admin/skills"> Skills</a></li>
-                        <li><a href="/admin/qualifications"> Qualifications  </a></li>
-                      </ul>
+   
+                  <li class="">
+                    <a href="javascript:void(0)">Add Data</a>
+                  <ul>
+                    <li>
+                      <a href="/admin/skills"> Skills</a>
                     </li>
-
-                    <li class=""><a href="javascript:void(0)">Plans</a>
-                      <ul>
-                        <li><a href="/admin/subscription_plans"> Membership Plans</a></li>
-                        <li><a href="/admin/staff_plans"> Addon Plans  </a></li>
-                      </ul>
+                    <li>
+                      <a href="/admin/qualifications"> Qualifications  </a>
                     </li>
-
-                    <li class=""><a href="/admin/pages/">Pages</a>
-                    </li>
-
-                    <li class=""><a href="/admin/requests">Requests <span class="sr-only">(current)</span></a></li>
-
-                    <% if session[:user_id] != nil && session[:user_role] == 'admin' %>
-                    <li><a href="/admin/log_out">Logout</a></li>
-                    <% end %>
                   </ul>
                 </li>
-              </ul>
-              </div><!-- /.navbar-collapse -->
-              </div><!-- /.container-fluid -->
-            </nav>
-          </div>
-        </div>
-      </div>
-      </div><!-- end. header-top -->
+                <li class="">
+                  <a href="/admin/help_center/">Help Center</a>
+                </li>
+                <li class="">
+                  <a href="javascript:void(0)">Plans</a>
+                <ul>
+                  <li>
+                    <a href="/admin/subscription_plans"> Membership Plans</a>
+                  </li>
+                  <li>
+                    <a href="/admin/staff_plans"> Addon Plans  </a>
+                  </li>
+                </ul>
+              </li>
+              <li class="">
+                <a href="/admin/pages/">Pages</a>
+              </li>
+            <li class="">
+              <a href="/admin/requests">Requests <span class="sr-only">(current)</span></a></li>
+            <% if session[:user_id] != nil && session[:user_role] == 'admin' %>
+            <li>
+              <a href="/admin/log_out">Logout</a></li>
+            <% end %>
+          </ul>
+        </li>
+      </ul>
+      </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav>
+  </div>
+</div>
+</div>
+</div><!-- end. header-top -->

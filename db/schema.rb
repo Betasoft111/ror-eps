@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151222160818) do
+ActiveRecord::Schema.define(version: 20160104163542) do
 
   create_table "admin_admin_users", force: true do |t|
     t.string   "first_name"
@@ -29,6 +29,13 @@ ActiveRecord::Schema.define(version: 20151222160818) do
     t.string   "page_name"
     t.string   "page_title"
     t.text     "page_content", limit: 2147483647
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "admin_help_centers", force: true do |t|
+    t.text     "question"
+    t.text     "answer"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

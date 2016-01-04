@@ -29,3 +29,6 @@
 	ALTER TABLE users_staff_plans ADD CONSTRAINT fk_plan FOREIGN KEY (plan_id) REFERENCES admin_staff_plans (id)
 
 --> Generate admin general pages : rails generate model admin/general_pages page_name:string page_title:string page_content:string
+
+--> Generate admin/help_center
+	rails generate model admin/help_center question:text answer:text

@@ -1,0 +1,43 @@
+<%= render 'admin/layouts/application' %>
+<div class="content inner-page">
+	<div class="content-down"></div>
+	<div class="container">
+    <% flash.each do |name, msg| %>
+      <div class="">
+        <h4 align="center" class="flash"><%= content_tag :div, msg, :id => "flash_#{name}" %>
+        </h4>
+      </div>
+    <% end %>		
+		<div class="row">
+			<h4><span><%= image_tag("line.png" , :alt => 'line.png') %></span>Add Qualification Page<span><%= image_tag("right.png" , :alt => 'right.png') %></span></h4>
+	
+			<%= form_tag  admin_help_center_add_path, {:class => 'form-horizontal add-employee' , :id => 'loginForm'} do %>
+			<div class="form-group">
+
+				<%= label_tag :qualification, 'Qualification', :class => "control-label col-sm-2 col-lg-offset-2" %>
+				<div class="col-sm-5">
+					<%= text_field_tag :qualification, nil, :class => 'form-control', :placeholder => 'Enter Qualifications Title', :required => 'required' %>
+				</div>
+			</div>
+			<div class="form-group">
+				<div class="frm-lat">
+					<%= submit_tag "Add Qualification", :class => 'btn btn-default' %>
+					<a href="/admin/skills/" class="btn btn-default">Cancel</a>
+				</div>
+			</div>
+			
+			<% end %>
+		</div>
+	</div>
+	
+</div>
+
+<script type="text/javascript">
+$(document).ready(function () {
+  $("#loginForm").validate();  
+});
+</script> 
+
+<%= render 'admin/layouts/footer' %>
+
+

@@ -1,5 +1,14 @@
 <%= render 'layouts/application' %>
-<title><%= @page_details.page_title %></title>
+<% if @page_details && @page_details != nil %>
+	<script>
+	 var title ='<%= @page_details.page_title %>';
+	 document.title = title;
+ 	</script>
+<% else %>
+	<script>
+	 document.title = "EPS | About Us";
+ 	</script>
+<% end %>
 <div class="content inner-page" >
 	<div class="content-down"></div>
 		<div class="container">
@@ -11,9 +20,16 @@
 			<% end %>
 
 			<div class="row">
-				<%= @page_details.page_content.html_safe %>
+				<% if @page_details && @page_details.page_content != nil %>
+					<%= @page_details.page_content.html_safe %>
+				<% end %>
 			</div>
 		</div>
 	</div>
 </div>
 <%= render 'layouts/footer' %>
+<style>
+.sweet-container {
+	display:none;
+}
+</style>

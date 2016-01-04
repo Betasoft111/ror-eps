@@ -1,0 +1,25 @@
+<%= render 'admin/layouts/application' %>
+</div>
+</div>
+</div>
+
+</div><!-- end. header -->
+<div class="content inner-page">
+<div class="content-down"></div>
+<div class="container">
+<% flash.each do |name, msg| %>
+<div class="">
+	<h4 align="center" class="flash"><%= content_tag :div, msg, :id => "flash_#{name}" %>
+	</h4>
+</div>
+<% end %>
+<div class="row">
+	<h4><span>
+		<%= image_tag("line.png" , :alt => 'line.png') %>
+		</span>Manage Help Center<span><%= image_tag("right.png" , :alt => 'right.png') %></span></h4>
+		<span class="q1"><a class="add-new add-new11" href="<%=  new_admin_help_center_path %>" > Add New</a>
+	</span>
+</div>
+</div>
+</div>
+<%= render 'admin/layouts/footer' %>
