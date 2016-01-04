@@ -12,7 +12,7 @@ class Admin::AdminController < ApplicationController
 			#################################
 			#  Get The List Of Comapnies    #
 			#################################
-			@companies = User.all 
+			@companies = User.all.order('id DESC')
 		else
 			redirect_to '/admin/log_in'
 		end
@@ -36,6 +36,11 @@ class Admin::AdminController < ApplicationController
 	def delete 
 		 User.find(params[:id]).destroy
 		redirect_to '/admin' , :notice => "Record Deleted!"
+	end
+
+
+	def user_activiy
+		@user_act =  User.all.order('id DESC')
 	end
 
 
