@@ -39,8 +39,12 @@ class Admin::AdminController < ApplicationController
 	end
 
 
-	def user_activiy
-		@user_act =  User.all.order('id DESC')
+	def user_activity
+		@user_act =  User.order('id DESC')
+	end
+
+	def request_activity
+		@request_act = CompanyRequest.order('id DESC')
 	end
 
 
