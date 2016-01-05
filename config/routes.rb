@@ -86,6 +86,12 @@ EPS::Application.routes.draw do
   namespace :admin do
     root to: "admin#index"
     get "create" => "admin#create"
+
+     #routes for messaging controller
+      get "/message/:id/" => "admin_messages#index"
+      post "/message/:id/Send" => "admin_messages#send_message"
+
+
     get "user_activity" => "admin#user_activity"
     get "request_activity" => "admin#request_activity"
     #get "subscription_plans" => "subscription_plans#index"
@@ -133,6 +139,11 @@ EPS::Application.routes.draw do
        post "/qualifications/add" => 'qualifications#add'
        post "/qualifications/update" => 'qualifications#update'
        get "/qualifications/:id/delete" => "qualifications#delete"
+
+
+
+
+
   end
 
   # #url's we are using in web
