@@ -46,6 +46,16 @@
     $('.header-top').removeClass("sticky");
     }
     });
+    function filter(element) {
+      var value = $(element).val();
+      $("#articleList li").each(function() {
+        if ($(this).text().search(new RegExp(value, "i")) > -1) {
+          $(this).show();
+        } else {
+          $(this).hide();
+        }
+      });
+    }
     </script>
   </head>
   <body>
@@ -81,9 +91,15 @@
                     <!-- <li><a href="/hiring_requests">Requests</a></li> -->
                     <li class="">
                       <a href="/help">Help</a>
-                        <ul>
-                          <li><a href="#" >Help Center</a></li>
-                          <li><a href="#" >Help Center</a></li>
+                        <ul class="search-nav">
+                          <li><i class="fa fa-search"></i>
+                              <input type="text" placeholder="How can we help you?" onkeyup="filter(this)"></li>
+                            <div id="articleList">
+                              <% @faqs.each do |faq| %>
+                                <li><a href="/help/<%= faq.id %>/<%= faq.question.gsub(/\s+/, '-') %>"><%= faq.question%></a></li>
+                              <% end %>
+                            </div>
+                            <li><a href="/help" ><span>Help Center</span></a></li>
                         </ul>
                     </li>
                     <li>

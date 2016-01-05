@@ -40,8 +40,16 @@
     <div class="content c3">
       <div class="container">
         <div class="row">
-          <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 c3left">
-            <h3>Why Us ?</h3>
+          <div class="bg1-color">
+          <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 c3right">
+            <!-- <img src="images/img1.png"> -->
+            <%= image_tag("career_banner11.jpg" , :alt => 'group') %>
+          </div>
+          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 c3left">
+            <h3><strong>Hosting opens up a world of opportunity</strong> </h3>
+            <p>Earn money sharing your extra space with travelers. </p>
+            <a href="#">See What You Can Earn</a>
+            <!-- 
             <span class="bottom-bar"></span>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
             <a href="#">Click Here To See List of Staff with experience</a>
@@ -50,12 +58,10 @@
               <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</li>
               <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
               <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
-            </ul>
+            </ul> -->
           </div>
-          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 c3right">
-            <!-- <img src="images/img1.png"> -->
-            <%= image_tag("img1.png" , :alt => 'video.png') %>
           </div>
+          
         </div>
       </div>
     </div>
@@ -78,7 +84,8 @@
       </div>
     </div>
     <div class="happy_client">
-      <h3>Happy Customers</h3>
+      <div class="container">
+      <h3>Explore the world</h3>
       <%#= debug @staff_data%>
 
       <% finalArr = [] 
@@ -105,11 +112,29 @@
 
       <p class="nn1"><span class="hp"></span></p>
       <ul>
+        <li class="col-lg-8">
+          <%= image_tag("w1-new.jpg" , :alt => 'qwert') %>
+        </li>
+        <li class="col-lg-4">
+          <%= image_tag("w2-new.jpg" , :alt => 'qwert') %>
+        </li>
+        <li class="col-lg-4">
+          <%= image_tag("w3-new.jpg" , :alt => 'qwert') %>
+        </li>
+         <li class="col-lg-4">
+          <%= image_tag("w4-new.jpg" , :alt => 'qwert') %>
+
+        </li>
+         <li class="col-lg-4">
+          <%= image_tag("w5-new.jpg" , :alt => 'qwert') %>
+
+        </li>
+      </ul>
+      <!-- <ul>
         <li class="col-md-6 col-lg-3 space-md-4 l1 text-center hvr-shutter-in-vertical">
           <span>Heading One</span>
-          <%= image_tag("emp1.jpg" , :alt => 'qwert') %>
-          <p>lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-          <a href="#">read more...</a>
+          <%= image_tag("w2.jpg" , :alt => 'qwert') %>
+          
         </li>
         <li class="col-md-6 col-lg-3 space-md-4 l2 hvr-shutter-in-vertical">
           <span>Heading Two</span>
@@ -129,7 +154,8 @@
           <p>lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
           <a href="#">read more...</a>
         </li>
-      </ul>
+      </ul> -->
+    </div>
       
     </div>
     <script type="text/javascript">

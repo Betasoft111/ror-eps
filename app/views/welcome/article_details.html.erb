@@ -13,11 +13,22 @@
 				</div>
 				<% end %>
 
-				<div class="row">
-					<ul>
-						<li><b><%= @faq.question %></b></li>				      	
-						<li><%= @faq.answer %></li>				      	
-			      	</ul>
+				<div class="row left-portion">
+					<div class="col-lg-4">
+						<ul>
+							<a href="/help"><span><i class="fa fa-long-arrow-left"></i>Back</a></span>
+							<% @faqs.each do |faq| %>
+					      		<li><a href="/help/<%= faq.id %>/<%= faq.question.gsub(/\s+/, '-') %>"><%= faq.question %></a></li>				      	
+					      	<% end %>
+
+						</ul>
+
+					</div>
+					<div class="col-lg-8">
+						<h2><b><%= @faq.question %></b></h2>				      	
+						<p><%= @faq.answer.html_safe %></p>	
+					</div>			      	
+			      
 				</div>
 			</div>
 		</div>

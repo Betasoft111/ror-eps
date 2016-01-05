@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title>Employee Placement System</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 
 <!--link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'-->
 <%= stylesheet_link_tag    "google-fonts.css" %>
@@ -52,11 +53,22 @@ $(document).ready(function () {
     $('.header-top').removeClass("sticky");
     }
     });
+    function filter(element) {
+      var value = $(element).val();
+      $("#articleList li").each(function() {
+        if ($(this).text().search(new RegExp(value, "i")) > -1) {
+          $(this).show();
+        } else {
+          $(this).hide();
+        }
+      });
+    }
     </script>
 
   </head>
   <body>
     <div class="header">
+      <div class="overlay"></div>
       <div class="header-top">
         <div class="container">
           <div class="row">
@@ -92,15 +104,45 @@ $(document).ready(function () {
                     <li class="hvr-overline-from-center"><a href="/contact_us">Contact Us</a></li>
                     <li class="">
                       <a href="/help">Help</a>
-                        <ul>
-                          <li><a href="#" >Help Center</a></li>
-                          <li><a href="#" >Help Center</a></li>
+                        <ul class="search-nav" >
+                          <li><i class="fa fa-search"></i>
+                              <input type="text" placeholder="How can we help you?" onkeyup="filter(this)"></li>
+                            <div id="articleList">
+                              <% @faqs.each do |faq| %>
+                                <li><a href="/help/<%= faq.id %>/<%= faq.question.gsub(/\s+/, '-') %>"><%= faq.question%></a></li>
+                              <% end %>
+                            </div>
+                            <li><a href="/help" ><span>Help Center</span></a></li>
                         </ul>
                     </li>
-                    <li class="hvr-overline-from-center"><a href="#">Pricing </a></li>
                     <% if session[:user_id] && session[:user_id] != nil %>
-                    <li class="hvr-overline-from-center"><a href="/log_out" >Logout</a></li>
+                      <li>
+                        <a href="#">Membership</a>
+                        <ul>
+                          <li><a href="/membership_plans" >Membership Plans</a></li>
+                          <li><a href="/addon_plans" >Add On Plans</a></li>
+                          <li><a href="/payment_history" >My Payments</a></li>
+                        </ul>
+                      </li>
+
+                      <li><a href="/hiring_requests" >Requests</a>
+                        <ul>
+                          <li><a href="/hiring_requests" >Hiring Requests</a></li>
+                          <li><a href="/my_requests" >Sent Requests</a></li>
+                        </ul>
+                      </li>
                     <% else %>
+                      <li class="hvr-overline-from-center"><a href="#">Pricing </a></li>
+                    <% end %>
+                    <% if session[:user_id] && session[:user_id] != nil %>
+                      <li><a href="#" >Settings</a>
+                        <ul>
+                          <li><a href="/favourite_searches" >Favourite Searches</a></li>
+                          <li><a href="/log_out" >Logout</a></li>
+                        </ul>
+                      </li>
+                    <% else %>
+
                     <!-- <li><a href="/join" class="login-tab">Login</a></li> -->
                     <li class=""><a href="/join" class="login-tab">Join</a>
                     <ul>

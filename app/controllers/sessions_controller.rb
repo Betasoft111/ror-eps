@@ -1,14 +1,17 @@
 class SessionsController < ApplicationController
 
     def register
+    	@faqs = Admin::HelpCenter.order('id desc')
     	@user = User.new
 	end
 
 	def login
+		@faqs = Admin::HelpCenter.order('id desc')
     	@user = User.new
 	end
 
 	def create
+	  @faqs = Admin::HelpCenter.order('id desc')
 	  user = User.authenticate(params[:email], params[:password])
 	  if user
 	    session[:user_id] = user.id

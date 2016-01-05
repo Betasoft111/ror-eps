@@ -14,11 +14,14 @@
 				<% end %>
 
 				<div class="row">
-					<ul>
+					<h2><b>Suggested for You </b></h2>
+					<div class="homepage-articles-list">
 			      		<% @faqs.each do |faq| %>
-				      		<li><b><a href="/help/<%= faq.id %>/<%= faq.question.gsub(/\s+/, '-') %>"><%= faq.question %></a></b></li>
+				      		<div class="col-lg-6">
+					      		<a href="/help/<%= faq.id %>/<%= faq.question.gsub(/\s+/, '-') %>"><i class="fa fa-file-text-o"></i><%= faq.question %></a>
+					      	</div>
 				      	<% end %>
-			      	</ul>
+			      	</div>
 				</div>
 			</div>
 		</div>

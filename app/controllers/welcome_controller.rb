@@ -26,6 +26,7 @@ class WelcomeController < ApplicationController
 	#  	About Page  #
 	#################
 	def about
+		@faqs = Admin::HelpCenter.order('id desc')
 		@page_details = Admin::GeneralPages.where(:page_name => 'about').first
 	end
 
@@ -33,6 +34,7 @@ class WelcomeController < ApplicationController
 	#  	Contact Page #
 	##################
 	def contact
+		@faqs = Admin::HelpCenter.order('id desc')
 		@page_details = Admin::GeneralPages.where(:page_name => 'contact').first
 	end
 
@@ -48,5 +50,6 @@ class WelcomeController < ApplicationController
 	######################
 	def article_details
 		@faq = Admin::HelpCenter.find(params[:id])
+		@faqs = Admin::HelpCenter.order('id desc')
 	end
 end

@@ -23,7 +23,7 @@
 
 				<%= label_tag :answer, 'Answer', :class => "control-label col-sm-2 col-lg-offset-2" %>
 				<div class="col-sm-5">
-					<%= text_area_tag :answer, @faq.answer, :class => 'form-control', :placeholder => 'Enter Answer Details', :required => 'required' %>
+					<%= text_area_tag :answer, @faq.answer, :id => "editor", :class => 'form-control ckeditor', :placeholder => 'Enter Answer Details', :required => 'required' %>
 					<input type="hidden" name="id" value="<%= params[:id] %>">
 				</div>
 			</div>
@@ -45,7 +45,7 @@ $(document).ready(function () {
   $("#loginForm").validate();  
 });
 </script> 
-
+<script src="http://cdn.ckeditor.com/4.5.6/standard-all/ckeditor.js"></script>
 <%= render 'admin/layouts/footer' %>
 
 
