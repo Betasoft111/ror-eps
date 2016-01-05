@@ -16,6 +16,7 @@ class WelcomeController < ApplicationController
 	     #else
 	     	@staff_data = AdminSkills.all
 	     	@qualifications = AdminQualifications.all
+	     	@faqs = Admin::HelpCenter.all
 			render :template => "welcome/index", :locals => { :user => @current_user }
 
 		 #end
