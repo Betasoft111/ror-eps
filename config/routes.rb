@@ -11,6 +11,7 @@ EPS::Application.routes.draw do
   get "about_us" => "welcome#about"
   get "contact_us" => "welcome#contact"
   get "help" => "welcome#help"
+  get "help/:id/:title" => "welcome#article_details"
 
   #################################
   #      Authentication Routes    #

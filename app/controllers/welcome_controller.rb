@@ -40,9 +40,12 @@ class WelcomeController < ApplicationController
 	##################
 	def help
 		@faqs = Admin::HelpCenter.all
-		@faqs.each do |faq|
-			logger.info('********************')
-			logger.info(faq.question)
-		end
+	end
+
+	######################
+	#  	 Artile Details  #
+	######################
+	def article_details
+		@faq = Admin::HelpCenter.find(params[:id])
 	end
 end
