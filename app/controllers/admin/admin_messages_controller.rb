@@ -20,7 +20,7 @@ class Admin::AdminMessagesController < ApplicationController
 	private
 
 	 def plan_params
-	    params.permit(:message_to, :message_subject, :message_data)
+	    params.permit(:message_to, :message_subject, :message_data, :message_by)
 	 end
 
 end

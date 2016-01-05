@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160105161114) do
+ActiveRecord::Schema.define(version: 20160105203136) do
 
   create_table "admin_admin_users", force: true do |t|
     t.string   "first_name"
@@ -117,6 +117,7 @@ ActiveRecord::Schema.define(version: 20160105161114) do
     t.text     "message_data"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "message_by"
   end
 
   create_table "subscription_plans", force: true do |t|
