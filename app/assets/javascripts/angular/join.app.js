@@ -7,7 +7,7 @@ var app = angular.module('joinApp', ['ngPasswordStrength']);
 /*
  * Intialize The Controller
  */
-app.controller('joinController', function($scope, $timeout) {
+app.controller('joinController', function($scope, $timeout, $http) {
 
   /*
    * Set the submit button value
@@ -39,5 +39,22 @@ app.controller('joinController', function($scope, $timeout) {
       }, 500);
     }
   });
+
+  /*
+   * Check For Duplicate Email
+   */
+  $scope.checkEmail = function() {
+    $http.post('/api/check_email',{email: $scope.user.email}).success(function (response) {
+      if(response.success) {
+        $scope.errMsg = response.user;
+        $scope.duplicateEmail = true;
+      }else{
+        $scope.errMsg = '';
+        $scope.duplicateEmail = false;
+      }
+    }).error(function (err){
+      console.log('Error checking the duplicate emails', err);
+    });
+  }
 
 });

@@ -99,6 +99,18 @@ class UsersController < ApplicationController
 		new_price = @plan_details.plan_price * 100
 	end
 
+	#################################
+	#  Check For Duplicate Email    #
+	#################################
+	def check_email
+		@result = User.find_by_email(params[:email])
+		if @result.blank?
+			render :json => { :success => false, :user => @result.to_json(:only => [:email]) }
+		else
+			render :json => { :success => true, :user => 'Email is already taken' }
+		end
+	end
+
 	private
 
 	  def user_params

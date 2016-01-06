@@ -112,23 +112,44 @@
 
       <p class="nn1"><span class="hp"></span></p>
       <ul>
-        <li class="col-lg-8">
-          <%= image_tag("w1-new.jpg" , :alt => 'qwert') %>
-        </li>
-        <li class="col-lg-4">
+        <div class="col-lg-8">
+          <li>
+            <div class="overlay"></div>
+            <%= image_tag("w1-new.jpg" , :alt => 'qwert') %>
+            <span><strong>
+              New York
+            </strong></span>
+          </li>
+        </div>
+        <div class="col-lg-4">
+        <li>
+          <div class="overlay"></div>
           <%= image_tag("w2-new.jpg" , :alt => 'qwert') %>
+          <span><strong>
+              Paris
+            </strong></span>
         </li>
-        <li class="col-lg-4">
+      </div>
+      <div  class="col-lg-4">
+        <li>
+          <div class="overlay"></div>
           <%= image_tag("w3-new.jpg" , :alt => 'qwert') %>
         </li>
-         <li class="col-lg-4">
+      </div>
+      <div  class="col-lg-4">
+         <li>
+          <div class="overlay"></div>
           <%= image_tag("w4-new.jpg" , :alt => 'qwert') %>
 
         </li>
-         <li class="col-lg-4">
+      </div>
+        <div  class="col-lg-4">
+         <li>
+          <div class="overlay"></div>
           <%= image_tag("w5-new.jpg" , :alt => 'qwert') %>
 
         </li>
+      </div>
       </ul>
       <!-- <ul>
         <li class="col-md-6 col-lg-3 space-md-4 l1 text-center hvr-shutter-in-vertical">
@@ -158,6 +179,61 @@
     </div>
       
     </div>
+
+<div class="slider-main">
+ <!-- Full Page Image Background Carousel Header -->
+    <header id="myCarousel" class="carousel slide">
+        <!-- Indicators -->
+       <!--  <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+        </ol> -->
+
+        <!-- Wrapper for Slides -->
+        <div class="carousel-inner">
+            <div class="item active">
+                <!-- Set the first background image using inline CSS below. -->
+                <div class="fill"><%= image_tag("sld1.jpg" , :alt => 'qwert') %></div>
+                <div class="carousel-caption">
+                    <h2>Caption 1</h2>
+                </div>
+            </div>
+            <div class="item">
+                <!-- Set the second background image using inline CSS below. -->
+                <div class="fill"><%= image_tag("sld2.png" , :alt => 'qwert') %></div>
+                <div class="carousel-caption">
+                    <h2>Caption 2</h2>
+                </div>
+            </div>
+            <div class="item">
+                <!-- Set the third background image using inline CSS below. -->
+                <div class="fill"><%= image_tag("sld3.jpg" , :alt => 'qwert') %></div>
+                <div class="carousel-caption">
+                    <h2>Caption 3</h2>
+                </div>
+            </div>
+        </div>
+
+        <!-- Controls -->
+        <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+            <span class="icon-prev"></span>
+        </a>
+        <a class="right carousel-control" href="#myCarousel" data-slide="next">
+            <span class="icon-next"></span>
+        </a>
+
+    </header>
+
+
+</div>
+
+
+
+
+
+
+
     <script type="text/javascript">
     function delete_cookie( name ) {
       document.cookie = name + '=; expires=Thu, 01 Jan 1970 00:00:01 GMT;';

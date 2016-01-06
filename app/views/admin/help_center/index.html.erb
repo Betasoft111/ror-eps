@@ -40,7 +40,7 @@
 									<tr>
 										<td><%= @counter %></td>
 										<td><%= faq.question.truncate(40) %></td>
-										<td><%= faq.answer.truncate(80) %></td>
+										<td><%= faq.answer.truncate(80).html_safe %></td>
 										<td>
 											<a href="/admin/help_center/<%= faq.id %>/edit" class="edit"></a> 
 											<a href="/admin/help_center/<%= faq.id %>/delete" class="delete"></a>

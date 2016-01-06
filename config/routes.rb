@@ -146,6 +146,11 @@ EPS::Application.routes.draw do
 
   end
 
+  #################################
+  #     API Routes For Angular    #
+  #################################
+  post "api/check_email" => "users#check_email"
+
   # #url's we are using in web
 
   # match 'admin/manage_company_user' => 'admin/admin#manage_company_user',  :via => :get
