@@ -53,7 +53,7 @@ class ChargesController < ApplicationController
 				end
 				ppr = PayPal::Recurring.new({
 				  :return_url   => "http://system.jobkeeper.dk:3000/company_home",
-				  :cancel_url   => "http://system.jobkeeper.dk:3000/charges/payment_method",
+				  :cancel_url   => "http://system.jobkeeper.dk:3000/membership_plans",
 				  :ipn_url      => "http://system.jobkeeper.dk:3000/charges/payment_ipn",
 				  :description  => @plan_details.plan_name,
 				  :amount       => @plan_details.plan_price.to_i,
@@ -141,6 +141,8 @@ class ChargesController < ApplicationController
 				
 					User.where(:id => @current_user.id).update_all(plan_id: @plan_id)
 					@email = UserMailer.payment_email(@current_user, @plan_details.plan_price).deliver
+					
+
 					redirect_to "/company_home", :notice => "Membership is updated successfully"
 			end
 		else

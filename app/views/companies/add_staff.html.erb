@@ -14,6 +14,11 @@
         <h4><span><%= image_tag("line.png" , :alt => 'line.png') %></span>New Employee Page<span><!-- <img src="img/right.png"> -->
         <%= image_tag("right.png" , :alt => 'right.png') %>
         </span></h4>
+
+
+
+
+        <%#= debug @qualifications %>
        
 
             <%= form_tag '/add_staff/create', { :multipart => true, :class => 'form-horizontal add-employee', :id => 'addStaff'} do %>
@@ -60,6 +65,8 @@
           <input type="hidden" name="availability_from" id="availability_from">
         </div>
       </div>
+
+
       <div class="col-lg-6">
          <%= label_tag :location, 'Location', :class => "control-label col-sm-3", :onFocus => "geolocate()" %>
         <div class="col-sm-9">
@@ -86,16 +93,49 @@
       <div class="col-lg-6">
         <%= label_tag :qualification, 'Qualification', :class => "control-label col-sm-3" %>
         <div class="col-sm-9">
-          <%= text_field_tag :qualification, nil, class:'form-control', :placeholder => 'Enter Qualification', :required => 'required', :id =>'staffQualitication'  %>
+          <%#= text_field_tag :qualification, nil, class:'form-control', :placeholder => 'Enter Qualification', :required => 'required', :id =>'staffQualitication'  %>
+          <select name ="qualification" class="form-control" required="required">
+              <option value ="">Select</option>
+              <% @qualifications.each do |quff| %>
+              <option value ="<%= quff.qualification %>"><%= quff.qualification %></option>
+              <% end %>
+          </select>
+
+        </div>
+      </div>
+
+
+    </div>
+
+    <div class="form-group">
+        <div class="col-lg-6">
+        <%= label_tag :staff_price, 'Price For Staff', :class => "control-label col-sm-3" %>
+        <div class="col-sm-9">
+          <%= text_field_tag :staff_price, nil, class:'form-control', :placeholder => 'Enter Staff Price', :required => 'required' %>
         </div>
       </div>
     </div>
+
+
 
       <div class="form-group">
         <div class="col-lg-6">
         <%= label_tag :experience, 'Experience', :class => "control-label col-sm-3" %>
         <div class="col-sm-9">
-          <%= text_field_tag :experience, nil, class:'form-control', :placeholder => 'Enter Experience', :required => 'required' %>
+          <%#= text_field_tag :experience, nil, class:'form-control', :placeholder => 'Enter Experience', :required => 'required' %>
+          <select name ="experience" class="form-control" required="required">
+              <option value ="">Select</option>
+              
+              <option value ="1">1 year</option>
+              <option value ="2">2 year</option>
+              <option value ="3">3 year</option>
+              <option value ="4">4 year</option>
+              <option value ="5">5 year</option>
+              <option value ="6">6 year</option>
+              <option value ="7">7 year</option>
+              <!-- <option value ="above 7">More then 7 year</option> -->
+              
+          </select>
         </div>
       </div>
       <div class="col-lg-6">
