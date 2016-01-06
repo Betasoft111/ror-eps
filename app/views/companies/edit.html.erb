@@ -75,14 +75,33 @@
         <div class="col-lg-6">
         <%= label_tag :qualification, 'Qualification', :class => "control-label col-sm-3" %>
         <div class="col-sm-9">
-          <%= text_field_tag :qualification, @staff_data.qualification, class:'form-control', :placeholder => 'Enter Qualification', :required => 'required', :id =>'staffQualitication' %>
+          <%#= text_field_tag :qualification, @staff_data.qualification, class:'form-control', :placeholder => 'Enter Qualification', :required => 'required', :id =>'staffQualitication' %>
+          <select name ="qualification" class="form-control" required="required">
+              <option value ="">Select</option>
+              <% @qualifications.each do |quff| %>
+              <option value ="<%= quff.qualification %>" <% if @staff_data.qualification = quff.qualification  %>selected="selected"<% end %>><%= quff.qualification %></option>
+              <% end %>
+          </select>
         </div>
       </div>
 
       <div class="col-lg-6">
         <%= label_tag :experience, 'Experience', :class => "control-label col-sm-3" %>
         <div class="col-sm-9">
-          <%= text_field_tag :experience, @staff_data.experience, class:'form-control', :placeholder => 'Enter Experience', :required => 'required' %>
+          <%#= text_field_tag :experience, @staff_data.experience, class:'form-control', :placeholder => 'Enter Experience', :required => 'required' %>
+           <select name ="experience" class="form-control" required="required">
+              <option value ="">Select</option>
+              
+              <option value ="1" <% if @staff_data.experience = 1  %>selected="selected"<% end %>>1 year</option>
+              <option value ="2" <% if @staff_data.experience = 2  %>selected="selected"<% end %>>2 year</option>
+              <option value ="3" <% if @staff_data.experience = 3  %>selected="selected"<% end %>>3 year</option>
+              <option value ="4" <% if @staff_data.experience = 4  %>selected="selected"<% end %>>4 year</option>
+              <option value ="5" <% if @staff_data.experience = 5  %>selected="selected"<% end %>>5 year</option>
+              <option value ="6" <% if @staff_data.experience = 6  %>selected="selected"<% end %>>6 year</option>
+              <option value ="7" <% if @staff_data.experience = 7  %>selected="selected"<% end %>>7 year</option>
+              <!-- <option value ="above 7">More then 7 year</option> -->
+              
+          </select>
         </div>
       </div>
     </div>
@@ -101,6 +120,16 @@
         </div>
       </div>
       </div>
+
+      <div class="form-group">
+        <div class="col-lg-6">
+        <%= label_tag :staff_price, 'Price For Staff', :class => "control-label col-sm-3" %>
+        <div class="col-sm-9">
+          <%= text_field_tag :staff_price, @staff_data.staff_price, class:'form-control', :placeholder => 'Enter Staff Price', :required => 'required' %>
+        </div>
+      </div>
+    </div>
+      
 
         <input type="hidden" name="company_id" value="<%= @current_user.id %>">
       <div class="form-group">
