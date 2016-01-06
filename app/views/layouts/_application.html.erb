@@ -84,11 +84,13 @@
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                   <ul class="nav navbar-nav navbar-right">
+                    <% if session[:user_id] && session[:user_id] != nil %>
                     <li class=""><a href="/company_home"> Manage Staff  <span class="sr-only">(current)</span></a></li>
+                    <% else %>
+                    <li class=""><a href="/"> Home  <span class="sr-only">(current)</span></a></li>
+                    <% end %>
                     <li><a href="/about_us">About Us</a></li>
                     <li class="hvr-overline-from-center"><a href="/contact_us">Contact Us</a></li>
-                    <% if session[:user_id] && session[:user_id] != nil %>
-                    <!-- <li><a href="/hiring_requests">Requests</a></li> -->
                     <li class="">
                       <a href="/help">Help</a>
                         <ul class="search-nav">
@@ -102,6 +104,9 @@
                             <li><a href="/help" ><span>Help Center</span></a></li>
                         </ul>
                     </li>
+                    <li class="hvr-overline-from-center"><a href="#">Pricing </a></li>
+                    <% if session[:user_id] && session[:user_id] != nil %>
+                    <!-- <li><a href="/hiring_requests">Requests</a></li> -->
                     <li>
                       <a href="#">Membership</a>
                       <ul>

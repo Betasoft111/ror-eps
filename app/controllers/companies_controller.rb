@@ -279,6 +279,30 @@ class CompaniesController < ApplicationController
 	def no_access
 	end
 
+	#################################
+	#  Check For Duplicate Email    #
+	#################################
+	def check_email
+		@result = CompanyStaff.find_by_email(params[:email])
+		if @result.blank?
+			render :json => { :success => false, :user => @result.to_json(:only => [:email]) }
+		else
+			render :json => { :success => true, :user => 'Email is already taken' }
+		end
+	end
+
+	##################################
+	#  Get The Details For The Staff #
+	##################################
+	def get_staff_details
+		@result = CompanyStaff.find(params[:id])
+		if @result != nil
+			render :json => { :success => false, :user => @result }
+		else
+			render :json => { :success => false, :user => 'No results found' }
+		end
+	end
+
 	private
 
 	  def plan_params

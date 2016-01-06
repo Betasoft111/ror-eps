@@ -44,6 +44,10 @@ $(document).ready(function () {
     }
  
     });
+      $('#availability').focus(function (){
+        //$(document).scrollTo('#skilsComplete');
+        $('html, body').animate({scrollTop: '450px'}, 800);
+        }); 
     });
     </script>
     <%#= javascript_include_tag "angular/routes.js" %>

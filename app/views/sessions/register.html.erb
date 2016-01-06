@@ -21,7 +21,7 @@
         </h4>
       </div>
     <% end %>
-      <h4 align="center" class="flash" ng-if="errMsg" ng-bind="errMsg"></h4>
+     
     <div class="row ">
       <div class="box-one ">
         
@@ -31,14 +31,31 @@
         <%= form_for User.new, :html => { :class => "loginForm", :name => "new_user" } do |f| %>
         <div class = "form-group col-md-6"  ng-class="{'has-error': new_user.first_name.$invalid && new_user.first_name.$dirty}">
           <input type = "text" class = "form-control" id = "first_name" name="first_name" ng-model="user.first_name" placeholder = "Enter First Name" required="required">
+          <span>
+            <i class="fa fa-check" ng-show="!new_user.first_name.$invalid && new_user.first_name.$dirty">
+            </i> 
+            <i class="fa fa-times" ng-show="new_user.first_name.$invalid && new_user.first_name.$dirty"></i>
+          </span>
 
         </div>
         <div class = "form-group col-md-6" ng-class="{'has-error': new_user.last_name.$invalid && new_user.last_name.$dirty}">
           <input type = "last_name" class = "form-control" ng-model="user.last_name" name="last_name" placeholder = "Enter Last Name" required="required">
+          <span>
+            <i class="fa fa-check" ng-show="!new_user.last_name.$invalid && new_user.last_name.$dirty">
+            </i> 
+            <i class="fa fa-times" ng-show="new_user.last_name.$invalid && new_user.last_name.$dirty"></i>
+          </span>
+
 
         </div>
         <div class = "form-group col-md-6" ng-class="{'has-error': new_user.email.$invalid && new_user.email.$dirty}">
           <input type = "email" class = "form-control" name="email" ng-model="user.email" id = "name" placeholder = "Enter Your Email" required="required" ng-keyup="checkEmail()" autocomplete="off">
+           <span class="down-msg" align="center" class="flash" ng-if="errMsg" ng-bind="errMsg"></span>
+          <span>
+            <i class="fa fa-check" ng-show="!new_user.email.$invalid && new_user.email.$dirty && !duplicateEmail">
+            </i> 
+            <i class="fa fa-times" ng-show="(new_user.email.$invalid && new_user.email.$dirty) || duplicateEmail"></i>
+          </span>
    
         </div>
         <div class = "form-group col-md-6" ng-class="{'has-error': new_user.user_type.$invalid && new_user.user_type.$dirty}">
@@ -51,6 +68,11 @@
         </div>
         <div class = "form-group col-md-6" ng-class="{'has-error': new_user.password.$invalid && new_user.password.$dirty}">
           <input type="password" name="password" ng-model="user.password" class="form-control immediate-help" id="exampleInputPassword1" placeholder="Password"  required="required" autocomplete="off">
+          <span>
+            <i class="fa fa-check" ng-show="!new_user.password.$invalid && new_user.password.$dirty">
+            </i> 
+            <i class="fa fa-times" ng-show="new_user.password.$invalid && new_user.password.$dirty"></i>
+          </span>
                 
         </div>
 
@@ -62,7 +84,7 @@
         
         <div class = "form-group col-md-12" ng-class="{'has-error': new_user.agree.$invalid && new_user.agree.$dirty}">
           <input type="checkbox" required="required" ng-model="user.agree" name="agree" style="opacity: 1">
-          <span>By submitting this form you agree to ESP <span class="c1">Terms of Service.</span></span>
+          <span class="check-text">By submitting this form you agree to ESP <span class="c1">Terms of Service.</span></span>
         </div>
         
         <!--  <div class = "checkbox">

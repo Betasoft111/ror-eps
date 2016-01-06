@@ -1,6 +1,6 @@
 body {
     font-family: open sans !important;
-    background-color: #EDEFED !important;
+   
 }
 p {
 	color: #2a2a2a;
@@ -29,6 +29,7 @@ h3 {
     margin: 0;
     width: 100%;
     position: relative;
+    min-height: 500px;
 }
 .header .navbar {
     background: none;
@@ -83,7 +84,7 @@ span.bottom-bar {
    
     float: left;
 
-    min-height: 650px;
+    min-height: 500px;
     position: relative;
     width: 100%;
 }
@@ -682,8 +683,18 @@ a.add-new:hover {
 }
 .add-employee {
     float: left;
-    margin-top: 30px;
+    /*margin-top: 30px;*/
     width: 100%;
+}
+.box-one form div.form-group > span.down-msg {
+    right: 50px;
+    color: #a94442;
+}
+input#image.form-control {
+    border: medium none;
+    height: auto;
+    margin-top: 14px;
+    padding: 0;
 }
 .add-employee .form-control {
     border-radius: 0;
@@ -693,7 +704,7 @@ a.add-new:hover {
 .add-employee .btn, .add-employee input[type="submit"] {
     background: rgba(0, 0, 0, 0) linear-gradient(to bottom, #4fc3ff 0%, #0376b0 100%) repeat scroll 0 0;
     border: 1px solid #0a7db7;
-    border-radius: 0;
+    border-radius: 3px;
     color: #fff;
     font-size: 20px;
     font-weight: normal;
@@ -706,9 +717,10 @@ a.add-new:hover {
     margin-right: 20px;
 }
 .add-employee .btn-default:hover {
-    background: #fff none repeat scroll 0 0;
+   
     border: 1px solid #0a7db7;
-    color: #0a7db7;
+    opacity: 0.6;
+    color: #fff;
 }
 .add-employee .q2 {
     padding-left: 5px;
@@ -1174,7 +1186,7 @@ ul.tabs {
             line-height: 48px;
             height: 48px; */
             width: 100%;
-            background: rgba(0, 0, 0, 0.4);
+            background: rgba(0, 0, 0, 0.7);
             /*text-align: left;
             padding-left: 20px;*/
             padding: 10px 0;
@@ -1627,7 +1639,32 @@ em.current {
     text-align: center;
     top: 40%;
 }
-
+.box-one form div.form-group > span.check-text {
+    position: static;
+}
+.box-one form div.form-group > span, #addStaff .form-group > div span {
+    position: absolute;
+    right: 24px;
+    top: 36%;
+}
+#addStaff input[type="text"] {
+    position: relative;
+}
+.box-one form div.form-group > span i , #addStaff .form-group > div span i{font-size: 19px;}
+.box-one form div.form-group > span i.fa-check , #addStaff .form-group > div span i.fa-check {
+    color: green;
+    
+}
+.box-one form div.form-group > span i.fa-times {
+    color: #a94442;
+    
+}
+.box-one form input[type="text"] {
+    position: relative;
+}
+.ui-autocomplete {
+    width: auto !important;
+}
 
 /* keep full widget on smaller screens */
 @media (max-width: 767px) { 
@@ -1817,7 +1854,9 @@ li.selected-tab {
 
 
 /*********** searchPage ****************/
-
+.search-employee {
+    margin-top: 50px;
+}
 .add-employee.search-employee .form-group:nth-child(5) {
     margin-bottom: 30px !important;
 }
@@ -1844,15 +1883,22 @@ li.selected-tab {
     width: 100%;
 }
 .company-search img {
-    background: #fff none repeat scroll 0 0;
-    border: 1px solid #015e8e;
-    border-radius: 50%;
+   background: #ffffff none repeat scroll 0 0;
+border: 1px solid #363839;
 
-    height: 60px;
-    
-   
-    width: 60px;
+height: 200px;
+display: block;
+margin: auto;
+width: 200px;
 }
+#map {
+    width: 100% !important;
+}
+#editStaff textarea {
+    height: 150px;
+    width: 100%;
+}
+
 .search-result h5 {
     color: #2a2a2a;
     display: inline-block;
@@ -1863,20 +1909,23 @@ li.selected-tab {
     /*bottom: 2px;
     position: absolute;
     right: 39px;*/
+    position: relative;
 }
-.company-search a{
-    margin-top: 0;
-    font-size: 13px;
+.company-search a {
     color: #008ed6;
-    text-decoration: none;
+    font-size: 13px;
+    margin-top: 20px;
+    text-align: center;
+    text-decoration: underline;
 }
-.rate-search {
+p.rate-search {
     background: #363839 none repeat scroll 0 0;
-    bottom: 79px;
-    color: #fff;
+    bottom: 45px;
+    color: #fff !important;
     font-size: 17px;
-    left: 30px;
-    padding: 10px 15px;
+    left: 22%;
+    margin: 0;
+    padding: 8px 20px;
     position: absolute;
 }
 .search-result {
@@ -1931,7 +1980,7 @@ p.Strong {
 .add-employee .btn, .add-employee input[type="submit"] {
     background: rgba(0, 0, 0, 0) linear-gradient(to bottom, #4fc3ff 0%, #0376b0 100%) repeat scroll 0 0;
     border: 1px solid #0a7db7;
-    border-radius: 0;
+    border-radius: 3px;
     color: #fff;
     font-size: 20px;
     font-weight: normal;
@@ -1994,17 +2043,9 @@ a.icon-eye-open {
 display: none;
 }
 
-.company-search img {
-display: block;
-}
 
-.company-search img {
-background: #ffffff none repeat scroll 0 0;
-border: 1px solid #015e8e;
-border-radius: 50%;
-height: 200px;
-width: 200px;
-}
+
+
 
 .company-search {
 
@@ -2014,24 +2055,12 @@ width: 200px;
 color: #2a2a2a;
 display: block;
 font-size: 17px;
-margin-top: 20px;
+margin-top: 10px;
 text-align: center;
 }
 
-.company-search a {
-color: #008ed6;
-font-size: 13px;
-margin-top: 0;
-text-align: center;
-text-decoration: none;
-}
 
-.company-search span {
-display: block;
-margin: 0 25% 20px;
-text-align: center;
-width: 50%;
-}
+
 
 .employee-cont {
   border: 1px solid #cccccc;
