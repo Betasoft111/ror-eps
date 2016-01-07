@@ -20,7 +20,7 @@ app.controller('joinController', function($scope, $timeout, $http) {
         var style = $(".progress-bar").width() / $('.progress-bar').parent().width() * 100;
         //console.log('style is ', parseInt(style));
         if (parseInt(style) > 0 && parseInt(style) <= 40) {
-          $scope.passStatus = "Week";
+          $scope.passStatus = "Weak";
           $scope.disabledJoin = true;
         } else if (parseInt(style) > 40 && parseInt(style) <= 70) {
           $scope.passStatus = "Good";
@@ -33,7 +33,7 @@ app.controller('joinController', function($scope, $timeout, $http) {
           $scope.passStatus = "Strong";
           $scope.disabledJoin = false;
         } else {
-          $scope.passStatus = "Week";
+          $scope.passStatus = "Weak";
           $scope.disabledJoin = false;
         }
       }, 500);

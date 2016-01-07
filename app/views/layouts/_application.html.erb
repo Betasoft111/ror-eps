@@ -20,6 +20,7 @@
     <%= stylesheet_link_tag    "autocompletes/jquery.tag-editor.css" %>
     <%= stylesheet_link_tag    "autocompletes/pure-min.css" %>
     <%= stylesheet_link_tag    "font-awesome.min.css" %>
+    <%#= stylesheet_link_tag    "jquery.mobile-1.4.5.min.css" %>
     <%#= stylesheet_link_tag    "sweetalert.css" %>
     <%= javascript_include_tag "moment.min.js" %>
     <%= javascript_include_tag "application.js" %>
@@ -34,6 +35,61 @@
     return false;
     }
     });
+      $('#flat-slider').slider({
+        orientation: 'horizontal',
+        range:       true,
+        values:      [$('#minPrice').val(), $('#maxPrice').val()],
+        slide: function( event, ui ) {
+          $( "#amount" ).val( "$" + ui.values[ 0 ] + " - $" + ui.values[ 1 ] );
+          $('#serach-results').css('opacity', '0.2');
+          /*
+           * Filter The Staff Based On Price Selected
+           */
+           var skills = $('#skills').val();
+           var experience = $('#experience').val();
+           var qualification = $('#staffQualitication').val();
+           var availability = $('#availability').val();
+           var minPrice = ui.values[ 0 ];
+           var maxPrice = ui.values[ 1 ];
+           $.ajax({
+              url: '/api/filter_staff?skills=' + skills + '&experience=' + experience + '&qualification=' + qualification + '&availability=' + availability + '&minp=' + minPrice + '&maxp=' + maxPrice,
+              type: 'get',
+              dataType: 'json',
+              success: function(response) {
+                
+                var html = '';
+                for(var i =0; i < response.length; i++) {
+                  if(response[i].staff_price >= minPrice &&  response[i].staff_price <= maxPrice) {
+                    if(response[i].is_private) {
+                      var imageStyle = "opacity: 0.2";
+                      var userName = response[i].first_name + response[i].last_name;
+                    }else{
+                      var imageStyle = "";
+                      var userName = 'User is private';
+                    }
+                    if(response[i].image_file_name !== '' && response[i].image_file_name) {
+                      var checkId = (response[i].id.toString().length == 1) ? '0' : '';
+                      console.log('ckh id is ', checkId, response[i].id.toString().length, response[i].id);
+                      var imagePath = '/system/company_staffs/images/000/000/0' + checkId + response[i].id +'/original/'+ response[i].image_file_name +'';
+                    }else{
+                      var imagePath = '/images/original/missing.png';
+                    }
+
+                    html = html + '<div class="col-lg-4 col-sm-4 search-result"><div class="company-search"><span><img style="'+ imageStyle +'" src="' + imagePath + '"><p class="rate-search">' + response[i].staff_price +' <span>$</span></p></span><a href="/staff_details/'+ response[i].id + '">View More</a></div><h5>' + response[i].company_fn + response[i].company_ln + '/ ' + userName +  ' </h5></div>';
+                  }
+                }
+                $('#serach-results').html('');
+                $('#serach-results').html(html);
+                $('#serach-results').css('opacity', '1');
+              },error: function(error) {
+                console.log('Here I am');
+              }
+           })
+
+        }
+      });
+      $( "#amount" ).val( "$" + $( "#flat-slider" ).slider( "values", 0 ) +
+      " - $" + $( "#flat-slider" ).slider( "values", 1 ) );
     });
     </script>
     <%#= javascript_include_tag "angular/routes.js" %>

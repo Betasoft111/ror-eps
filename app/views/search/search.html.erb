@@ -29,19 +29,19 @@
 						<div class="form-group">
 							<label class="control-label col-sm-3" for="pwd">Skill</label>
 							<div class="col-sm-9">
-								<input type="text" name="skills" class="form-control autoComplete" id="pwd" placeholder="Skills (Want to hire for)" value="<%= params[:skills] %>">
+								<input type="text" name="skills" class="form-control autoComplete" id="skills" placeholder="Skills (Want to hire for)" value="<%= params[:skills] %>">
 							</div>
 						</div>
 						<div class="form-group">
 							<label class="control-label col-sm-3" for="pwd">Experience</label>
 							<div class="col-sm-9">
-								<input type="text" name="experience" class="form-control" id="pwd" placeholder="Enter the work experience" value="<%= params[:experience] %>">
+								<input type="text" name="experience" class="form-control" id="experience" placeholder="Enter the work experience" value="<%= params[:experience] %>">
 							</div>
 						</div>
 						<div class="form-group">
 							<label class="control-label col-sm-3" for="pwd">Qualification</label>
 							<div class="col-sm-9">
-								<input type="text" name="staff_quf" id="staffQualitication" class="form-control" id="pwd" placeholder="Enter the staff Qualification" value="<%= params[:staff_quf] %>" >
+								<input type="text" name="staff_quf" id="staffQualitication" class="form-control" id="staff_quf" placeholder="Enter the staff Qualification" value="<%= params[:staff_quf] %>" >
 							</div>
 						</div>
 						<div class="form-group">
@@ -53,6 +53,18 @@
 							</div>
 						</div>
 					
+					<div class="form-group">
+					  <label for="amount" class="control-label col-sm-3">Price range:</label>
+					  <div class="col-sm-9">
+					  	<input type="hidden" id="minPrice" value="<%= @min_price %>">
+					  	<input type="hidden" id="maxPrice" value="<%= @max_price %>">
+					  	<input type="text" id="amount" readonly style="border:0; color:#f6931f; font-weight:bold;">
+				 
+							<div id="flat-slider"></div>
+						</div>
+					</div>
+
+
 					<div class="form-group">
 						<div class="col-sm-offset-2 col-sm-10 ">
 							<button type="submit" class="btn btn-default  pull-right">Search Staff</button>
@@ -80,7 +92,7 @@
 				<% end %>
 			<% end %>
 		</div>
-		<div class="row">
+		<div class="row" id="serach-results">
 			<% @search_results.each do |data| %>
 			<div class="col-lg-4 col-sm-4 search-result">
 				<!-- <img src="img/search1.jpg"> -->
@@ -231,7 +243,8 @@ $(document).ready(function () {
 				    	lat: latitude, 
 				    	lng: longitude,
 				    	name: value.first_name,
-				    	price: value.staff_price
+				    	price: value.staff_price,
+				    	is_private: value.is_private
 
 				    });
 				  } 
@@ -281,8 +294,9 @@ var lng = locations[i].lng;
         });
         map.setCenter(marker.getPosition())
 
+        var userName = (locations[i].is_private) ? 'User is private' : locations[i].name;
 
-        var content = locations[i].name + '<br>' + '$' + locations[i].price;     
+        var content = '<div class="map-area"><b>' + userName + '<br>' + '$' + locations[i].price + '<b></div>';     
 
   var infowindow = new google.maps.InfoWindow()
 

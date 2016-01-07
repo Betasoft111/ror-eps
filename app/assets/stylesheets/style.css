@@ -3,16 +3,16 @@ body {
    
 }
 p {
-	color: #2a2a2a;
-	font-family: Open Sans;
-	font-size: 17px;
-	line-height: 28px;
+    color: #2a2a2a;
+    font-family: Open Sans;
+    font-size: 17px;
+    line-height: 28px;
 }
 h3 {
-	color: #2a2a2a !important;
-	font-size: 35px !important;
-	font-weight: bold !important;
-	margin-bottom: 0 !important;
+    color: #2a2a2a !important;
+    font-size: 35px !important;
+    font-weight: bold !important;
+    margin-bottom: 0 !important;
 }
 .main-c1 {
     width:100%;
@@ -41,8 +41,8 @@ h3 {
     margin: 0;
 }
 .banner-inner p {
-	font-size: 19px;
-	color: #fff;
+    font-size: 19px;
+    color: #fff;
 }
 span.bottom-bar {
     background: #008ed6 none repeat scroll 0 0;
@@ -75,11 +75,11 @@ span.bottom-bar {
 }
 
 .banner-inner img{
-	width: auto;
-	margin-bottom: 20px;
+    width: auto;
+    margin-bottom: 20px;
 }
 .banner {
-	 background-attachment: fixed;
+     background-attachment: fixed;
    /* background-image: url("../assets/banner.png");*/
     background-position: center top;
     background-repeat: no-repeat;
@@ -692,6 +692,14 @@ a.add-new:hover {
 .box-one form div.form-group > span.down-msg {
     right: 50px;
     color: #a94442;
+    position: absolute;
+    bottom: 18px;
+}
+span.edit-staff-down-msg.ng-binding.ng-scope {
+    position: absolute;
+    right: 50px;
+    bottom: 16px;
+    color: #a94442;
 }
 input#image.form-control {
     border: medium none;
@@ -921,7 +929,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4fc3ff', end
     line-height: normal;
 }
 form.ng-pristine button {
-    width: 100%;
+ /*   width: 100%;*/
 }
 .card span {
     border-right: 1px solid #fff;
@@ -1643,10 +1651,12 @@ em.current {
     text-align: center;
     top: 40%;
 }
+
+
 .box-one form div.form-group > span.check-text {
     position: static;
 }
-.box-one form div.form-group > span, #addStaff .form-group > div span {
+.box-one form div.form-group > span i.fa, #addStaff .form-group > div span i.fa,  #editStaff .form-group > div span i.fa {
     position: absolute;
     right: 24px;
     top: 36%;
@@ -1654,14 +1664,17 @@ em.current {
 #addStaff input[type="text"] {
     position: relative;
 }
-.box-one form div.form-group > span i , #addStaff .form-group > div span i{font-size: 19px;}
-.box-one form div.form-group > span i.fa-check , #addStaff .form-group > div span i.fa-check {
+.box-one form div.form-group > span i , #addStaff .form-group > div span i, #editStaff .form-group > div span i{font-size: 19px;}
+.box-one form div.form-group > span i.fa-check , #addStaff .form-group > div span i.fa-check, #editStaff .form-group > div span i.fa-check {
     color: green;
     
 }
 .box-one form div.form-group > span i.fa-times {
     color: #a94442;
     
+}
+.box-one form div.form-group > span i.fa-times, #addStaff .form-group > div span i.fa-times, #editStaff .form-group > div span i.fa-times {
+    color:#a94442;
 }
 .box-one form input[type="text"] {
     position: relative;
@@ -1670,13 +1683,8 @@ em.current {
     width: auto !important;
 }
 
-/* keep full widget on smaller screens */
-@media (max-width: 767px) { 
-    body {
-        padding-left: 0;
-        padding-right: 0;
-    }
-}
+
+
 
 /**** media start *****/
 @media screen and (max-width: 1200px) {
@@ -1744,6 +1752,14 @@ p.plan-price span {
 
  }
 
+
+/* keep full widget on smaller screens */
+@media (max-width: 767px) { 
+    body {
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
 
 @media screen and (max-width: 767px) {
 .header-top .navbar-header {display: block;}
@@ -2108,4 +2124,3 @@ text-align: center;
   float: left;
   margin-right: 20px;
 }
-
