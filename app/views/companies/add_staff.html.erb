@@ -131,6 +131,7 @@
         <div class="col-sm-9" ng-class="{'has-error': addStaff.staff_price.$invalid && addStaff.staff_price.$dirty}">
           <%#= text_field_tag :staff_price, nil, class:'form-control', :placeholder => 'Enter Staff Price', :required => 'required' %>
           <input type = "number" class = "form-control" id = "staff_price" name="staff_price" ng-model="staff.staff_price" placeholder = "Enter Price" required="required" min="1">
+          
            <span>
             <i class="fa fa-check" ng-show="!addStaff.staff_price.$invalid && addStaff.staff_price.$dirty">
             </i> 

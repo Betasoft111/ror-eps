@@ -171,22 +171,23 @@ class CompaniesController < ApplicationController
 		@plan_id = params[:plan_id]
 	  	@plan_details = Admin::StaffPlan.find(@plan_id)
 	  	 if @plan_details.id != nil
-	  		if @plan_details.plan_type == 1
-	  			@planname = "Monthly"
-	  			@pantype = Time.now + 30.days
-	  		elsif @plan_details.plan_type == 2
-	  			@pantype = Time.now + 15.days
-	  			@planname = "Quaterly"
-	  		else  @plan_details.plan_type == 3
-	  			@pantype = Time.now + 365.days
-	  			@planname = "Yearly"
-	  		end
+	  		# if @plan_details.plan_type == 1
+	  		# 	@planname = "Monthly"
+	  		# 	@pantype = Time.now + 30.days
+	  		# elsif @plan_details.plan_type == 2
+	  		# 	@pantype = Time.now + 15.days
+	  		# 	@planname = "Quaterly"
+	  		# else  @plan_details.plan_type == 3
+	  		# 	@pantype = Time.now + 365.days
+	  		# 	@planname = "Yearly"
+	  		# end
+	  		@planname = @plan_details.plan_name
 
 	  	 @history = UsersPaymentHistory.create({
 									:plan_id =>  @plan_details.id,
 									:user_id => @current_user.id,
 									:purchased_on => Time.new,
-									:expired_on => @pantype,
+									#:expired_on => @pantype,
 									:plan_name => @planname,
 									:plan_type => 'StaffPlan'
 								})
