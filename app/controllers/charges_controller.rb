@@ -111,6 +111,7 @@ class ChargesController < ApplicationController
 	#     IPN Listner For Epay      #
 	################################# 
 	def payment_ipn
+
 		if params[:txnid] && params[:txnid] != nil && params[:orderid] && params[:orderid] != nil && params[:amount] && params[:amount] != nil
 			@plan_details = SubscriptionPlan.where(:plan_price => params[:amount]) #.where(:email => plan_params[:email])
 			if @plan_details && @plan_details[0]
@@ -140,7 +141,7 @@ class ChargesController < ApplicationController
 				#end  
 				
 					User.where(:id => @current_user.id).update_all(plan_id: @plan_id)
-					@email = UserMailer.payment_email(@current_user, @plan_details.plan_price).deliver
+					#@email = UserMailer.payment_email(@current_user, @plan_details.plan_price).deliver
 					
 
 					redirect_to "/company_home", :notice => "Membership is updated successfully"
