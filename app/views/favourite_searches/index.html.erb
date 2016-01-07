@@ -31,16 +31,16 @@
 						<th>Action</th>
 					</tr>
 				</thead>
-				<%#= @current_user.id %>
+				
 				<tbody>
-					<%#= @logedinusers_FavouriteSearch.inspect %>
+					
 					<% @logedinusers_FavouriteSearch.each do |search| %>
 					<tr>
 						<td><%= search.skills %></td>
 						<td><%= search.qualification %></td>
 						<td><%= search.experience %></td>
 						<td><%= search.availability %></td>
-						<td><a class="icon-eye-open" target="_blank" href="search?skills=<%= search.skills %>&staff_quf=<%= search.qualification %>&experience= <%= search.experience %> &availability=<%= search.availability %>"><i class="fa fa-eye"></i></a> &nbsp; <a href="/favourite_searches/destroy/<%= search.id %>" class="delete"></a> </td>						
+						<td><a class="icon-eye-open" target="_blank" href="search?skills=<%= search.skills %>&staff_quf=<%= search.qualification %>&experience=<%= search.experience %>&availability=<%= search.availability %>"><i class="fa fa-eye"></i></a> &nbsp; <a href="/favourite_searches/destroy/<%= search.id %>" class="delete"></a> </td>						
 					</tr>
 					<% end %>
 				</tbody>
