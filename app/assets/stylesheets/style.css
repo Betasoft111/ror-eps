@@ -692,6 +692,14 @@ a.add-new:hover {
 .box-one form div.form-group > span.down-msg {
     right: 50px;
     color: #a94442;
+    position: absolute;
+    bottom: 18px;
+}
+span.edit-staff-down-msg.ng-binding.ng-scope {
+    position: absolute;
+    right: 50px;
+    bottom: 16px;
+    color: #a94442;
 }
 input#image.form-control {
     border: medium none;
