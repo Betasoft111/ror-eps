@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160106165823) do
+ActiveRecord::Schema.define(version: 20160107224504) do
 
   create_table "admin_admin_users", force: true do |t|
     t.string   "first_name"
@@ -97,7 +97,7 @@ ActiveRecord::Schema.define(version: 20160106165823) do
     t.string   "location"
     t.string   "availability_to"
     t.string   "availability_from"
-    t.text     "staff_price"
+    t.integer  "staff_price"
   end
 
   add_index "company_staffs", ["company_id"], name: "fk_staff", using: :btree
