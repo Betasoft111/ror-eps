@@ -226,7 +226,14 @@ $(document).ready(function () {
 				    var latitude = results[0].geometry.location.lat();
 				    var longitude = results[0].geometry.location.lng();
 				    //alert(latitude);
-				    locations.push({name: address, lat: latitude, lng: longitude});
+				    locations.push({
+				    	name: address, 
+				    	lat: latitude, 
+				    	lng: longitude,
+				    	name: value.first_name,
+				    	price: value.staff_price
+
+				    });
 				  } 
 				}); 
 			});
@@ -259,20 +266,49 @@ function fillGeoMap(locations) {
 
     var marker, i;
 
-    for (i = 0; i < locations.length; i++) {  
-      //console.log('location are ==>', locations[i].lat, locations[i].lng);
-      marker = new google.maps.Marker({
-        position: new google.maps.LatLng(locations[i].lat, locations[i].lng),
-        map: map
-      });
+   
 
-      google.maps.event.addListener(marker, 'click', (function(marker, i) {
+
+for (i = 0; i < locations.length; i++) {  
+
+var lat = locations[i].lat;
+var lng = locations[i].lng;
+
+ latlngset = new google.maps.LatLng(lat, lng);
+
+  var marker = new google.maps.Marker({  
+          map: map, title: locations[i].name , position: latlngset  
+        });
+        map.setCenter(marker.getPosition())
+
+
+        var content = locations[i].name + '<br>' + '$' + locations[i].price;     
+
+  var infowindow = new google.maps.InfoWindow()
+
+google.maps.event.addListener(marker,'click', (function(marker,content,infowindow){ 
         return function() {
-          infowindow.setContent(locations[i].name);
-          infowindow.open(map, marker);
-        }
-      })(marker, i));
-    }
+           infowindow.setContent(content);
+           infowindow.open(map,marker);
+        };
+    })(marker,content,infowindow)); 
+
+  }
+
+    // for (i = 0; i < locations.length; i++) {  
+    //   //console.log('location are ==>', locations[i].lat, locations[i].lng);
+    //   marker = new google.maps.Marker({
+    //     position: new google.maps.LatLng(locations[i].lat, locations[i].lng),
+    //     map: map
+    //   });
+
+    //   google.maps.event.addListener(marker, 'click', (function(marker, i) {
+    //     return function() {
+    //       infowindow.setContent(locations[i].name);
+    //       infowindow.open(map, marker);
+    //     }
+    //   })(marker, i));
+    // }
 }
    
   </script>

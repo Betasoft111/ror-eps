@@ -31,6 +31,9 @@ h3 {
     position: relative;
     min-height: 500px;
 }
+.header.inner-pages-ng {
+    min-height: auto;
+}
 .header .navbar {
     background: none;
     border: medium none;
@@ -1234,6 +1237,7 @@ p.nn1 {
 .happy_client ul li {
     margin-bottom: 30px;
     position: relative;
+     transition: background .3s ease, color 0.2s linear;
 }
 .l1.hvr-shutter-in-vertical::before , .l1{
     background: rgba(101,109,148,0.7) !important;
