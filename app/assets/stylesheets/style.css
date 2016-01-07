@@ -1234,6 +1234,7 @@ p.nn1 {
 .happy_client ul li {
     margin-bottom: 30px;
     position: relative;
+     transition: background .3s ease, color 0.2s linear;
 }
 .l1.hvr-shutter-in-vertical::before , .l1{
     background: rgba(101,109,148,0.7) !important;
