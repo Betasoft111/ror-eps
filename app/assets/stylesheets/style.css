@@ -31,6 +31,9 @@ h3 {
     position: relative;
     min-height: 500px;
 }
+.header.inner-pages-ng {
+    min-height: auto;
+}
 .header .navbar {
     background: none;
     border: medium none;
