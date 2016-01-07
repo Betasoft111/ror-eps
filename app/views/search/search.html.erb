@@ -212,8 +212,8 @@ $('#availability_to').val(selectedDate[1]);
 });
 </script>
 <script type="text/javascript">
-$(document).ready(function () {
-	//var array = '<%= escape_javascript @search_results.to_json %>';
+
+function searchForMap(minPrice, maxPrice) {
 	var skills = getParameterByName("skills"),
 		experience = getParameterByName("experience"),
 		staff_quf = getParameterByName("staff_quf"),
@@ -228,27 +228,28 @@ $(document).ready(function () {
 			//console.log('Here ', response);
 			var locations = [];
 			$.each(response, function (index, value) {
+				if(value.staff_price >= minPrice &&  value.staff_price <= maxPrice) {
+					var geocoder = new google.maps.Geocoder();
+					var address = value.location;
+	//console.log('Here ', address, value);
+					geocoder.geocode( { 'address': address}, function(results, status) {
 
-				var geocoder = new google.maps.Geocoder();
-				var address = value.location;
-//console.log('Here ', address, value);
-				geocoder.geocode( { 'address': address}, function(results, status) {
+					  if (status == google.maps.GeocoderStatus.OK) {
+					    var latitude = results[0].geometry.location.lat();
+					    var longitude = results[0].geometry.location.lng();
+					    //alert(latitude);
+					    locations.push({
+					    	name: address, 
+					    	lat: latitude, 
+					    	lng: longitude,
+					    	name: value.first_name,
+					    	price: value.staff_price,
+					    	is_private: value.is_private
 
-				  if (status == google.maps.GeocoderStatus.OK) {
-				    var latitude = results[0].geometry.location.lat();
-				    var longitude = results[0].geometry.location.lng();
-				    //alert(latitude);
-				    locations.push({
-				    	name: address, 
-				    	lat: latitude, 
-				    	lng: longitude,
-				    	name: value.first_name,
-				    	price: value.staff_price,
-				    	is_private: value.is_private
-
-				    });
-				  } 
-				}); 
+					    });
+					  } 
+					}); 
+				}
 			});
 			setTimeout(function () {
 				fillGeoMap(locations);
@@ -257,6 +258,14 @@ $(document).ready(function () {
 			console.log('Error getting ', err);
 		}
 	});
+
+	}
+
+$(document).ready(function () {
+	//var array = '<%= escape_javascript @search_results.to_json %>';
+	var minPrice = $('#minPrice').val();
+	var maxPrice = $('#maxPrice').val();
+	searchForMap(minPrice, maxPrice);
 });
 
 function getParameterByName(name) {
