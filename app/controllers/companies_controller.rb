@@ -136,8 +136,13 @@ class CompaniesController < ApplicationController
 		 	params[:is_private] = 0
 		end
 		@user = CompanyStaff.find(params[:id])
-    	@user.update_attribute(:image, params[:image])
+		if params[:image] == nil
+			CompanyStaff.where(:id => params[:id]).update_all(:first_name => params[:first_name], :last_name => params[:last_name], :email => params[:email], :skills => params[:skills], :availability => params[:availability], :is_private => params[:is_private], :qualification => params[:qualification], :experience => params[:experience], :location => params[:location], :availability_to => params[:availability_to], :availability_from => params[:availability_from], :staff_price => params[:staff_price])
+		else
+		@user.update_attribute(:image, params[:image])
 		CompanyStaff.where(:id => params[:id]).update_all(:first_name => params[:first_name], :last_name => params[:last_name], :email => params[:email], :skills => params[:skills], :availability => params[:availability], :is_private => params[:is_private], :qualification => params[:qualification], :experience => params[:experience], :location => params[:location], :availability_to => params[:availability_to], :availability_from => params[:availability_from], :staff_price => params[:staff_price])
+		end
+    	
 		redirect_to "/company_home", :notice => "Updated successfully"
 	end
 	#################################
