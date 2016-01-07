@@ -68,8 +68,8 @@
                       var userName = 'User is private';
                     }
                     if(response[i].image_file_name !== '' && response[i].image_file_name) {
-                      var checkId = (response[i].id.length == 1) ? '0' : '';
-                      console.log('ckh id is ', checkId, response[i].id.length);
+                      var checkId = (response[i].id.toString().length == 1) ? '0' : '';
+                      console.log('ckh id is ', checkId, response[i].id.toString().length, response[i].id);
                       var imagePath = '/system/company_staffs/images/000/000/0' + checkId + response[i].id +'/original/'+ response[i].image_file_name +'';
                     }else{
                       var imagePath = '/images/original/missing.png';
