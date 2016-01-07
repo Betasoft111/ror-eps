@@ -43,7 +43,7 @@
 						        				<% end %> 
 						        			</td>
 						        			<td><%= company.created_at.strftime("%d-%m-%Y") %></td>
-						        			<td><a href="/admin/company/<%= company.id %>/edit" class="edit"> </a> <a href="/admin/company/<%= company.id %>/delete" class="delete"> </a> <a href="admin/message/<%= company.id %>/" class="message">Contact User </a></td>
+						        			<td><a href="/admin/company/<%= company.id %>/edit" class="edit"> </a> <a href="/admin/company/<%= company.id %>/delete" class="delete"> </a> <a href="admin/message/<%= company.id %>/" class="message"><i class="fa fa-envelope"></i> </a></td>
 						        		</tr>
 						        	<% end %>
 						        </tbody>

@@ -92,10 +92,13 @@
 						<% else %>
 							<%= image_tag(data.image.url , :alt => 'company1.png') %>
 						<% end %>
+
+						<p class="rate-search"><%= data.staff_price %> <span>$</span></p> 
 					</span>
+
 					<a href="/staff_details/<%= data.id%>">View More</a>
 				</div>
-				 <span class="rate-search"><%= data.staff_price %> <sup>$</sup></span> 
+				
 				<h5><%= data.company_fn %> <%= data.company_ln %>/ 
 					<% if data.is_private %>
 						User is private

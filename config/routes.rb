@@ -150,6 +150,8 @@ EPS::Application.routes.draw do
   #     API Routes For Angular    #
   #################################
   post "api/check_email" => "users#check_email"
+  post "api/check_staff_email" => "companies#check_email"
+  get "api/staff_edit/:id" => "companies#get_staff_details"
 
   # #url's we are using in web
 

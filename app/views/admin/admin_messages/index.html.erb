@@ -22,14 +22,11 @@
   	  <form id="editStaff" class="form-horizontal add-employee" action="/admin/message/<%=  @userdata.id %>/Send" method="POST">
 
         <div class="form-group">
-        <div class="col-lg-6">
-        <p style="
-    width: 20%;
-    float: left;
-">To :</p>
-        <div class="col-sm-9">
-          <p><%=  @userdata.email %></p>
-        </div>
+       
+        <p class="text-center"><strong>To : <%=  @userdata.email %></strong></p>
+       
+       
+     
       </div>
 
       <div class="form-group">

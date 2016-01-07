@@ -1,283 +1,316 @@
 <%= render 'layouts/application' %>
-
-  <div class="content inner-page">
-    <div class="content-down"></div>
-    <div class="container">
-
-<% flash.each do |name, msg| %>
-      <div class="">
-        <h4 align="center" class="flash"><%= content_tag :div, msg, :id => "flash_#{name}" %>
-        </h4>
-      </div>
+<div class="content inner-page">
+  <div class="content-down"></div>
+  <div class="container" ng-app="staffAPP" ng-controller="staffController">
+    <% flash.each do |name, msg| %>
+    <div class="">
+      <h4 align="center" class="flash"><%= content_tag :div, msg, :id => "flash_#{name}" %>
+      </h4>
+    </div>
     <% end %>
-
-      <div class="row">
-        <h4><span><%= image_tag("line.png" , :alt => 'line.png') %></span>Edit Employee Page<span><!-- <img src="img/right.png"> -->
-        <%= image_tag("right.png" , :alt => 'right.png') %>
-        </span></h4>
-        
-
-            <%= form_tag @staff_url, { :multipart => true , :class => 'form-horizontal add-employee', :id => 'editStaff'} do %>
-      <div class="form-group">
-        <div class="col-lg-6">
+    <div class="row" ng-init="getDetails(<%= params[:id] %>)">
+      <h4><span><%= image_tag("line.png" , :alt => 'line.png') %></span>Edit Employee Page<span><!-- <img src="img/right.png"> -->
+      <%= image_tag("right.png" , :alt => 'right.png') %>
+    </span></h4>
+    
+    <%= form_tag @staff_url, { :multipart => true , :class => 'form-horizontal add-employee', :id => 'editStaff', :name => "editStaff"} do %>
+    <div class="form-group">
+      <div class="col-lg-6">
         <%= label_tag :first_name, 'First Name', :class => "control-label col-sm-3" %>
-        <div class="col-sm-9">
-          <%= text_field_tag :first_name, @staff_data.first_name, :class => 'form-control', :placeholder => 'Enter First Name', :required => 'required' %>
-        </div>
-      </div>
-        <div class="col-lg-6">
-          <%= label_tag :last_name, 'Last Name', :class => "control-label col-sm-3", :required => 'required' %>
-        <div class="col-sm-9">
-          <%= text_field_tag :last_name, @staff_data.last_name, :class => 'form-control', :placeholder => 'Enter Last Name', :required => 'required' %>
-        </div>
-      </div>
-    
-    
-        
-      </div>
-      <div class="form-group">
-        <div class="col-lg-6">
-        <%= label_tag :email, 'Email', :class => "control-label col-sm-3" %>
-        <div class="col-sm-9">
-          <%= email_field_tag :email, @staff_data.email, class:'form-control', :placeholder => 'Enter Email', :required => 'required' %>
+        <div class="col-sm-9" ng-class="{'has-error': editStaff.first_name.$invalid && editStaff.first_name.$dirty}">
+          <%#= text_field_tag :first_name, @staff_data.first_name, :class => 'form-control', :placeholder => 'Enter First Name', :required => 'required' %>
+          <input type = "text" class = "form-control" id = "first_name" name="first_name" ng-model="staff.first_name" placeholder = "Enter First Name" required="required">
+           <span>
+            <i class="fa fa-check" ng-show="!editStaff.first_name.$invalid && editStaff.first_name.$dirty">
+            </i> 
+            <i class="fa fa-times" ng-show="editStaff.first_name.$invalid && editStaff.first_name.$dirty"></i>
+          </span>
         </div>
       </div>
       <div class="col-lg-6">
-         <%= label_tag :skills, 'Skills', :class => "control-label col-sm-3" %>
+        <%= label_tag :last_name, 'Last Name', :class => "control-label col-sm-3", :required => 'required' %>
+        <div class="col-sm-9" ng-class="{'has-error': editStaff.last_name.$invalid && editStaff.last_name.$dirty}">
+          <%#= text_field_tag :last_name, @staff_data.last_name, :class => 'form-control', :placeholder => 'Enter Last Name', :required => 'required' %>
+          <input type = "text" class = "form-control" id = "last_name" name="last_name" ng-model="staff.last_name" placeholder = "Enter Last Name" required="required">
+           <span>
+            <i class="fa fa-check" ng-show="!editStaff.last_name.$invalid && editStaff.last_name.$dirty">
+            </i> 
+            <i class="fa fa-times" ng-show="editStaff.last_name.$invalid && editStaff.last_name.$dirty"></i>
+          </span>
+        </div>
+      </div>
+      
+      
+      
+    </div>
+    <div class="form-group">
+      <div class="col-lg-6">
+        <%= label_tag :email, 'Email', :class => "control-label col-sm-3" %>
+        <div class="col-sm-9" ng-class="{'has-error': editStaff.email.$invalid && editStaff.email.$dirty}">
+          <%#= email_field_tag :email, @staff_data.email, class:'form-control', :placeholder => 'Enter Email', :required => 'required' %>
+          <input type = "email" class = "form-control" id = "email" name="email" ng-model="staff.email" placeholder = "Enter Email" required="required" >
+           <span>
+            <i class="fa fa-check" ng-show="!editStaff.email.$invalid && editStaff.email.$dirty">
+            </i> 
+            <i class="fa fa-times" ng-show="editStaff.email.$invalid && editStaff.email.$dirty"></i>
+          </span>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <%= label_tag :skills, 'Skills', :class => "control-label col-sm-3" %>
         <div class="col-sm-9">
           <%= text_field_tag :skills, @staff_data.skills, class:'form-control', :placeholder => 'Enter Skills', :required => 'required', :id =>'skilsComplete'%>
+        </div>
       </div>
-      </div>
-
-       
-      </div>
-
-      <div class="form-group">
-        <div class="col-lg-6">
+      
+    </div>
+    <div class="form-group">
+      <div class="col-lg-6">
         <%= label_tag :availability, 'Availability', :class => "control-label col-sm-3" %>
         <div class="col-sm-9">
-          <%= text_field_tag :availability, @staff_data.availability, class:'form-control', :placeholder => 'Enter Availability', :required => 'required' %>
+          <%#= text_field_tag :availability, @staff_data.availability, class:'form-control', :placeholder => 'Enter Availability', :required => 'required' %>
+          <input type = "text" class = "form-control" id = "availability" name="availability" ng-model="staff.availability" placeholder = "Enter Availability" required="required">
+           <span>
+            <i class="fa fa-check" ng-show="!editStaff.availability.$invalid && editStaff.availability.$dirty">
+            </i> 
+            <i class="fa fa-times" ng-show="editStaff.availability.$invalid && editStaff.availability.$dirty"></i>
+          </span>
           <input type="hidden" name="availability_to" id="availability_to" value="<%= @staff_data.availability_to %>">
           <input type="hidden" name="availability_from" id="availability_from" value="<%= @staff_data.availability_from %>">
         </div>
       </div>
       <div class="col-lg-6">
-         <%= label_tag :is_private, 'Is Private', :class => "control-label col-sm-3" %>
-        <div class="col-sm-9">   
-          <%= select_tag "is_private", options_for_select([ "Select", "No", "Yes" ], @staff_data.is_private == true ? "Yes" : "No"), class: "form-control" %>
+        <%= label_tag :is_private, 'Is Private', :class => "control-label col-sm-3" %>
+        <div class="col-sm-9" ng-class="{'has-error': editStaff.is_private.$invalid && editStaff.is_private.$dirty}">
+          <%#= select_tag "is_private", options_for_select([ "Select", "No", "Yes" ], @staff_data.is_private == true ? "Yes" : "No"), class: "form-control" %>
+          <select name="is_private" id="is_private" class="form-control" required="required" ng-model="staff.is_private">
+            <option value="">Select </option>
+            <option value="0"  >No</option>
+            <option value="1" >Yes</option>
+          </select>
         </div>
       </div>
-      </div>
-
-   
-
-      <div class="form-group">
-        <div class="col-lg-6">
+    </div>
+    
+    <div class="form-group">
+      <div class="col-lg-6">
         <%= label_tag :qualification, 'Qualification', :class => "control-label col-sm-3" %>
-        <div class="col-sm-9">
+        <div class="col-sm-9"  ng-class="{'has-error': editStaff.qualification.$invalid && editStaff.qualification.$dirty}">
           <%#= text_field_tag :qualification, @staff_data.qualification, class:'form-control', :placeholder => 'Enter Qualification', :required => 'required', :id =>'staffQualitication' %>
-          <select name ="qualification" class="form-control" required="required">
+          <select name ="qualification" class="form-control" required="required" ng-model="staff.qualification">
               <option value ="">Select</option>
               <% @qualifications.each do |quff| %>
-              <option value ="<%= quff.qualification %>" <% if @staff_data.qualification = quff.qualification  %>selected="selected"<% end %>><%= quff.qualification %></option>
-              <% end %>
+              <option value ="<%= quff.qualification %>" 
+                <% if @staff_data.qualification = quff.qualification  %>selected="selected"<% end %>>
+                <%= quff.qualification %>
+              </option>
+            <% end %>
           </select>
         </div>
       </div>
-
       <div class="col-lg-6">
         <%= label_tag :experience, 'Experience', :class => "control-label col-sm-3" %>
-        <div class="col-sm-9">
+        <div class="col-sm-9"  ng-class="{'has-error': editStaff.experience.$invalid && editStaff.experience.$dirty}">
           <%#= text_field_tag :experience, @staff_data.experience, class:'form-control', :placeholder => 'Enter Experience', :required => 'required' %>
-           <select name ="experience" class="form-control" required="required">
-              <option value ="">Select</option>
-              
-              <option value ="1" <% if @staff_data.experience = 1  %>selected="selected"<% end %>>1 year</option>
-              <option value ="2" <% if @staff_data.experience = 2  %>selected="selected"<% end %>>2 year</option>
-              <option value ="3" <% if @staff_data.experience = 3  %>selected="selected"<% end %>>3 year</option>
-              <option value ="4" <% if @staff_data.experience = 4  %>selected="selected"<% end %>>4 year</option>
-              <option value ="5" <% if @staff_data.experience = 5  %>selected="selected"<% end %>>5 year</option>
-              <option value ="6" <% if @staff_data.experience = 6  %>selected="selected"<% end %>>6 year</option>
-              <option value ="7" <% if @staff_data.experience = 7  %>selected="selected"<% end %>>7 year</option>
-              <!-- <option value ="above 7">More then 7 year</option> -->
-              
+          <select name ="experience" class="form-control" required="required"  ng-model="staff.experience">
+            <option value ="">Select</option>
+            
+            <option value ="1" <% if @staff_data.experience = '1'  %>selected="selected"<% end %>>1 year</option>
+            <option value ="2" <% if @staff_data.experience = '2'  %>selected="selected"<% end %>>2 year</option>
+            <option value ="3" <% if @staff_data.experience = '3'  %>selected="selected"<% end %>>3 year</option>
+            <option value ="4" <% if @staff_data.experience = '4'  %>selected="selected"<% end %>>4 year</option>
+            <option value ="5" <% if @staff_data.experience = '5'  %>selected="selected"<% end %>>5 year</option>
+            <option value ="6" <% if @staff_data.experience = '6'  %>selected="selected"<% end %>>6 year</option>
+            <option value ="7" <% if @staff_data.experience = '7'  %>selected="selected"<% end %>>7 year</option>
+            <!-- <option value ="above 7">More then 7 year</option> -->
+            
           </select>
         </div>
       </div>
     </div>
-
-         <div class="form-group">
-          <div class="col-lg-6">
+    <div class="form-group">
+      <div class="col-lg-6">
         <%= label_tag :location, 'Location', :class => "control-label col-sm-3" %>
-        <div class="col-sm-9">
-          <%= text_field_tag :location,  @staff_data.location, class:'form-control', :placeholder => 'Enter Location', :required => 'required' %>
+        <div class="col-sm-9" ng-class="{'has-error': editStaff.location.$invalid && editStaff.location.$dirty}">
+          <%#= text_field_tag :location,  @staff_data.location, class:'form-control', :placeholder => 'Enter Location', :required => 'required' %>
+           <input type = "text" class = "form-control" id = "location" name="location" ng-model="staff.location" placeholder = "Enter Location" required="required">
+           <span>
+            <i class="fa fa-check" ng-show="!editStaff.location.$invalid && editStaff.location.$dirty">
+            </i> 
+            <i class="fa fa-times" ng-show="editStaff.location.$invalid && editStaff.location.$dirty"></i>
+          </span>
         </div>
       </div>
-       <div class="col-lg-6">
-         <%= label_tag :image, 'Upload Image', :class => "control-label col-sm-3" %>
+      <div class="col-lg-6">
+        <%= label_tag :image, 'Upload Image', :class => "control-label col-sm-3" %>
         <div class="col-sm-9">
-          <%= file_field_tag :image, class: 'form-control' %> 
-        </div>
-      </div>
-      </div>
-
-      <div class="form-group">
-        <div class="col-lg-6">
-        <%= label_tag :staff_price, 'Price For Staff', :class => "control-label col-sm-3" %>
-        <div class="col-sm-9">
-          <%= text_field_tag :staff_price, @staff_data.staff_price, class:'form-control', :placeholder => 'Enter Staff Price', :required => 'required' %>
+          <%= file_field_tag :image, class: 'form-control' %>
         </div>
       </div>
     </div>
-      
-
-        <input type="hidden" name="company_id" value="<%= @current_user.id %>">
-      <div class="form-group">
-         <div class="col-lg-6">
+    <div class="form-group">
+      <div class="col-lg-6">
+        <%= label_tag :staff_price, 'Price For Staff ($)', :class => "control-label col-sm-3" %>
+        <div class="col-sm-9" ng-class="{'has-error': editStaff.staff_price.$invalid && editStaff.staff_price.$dirty}">
+          <%#= text_field_tag :staff_price, @staff_data.staff_price, class:'form-control', :placeholder => 'Enter Staff Price', :required => 'required' %>
+          <input type = "number" class = "form-control" id = "staff_price" name="staff_price" ng-model="staff.staff_price" placeholder = "Enter Price" required="required" min="1" >
+           <span>
+            <i class="fa fa-check" ng-show="!editStaff.staff_price.$invalid && editStaff.staff_price.$dirty">
+            </i> 
+            <i class="fa fa-times" ng-show="editStaff.staff_price.$invalid && editStaff.staff_price.$dirty"></i>
+        </div>
+      </div>
+    </div>
+    
+    <input type="hidden" name="company_id" value="<%= @current_user.id %>">
+    <div class="form-group">
+      <div class="col-lg-6">
         <div class="col-sm-offset-3 col-sm-10">
-          <%= submit_tag "Update", :class => 'btn btn-default' %>
+          <button type = "submit" ng-show="editStaff.$invalid" ng-disabled="editStaff.$invalid" class = "btn btn-default register">Fill all fields</button>
+           <button type = "submit" ng-show="!editStaff.$invalid" class = "btn btn-default register" >Update Details</button>
+          <%#= submit_tag "Update", :class => 'btn btn-default' %>
           <a href="/company_home" class="btn btn-default">Cancel</a>
         </div>
       </div>
-      </div>
-      <% end %>
-
-        </div>
-      </div>
-      
     </div>
-     <% finalArr = [] 
-         qualification = []
+    <% end %>
+  </div>
+</div>
 
-         @qualifications.each do |quff|
-              qualification.push(quff.qualification)
-         end
-       %>
-      <% @staff_data1.each do |staff| %>
-      <%#= debug staff %>
+</div>
+<% finalArr = []
+qualification = []
+@qualifications.each do |quff|
+qualification.push(quff.qualification)
+end
+%>
+<% @staff_data1.each do |staff| %>
+<%#= debug staff %>
+<% finalArr.push(staff.skill) %>
+<% #@singlearr =  staff.skills.split(",")
+#qualification.push(staff.qualification)
+%>
+<% #@singlearr.each do |arr|  %>
 
-       <% finalArr.push(staff.skill) %>
-          <% #@singlearr =  staff.skills.split(",") 
-            #qualification.push(staff.qualification)
-          %>
-            <% #@singlearr.each do |arr|  %>
-             
-            <% #end %>
-        <% end %>
-        
-        <input type="hidden" id="hiddenComplete" value="<%= finalArr %>"> 
-        <input type="hidden" id="hiddenQua" value="<%= qualification %>"> 
+<% #end %>
+<% end %>
 
+<input type="hidden" id="hiddenComplete" value="<%= finalArr %>">
+<input type="hidden" id="hiddenQua" value="<%= qualification %>">
+<script type="text/javascript">
+$(document).ready(function () {
+//$('#editStaff').validate();
+var autCompleteArr = [],
+autoQompleteQua = [];
+var autoCompleteData = $('#hiddenComplete').val()
+autoCompleteDataQua  = $('#hiddenQua').val()    ;
+if(autoCompleteData && autoCompleteData !='') {
 
-    <script type="text/javascript">
-
-    $(document).ready(function () {
-        $('#editStaff').validate();
-      var autCompleteArr = [],
-          autoQompleteQua = [];
-      var autoCompleteData = $('#hiddenComplete').val()
-          autoCompleteDataQua  = $('#hiddenQua').val()    ;
-      if(autoCompleteData && autoCompleteData !='') {
-        
-        var newArr = autoCompleteData.split(',');
-       $.each(newArr, function (index, value) {
-        var newValue = value.replace(/[^a-z0-9\s]/gi, '');
-        autCompleteArr.push(newValue);
-       });
-
-        var unique=autCompleteArr.filter(function(itm,i,a){
-          return i==autCompleteArr.indexOf(itm);
-      });
-        //console.log('Here ', unique);
-       // $( "#skilsComplete" ).autocomplete({
-       //  source: unique
-       // });
-        $('#skilsComplete').tagEditor({
-            autocomplete: {
-                delay: 0, // show suggestions immediately
-                position: { collision: 'flip' }, // automatic menu position up/down
-                source: unique//['ActionScript', 'AppleScript', 'Asp', ... 'Python', 'Ruby']
-            },
-            forceLowercase: false,
-            placeholder: 'Enter skills'
-        });
-       $(".autoComplete").autocomplete({
-        source: unique
-       });
-      }
-
-        if(autoCompleteDataQua && autoCompleteDataQua !='') {
-           var newArrQua = autoCompleteDataQua.split(',');
-           $.each(newArrQua, function (index, value) {
-            var newValueQa = value.replace(/[^a-z0-9\s]/gi, '');
-            autoQompleteQua.push(newValueQa);
-           });
-
-            var uniqueQa = autoQompleteQua.filter(function(itm,i,a){
-              return i==autoQompleteQua.indexOf(itm);
-          });
-
-            $("#staffQualitication").autocomplete({
-              source: uniqueQa
-           });
+var newArr = autoCompleteData.split(',');
+$.each(newArr, function (index, value) {
+var newValue = value.replace(/[^a-z0-9\s]/gi, '');
+autCompleteArr.push(newValue);
+});
+var unique=autCompleteArr.filter(function(itm,i,a){
+return i==autCompleteArr.indexOf(itm);
+});
+//console.log('Here ', unique);
+// $( "#skilsComplete" ).autocomplete({
+//  source: unique
+// });
+$('#skilsComplete').tagEditor({
+autocomplete: {
+delay: 0, // show suggestions immediately
+position: { collision: 'flip' }, // automatic menu position up/down
+source: unique//['ActionScript', 'AppleScript', 'Asp', ... 'Python', 'Ruby']
+},
+forceLowercase: false,
+placeholder: 'Enter skills'
+});
+$(".autoComplete").autocomplete({
+source: unique
+});
+}
+if(autoCompleteDataQua && autoCompleteDataQua !='') {
+var newArrQua = autoCompleteDataQua.split(',');
+$.each(newArrQua, function (index, value) {
+var newValueQa = value.replace(/[^a-z0-9\s]/gi, '');
+autoQompleteQua.push(newValueQa);
+});
+var uniqueQa = autoQompleteQua.filter(function(itm,i,a){
+return i==autoQompleteQua.indexOf(itm);
+});
+$("#staffQualitication").autocomplete({
+source: uniqueQa
+});
+}
+$(function() {
+    $('#availability').daterangepicker({
+        autoUpdateInput: false,
+        locale: {
+            cancelLabel: 'Clear'
         }
-
-  $(function() {
-        $('#availability').daterangepicker();
     });
 
-    $('#availability').change(function () {
-      //alert($(this).val());
-      var selectedDate = $(this).val().split('-'); 
-      $('#availability_from').val(selectedDate[0]);
-      $('#availability_to').val(selectedDate[1]);
-      //console.log('selected dates are', selectedDate[0], selectedDate[1]);
-
+    $('#availability').on('apply.daterangepicker', function(ev, picker) {
+        $(this).val(picker.startDate.format('MM/DD/YYYY') + ' - ' + picker.endDate.format('MM/DD/YYYY'));
+        var dateVal = picker.startDate.format('MM/DD/YYYY') + ' - ' + picker.endDate.format('MM/DD/YYYY');
+        angular.element(document.querySelector('[ng-controller="staffController"]')).scope().cahngeAvl(dateVal);
     });
-    });
-    </script>
 
+    $('#availability').on('cancel.daterangepicker', function(ev, picker) {
+        $(this).val('');
+    });
+});
+$('#availability').change(function () {
+  //alert($(this).val());
+  var selectedDate = $(this).val().split('-'); 
+  $('#availability_from').val(selectedDate[0]);
+  $('#availability_to').val(selectedDate[1]);
+  //console.log('selected dates are', selectedDate[0], selectedDate[1]);
+
+});
+});
+</script>
 <script>
 // This example displays an address form, using the autocomplete feature
 // of the Google Places API to help users fill in the information.
 var placeSearch, autocomplete;
 function initAutocomplete() {
-  // Create the autocomplete object, restricting the search to geographical
-  // location types.
-  autocomplete = new google.maps.places.Autocomplete(
-      /** @type {!HTMLInputElement} */(document.getElementById('location')),
-      {types: ['geocode']});
-
-  // When the user selects an address from the dropdown, populate the address
-  // fields in the form.
+// Create the autocomplete object, restricting the search to geographical
+// location types.
+autocomplete = new google.maps.places.Autocomplete(
+/** @type {!HTMLInputElement} */(document.getElementById('location')),
+{types: ['geocode']});
+// When the user selects an address from the dropdown, populate the address
+// fields in the form.
 }
-
 // [START region_geolocation]
 // Bias the autocomplete object to the user's geographical location,
 // as supplied by the browser's 'navigator.geolocation' object.
 function geolocate() {
-  if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(function(position) {
-      var geolocation = {
-        lat: position.coords.latitude,
-        lng: position.coords.longitude
-      };
-      var circle = new google.maps.Circle({
-        center: geolocation,
-        radius: position.coords.accuracy
-      });
-      autocomplete.setBounds(circle.getBounds());
-    });
-  }
+if (navigator.geolocation) {
+navigator.geolocation.getCurrentPosition(function(position) {
+var geolocation = {
+lat: position.coords.latitude,
+lng: position.coords.longitude
+};
+var circle = new google.maps.Circle({
+center: geolocation,
+radius: position.coords.accuracy
+});
+autocomplete.setBounds(circle.getBounds());
+});
+}
 }
 // [END region_geolocation]
 </script>
 <style type="text/css">
 .sweet-container {
-  display: none;
+display: none;
 }
 </style>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAaeRBXe6kIcRkaDZMMx9CbSvLgAXuSPAI&signed_in=true&libraries=places&callback=initAutocomplete"
-        async defer></script>
-            
-    <%= render 'layouts/footer' %>
+async defer></script>
+
+<%= render 'layouts/footer' %>
