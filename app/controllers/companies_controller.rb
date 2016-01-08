@@ -150,11 +150,12 @@ class CompaniesController < ApplicationController
 	#################################
 	def destroy
 	    CompanyStaff.find(params[:id]).destroy
+	    render :json => { :success => true, :msg => 'Member is removed' }
 	    # @staff_list = CompanyStaff.all
-		respond_to do |format|
-        	format.html { redirect_to "/company_home", :notice => "Staff Record Deleted successfully" }
-        	format.js
-    	end
+		# respond_to do |format|
+  #       	format.html { redirect_to "/company_home", :notice => "Staff Record Deleted successfully" }
+  #       	format.js
+  #   	end
 	end
 
 	#################################
