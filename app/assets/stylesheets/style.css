@@ -1667,7 +1667,7 @@ em.current {
 .box-one form div.form-group > span i , #addStaff .form-group > div span i, #editStaff .form-group > div span i{font-size: 19px;}
 .box-one form div.form-group > span i.fa-check , #addStaff .form-group > div span i.fa-check, #editStaff .form-group > div span i.fa-check {
     color: green;
-    
+    right: 50px;
 }
 .box-one form div.form-group > span i.fa-times {
     color: #a94442;
@@ -1675,6 +1675,7 @@ em.current {
 }
 .box-one form div.form-group > span i.fa-times, #addStaff .form-group > div span i.fa-times, #editStaff .form-group > div span i.fa-times {
     color:#a94442;
+    right: 50px;
 }
 .box-one form input[type="text"] {
     position: relative;

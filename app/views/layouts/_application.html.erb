@@ -51,8 +51,13 @@
       // $('#availability').change(function () {
       //   filterResults();
       // });
-
-        
+  
+      /*
+       * Remove The Spacer Div
+       */
+      $('.btn').click(function () {
+        $('.tag-editor-spacer').remove();
+      });
 
       $('#flat-slider').slider({
         orientation: 'horizontal',
