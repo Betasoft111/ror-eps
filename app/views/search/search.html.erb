@@ -285,8 +285,11 @@ $(document).ready(function () {
 		url: url,
 		type: 'get',
 		success: function(response) {	
-			
-			searchForMap(minPrice, maxPrice, response);
+			if(response.length) {
+				searchForMap(minPrice, maxPrice, response);				
+			}else {
+				buildDemoMap();
+			}
 
 		},error: function(err) {
 			console.log('Error getting ', err);
@@ -345,17 +348,18 @@ google.maps.event.addListener(marker,'click', (function(marker,content,infowindo
 
   }
 
-	}/*else{
-		 var centerLat = 55.676097,
-	 	 centerLng = 12.568337;
-		 var map = new google.maps.Map(document.getElementById('map'), {
-	      zoom: 10,
-	      center: new google.maps.LatLng(centerLat, centerLng),
-	      mapTypeId: google.maps.MapTypeId.ROADMAP
-	    });
-	}*/
+	}
 }
    
+ function buildDemoMap() {
+ var centerLat =  55.676097,
+	 	 centerLng = 12.568337;
+	 var map = new google.maps.Map(document.getElementById('map'), {
+      zoom: 10,
+      center: new google.maps.LatLng(centerLat, centerLng),
+      mapTypeId: google.maps.MapTypeId.ROADMAP
+    });
+ }  
   </script>
     <style>
  /* .sweet-container {

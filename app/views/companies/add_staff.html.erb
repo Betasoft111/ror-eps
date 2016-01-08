@@ -170,7 +170,7 @@
       </div>
     </div>
     
-    <input type="hidden" name="company_id" value="<%= @current_user.id %>">
+    <input type="hidden" name="company_id" ng-model="staff.company_id" value="<%= @current_user.id %>">
     <div class="form-group">
       <div class="col-lg-6">
         <label for="staff_price" class="control-label col-sm-3"></label>

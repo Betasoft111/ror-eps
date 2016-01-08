@@ -81,4 +81,57 @@ app.controller('staffController', function($scope, $timeout, $http) {
     }
    }
 
+   /*
+    * Add New Staff Member
+    */
+    $scope.addNewStaff = function () {
+      $http.post('/add_staff/create', $scope.staff).success(function (response) {
+        //console.log('new staff added');
+        if(response.success) {
+          swal({   
+            title: 'Staff Added',
+            text: 'New staff member is added to company',
+            type: 'success',
+            showCancelButton: false,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',   
+            confirmButtonText: 'Go to home',   
+            closeOnConfirm: false 
+          }, function() {   
+            window.location.href = "/company_home";
+            //swal(     'Deleted!',     'Your file has been deleted.',     'success'   ); 
+          }); 
+        }else if(!response.success && response.code === 'plan_expired') {
+          swal({  
+                 title: 'Plan Expired',   
+                 text: 'Your add staff limit is reached for the current plan, please upgrade you plan',   
+                 type: 'warning',   
+                 //showCancelButton: true,   
+                 confirmButtonColor: '#3085d6',   
+                 cancelButtonColor: '#d33',   
+                 confirmButtonText: 'Yes, Upgrade!',  
+                 //cancelButtonText: 'No, cancel plx!',   
+                 confirmButtonClass: 'confirm-class',   
+                 cancelButtonClass: 'cancel-class',   
+                 closeOnConfirm: true,   
+                 closeOnCancel: true 
+               }, function(isConfirm) {   
+                if (isConfirm) {     
+                  window.location.href = "/addon_plans";
+                } else { 
+                } 
+              });
+
+        }else if(!response.success && response.code === 'error') {
+          sweetAlert('Something wrong...',
+            response.msg,
+            'error');
+          $scope.staff.email = '';
+        }
+        
+      }).error(function () {
+        console.log('error adding new staff');
+      });
+    }
+
 });
