@@ -65,11 +65,11 @@
 					</div>
 
 
-					<div class="form-group">
+					<!-- <div class="form-group">
 						<div class="col-sm-offset-2 col-sm-10 ">
 							<button type="submit" class="btn btn-default  pull-right">Search Staff</button>
 						</div>
-					</div>
+					</div> -->
 				</form>
 			</div>
 			<div class="col-lg-5 map">
@@ -92,6 +92,7 @@
 				<% end %>
 			<% end %>
 		</div>
+
 		<div class="row" id="serach-results">
 			<% @search_results.each do |data| %>
 			<div class="col-lg-4 col-sm-4 search-result">
@@ -187,8 +188,10 @@ source: uniqueQa
 });
 }
 	$(function() {
+		var dateToday = new Date();
 	    $('#availability').daterangepicker({
 	        autoUpdateInput: false,
+	        minDate: dateToday,
 	        locale: {
 	            cancelLabel: 'Clear'
 	        }
@@ -196,10 +199,12 @@ source: uniqueQa
 
 	    $('#availability').on('apply.daterangepicker', function(ev, picker) {
 	        $(this).val(picker.startDate.format('MM/DD/YYYY') + ' - ' + picker.endDate.format('MM/DD/YYYY'));
+	         filterResults();
 	    });
 
 	    $('#availability').on('cancel.daterangepicker', function(ev, picker) {
 	        $(this).val('');
+	        filterResults();
 	    });
 	});
 $('#availability').change(function () {
@@ -212,47 +217,56 @@ $('#availability_to').val(selectedDate[1]);
 });
 </script>
 <script type="text/javascript">
+
+function searchForMap(minPrice, maxPrice, response) {
+
+	var locations = [];
+	$.each(response, function (index, value) {
+		if(value.staff_price >= minPrice &&  value.staff_price <= maxPrice) {
+			var geocoder = new google.maps.Geocoder();
+			var address = value.location;
+
+			geocoder.geocode( { 'address': address}, function(results, status) {
+
+			  if (status == google.maps.GeocoderStatus.OK) {
+			    var latitude = results[0].geometry.location.lat();
+			    var longitude = results[0].geometry.location.lng();
+			    locations.push({
+			    	name: address, 
+			    	lat: latitude, 
+			    	lng: longitude,
+			    	name: value.first_name,
+			    	price: value.staff_price,
+			    	is_private: value.is_private
+
+			    });
+			  } 
+			}); 
+		}
+	});
+	setTimeout(function () {
+		fillGeoMap(locations);
+	},500);	
+
+}
+
 $(document).ready(function () {
 	//var array = '<%= escape_javascript @search_results.to_json %>';
+	var minPrice = $('#minPrice').val();
+	var maxPrice = $('#maxPrice').val();
+
 	var skills = getParameterByName("skills"),
 		experience = getParameterByName("experience"),
 		staff_quf = getParameterByName("staff_quf"),
 		availability = getParameterByName("availability"),
 		url = "/search_json?skills=" + skills + "&experience=" + experience + "&staff_quf=" + staff_quf + "&availability=" + availability;
-//console.log('===========>', url);
-
-	$.ajax({
+		$.ajax({
 		url: url,
 		type: 'get',
-		success: function(response) {
-			//console.log('Here ', response);
-			var locations = [];
-			$.each(response, function (index, value) {
+		success: function(response) {	
+			
+			searchForMap(minPrice, maxPrice, response);
 
-				var geocoder = new google.maps.Geocoder();
-				var address = value.location;
-//console.log('Here ', address, value);
-				geocoder.geocode( { 'address': address}, function(results, status) {
-
-				  if (status == google.maps.GeocoderStatus.OK) {
-				    var latitude = results[0].geometry.location.lat();
-				    var longitude = results[0].geometry.location.lng();
-				    //alert(latitude);
-				    locations.push({
-				    	name: address, 
-				    	lat: latitude, 
-				    	lng: longitude,
-				    	name: value.first_name,
-				    	price: value.staff_price,
-				    	is_private: value.is_private
-
-				    });
-				  } 
-				}); 
-			});
-			setTimeout(function () {
-				fillGeoMap(locations);
-			},500)
 		},error: function(err) {
 			console.log('Error getting ', err);
 		}
@@ -267,6 +281,7 @@ function getParameterByName(name) {
 }
 
 function fillGeoMap(locations) { 
+	if(locations.length){
 	 var centerLat = (locations[0] && locations[0].lat) ? locations[0].lat : 55.676097,
 	 	 centerLng = (locations[0] && locations[0].lng) ? locations[0].lng : 12.568337;
 	 var map = new google.maps.Map(document.getElementById('map'), {
@@ -309,21 +324,21 @@ google.maps.event.addListener(marker,'click', (function(marker,content,infowindo
 
   }
 
-    // for (i = 0; i < locations.length; i++) {  
-    //   //console.log('location are ==>', locations[i].lat, locations[i].lng);
-    //   marker = new google.maps.Marker({
-    //     position: new google.maps.LatLng(locations[i].lat, locations[i].lng),
-    //     map: map
-    //   });
-
-    //   google.maps.event.addListener(marker, 'click', (function(marker, i) {
-    //     return function() {
-    //       infowindow.setContent(locations[i].name);
-    //       infowindow.open(map, marker);
-    //     }
-    //   })(marker, i));
-    // }
+	}/*else{
+		 var centerLat = 55.676097,
+	 	 centerLng = 12.568337;
+		 var map = new google.maps.Map(document.getElementById('map'), {
+	      zoom: 10,
+	      center: new google.maps.LatLng(centerLat, centerLng),
+	      mapTypeId: google.maps.MapTypeId.ROADMAP
+	    });
+	}*/
 }
    
   </script>
+    <style>
+  .sweet-container {
+    display: none;
+  }
+  </style>
 <%= render 'layouts/footer' %>
