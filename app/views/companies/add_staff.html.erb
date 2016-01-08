@@ -146,13 +146,13 @@
           <select name ="experience" class="form-control" required="required" ng-model="staff.experience">
             <option value ="">Select</option>
             
-            <option value ="1">1 year</option>
-            <option value ="2">2 year</option>
-            <option value ="3">3 year</option>
-            <option value ="4">4 year</option>
-            <option value ="5">5 year</option>
-            <option value ="6">6 year</option>
-            <option value ="7">7 year</option>
+            <option value ="1">1 years</option>
+            <option value ="2">2 years</option>
+            <option value ="3">3 years</option>
+            <option value ="4">4 years</option>
+            <option value ="5">5 years</option>
+            <option value ="6">6 years</option>
+            <option value ="7">7 years</option>
             <!-- <option value ="above 7">More then 7 year</option> -->
             
           </select>
@@ -234,10 +234,8 @@ $('#skilsComplete').tagEditor({
       placeholder: 'Enter skills',
       onChange: function(field, editor, tags) {
          if(tags.length) {
-         // console.log('valid form');
           angular.element(document.querySelector('[ng-controller="staffController"]')).scope().skillsAdded('1');
          }else{
-         // console.log('invalid form');
           angular.element(document.querySelector('[ng-controller="staffController"]')).scope().skillsAdded('0');
          }
     },

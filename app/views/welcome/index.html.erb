@@ -24,7 +24,19 @@
             <ul>
               <li><input type="text" name="skills" id="skilsComplete" placeholder="Skills (Want to hire For)"></li>
               <li><input type="text" name="staff_quf" id="staffQualitication" placeholder="Enter the Staff Qualification"></li>
-              <li><input type="text" name="experience" placeholder="Enter the work experience"></li>
+              <li>
+                  <!-- <input type="text" name="experience" placeholder="Enter the work experience"> -->
+                  <select name="experience" >
+                      <option value="">Select the work experience</option>
+                      <option value ="1">1 year</option>
+                      <option value ="2">2 years</option>
+                      <option value ="3">3 years</option>
+                      <option value ="4">4 years</option>
+                      <option value ="5">5 years</option>
+                      <option value ="6">6 years</option>
+                      <option value ="7">7 years</option>
+                  </select>
+              </li>
               <li><input type="text" id="availability" name="availability" placeholder="Select The Availability Dates" value="" >
                 <input type="hidden" name="availability_to" id="availability_to">
                 <input type="hidden" name="availability_from" id="availability_from" >
