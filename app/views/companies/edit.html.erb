@@ -228,14 +228,24 @@ return i==autCompleteArr.indexOf(itm);
 //  source: unique
 // });
 $('#skilsComplete').tagEditor({
-autocomplete: {
-delay: 0, // show suggestions immediately
-position: { collision: 'flip' }, // automatic menu position up/down
-source: unique//['ActionScript', 'AppleScript', 'Asp', ... 'Python', 'Ruby']
-},
-forceLowercase: false,
-placeholder: 'Enter skills'
+    autocomplete: {
+      delay: 0, // show suggestions immediately
+      position: { collision: 'flip' }, // automatic menu position up/down
+      source: unique//['ActionScript', 'AppleScript', 'Asp', ... 'Python', 'Ruby']
+    },
+    forceLowercase: false,
+    placeholder: 'Enter skills',
+    onChange: function(field, editor, tags) {
+         if(tags.length) {
+          //console.log('valid form');
+          angular.element(document.querySelector('[ng-controller="staffController"]')).scope().skillsAdded('1');
+         }else{
+          //console.log('invalid form');
+          angular.element(document.querySelector('[ng-controller="staffController"]')).scope().skillsAdded('0');
+         }
+    },
 });
+
 $(".autoComplete").autocomplete({
 source: unique
 });
@@ -254,8 +264,10 @@ source: uniqueQa
 });
 }
 $(function() {
-    $('#availability').daterangepicker({
+    var dateToday = new Date();
+      $('#availability').daterangepicker({
         autoUpdateInput: false,
+        minDate: dateToday,
         locale: {
             cancelLabel: 'Clear'
         }

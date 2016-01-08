@@ -8,7 +8,7 @@ var app = angular.module('staffAPP', []);
  * Intialize The Controller
  */
 app.controller('staffController', function($scope, $timeout, $http) {
-
+  $scope.staff = {};
   /*
    * Set the submit button value
    */
@@ -65,5 +65,20 @@ app.controller('staffController', function($scope, $timeout, $http) {
       console.log('Error checking the duplicate emails', err);
     });
   }
+
+  /*
+   * Enable the submit button when skills added
+   */
+   $scope.skillsAdded = function (value) {
+    //console.log('here', value);
+    if(value === '1') {
+      $scope.staff.skills = 'true';
+    }else{
+      //$scope.staff.skills = '';
+       $timeout(function () {
+            $scope.addStaff.skills.$dirty = true;
+       }, 0);
+    }
+   }
 
 });
