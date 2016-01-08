@@ -65,11 +65,11 @@
 					</div>
 
 
-					<div class="form-group">
+					<!-- <div class="form-group">
 						<div class="col-sm-offset-2 col-sm-10 ">
 							<button type="submit" class="btn btn-default  pull-right">Search Staff</button>
 						</div>
-					</div>
+					</div> -->
 				</form>
 			</div>
 			<div class="col-lg-5 map">
@@ -188,8 +188,10 @@ source: uniqueQa
 });
 }
 	$(function() {
+		var dateToday = new Date();
 	    $('#availability').daterangepicker({
 	        autoUpdateInput: false,
+	        minDate: dateToday,
 	        locale: {
 	            cancelLabel: 'Clear'
 	        }
@@ -197,10 +199,12 @@ source: uniqueQa
 
 	    $('#availability').on('apply.daterangepicker', function(ev, picker) {
 	        $(this).val(picker.startDate.format('MM/DD/YYYY') + ' - ' + picker.endDate.format('MM/DD/YYYY'));
+	         filterResults();
 	    });
 
 	    $('#availability').on('cancel.daterangepicker', function(ev, picker) {
 	        $(this).val('');
+	        filterResults();
 	    });
 	});
 $('#availability').change(function () {
@@ -277,7 +281,6 @@ function getParameterByName(name) {
 }
 
 function fillGeoMap(locations) { 
-	//console.log('Here ==> ',locations);
 	if(locations.length){
 	 var centerLat = (locations[0] && locations[0].lat) ? locations[0].lat : 55.676097,
 	 	 centerLng = (locations[0] && locations[0].lng) ? locations[0].lng : 12.568337;
@@ -321,21 +324,15 @@ google.maps.event.addListener(marker,'click', (function(marker,content,infowindo
 
   }
 
-    // for (i = 0; i < locations.length; i++) {  
-    //   //console.log('location are ==>', locations[i].lat, locations[i].lng);
-    //   marker = new google.maps.Marker({
-    //     position: new google.maps.LatLng(locations[i].lat, locations[i].lng),
-    //     map: map
-    //   });
-
-    //   google.maps.event.addListener(marker, 'click', (function(marker, i) {
-    //     return function() {
-    //       infowindow.setContent(locations[i].name);
-    //       infowindow.open(map, marker);
-    //     }
-    //   })(marker, i));
-    // }
-	}
+	}/*else{
+		 var centerLat = 55.676097,
+	 	 centerLng = 12.568337;
+		 var map = new google.maps.Map(document.getElementById('map'), {
+	      zoom: 10,
+	      center: new google.maps.LatLng(centerLat, centerLng),
+	      mapTypeId: google.maps.MapTypeId.ROADMAP
+	    });
+	}*/
 }
    
   </script>

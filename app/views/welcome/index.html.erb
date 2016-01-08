@@ -283,9 +283,10 @@
         }
 
         $(function() {
+            var dateToday = new Date();
             $('#availability').daterangepicker({
                 autoUpdateInput: false,
-                minDate: 0,
+                minDate: dateToday,
                 locale: {
                     cancelLabel: 'Clear',
                     
