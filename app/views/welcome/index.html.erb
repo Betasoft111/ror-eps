@@ -20,13 +20,13 @@
     <div class="banner-bottom">
       <div class="container">
         <div class="row">
-          <form method="get" action="/search">
+          <form method="get" action="/search" id="searchForm">
             <ul>
               <li><input type="text" name="skills" id="skilsComplete" placeholder="Skills (Want to hire For)"></li>
               <li><input type="text" name="staff_quf" id="staffQualitication" placeholder="Enter the Staff Qualification"></li>
               <li>
                   <!-- <input type="text" name="experience" placeholder="Enter the work experience"> -->
-                  <select name="experience" >
+                  <select name="experience" id="experience">
                       <option value="">Select the work experience</option>
                       <option value ="1">1 year</option>
                       <option value ="2">2 years</option>
@@ -307,6 +307,21 @@
 
             $('#availability').on('apply.daterangepicker', function(ev, picker) {
                 $(this).val(picker.startDate.format('MM/DD/YYYY') + ' - ' + picker.endDate.format('MM/DD/YYYY'));
+
+                 /*
+                 * Auto Submit Form
+                 */
+                 var skills = $('#skilsComplete').val();
+                 var staffQualitication = $('#staffQualitication').val();
+                 var experience = $('#experience option:selected').val();
+                 var dateVal = picker.startDate.format('MM/DD/YYYY') + ' - ' + picker.endDate.format('MM/DD/YYYY')
+                 if(skills !=='' && staffQualitication !=='' && experience !=='') {
+                  //alert('');
+                  window.location = "/search?skills="+ encodeURI(skills) +"&staff_quf="+ encodeURI(staffQualitication) +"&experience="+ experience +"&availability="+ encodeURI(dateVal) +"&availability_to=&availability_from="
+                    // $("#searchForm").submit(function(){
+                    //     alert("Submitted");
+                    // });
+                 }
             });
 
             $('#availability').on('cancel.daterangepicker', function(ev, picker) {
@@ -322,6 +337,8 @@
             //console.log('selected dates are', selectedDate[0], selectedDate[1]);
 
           });
+
+
     });
     </script>
     <%= render 'layouts/footer' %>
