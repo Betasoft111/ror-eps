@@ -92,6 +92,7 @@
 				<% end %>
 			<% end %>
 		</div>
+
 		<div class="row" id="serach-results">
 			<% @search_results.each do |data| %>
 			<div class="col-lg-4 col-sm-4 search-result">
@@ -213,59 +214,59 @@ $('#availability_to').val(selectedDate[1]);
 </script>
 <script type="text/javascript">
 
-function searchForMap(minPrice, maxPrice) {
-	var skills = getParameterByName("skills"),
-		experience = getParameterByName("experience"),
-		staff_quf = getParameterByName("staff_quf"),
-		availability = getParameterByName("availability"),
-		url = "/search_json?skills=" + skills + "&experience=" + experience + "&staff_quf=" + staff_quf + "&availability=" + availability;
-//console.log('===========>', url);
+function searchForMap(minPrice, maxPrice, response) {
 
-	$.ajax({
-		url: url,
-		type: 'get',
-		success: function(response) {
-			//console.log('Here ', response);
-			var locations = [];
-			$.each(response, function (index, value) {
-				if(value.staff_price >= minPrice &&  value.staff_price <= maxPrice) {
-					var geocoder = new google.maps.Geocoder();
-					var address = value.location;
-	//console.log('Here ', address, value);
-					geocoder.geocode( { 'address': address}, function(results, status) {
+	var locations = [];
+	$.each(response, function (index, value) {
+		if(value.staff_price >= minPrice &&  value.staff_price <= maxPrice) {
+			var geocoder = new google.maps.Geocoder();
+			var address = value.location;
 
-					  if (status == google.maps.GeocoderStatus.OK) {
-					    var latitude = results[0].geometry.location.lat();
-					    var longitude = results[0].geometry.location.lng();
-					    //alert(latitude);
-					    locations.push({
-					    	name: address, 
-					    	lat: latitude, 
-					    	lng: longitude,
-					    	name: value.first_name,
-					    	price: value.staff_price,
-					    	is_private: value.is_private
+			geocoder.geocode( { 'address': address}, function(results, status) {
 
-					    });
-					  } 
-					}); 
-				}
-			});
-			setTimeout(function () {
-				fillGeoMap(locations);
-			},500)
-		},error: function(err) {
-			console.log('Error getting ', err);
+			  if (status == google.maps.GeocoderStatus.OK) {
+			    var latitude = results[0].geometry.location.lat();
+			    var longitude = results[0].geometry.location.lng();
+			    locations.push({
+			    	name: address, 
+			    	lat: latitude, 
+			    	lng: longitude,
+			    	name: value.first_name,
+			    	price: value.staff_price,
+			    	is_private: value.is_private
+
+			    });
+			  } 
+			}); 
 		}
 	});
+	setTimeout(function () {
+		fillGeoMap(locations);
+	},500);	
 
-	}
+}
 
 $(document).ready(function () {
 	//var array = '<%= escape_javascript @search_results.to_json %>';
 	var minPrice = $('#minPrice').val();
 	var maxPrice = $('#maxPrice').val();
-	searchForMap(minPrice, maxPrice);
+
+	var skills = getParameterByName("skills"),
+		experience = getParameterByName("experience"),
+		staff_quf = getParameterByName("staff_quf"),
+		availability = getParameterByName("availability"),
+		url = "/search_json?skills=" + skills + "&experience=" + experience + "&staff_quf=" + staff_quf + "&availability=" + availability;
+		$.ajax({
+		url: url,
+		type: 'get',
+		success: function(response) {	
+			
+			searchForMap(minPrice, maxPrice, response);
+
+		},error: function(err) {
+			console.log('Error getting ', err);
+		}
+	});
 });
 
 function getParameterByName(name) {
@@ -276,6 +277,8 @@ function getParameterByName(name) {
 }
 
 function fillGeoMap(locations) { 
+	//console.log('Here ==> ',locations);
+	if(locations.length){
 	 var centerLat = (locations[0] && locations[0].lat) ? locations[0].lat : 55.676097,
 	 	 centerLng = (locations[0] && locations[0].lng) ? locations[0].lng : 12.568337;
 	 var map = new google.maps.Map(document.getElementById('map'), {
@@ -332,6 +335,7 @@ google.maps.event.addListener(marker,'click', (function(marker,content,infowindo
     //     }
     //   })(marker, i));
     // }
+	}
 }
    
   </script>
