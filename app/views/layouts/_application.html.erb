@@ -128,7 +128,7 @@
 function filterResults() {
           //$( "#amount" ).val( "$" + ui.values[ 0 ] + " - $" + ui.values[ 1 ] );
           $('#serach-results').css('opacity', '0.2');
-
+          $('#serach-results-loader').show();
           var minPrice = ($('#minHidAmn').val()) ?  $('#minHidAmn').val() : $('#minPrice').val();
           var maxPrice = ($('#maxHidAmn').val()) ? $('#maxHidAmn').val() : $('#maxPrice').val();
 
@@ -175,7 +175,7 @@ function filterResults() {
                 $('#serach-results').html('');
                 $('#serach-results').html(html);
                 $('#serach-results').css('opacity', '1');
-                
+                $('#serach-results-loader').hide();
               },error: function(error) {
                 console.log('Here I am');
               }

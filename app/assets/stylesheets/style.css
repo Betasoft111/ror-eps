@@ -1691,7 +1691,10 @@ em.current {
     right: 50px;
 }
 
-#addStaff .form-group.number .fa.fa-check, #editStaff .form-group.number .fa.fa-check, #addStaff .form-group.number .fa.fa-times, #editStaff .form-group.number .fa.fa-times {
+#editStaff .form-group.number .fa.fa-check, 
+#editStaff .form-group.number .fa.fa-times, 
+#addStaff .form-group.number .fa.fa-times, 
+#editStaff .form-group.number .fa.fa-times {
     right: 50px;
 }
 .box-one form div.form-group > span i.fa-times, #addStaff .form-group > div span i.fa-times, #editStaff .form-group > div span i.fa-times {
@@ -1704,9 +1707,18 @@ em.current {
 .ui-autocomplete {
     width: auto !important;
 }
-
-
-
+#serach-results-loader {
+    left: 0;
+    margin-left: auto;
+    margin-right: auto;
+    position: absolute;
+    right: 0;
+    top: 5%;
+    text-align: center;
+}
+.search-main {
+    position: relative;
+}
 
 /**** media start *****/
 @media screen and (max-width: 1200px) {
@@ -1927,7 +1939,7 @@ li.selected-tab {
 .company-search img {
    background: #ffffff none repeat scroll 0 0;
 border: 1px solid #363839;
-
+border-radius: 50%;
 height: 200px;
 display: block;
 margin: auto;
@@ -2037,7 +2049,12 @@ p.Strong {
 
 /******** 16-12-15 ********/
 .save-search {
-    background: rgba(0, 0, 0, 0) linear-gradient(to bottom, #4fc3ff 0%, #0376b0 100%) repeat scroll 0 0;
+    * Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#4fc3ff+0,0376b0+100 */
+background: #4fc3ff; /* Old browsers */
+background: -moz-linear-gradient(top, #4fc3ff 0%, #0376b0 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top, #4fc3ff 0%,#0376b0 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom, #4fc3ff 0%,#0376b0 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4fc3ff', endColorstr='#0376b0',GradientType=0 ); /* IE6-9 */
     border: 1px solid #0a7db7;
     color: #ffffff;
     float: right;
@@ -2158,7 +2175,9 @@ text-align: center;
     width: 65% !important;
     border-radius: 50%;
 }
-
+ul#ui-id-1, ul#ui-id-2 {
+    width: 18.6% !important;
+}
 
 
 
@@ -2185,4 +2204,8 @@ text-align: center;
         height: 30px;
     }
 
+}
+
+#serach-results-loader {
+    display: none;
 }
