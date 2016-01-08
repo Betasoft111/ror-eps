@@ -13,6 +13,8 @@
       <%= image_tag("right.png" , :alt => 'right.png') %>
     </span></h4>
     
+   <%#= debug @staff_data.image_file_name %>
+
     <%= form_tag @staff_url, { :multipart => true , :class => 'form-horizontal add-employee', :id => 'editStaff', :name => "editStaff"} do %>
     <div class="form-group">
       <div class="col-lg-6">
@@ -143,11 +145,18 @@
       </div>
       <div class="col-lg-6">
         <%= label_tag :image, 'Upload Image', :class => "control-label col-sm-3" %>
+
+        <div id="image_preview">
+          <%= image_tag(@staff_data.image.url , :alt => 'company1.png', :style => "width: 20%;
+    float: right;") %>
+          <%#= debug @staff_data.image.url %>
+        </div>
         <div class="col-sm-9">
           <%= file_field_tag :image, class: 'form-control' %>
         </div>
       </div>
     </div>
+    
     <div class="form-group">
       <div class="col-lg-6">
         <%= label_tag :staff_price, 'Price For Staff ($)', :class => "control-label col-sm-3" %>
