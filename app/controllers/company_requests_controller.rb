@@ -48,7 +48,7 @@ class CompanyRequestsController < ApplicationController
 					:user_emailBy => @current_user.email
 					})
 	  	if @request.save
-	    	redirect_to root_url, :notice => "Request Sent Successfully."
+	    	redirect_to 'company_requests/new', :notice => "Request Sent Successfully."
 	  	else
 	  		redirect_to 'company_requests/new', :notice => "Unable To Process Your Request."
 	  	end

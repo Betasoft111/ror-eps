@@ -64,7 +64,7 @@
         range:       true,
         values:      [$('#minPrice').val(), $('#maxPrice').val()],
         slide: function( event, ui ) {
-          $( "#amount" ).val( "$" + ui.values[ 0 ] + " - $" + ui.values[ 1 ] );
+          $( "#amountRange" ).val( "$" + ui.values[ 0 ] + " - $" + ui.values[ 1 ] );
           $('#serach-results').css('opacity', '0.2');
           
           /*
@@ -118,7 +118,7 @@
 
         }
       });
-      $( "#amount" ).val( "$" + $( "#flat-slider" ).slider( "values", 0 ) +
+      $( "#amountRange" ).val( "$" + $( "#flat-slider" ).slider( "values", 0 ) +
       " - $" + $( "#flat-slider" ).slider( "values", 1 ) );
 
      
