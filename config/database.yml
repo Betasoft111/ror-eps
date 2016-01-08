@@ -11,7 +11,7 @@ development:
   timeout: 5000
 
   username: root #db_eps
-  password: root #dp_eps_plesk
+  password: toor #dp_eps_plesk
 
 
 # Warning: The database defined as "test" will be erased and

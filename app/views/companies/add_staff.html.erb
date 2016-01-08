@@ -60,7 +60,7 @@
         <%= label_tag :skills, 'Skills', :class => "control-label col-sm-3" %>
         <div class="col-sm-9">
           <%#= text_field_tag :skills, nil, class:'form-control', :id =>'skilsComplete', :placeholder => 'Enter Skills', :required => 'required'   %>
-          <input type = "text" class = "form-control" id = "skilsComplete" name="skills" ng-model="staff.skills" placeholder = "Enter Skills">
+          <input type = "text" class = "form-control" id = "skilsComplete" name="skills" ng-model="staff.skills" placeholder = "Enter Skills" required="required">
            <span>
             <i class="fa fa-check" ng-show="!addStaff.skills.$invalid && addStaff.skills.$dirty">
             </i> 
