@@ -255,7 +255,7 @@ class ChargesController < ApplicationController
 											:user_id => @current_user.id,
 											:purchased_on => Time.new,
 											#:expired_on => @pantype,
-											:plan_name => @plan_details.plan_name,
+											:plan_name => @plan_details[0].plan_name,
 											:plan_type => 'Addon Plan'
 										})
 				  @history.save
