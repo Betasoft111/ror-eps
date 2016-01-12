@@ -163,7 +163,8 @@ class CompaniesController < ApplicationController
 	#################################
 	def upgrade_plan
 		@plans = Admin::StaffPlan.all
-		@selectedstaffplan = UsersStaffPlan.where(:user_id =>@current_user.id)
+		@getstaffplan = UsersStaffPlan.where(:user_id =>@current_user.id).first
+		@selectedstaffplan = Admin::StaffPlan.find(@getstaffplan.plan_id)
 	end
 
 	#################################
