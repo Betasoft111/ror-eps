@@ -35,7 +35,7 @@
       //     return false;
       //   }
       // });
-
+  filterResults();
       /* 
        * Call Search Filter On Every Feild Change
        */
@@ -126,6 +126,7 @@
     });
 
 function filterResults() {
+  //alert('called');
           //$( "#amount" ).val( "$" + ui.values[ 0 ] + " - $" + ui.values[ 1 ] );
           $('#serach-results').css('opacity', '0.2');
           $('#serach-results-loader').show();

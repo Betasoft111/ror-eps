@@ -62,9 +62,9 @@
           <%#= text_field_tag :skills, nil, class:'form-control', :id =>'skilsComplete', :placeholder => 'Enter Skills', :required => 'required'   %>
           <input type = "text" class = "form-control" id = "skilsComplete" name="skills" ng-model="staff.skills" placeholder = "Enter Skills" required="required">
            <span>
-            <i class="fa fa-check" ng-show="!addStaff.skills.$invalid && addStaff.skills.$dirty">
+            <i class="fa fa-check" ng-show="skillsValid">
             </i> 
-            <i class="fa fa-times" ng-show="addStaff.skills.$invalid && addStaff.skills.$dirty"></i>
+            <i class="fa fa-times" ng-show="!skillsValid"></i>
           </span>
           <!-- <a href="javascript:void(0)" style="float: right;margin: 0px;" class="add_more">+Add more</a> -->
         </div>
@@ -234,9 +234,9 @@ $('#skilsComplete').tagEditor({
       placeholder: 'Enter skills',
       onChange: function(field, editor, tags) {
          if(tags.length) {
-          angular.element(document.querySelector('[ng-controller="staffController"]')).scope().skillsAdded('1');
+          angular.element(document.querySelector('[ng-controller="staffController"]')).scope().skillsAdded('have_it');
          }else{
-          angular.element(document.querySelector('[ng-controller="staffController"]')).scope().skillsAdded('0');
+          angular.element(document.querySelector('[ng-controller="staffController"]')).scope().skillsAdded('not_have');
          }
     },
 });

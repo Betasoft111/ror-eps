@@ -169,6 +169,7 @@ $(function() {
 delete_cookie('opentab');
 });
 $(document).ready(function () {
+//	filterResults();
 var autCompleteArr = [],
 autoQompleteQua = [];
 var autoCompleteData = $('#hiddenComplete').val()
@@ -247,6 +248,7 @@ function searchForMap(minPrice, maxPrice, response) {
 			  if (status == google.maps.GeocoderStatus.OK) {
 			    var latitude = results[0].geometry.location.lat();
 			    var longitude = results[0].geometry.location.lng();
+			  //  console.log('called map', latitude);
 			    locations.push({
 			    	name: address, 
 			    	lat: latitude, 
@@ -261,8 +263,9 @@ function searchForMap(minPrice, maxPrice, response) {
 		}
 	});
 	setTimeout(function () {
+		//console.log('in time out', locations);
 		fillGeoMap(locations);
-	},500);	
+	},2000);	
 
 }
 
@@ -304,7 +307,7 @@ function getParameterByName(name) {
     return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
 }
 
-function fillGeoMap(locations) { 
+function fillGeoMap(locations) { //console.log('fill maps ', locations);
 	if(locations.length){
 	 var centerLat = (locations[0] && locations[0].lat) ? locations[0].lat : 55.676097,
 	 	 centerLng = (locations[0] && locations[0].lng) ? locations[0].lng : 12.568337;
@@ -313,6 +316,24 @@ function fillGeoMap(locations) {
       center: new google.maps.LatLng(centerLat, centerLng),
       mapTypeId: google.maps.MapTypeId.ROADMAP
     });
+//console.log('mapppppppppppp', map);
+	googleMapsLoaded = false;
+
+/* listen to the tilesloaded event
+   if that is triggered, google maps is loaded successfully for sure */
+google.maps.event.addListener(map, 'tilesloaded', function() {
+   googleMapsLoaded = true;
+   //clear the listener, we only need it once
+   google.maps.event.clearListeners(map, 'tilesloaded');
+});
+
+/* a delayed check to see if google maps was ever loaded */
+setTimeout(function() {
+  if (!googleMapsLoaded) {
+     //we have waited 5 secs, google maps is not loaded yet
+     alert('google maps is not loaded');
+  }    
+}, 5000); 
 
     var infowindow = new google.maps.InfoWindow();
 

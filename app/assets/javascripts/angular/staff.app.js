@@ -70,14 +70,18 @@ app.controller('staffController', function($scope, $timeout, $http) {
    * Enable the submit button when skills added
    */
    $scope.skillsAdded = function (value) {
-    //console.log('here', value);
-    if(value === '1') {
+    console.log('here', value);
+    if(value === 'have_it') {
       $scope.staff.skills = 'true';
+      $scope.skillsValid = true;
     }else{
       //$scope.staff.skills = '';
        $timeout(function () {
+        console.log('here', value);
             $scope.addStaff.skills.$dirty = true;
-       }, 0);
+            $scope.addStaff.skills.$invalid = true;
+            $scope.skillsValid = false;
+       }, 100);
     }
    }
 
