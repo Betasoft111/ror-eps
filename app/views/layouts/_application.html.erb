@@ -41,7 +41,9 @@
        */
       $('#skills').focusout(function () {
         $('.tag-editor-spacer').remove();
-        filterResults();
+        setTimeout(function () {
+          filterResults();          
+        },100);
       });
       $('#experience').focusout(function () {
         filterResults();
