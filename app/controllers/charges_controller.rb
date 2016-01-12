@@ -262,7 +262,7 @@ class ChargesController < ApplicationController
 				#end  
 				
 					#User.where(:id => @current_user.id).update_all(plan_id: @plan_id)
-					@new_allowed_staff = @plan_details.no_of_staff.to_i + @current_user.
+					@new_allowed_staff = @plan_details[0].no_of_staff.to_i + @current_user.
 					UsersStaffPlan.where(:user_id => @current_user.id).update_all(plan_id: @plan_id, no_of_profiles: @new_allowed_staff)
 					@email = UserMailer.payment_email(@current_user, @plan_details.plan_price).deliver
 					redirect_to "/company_home", :notice => "Membership is updated successfully"
