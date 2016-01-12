@@ -10,11 +10,11 @@
 
  app.controller('paymentController', function ($scope, $location, $anchorScroll, anchorSmoothScroll) {
 
-     $scope.showFourthTab = false;
- 	 $scope.showFirstTab = true;
+     $scope.showfourthTab = true;
+ 	 $scope.showFirstTab = false;
 	 $scope.showSecondTab = false;
 	 $scope.showThirdTab = false;
-	 $scope.selectedTab = 1;
+	 $scope.selectedTab = 4;
 
 	 $scope.selectPlan = function (id, name, price) {
 	 	$scope.selectedPlan = {};
@@ -44,7 +44,7 @@
 
 //alert(value);
         if(value == '4'){
-            $scope.showFourthTab = true;
+            $scope.showfourthTab = true;
             $scope.showFirstTab = false;
             //$scope.showFourthTab = false;
             $scope.selectedTab = 4;
@@ -53,14 +53,14 @@
 
 	 		$scope.showFirstTab = true;
 	 	 	$scope.showSecondTab = false;
-            $scope.showFourthTab = false;
+            $scope.showfourthTab = false;
 	 	 	$scope.selectedTab = 1;
 
 	 	}else if(value === '2' && $scope.selectedPlan && $scope.selectedPlan.id) {
 
 	 		$scope.showFirstTab = false;
 	 	 	$scope.showSecondTab = true;
-            $scope.showFourthTab = false;
+            $scope.showfourthTab = false;
 	 	 	$scope.selectedTab = 2;
 	 	}
 	 }
