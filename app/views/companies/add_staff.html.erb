@@ -60,11 +60,11 @@
         <%= label_tag :skills, 'Skills', :class => "control-label col-sm-3" %>
         <div class="col-sm-9">
           <%#= text_field_tag :skills, nil, class:'form-control', :id =>'skilsComplete', :placeholder => 'Enter Skills', :required => 'required'   %>
-          <input type = "text" class = "form-control" id = "skilsComplete" name="skills" ng-model="staff.skills" placeholder = "Enter Skills" required="required">
+          <textarea class = "form-control" id = "skilsComplete" name="skills" ng-model="staff.skills" placeholder = "Enter Skills" required="required"></textarea>
            <span>
             <i class="fa fa-check" ng-show="skillsValid">
             </i> 
-            <i class="fa fa-times" ng-show="!skillsValid"></i>
+            <i class="fa fa-times" ng-show="!skillsValid && showSkillsCheck"></i>
           </span>
           <!-- <a href="javascript:void(0)" style="float: right;margin: 0px;" class="add_more">+Add more</a> -->
         </div>
@@ -175,8 +175,8 @@
       <div class="col-lg-6">
         <label for="staff_price" class="control-label col-sm-3"></label>
         <%#= submit_tag "Add Staff", :class => 'btn btn-default col-sm-offset-2' %>
-        <button type = "submit" ng-show="addStaff.$invalid || duplicateEmail" ng-disabled="addStaff.$invalid || duplicateEmail" class = "btn btn-default register">Fill all fields</button>
-           <button type = "submit" ng-show="!addStaff.$invalid && !duplicateEmail" class = "btn btn-default register" >Add Staff</button>
+        <button type = "submit" ng-show="addStaff.$invalid || duplicateEmail || !disableSubmit" ng-disabled="addStaff.$invalid || duplicateEmail || !disableSubmit" class = "btn btn-default register">Fill all fields</button>
+           <button type = "submit" ng-show="!addStaff.$invalid && !duplicateEmail && disableSubmit" class = "btn btn-default register" >Add Staff</button>
         <%= link_to "Cancel", "/company_home", class: "btn btn-default" %>
       </div>
     </div>
@@ -233,6 +233,19 @@ $('#skilsComplete').tagEditor({
       forceLowercase: false,
       placeholder: 'Enter skills',
       onChange: function(field, editor, tags) {
+        console.log('tags ', tags.length);
+        if(tags.length >= 4) {
+         // setTimeout(function () {
+            //console.log('adding')
+            $('.tag-editor').attr('style', 'min-height: 95px !important');
+            
+        //  },500);
+        }else if(tags.length >= 8) {
+           $('.tag-editor').attr('style', 'min-height: 160px !important');
+        }else if(tags.length >= 12) {
+           $('.tag-editor').attr('style', 'min-height: 240px !important');
+        }
+
          if(tags.length) {
           angular.element(document.querySelector('[ng-controller="staffController"]')).scope().skillsAdded('have_it');
          }else{

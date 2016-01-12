@@ -29,7 +29,7 @@ h3 {
     margin: 0;
     width: 100%;
     position: relative;
-    min-height: 500px;
+    /*min-height: 500px;*/
 }
 .header.inner-pages-ng {
     min-height: auto;

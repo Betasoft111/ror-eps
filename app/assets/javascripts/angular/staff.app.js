@@ -13,6 +13,8 @@ app.controller('staffController', function($scope, $timeout, $http) {
    * Set the submit button value
    */
   $scope.disabledJoin = true;
+  $scope.showSkillsCheck = false;
+  $scope.disableSubmit = true;
 
   /*
    * Check Skills Added
@@ -70,17 +72,20 @@ app.controller('staffController', function($scope, $timeout, $http) {
    * Enable the submit button when skills added
    */
    $scope.skillsAdded = function (value) {
-    console.log('here', value);
+   // console.log('here', value);
     if(value === 'have_it') {
       $scope.staff.skills = 'true';
       $scope.skillsValid = true;
+      $scope.disableSubmit = true;
     }else{
       //$scope.staff.skills = '';
        $timeout(function () {
-        console.log('here', value);
+     //  console.log('here', value);
+            $scope.showSkillsCheck = true;
             $scope.addStaff.skills.$dirty = true;
             $scope.addStaff.skills.$invalid = true;
             $scope.skillsValid = false;
+            $scope.disableSubmit = false;
        }, 100);
     }
    }
