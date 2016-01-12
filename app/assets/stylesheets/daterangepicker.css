@@ -372,4 +372,7 @@
   .daterangepicker .calendar.left {
     clear: none;
   }
+    .daterangepicker{
+    width: auto;
+  }
 }

@@ -1719,6 +1719,10 @@ em.current {
 .search-main {
     position: relative;
 }
+.daterangepicker .ranges {
+    clear: both !important;
+
+}
 
 /**** media start *****/
 @media screen and (max-width: 1200px) {
@@ -1751,6 +1755,7 @@ p.plan-price span {
 }
 
 @media screen and (max-width: 800px) {
+    .daterangepicker .calendar {width: 270px !important;}
     .header .navbar li a { padding: 5px 10px; }
     .porro_inner {width: 80%;}
     .content a {margin:10px 0 20px; }
