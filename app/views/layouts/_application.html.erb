@@ -82,7 +82,11 @@
 
            $('#minHidAmn').val(minPrice);
            $('#maxHidAmn').val(maxPrice);
-
+           String.prototype.ltrim = function() {
+              var trimmed = this.replace(/^\s+/g, '');
+              return trimmed;
+          };
+           skills = skills.ltrim();
            $.ajax({
               url: '/api/filter_staff?skills=' + skills + '&experience=' + experience + '&qualification=' + qualification + '&availability=' + availability + '&minp=' + minPrice + '&maxp=' + maxPrice,
               type: 'get',
@@ -144,6 +148,11 @@ function filterResults() {
            var experience = $('#experience').val();
            var qualification = $('#staffQualitication').val();
            var availability = $('#availability').val();
+           String.prototype.ltrim = function() {
+              var trimmed = this.replace(/^\s+/g, '');
+              return trimmed;
+          };
+           skills = skills.ltrim();
            // var minPrice = ui.values[ 0 ];
            // var maxPrice = ui.values[ 1 ];
            $.ajax({
