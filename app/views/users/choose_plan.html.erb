@@ -11,13 +11,34 @@
     <% end %>
     <div class="row">
       <ul class="tabs ch-tab">
-        <li ng-class="{'selected-tab': selectedTab == '1' }"><a ng-click="changeTab('1')" href="#tab1">Choose Plan</a></li>
+        <li ng-class="{'selected-tab': selectedTab == '4' }"><a ng-click="changeTab('4')" href="#tab4">Current Plan</a></li><li ng-class="{'selected-tab': selectedTab == '1' }"><a ng-click="changeTab('1')" href="#tab1">Choose Plan</a></li>
         <li ng-class="{'selected-tab': selectedTab == '2' }"><a ng-click="changeTab('2')" href="#tab2">Payment Method</a></li>
         <li ng-class="{'selected-tab': selectedTab == '3' }"><a ng-click="changeTab('3')" href="#tab3">All Set</a></li>
       </ul>
       
       <!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras et sapien porttitor, aliquam lectus in, dapibus enim. Suspendisse potenti. Proin eleifend, erat et lobortis venenatis, arcu magna iaculis dolor, ac mollis tellus metus nec nisl. Sed eu consequat sapien. Fusce sit amet suscipit orci. Nam risus nibh, malesuada et dictum sed, lobortis quis velit. In orci ex, sodales nec ante in, faucibus dictum turpis. Nunc placerat sem vel libero commodo. </p> -->
     </div>
+
+     <div class="row three-sap"  id="fourth-tab" ng-show="showFourthTab">
+        <%#= debug @currentpaln %>
+          <% if @currentpaln != nil %>
+          <div class="col-sm-4 col-xs-12">
+              <div class="plan-main" id="3">
+                <div class="plan">
+                  <p class="plan-duration"><%= @currentpaln.plan_name %></p>
+                  <p class="plan-price">$<span><%= @currentpaln.plan_price %></span>
+                /monthly</p>
+                <p class="plan-month"><%= @currentpaln.total_profiles %> Profiles</p>
+          </div>
+          <div class="overlay-plan 3 opacity" id="select3" style="cursor:pointer" ng-click="selectPlan('3', 'Test Plan', '25')">
+        </div>
+      </div>
+      </div>
+      <% else %>
+        No Selected Plan
+      <% end %>
+     </div>
+
     <div class="row three-sap"  id="first-tab" ng-show="showFirstTab">
       <h3>Select The Best Subscription Plan Suites Your Needs</h3>
       <!-- <form action="/charges/payment_method" method="POST"> -->

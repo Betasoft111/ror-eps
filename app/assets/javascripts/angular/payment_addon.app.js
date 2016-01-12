@@ -2,7 +2,7 @@
  * Starting The Angular JS Application
  */
 
- var app = angular.module('epsPayment', []);
+ var app = angular.module('epsPaymentAdd', []);
 
 /*
  * Intialize The Payment Controller
@@ -10,11 +10,11 @@
 
  app.controller('paymentController', function ($scope, $location, $anchorScroll, anchorSmoothScroll) {
 
-     $scope.showFourthTab = true;
- 	 $scope.showFirstTab = false;
+     $scope.showFourthTab = false;
+ 	 $scope.showFirstTab = true;
 	 $scope.showSecondTab = false;
 	 $scope.showThirdTab = false;
-	 $scope.selectedTab = 4;
+	 $scope.selectedTab = 1;
 
 	 $scope.selectPlan = function (id, name, price) {
 	 	$scope.selectedPlan = {};

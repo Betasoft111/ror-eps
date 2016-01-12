@@ -89,6 +89,9 @@ class UsersController < ApplicationController
 	#################################
 	def choose_plan
 		@plans = SubscriptionPlan.all
+		@paln = User.find(@current_user.id)
+		@currentpaln = SubscriptionPlan.find(@paln.plan_id)
+		
 	end
 
 	#################################
