@@ -84,8 +84,8 @@
           <div class="col-lg-3">
             <div class="card epay">
                     <script type="text/javascript">
+                      $.getScript("https://ssl.ditonlinebetalingssystem.dk/integration/ewindow/paymentwindow.js");
                       function loadEpay() {
-                       $.getScript("https://ssl.ditonlinebetalingssystem.dk/integration/ewindow/paymentwindow.js");
                          setTimeout(function() {
                             var amount = $('#hidden_amount').val();
                             paymentwindow = new PaymentWindow({
@@ -125,14 +125,19 @@
 <script>
 $(document).ready(function () {
 
-  $('.overlay-plan ').click(function () {
-    var divid = this.id;
-    var radioId = '#'+divid.toString();
-    $('.overlay-plan').removeClass('opacity');
-    $('#'+divid).addClass('opacity'); 
-    $(radioId).prop('checked', true); 
-    //$('#span'+radioId+':before').css('content', '✓'); //span
-  });
+$('.overlay-plan ').click(function () {
+$('.overlay-plan').css('opacity',0);
+$(this).css('opacity',1);
+var divid = this.id;
+var radioId = '#'+divid.toString();
+//console.log('here ', divid);
+// setTimeout(function () {
+//   $('#'+divid).addClass('opacity');
+// },100);
+$(radioId).prop('checked', true);
+//$('#span'+radioId+':before').css('content', '✓'); //span
+});
+  
 
   //$("#loginForm").validate();
   

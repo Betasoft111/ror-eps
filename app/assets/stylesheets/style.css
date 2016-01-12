@@ -1723,6 +1723,9 @@ em.current {
     clear: both !important;
 
 }
+.daterangepicker {
+    width: auto;
+}
 
 /**** media start *****/
 @media screen and (max-width: 1200px) {
@@ -1737,8 +1740,19 @@ em.current {
   margin-right: 0;
   width: 100%;
 }
+  .daterangepicker {
+    width: 283px !important;
+}
+    .daterangepicker .calendar {width: 270px !important;}
+
+
 
 }
+
+
+
+
+
 @media screen and (max-width: 1000px) {
 .header .navbar li a {
   font-size: 14px;
@@ -1752,10 +1766,11 @@ p.plan-price span {
   font-size: 29px;
 }
 
+
 }
 
 @media screen and (max-width: 800px) {
-    .daterangepicker .calendar {width: 270px !important;}
+
     .header .navbar li a { padding: 5px 10px; }
     .porro_inner {width: 80%;}
     .content a {margin:10px 0 20px; }

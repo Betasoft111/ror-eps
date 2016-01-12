@@ -60,7 +60,7 @@
       <p class="plan-month">Yearly</p>
       <% end %>
     </div>
-    <div class="overlay-plan <%= plan.id %>" id="select<%= plan.id %>"  style="cursor:pointer" ng-click="selectPlan('<%= plan.id %>', '<%= plan.plan_name %>', '<%= plan.plan_price %>')">
+    <div class="overlay-plan <%= plan.id %>" id="select_<%= plan.id %>"  style="cursor:pointer" ng-click="selectPlan('<%= plan.id %>', '<%= plan.plan_name %>', '<%= plan.plan_price %>')">
       <input type="hidden" name="plan_id" value="<%= plan.id %>">
       <div>
         <input type="radio" class="selected_plan_radio"  name="selected_plan" value="<%= plan.id %>" id="select<%= plan.id %>" ng-click="selectPlan('<%= plan.id %>', '<%= plan.plan_name %>', '<%= plan.plan_price %>')" ng-required="required" ng-model="selected_plan">
@@ -122,8 +122,8 @@
 <div class="col-lg-3">
   <div class="card epay">
     <script type="text/javascript">
-    function loadEpay() {
     $.getScript("https://ssl.ditonlinebetalingssystem.dk/integration/ewindow/paymentwindow.js");
+    function loadEpay() {
     setTimeout(function() {
     var amount = $('#hidden_amount').val();
     paymentwindow = new PaymentWindow({
@@ -161,11 +161,19 @@
 </div>
 <script>
 $(document).ready(function () {
+
+// $('.overlay-plan').first().css('opacity','1');
+// $('.overlay-plan').first().trigger("click");
+
 $('.overlay-plan ').click(function () {
+$('.overlay-plan').css('opacity',0);
+$(this).css('opacity',1);
 var divid = this.id;
 var radioId = '#'+divid.toString();
-$('.overlay-plan').removeClass('opacity');
-$('#'+divid).addClass('opacity');
+//console.log('here ', divid);
+// setTimeout(function () {
+//   $('#'+divid).addClass('opacity');
+// },100);
 $(radioId).prop('checked', true);
 //$('#span'+radioId+':before').css('content', '✓'); //span
 });
@@ -174,9 +182,9 @@ $(radioId).prop('checked', true);
 });
 </script>
 <style>
-.sweet-container {
+/*.sweet-container {
   display: none;
-}
+}*/
 </style>
 <!-- angular js stuff -->
 <%= javascript_include_tag "angular/angular.min.js" %>
