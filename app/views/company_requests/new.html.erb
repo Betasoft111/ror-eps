@@ -29,14 +29,14 @@
       <div class="form-group">
         <%= label_tag :amount, 'Propsed Amount', :class => "control-label col-sm-2" %>
         <div class="col-sm-7">
-          <%= text_field_tag :amount, nil, class:'form-control', :placeholder => 'Enter Propsed Amount', :required => 'required' %>
+          <%= number_field_tag :amount, nil, class:'form-control', :placeholder => 'Enter Propsed Amount', :required => 'required', :min => 1%>
         </div>
       </div>
 
         <div class="form-group">
         <%= label_tag :total_emp, 'Number of Employees', :class => "control-label col-sm-2" %>
         <div class="col-sm-7">
-          <%= text_field_tag :total_emp, nil, class:'form-control', :placeholder => 'Enter Number of Employees', :required => 'required' %>
+          <%= number_field_tag :total_emp, nil, class:'form-control', :placeholder => 'Enter Number of Employees', :required => 'required' %>
         </div>
       </div>
 
@@ -55,7 +55,7 @@
       <div class="form-group">
         <%= label_tag :total_days, 'No. of days', :class => "control-label col-sm-2" %>
         <div class="col-sm-7">
-          <%= text_field_tag :total_days, nil, class:'form-control', :placeholder => 'Enter No. of days', :required => 'required' %>
+          <%= number_field_tag :total_days, nil, class:'form-control', :placeholder => 'Enter No. of days', :required => 'required' %>
         </div>
       </div>
 
