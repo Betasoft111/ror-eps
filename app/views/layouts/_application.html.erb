@@ -45,10 +45,24 @@
           filterResults();          
         },100);
       });
+      $('#skills').keyup(function () {
+        $('.tag-editor-spacer').remove();
+        setTimeout(function () {
+          filterResults();          
+        },100);
+      });
+
+      $('#experience').keyup(function () {
+        filterResults();
+      });
       $('#experience').focusout(function () {
         filterResults();
       });
+
       $('#staffQualitication').focusout(function () {
+        filterResults();
+      });
+      $('#staffQualitication').keyup(function () {
         filterResults();
       });
       // $('#availability').change(function () {
@@ -67,6 +81,12 @@
         range:       true,
         values:      [$('#minPrice').val(), $('#maxPrice').val()],
         slide: function( event, ui ) {
+
+          $('#serach-results').css('opacity', '0.2');
+          $('#serach-results-loader').show();
+
+          setTimeout(function () {
+
           $( "#amountRange" ).val( "$" + ui.values[ 0 ] + " - $" + ui.values[ 1 ] );
           $('#serach-results').css('opacity', '0.2');
           
@@ -96,6 +116,8 @@
                   $('#noResults').hide();
                 }else {
                   $('#noResults').show();
+                  $('#serach-results').css('opacity', '1');                
+                  $('#serach-results-loader').hide();
                 }
                 searchForMap(ui.values[ 0 ] , ui.values[ 1 ], response);
                 var html = '';
@@ -121,13 +143,13 @@
                 }
                 $('#serach-results').html('');
                 $('#serach-results').html(html);
-                $('#serach-results').css('opacity', '1');
+                
                 
               },error: function(error) {
                 console.log('Here I am');
               }
            });
-
+          },1500);
         }
       });
       $( "#amountRange" ).val( "$" + $( "#flat-slider" ).slider( "values", 0 ) +
