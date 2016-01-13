@@ -10,8 +10,8 @@ development:
   pool: 5
   timeout: 5000
 
-  username: root #db_eps
-  password: root #dp_eps_plesk
+  username: db_eps
+  password: dp_eps_plesk
 
 
 # Warning: The database defined as "test" will be erased and
