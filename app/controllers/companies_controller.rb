@@ -164,7 +164,11 @@ class CompaniesController < ApplicationController
 	def upgrade_plan
 		@plans = Admin::StaffPlan.all
 		@getstaffplan = UsersStaffPlan.where(:user_id =>@current_user.id).first
-		@selectedstaffplan = Admin::StaffPlan.find(@getstaffplan.plan_id)
+		if @getstaffplan && @getstaffplan != nil
+			@selectedstaffplan = Admin::StaffPlan.find(@getstaffplan.plan_id)
+		else
+			@selectedstaffplan = nil
+		end
 	end
 
 	#################################
