@@ -69,7 +69,8 @@
         <div class="col-sm-offset-2 col-sm-10">
         	
           <%= submit_tag "Send Request", :class => 'btn btn-default' %>          
-          <%= link_to "Cancel", root_url , class: "btn btn-default" %>
+          <%#= link_to "Cancel", root_url , class: "btn btn-default" %>
+          &nbsp;&nbsp;<a href="javascript:void(0)" class="btn btn-default" onclick="return window.history.back();">Back To Search</a>
         </div>
       </div>
       <% end %>
