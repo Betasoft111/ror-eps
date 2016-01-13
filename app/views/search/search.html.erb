@@ -130,6 +130,18 @@
 		</div>
 	</div>
 
+<div id="noResults" class="outer-listings-container row-space-2">
+	<div class="listings-container">
+		<div class="col-10 col-sm-offset-1 row-space-top-2-sm col-md-offset-0 col-lg-8">
+			<p class="text-lead">We couldn’t find any results that matched your criteria, but tweaking your search may help. Here are some ideas:</p>
+			<ul>
+				<li>Remove some filters.</li>
+				<li>Expand the area of your search.</li>
+				<li>Search for a city, address, or landmark.</li>
+			</ul>
+		</div>
+	</div>
+</div>
 
 <div id="serach-results-loader"> 
 	<%= image_tag('image_940385.gif' , :alt => 'loader') %>
@@ -291,7 +303,9 @@ $(document).ready(function () {
 		success: function(response) {	
 			if(response.length) {
 				searchForMap(minPrice, maxPrice, response);				
+				$('#noResults').hide();
 			}else {
+				$('#noResults').show();
 				buildDemoMap();
 			}
 

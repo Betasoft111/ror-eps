@@ -2229,3 +2229,18 @@ ul#ui-id-1, ul#ui-id-2 {
 #serach-results-loader {
     display: none;
 }
+
+
+/*** 14 Jan 2016 ***/
+.outer-listings-container {
+   /* overflow-x: hidden;*/
+}
+.row-space-2 {
+    margin-bottom: 12.5px;
+}
+.text-lead {
+    font-size: 16px;
+}
+#noResults {
+    display: none;
+}

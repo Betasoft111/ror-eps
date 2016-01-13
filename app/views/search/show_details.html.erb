@@ -69,8 +69,11 @@
 			<p><label>Other details : </label> </p>
 			<% if !current_user %>
 				<%= link_to "Please Login First", company_request_path(@user_detail.company_id), class: "btn btn-default", disabled: "disabled" %>
+				<%#= link_to "Please Login First", company_request_path(@user_detail.company_id), class: "btn btn-default", disabled: "disabled" %>
+				&nbsp;&nbsp;<a href="javascript:void(0)" class="btn btn-default" onclick="return window.history.back();">Back To Search</a>
 			<% else %>
 				<%= link_to "Contact To Company", company_request_path(@user_detail.company_id), class: "btn btn-default" %>
+				&nbsp;&nbsp;<a href="javascript:void(0)" class="btn btn-default" onclick="return window.history.back();">Back To Search</a>
 			<% end %>
 		</div>
 	</div>

@@ -92,6 +92,11 @@
               type: 'get',
               dataType: 'json',
               success: function(response) {
+                if(response.length) {
+                  $('#noResults').hide();
+                }else {
+                  $('#noResults').show();
+                }
                 searchForMap(ui.values[ 0 ] , ui.values[ 1 ], response);
                 var html = '';
                 for(var i =0; i < response.length; i++) {
@@ -160,7 +165,11 @@ function filterResults() {
               type: 'get',
               dataType: 'json',
               success: function(response) {
-                
+                if(response.length) {
+                  $('#noResults').hide();
+                }else {
+                  $('#noResults').show();
+                }
                 var html = '';
                  searchForMap(minPrice , maxPrice, response);
                 for(var i =0; i < response.length; i++) {
