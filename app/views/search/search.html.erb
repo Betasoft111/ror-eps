@@ -318,23 +318,23 @@ function fillGeoMap(locations) { //console.log('fill maps ', locations);
       mapTypeId: google.maps.MapTypeId.ROADMAP
     });
 //console.log('mapppppppppppp', map);
-	googleMapsLoaded = false;
+//	googleMapsLoaded = false;
 
 /* listen to the tilesloaded event
    if that is triggered, google maps is loaded successfully for sure */
-google.maps.event.addListener(map, 'tilesloaded', function() {
-   googleMapsLoaded = true;
+//google.maps.event.addListener(map, 'tilesloaded', function() {
+  // googleMapsLoaded = true;
    //clear the listener, we only need it once
-   google.maps.event.clearListeners(map, 'tilesloaded');
-});
+//   google.maps.event.clearListeners(map, 'tilesloaded');
+//});
 
 /* a delayed check to see if google maps was ever loaded */
-setTimeout(function() {
-  if (!googleMapsLoaded) {
+//setTimeout(function() {
+  //if (!googleMapsLoaded) {
      //we have waited 5 secs, google maps is not loaded yet
-     alert('google maps is not loaded');
-  }    
-}, 5000); 
+    // alert('google maps is not loaded');
+//  }    
+//}, 5000); 
 
     var infowindow = new google.maps.InfoWindow();
 
