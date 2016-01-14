@@ -97,6 +97,7 @@
 
 <div id="serach-results">
 		<div class="row">
+			<% if @search_results !=nil %>
 			<% @search_results.each do |data| %>
 			<div class="col-lg-4 col-sm-4 search-result">
 				<!-- <img src="img/search1.jpg"> -->
@@ -127,8 +128,11 @@
 				</h5>
 			</div>
 			<% end %>
+			<% end %>
 		</div>
 	</div>
+
+
 
 <div id="noResults" class="outer-listings-container row-space-2">
 	<div class="listings-container">
@@ -150,7 +154,7 @@
 
 </div>
 
-
+	<div id="paginationDiv"></div>
 
 
 	</div>
@@ -296,13 +300,13 @@ $(document).ready(function () {
 		experience = getParameterByName("experience"),
 		staff_quf = getParameterByName("staff_quf"),
 		availability = getParameterByName("availability"),
-		url = "/search_json?skills=" + skills + "&experience=" + experience + "&staff_quf=" + staff_quf + "&availability=" + availability;
+		url = "/search_json/1/25?skills=" + skills + "&experience=" + experience + "&staff_quf=" + staff_quf + "&availability=" + availability;
 		$.ajax({
 		url: url,
 		type: 'get',
 		success: function(response) {	
-			if(response.length) {
-				searchForMap(minPrice, maxPrice, response);				
+			if(response.data.length) {
+				searchForMap(minPrice, maxPrice, response.data);				
 				$('#noResults').hide();
 			}else {
 				$('#noResults').show();

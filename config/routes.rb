@@ -45,7 +45,7 @@ EPS::Application.routes.draw do
   #################################
   get "/search" => "search#search"
   get "/staff_details/:id" => "search#show_details"
-  get "/search_json" => "search#search_json"
+  get "/search_json/:start/:end" => "search#search_json"
 
 
   #################################
@@ -152,7 +152,7 @@ EPS::Application.routes.draw do
   post "api/check_email" => "users#check_email"
   post "api/check_staff_email" => "companies#check_email"
   get "api/staff_edit/:id" => "companies#get_staff_details"
-  get "api/filter_staff" => "search#staff_ajax_filter"
+  get "api/filter_staff/:start/:end" => "search#staff_ajax_filter"
 
   # #url's we are using in web
 
